@@ -1,0 +1,11 @@
+{
+  "name": "drupal/shopify",
+  "type": "drupal-module",
+  "description": "Display your Shopify store within your Drupal site.",
+  "homepage": "http://drupal.org/project/shopify",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "donutdan4114/shopify": "v2020.01.*"
+  }
+}

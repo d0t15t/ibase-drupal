@@ -1,0 +1,123 @@
+diff --git a/shopify.info.yml b/shopify.info.yml
+index 50bcb44..f2baf6f 100644
+--- a/shopify.info.yml
++++ b/shopify.info.yml
+@@ -1,3 +1,4 @@
++core_version_requirement: ^8 || ^9
+ name: 'Shopify eCommerce'
+ description: 'Display your Shopify store within your Drupal site.'
+ package: Shopify
+diff --git a/shopify.module b/shopify.module
+index 5f3ae84..bba04fe 100644
+--- a/shopify.module
++++ b/shopify.module
+@@ -689,7 +689,7 @@ function shopify_collection_save_image(Term $term, $image_url) {
+     // If our directory doesn't exist and can't be created, use the default.
+     $directory = NULL;
+   }
+-  $file = system_retrieve_file($image_url, $directory, TRUE, FILE_EXISTS_REPLACE);
++  $file = system_retrieve_file($image_url, $directory, TRUE, FileSystemInterface::EXISTS_REPLACE);
+   $term->field_shopify_collection_image = $file;
+   $term->save();
+ }
+diff --git a/src/Batch/ShopifyCollectionBatch.php b/src/Batch/ShopifyCollectionBatch.php
+index c63c5c8..e406057 100644
+--- a/src/Batch/ShopifyCollectionBatch.php
++++ b/src/Batch/ShopifyCollectionBatch.php
+@@ -56,7 +56,7 @@ class ShopifyCollectionBatch {
+       $this->operations[] = [
+         [__CLASS__, 'deleteAllCollections'],
+         [
+-          t('Deleting all collections...'),
++          $this->t('Deleting all collections...'),
+         ],
+       ];
+     }
+@@ -118,7 +118,7 @@ class ShopifyCollectionBatch {
+   public static function cleanUpCollections($operation_details, &$context) {
+     $count = shopify_sync_deleted_collections();
+     if ($count) {
+-      drupal_set_message(t('Deleted @collections.', [
++      \Drupal::messenger()->addMessage(t('Deleted @collections.', [
+         '@collections' => \Drupal::translation()
+           ->formatPlural($count, '@count collection', '@count collections'),
+       ]));
+@@ -151,9 +151,8 @@ class ShopifyCollectionBatch {
+     // Update the collections sync time.
+     \Drupal::state()
+       ->set('shopify.sync.collections_last_sync_time', \Drupal::time()->getRequestTime());
+-    drupal_set_message(t('Synced @count.', [
+-      '@count' => \Drupal::translation()
+-        ->formatPlural(count($results), '@count collection', '@count collections'),
++    \Drupal::messenger()->addMessage(t('Synced @count.', [
++      '@count' => \Drupal::translation()->formatPlural(count($results), '@count collection', '@count collections'),
+     ]));
+   }
+ 
+diff --git a/src/Controller/ShopifyAddedToCart.php b/src/Controller/ShopifyAddedToCart.php
+index 562e9c0..717ada5 100644
+--- a/src/Controller/ShopifyAddedToCart.php
++++ b/src/Controller/ShopifyAddedToCart.php
+@@ -7,6 +7,7 @@ use Drupal\Core\Url;
+ use Drupal\shopify\Entity\ShopifyProduct;
+ use Drupal\shopify\Entity\ShopifyProductVariant;
+ use Symfony\Component\HttpFoundation\Response;
++use Drupal\Core\Link;
+ 
+ /**
+  * Class ShopifyAddedToCart.
+@@ -34,11 +35,11 @@ class ShopifyAddedToCart extends ControllerBase {
+ 
+     $messenger = \Drupal::messenger();
+     $title = $variant->label() == 'Default Title' ? '' : '- ' . $variant->label();
+-    $messenger->addStatus(t('@quantity x @parent @title (@price) added to @cart_link.', [
++    $messenger->addStatus($this->t('@quantity x @parent @title (@price) added to @cart_link.', [
+       '@parent' => $product->label(),
+       '@title' => $title,
+       '@price' => shopify_currency_format($variant->price->value),
+-      '@cart_link' => \Drupal::l(t('your cart'), Url::fromUri('https://' . shopify_shop_info('domain') . '/cart', ['attributes' => ['target' => '_blank']])),
++      '@cart_link' => Link::fromTextAndUrl($this->t('your cart'), Url::fromUri('https://' . shopify_shop_info('domain') . '/cart', ['attributes' => ['target' => '_blank']])),
+       '@quantity' => $quantity,
+     ]));
+     return new Response('okay', Response::HTTP_OK);
+diff --git a/src/Entity/ShopifyEntityTrait.php b/src/Entity/ShopifyEntityTrait.php
+index 2341d97..1a791ef 100644
+--- a/src/Entity/ShopifyEntityTrait.php
++++ b/src/Entity/ShopifyEntityTrait.php
+@@ -2,6 +2,8 @@
+ 
+ namespace Drupal\shopify\Entity;
+ 
++use Drupal\Core\File\FileSystemInterface;
++
+ /**
+  * Class ShopifyEntityTrait.
+  */
+@@ -23,11 +25,12 @@ trait ShopifyEntityTrait {
+    */
+   public static function setupProductImage($image_url) {
+     $directory = file_build_uri('shopify_images');
+-    if (!file_prepare_directory($directory, FILE_CREATE_DIRECTORY)) {
++    $fileSystem = $this->getFileSystem();
++    if (!$fileSystem->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY)) {
+       // If our directory doesn't exist and can't be created, use the default.
+       $directory = NULL;
+     }
+-    $file = system_retrieve_file($image_url, $directory, TRUE, FILE_EXISTS_REPLACE);
++    $file = system_retrieve_file($image_url, $directory, TRUE, FileSystemInterface::EXISTS_REPLACE);
+     return $file;
+   }
+ 
+diff --git a/src/Form/ShopifyThemeDownloadForm.php b/src/Form/ShopifyThemeDownloadForm.php
+index 0c9b735..b3a835b 100644
+--- a/src/Form/ShopifyThemeDownloadForm.php
++++ b/src/Form/ShopifyThemeDownloadForm.php
+@@ -306,7 +306,7 @@ class ShopifyThemeDownloadForm extends FormBase {
+    *   Returns the destination file path.
+    */
+   public static function downloadRemoteCopy($download_url = '') {
+-    $file_path = system_retrieve_file($download_url ?: self::REMOTE_DOWNLOAD_URL, FileSystemInterface::getTempDirectory() . '/shopify_default_theme_' . \Drupal::time()->getRequestTime() . '.zip', $managed = FALSE, FILE_EXISTS_REPLACE);
++    $file_path = system_retrieve_file($download_url ?: self::REMOTE_DOWNLOAD_URL, FileSystemInterface::getTempDirectory() . '/shopify_default_theme_' . \Drupal::time()->getRequestTime() . '.zip', $managed = FALSE, FileSystemInterface::EXISTS_REPLACE);
+     if (sha1_file($file_path) !== self::REMOTE_DOWNLOAD_SHASUM) {
+       $messenger = \Drupal::messenger();
+       $messenger->addError(t('Checksum failed. Could not verify the downloaded file. You may need to upgrade this module.'));
