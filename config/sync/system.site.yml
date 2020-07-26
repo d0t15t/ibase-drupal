@@ -1,6 +1,6 @@
-uuid: c22e8783-c81d-4f15-b2d2-cde4ae57bb89
-name: ibase
-mail: dev@dyss.net
+uuid: 0ceaa7f3-905d-4f35-8a7a-6f3294a68c02
+name: 'Drush Site-Install'
+mail: admin@example.com
 slogan: ''
 page:
   403: ''
@@ -12,4 +12,3 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
-mail_notification: ''

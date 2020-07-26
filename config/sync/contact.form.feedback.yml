@@ -1,4 +1,4 @@
-uuid: b6812409-b6bc-48df-99b4-f5a166bdcd80
+uuid: 261eda22-150f-4d52-9a4c-d6f9b4dcfc89
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - dev@dyss.net
+  - admin@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

@@ -1,0 +1,25 @@
+uuid: 3da8618c-51d8-4b81-b32e-7e69715381a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product
+    - paragraphs.paragraphs_type.teaser
+id: paragraph.teaser.field_product
+field_name: field_product
+entity_type: paragraph
+bundle: teaser
+label: Product
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:shopify_product'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

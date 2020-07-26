@@ -1,0 +1,37 @@
+uuid: e2990d5c-2b68-4842-ac74-f6f746b8cdc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teasers
+    - paragraphs.paragraphs_type.teaser
+    - paragraphs.paragraphs_type.teasers
+  module:
+    - entity_reference_revisions
+id: paragraph.teasers.field_teasers
+field_name: field_teasers
+entity_type: paragraph
+bundle: teasers
+label: Teasers
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      teaser: teaser
+    target_bundles_drag_drop:
+      slideshow:
+        weight: 4
+        enabled: false
+      teaser:
+        enabled: true
+        weight: 5
+      teasers:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

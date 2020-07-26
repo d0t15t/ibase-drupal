@@ -1,3 +1,8 @@
 # Ignore system files.
 .idea
 vendor
+
+*.sql
+*.sql.gz
+
+web/libraries
