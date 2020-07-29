@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.teaser.field_collection
-    - field.field.paragraph.teaser.field_image
+    - field.field.paragraph.teaser.field_media
     - field.field.paragraph.teaser.field_page
     - field.field.paragraph.teaser.field_product
     - paragraphs.paragraphs_type.teaser
@@ -21,9 +21,9 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_image:
+  field_media:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 4
     label: above
     settings:
       view_mode: default

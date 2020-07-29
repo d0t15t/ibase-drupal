@@ -1,24 +1,22 @@
-uuid: 995dd61d-2879-48a3-b97e-6f152d85ab98
+uuid: 8af24120-3294-414d-ac71-7fbd9f505747
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.teasers.field_body
-    - field.field.paragraph.teasers.field_headline
-    - field.field.paragraph.teasers.field_layout
-    - field.field.paragraph.teasers.field_teasers
-    - paragraphs.paragraphs_type.teasers
+    - field.field.paragraph.tiles.field_body
+    - field.field.paragraph.tiles.field_headline
+    - field.field.paragraph.tiles.field_teasers
+    - paragraphs.paragraphs_type.tiles
   module:
     - entity_reference_revisions
-    - options
     - text
-id: paragraph.teasers.default
+id: paragraph.tiles.default
 targetEntityType: paragraph
-bundle: teasers
+bundle: tiles
 mode: default
 content:
   field_body:
-    weight: 2
+    weight: 0
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -32,15 +30,8 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_layout:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_teasers:
-    weight: 0
+    weight: 2
     label: above
     settings:
       view_mode: default

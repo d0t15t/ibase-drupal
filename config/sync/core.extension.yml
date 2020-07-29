@@ -9,6 +9,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   color: 0
+  color_field: 0
   config: 0
   contact: 0
   contextual: 0
@@ -19,6 +20,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -27,6 +29,7 @@ module:
   image: 0
   inline_entity_form: 0
   jsonapi: 0
+  jsonapi_extras: 0
   link: 0
   media: 0
   media_library: 0
@@ -40,6 +43,7 @@ module:
   quickedit: 0
   rdf: 0
   redirect: 0
+  rest: 0
   search: 0
   serialization: 0
   shopify: 0

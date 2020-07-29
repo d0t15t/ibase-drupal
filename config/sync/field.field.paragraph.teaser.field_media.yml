@@ -1,17 +1,17 @@
-uuid: 103c7266-76db-4e34-ab00-0958015a3922
+uuid: f01afe56-9426-4479-9834-b70a8d7a9bb2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_image
+    - field.storage.paragraph.field_media
     - media.type.image
     - media.type.video
     - paragraphs.paragraphs_type.teaser
-id: paragraph.teaser.field_image
-field_name: field_image
+id: paragraph.teaser.field_media
+field_name: field_media
 entity_type: paragraph
 bundle: teaser
-label: Image
+label: Media
 description: ''
 required: false
 translatable: false

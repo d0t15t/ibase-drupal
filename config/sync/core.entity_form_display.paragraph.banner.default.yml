@@ -1,0 +1,55 @@
+uuid: 89039c10-74da-4006-9432-3bbd66f3bf21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.banner.field_body
+    - field.field.paragraph.banner.field_color
+    - field.field.paragraph.banner.field_headline
+    - field.field.paragraph.banner.field_media
+    - paragraphs.paragraphs_type.banner
+  module:
+    - color_field
+    - media_library
+    - text
+id: paragraph.banner.default
+targetEntityType: paragraph
+bundle: banner
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_color:
+    weight: 3
+    settings:
+      default_colors: "\n#AC725E,#D06B64,#F83A22,#FA573C,#FF7537,#FFAD46\n#42D692,#16A765,#7BD148,#B3DC6C,#FBE983\n#92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF\n#B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2\n#CD74E6,#A47AE2"
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_headline:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media:
+    weight: 1
+    settings:
+      media_types:
+        - image
+        - remote_video
+        - video
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+hidden:
+  created: true
+  status: true

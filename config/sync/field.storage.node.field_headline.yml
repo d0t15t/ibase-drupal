@@ -1,12 +1,12 @@
-uuid: d7f481b8-d624-465d-9079-5cfcb6bea336
+uuid: 11a2cda6-1500-4bfd-94e3-150bea2f1786
 langcode: en
 status: true
 dependencies:
   module:
-    - media
-id: media.field_title
-field_name: field_title
-entity_type: media
+    - node
+id: node.field_headline
+field_name: field_headline
+entity_type: node
 type: string
 settings:
   max_length: 255

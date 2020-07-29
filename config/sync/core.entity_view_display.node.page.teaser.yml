@@ -5,6 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_blocks
+    - field.field.node.page.field_headline
+    - field.field.node.page.field_hero_media
+    - field.field.node.page.field_media
+    - field.field.node.page.field_title_bool
     - node.type.page
   module:
     - text
@@ -27,4 +32,9 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_blocks: true
+  field_headline: true
+  field_hero_media: true
+  field_media: true
+  field_title_bool: true

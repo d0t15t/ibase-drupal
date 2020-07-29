@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.media.media_library
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
-    - field.field.media.image.field_title
     - image.style.medium
     - media.type.image
   module:
@@ -31,6 +30,5 @@ hidden:
   created: true
   field_caption: true
   field_media_image: true
-  field_title: true
   name: true
   uid: true

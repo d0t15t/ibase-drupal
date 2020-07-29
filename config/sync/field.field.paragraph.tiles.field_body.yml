@@ -1,16 +1,16 @@
-uuid: 48f46800-5859-4dd8-9db6-ccb7db263cac
+uuid: 06eca180-94c1-4c09-93d5-f131a6c37062
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_body
-    - paragraphs.paragraphs_type.teasers
+    - paragraphs.paragraphs_type.tiles
   module:
     - text
-id: paragraph.teasers.field_body
+id: paragraph.tiles.field_body
 field_name: field_body
 entity_type: paragraph
-bundle: teasers
+bundle: tiles
 label: Body
 description: ''
 required: false

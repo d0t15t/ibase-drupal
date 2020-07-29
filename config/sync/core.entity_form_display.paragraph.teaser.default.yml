@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.teaser.field_collection
-    - field.field.paragraph.teaser.field_image
+    - field.field.paragraph.teaser.field_media
     - field.field.paragraph.teaser.field_page
     - field.field.paragraph.teaser.field_product
     - paragraphs.paragraphs_type.teaser
   module:
+    - inline_entity_form
     - media_library
 id: paragraph.teaser.default
 targetEntityType: paragraph
@@ -16,31 +17,36 @@ bundle: teaser
 mode: default
 content:
   field_collection:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_media:
+    type: media_library_widget
     weight: 3
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_image:
-    type: media_library_widget
-    weight: 1
-    settings:
-      media_types: {  }
+      media_types:
+        - image
+        - video
     third_party_settings: {  }
     region: content
   field_page:
     weight: 2
     settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
       match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   field_product:
     weight: 0
