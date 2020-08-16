@@ -1,0 +1,5 @@
+# Ignore system files.
+.idea
+
+*.sql
+*.sql.gz

@@ -1,0 +1,34 @@
+uuid: f9bb75c0-d07d-4822-a879-6392b3483a36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tiles.field_teasers
+    - paragraphs.paragraphs_type.tiles
+  module:
+    - inline_entity_form
+id: paragraph.tiles.default
+targetEntityType: paragraph
+bundle: tiles
+mode: default
+content:
+  field_teasers:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+hidden:
+  created: true
+  status: true
