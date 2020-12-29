@@ -1,9 +1,0 @@
-uuid: 1446c91a-55de-4cfb-ac97-7e522298d769
-langcode: en
-status: true
-dependencies: {  }
-id: editor
-label: Editor
-weight: -8
-is_admin: null
-permissions: {  }
