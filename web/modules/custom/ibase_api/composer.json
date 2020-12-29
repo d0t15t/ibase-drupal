@@ -1,0 +1,13 @@
+{
+    "name": "ibase_api",
+    "type": "drupal-module",
+    "description": "Custom api.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/ibase_api",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/ibase_api",
+        "source": "http://cgit.drupalcode.org/ibase_api"
+    }
+}

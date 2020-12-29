@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains goldies_shopify.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_help().
+ */
+function goldies_shopify_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the goldies_shopify module.
+    case 'help.page.goldies_shopify':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function goldies_shopify_theme() {
+  return [
+    'goldies_shopify' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_entity_update().
+ */
+function goldies_shopify_entity_insert(EntityInterface $entity) {
+  $t=1;
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function goldies_shopify_entity_update(EntityInterface $entity) {
+  $t=1;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function goldies_shopify_ENTITY_TYPE_update(Drupal\Core\Entity\EntityInterface $entity) {
+
+}

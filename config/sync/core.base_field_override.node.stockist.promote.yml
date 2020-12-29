@@ -1,0 +1,22 @@
+uuid: 97f190c6-6b7e-4bc4-bb0e-3d56f1a9cc08
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stockist
+id: node.stockist.promote
+field_name: promote
+entity_type: node
+bundle: stockist
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,68 @@
+uuid: e2998473-1b7d-428a-843c-eaaab0fb6f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser.field_collection
+    - field.field.paragraph.teaser.field_headline
+    - field.field.paragraph.teaser.field_media
+    - field.field.paragraph.teaser.field_page
+    - field.field.paragraph.teaser.field_product
+    - field.field.paragraph.teaser.field_teaser_type
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - options
+id: paragraph.teaser.default
+targetEntityType: paragraph
+bundle: teaser
+mode: default
+content:
+  field_collection:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_headline:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_page:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_product:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_teaser_type:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

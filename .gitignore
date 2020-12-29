@@ -6,3 +6,5 @@ vendor
 *.sql.gz
 
 web/libraries
+/.editorconfig
+/.gitattributes

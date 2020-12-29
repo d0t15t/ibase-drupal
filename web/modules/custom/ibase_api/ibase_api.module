@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains ibase_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ibase_api_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ibase_api module.
+    case 'help.page.ibase_api':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom api.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ibase_api_theme() {
+  return [
+    'ibase_api' => [
+      'render element' => 'children',
+    ],
+  ];
+}

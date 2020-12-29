@@ -1,0 +1,13 @@
+uuid: 974a7019-ca65-4648-b45d-9021ab2628aa
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - shopify
+_core:
+  default_config_hash: 604uL0naKbTQEzrovTxOdmMGz9Zppy-C0APxiV1kfl4
+name: 'Shopify Tags'
+vid: shopify_tags
+description: 'Tags that are dynamically pulled from Shopify.'
+weight: 0

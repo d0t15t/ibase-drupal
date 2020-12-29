@@ -1,0 +1,23 @@
+uuid: b9724c06-01d4-46c7-9611-abbe1e6e02db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_bool
+    - node.type.page
+id: node.page.field_title_bool
+field_name: field_title_bool
+entity_type: node
+bundle: page
+label: 'Use title for headline'
+description: 'If checked, the title field will be displayed as a headline.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

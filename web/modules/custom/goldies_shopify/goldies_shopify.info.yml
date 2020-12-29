@@ -1,0 +1,8 @@
+name: 'goldies_shopify'
+core_version_requirement: ^8 || ^9
+type: module
+description: 'My Awesome Module'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - shopify

@@ -1,0 +1,9 @@
+name: 'ibase_api'
+core_version_requirement: ^8 || ^9
+type: module
+description: 'Custom api.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - drupal:rest
+  - restui

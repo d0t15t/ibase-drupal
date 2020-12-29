@@ -1,0 +1,12 @@
+uuid: a2b3feed-4716-4252-9d98-be155cbd3cae
+langcode: en
+status: true
+dependencies:
+  module:
+    - shopify
+_core:
+  default_config_hash: KbBo_RHYD1pzqHhiDc6Ki_y-irfXHHvS_3gsaLL5Zns
+id: shopify_product.store_listing
+label: 'Store Listing'
+targetEntityType: shopify_product
+cache: true

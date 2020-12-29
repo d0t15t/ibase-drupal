@@ -1,0 +1,16 @@
+Index: shopify.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- shopify.module	(revision f74e672c6e32abce33594384a96db0a0f7d95704)
++++ shopify.module	(date 1609237628888)
+@@ -651,6 +651,8 @@
+     ],
+     'field_shopify_collection_id' => $collection->id,
+     'field_shopify_collection_pub' => $date ? $date : 0,
++    // Custom field.
++    'field_uri' => sprintf('/collections/%s', $collection->handle),
+   ]);
+   if ($term->save() && isset($collection->image->src)) {
+     // Save the image for this term.
