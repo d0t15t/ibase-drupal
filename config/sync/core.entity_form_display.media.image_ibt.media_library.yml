@@ -1,0 +1,32 @@
+uuid: f7f01097-274e-444d-ad24-05d58be6bba0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.image_ibt.field_caption
+    - field.field.media.image_ibt.field_media_image
+    - image.style.thumbnail
+    - media.type.image_ibt
+  module:
+    - image
+id: media.image_ibt.media_library
+targetEntityType: media
+bundle: image_ibt
+mode: media_library
+content:
+  field_media_image:
+    weight: -50
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  field_caption: true
+  name: true
+  path: true
+  status: true
+  uid: true

@@ -1,9 +1,10 @@
-uuid: 14b2d050-52cf-4524-bdb8-c002eb90c76d
+uuid: 5b563511-9c3f-4f7d-953a-b97f3610b411
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.shopify_product.full
+    - field.field.shopify_product.shopify_product.field_shopify_handle
   module:
     - shopify
     - text
@@ -62,6 +63,7 @@ content:
     region: content
 hidden:
   extra_images: true
+  field_shopify_handle: true
   handle: true
   image: true
   options: true

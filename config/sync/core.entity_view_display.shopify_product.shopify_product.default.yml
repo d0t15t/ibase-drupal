@@ -1,7 +1,9 @@
-uuid: 5cdacd87-0297-4c5d-8f41-ad2547d82eea
+uuid: 39662ed8-0568-4ab7-8d0b-507ded723439
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.shopify_product.shopify_product.field_shopify_handle
   module:
     - image
     - shopify
@@ -50,6 +52,14 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+  field_shopify_handle:
+    weight: 201
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   image:
     label: hidden
     type: image

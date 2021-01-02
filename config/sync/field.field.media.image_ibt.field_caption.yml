@@ -1,0 +1,21 @@
+uuid: 3dbde06f-4b36-41fb-bc4a-219e7b431bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media.type.image_ibt
+  module:
+    - text
+id: media.image_ibt.field_caption
+field_name: field_caption
+entity_type: media
+bundle: image_ibt
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

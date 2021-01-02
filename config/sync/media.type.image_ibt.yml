@@ -1,0 +1,14 @@
+uuid: 0eb2b96e-060d-4a3d-8804-d6114c747963
+langcode: en
+status: true
+dependencies: {  }
+id: image_ibt
+label: image_ibt
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name

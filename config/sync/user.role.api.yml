@@ -1,0 +1,10 @@
+uuid: fe2ca8e1-3a31-4839-8c66-4037e8112b69
+langcode: en
+status: true
+dependencies: {  }
+id: api
+label: API
+weight: -7
+is_admin: null
+permissions:
+  - 'restful get menu_items_resource'

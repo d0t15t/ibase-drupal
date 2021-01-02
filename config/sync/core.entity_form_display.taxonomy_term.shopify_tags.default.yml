@@ -1,4 +1,4 @@
-uuid: dbfec941-f22c-4e7c-b866-d7df8ee2ab37
+uuid: bdbebf46-7c14-4f3d-ba98-d3062416235b
 langcode: en
 status: true
 dependencies:
@@ -13,6 +13,11 @@ targetEntityType: taxonomy_term
 bundle: shopify_tags
 mode: default
 content:
+  menu:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 0

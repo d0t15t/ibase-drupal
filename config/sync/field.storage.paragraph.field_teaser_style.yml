@@ -1,0 +1,30 @@
+uuid: 51af68ff-896b-4118-a182-8ce143e085c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_teaser_style
+field_name: field_teaser_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: 'Default (Image no text)'
+    -
+      value: headline
+      label: 'Image with headline'
+    -
+      value: overlay
+      label: 'Text over image with bg'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

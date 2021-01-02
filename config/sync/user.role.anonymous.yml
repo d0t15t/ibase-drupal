@@ -11,7 +11,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access site-wide contact form'
+  - 'restful get menu_items_resource'
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'

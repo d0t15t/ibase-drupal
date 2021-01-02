@@ -1,8 +1,11 @@
-uuid: ad22610e-5081-4275-bafe-a69a1df1532a
+uuid: 1bb6db7e-b53a-4197-97f1-d7ec7986b700
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.shopify_product.shopify_product.field_shopify_handle
   module:
+    - path
     - shopify
 _core:
   default_config_hash: luOX63VGIM3lLjAOSTmm1mHkOuKl9RjJ91x5PuV9yb0
@@ -10,7 +13,21 @@ id: shopify_product.shopify_product.default
 targetEntityType: shopify_product
 bundle: shopify_product
 mode: default
-content: {  }
+content:
+  field_shopify_handle:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body_html: true
   collections: true

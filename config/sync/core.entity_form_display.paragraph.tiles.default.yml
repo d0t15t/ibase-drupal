@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.tiles.field_teasers
     - paragraphs.paragraphs_type.tiles
   module:
-    - inline_entity_form
+    - paragraphs
 id: paragraph.tiles.default
 targetEntityType: paragraph
 bundle: tiles
@@ -15,19 +15,21 @@ content:
   field_teasers:
     weight: 2
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      revision: false
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: teaser
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: paragraphs
     region: content
 hidden:
   created: true

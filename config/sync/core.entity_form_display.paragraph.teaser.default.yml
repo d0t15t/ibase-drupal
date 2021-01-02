@@ -8,11 +8,13 @@ dependencies:
     - field.field.paragraph.teaser.field_media
     - field.field.paragraph.teaser.field_page
     - field.field.paragraph.teaser.field_product
+    - field.field.paragraph.teaser.field_subline
+    - field.field.paragraph.teaser.field_teaser_style
     - field.field.paragraph.teaser.field_teaser_type
     - paragraphs.paragraphs_type.teaser
   module:
+    - chosen_field
     - field_group
-    - inline_entity_form
     - media_library
 third_party_settings:
   field_group:
@@ -22,7 +24,7 @@ third_party_settings:
         - group_two
         - group_three
       parent_name: ''
-      weight: 2
+      weight: 4
       format_type: tabs
       region: content
       format_settings:
@@ -81,8 +83,9 @@ content:
   field_collection:
     weight: 2
     settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    third_party_settings:
+      conditional_fields: {  }
+    type: chosen_select
     region: content
   field_headline:
     weight: 0
@@ -94,7 +97,7 @@ content:
     region: content
   field_media:
     type: media_library_widget
-    weight: 3
+    weight: 5
     settings:
       media_types:
         - image
@@ -103,33 +106,33 @@ content:
     region: content
   field_page:
     weight: 4
-    settings:
-      form_mode: default
-      revision: false
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
+    settings: {  }
+    third_party_settings:
+      conditional_fields: {  }
+    type: chosen_select
     region: content
   field_product:
-    weight: 3
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_subline:
+    weight: 1
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
+    region: content
+  field_teaser_style:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_teaser_type:
-    weight: 1
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select

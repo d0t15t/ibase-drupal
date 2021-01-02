@@ -1,0 +1,14 @@
+uuid: 5dd9dea5-0db6-4b6f-ba9c-69d30efbffc4
+langcode: en
+status: true
+dependencies:
+  module:
+    - shopify
+id: shopify_product
+label: 'Shopify product'
+type: 'canonical_entities:shopify_product'
+pattern: 'products/[shopify_product:field_shopify_handle:value]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

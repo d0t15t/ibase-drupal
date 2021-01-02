@@ -8,3 +8,5 @@ vendor
 web/libraries
 /.editorconfig
 /.gitattributes
+*.tar.gz
+*.gz

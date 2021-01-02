@@ -1,0 +1,23 @@
+uuid: e14fb75f-c73c-4b4c-9181-97c86b7a81e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser_style
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - options
+id: paragraph.teaser.field_teaser_style
+field_name: field_teaser_style
+entity_type: paragraph
+bundle: teaser
+label: 'Teaser style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

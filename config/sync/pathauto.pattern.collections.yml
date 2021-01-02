@@ -8,16 +8,16 @@ dependencies:
 id: collections
 label: Collections
 type: 'canonical_entities:taxonomy_term'
-pattern: 'collections/[term:name]'
+pattern: 'collections/[term:field_shopify_handle:value]'
 selection_criteria:
-  0c66c020-f964-44d6-9e56-5cfe01f01b48:
+  3c876ed4-7da3-4d0a-bf74-68a093385758:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       shopify_collections: shopify_collections
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 0c66c020-f964-44d6-9e56-5cfe01f01b48
+    uuid: 3c876ed4-7da3-4d0a-bf74-68a093385758
 selection_logic: and
 weight: -5
 relationships: {  }
