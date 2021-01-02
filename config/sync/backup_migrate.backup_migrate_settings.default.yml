@@ -1,0 +1,46 @@
+uuid: 89e24357-9374-467c-b0d8-13b895fad0b3
+langcode: en
+status: true
+dependencies: {  }
+id: default
+label: Default
+config:
+  namer:
+    filename: ibase-db
+    timestamp: 1
+    timestamp_format: Y-m-d\TH-i-s
+  compressor:
+    compression: gzip
+  encrypt:
+    encrypt: 0
+    encrypt_password: ''
+  utils:
+    site_offline: 0
+  metadata:
+    description: ''
+  db_exclude:
+    exclude_tables: {  }
+    nodata_tables:
+      cache_bootstrap: cache_bootstrap
+      cache_config: cache_config
+      cache_container: cache_container
+      cache_data: cache_data
+      cache_default: cache_default
+      cache_discovery: cache_discovery
+      cache_entity: cache_entity
+      cache_menu: cache_menu
+      cache_rest: cache_rest
+      cache_toolbar: cache_toolbar
+      sessions: sessions
+      watchdog: watchdog
+  private_files_exclude:
+    exclude_filepaths:
+      - backup_migrate
+  public_files_exclude:
+    exclude_filepaths:
+      - js
+      - css
+      - php
+      - styles
+      - 'config_*'
+      - .htaccess
