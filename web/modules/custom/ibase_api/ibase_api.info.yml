@@ -7,3 +7,4 @@ package: 'Custom'
 dependencies:
   - drupal:rest
   - restui
+  - jsonapi_extras

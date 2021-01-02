@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Install / update hooks.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_requirements().
+ */
+function shopify_requirements($phase) {
+  $requirements = [];
+
+  if ($phase === 'install') {
+
+    // Check if we're running a 64-bit version of PHP.
+    if (PHP_INT_SIZE === 4) {
+      $requirements['shopify'] = [
+        'title' => t('Shopify'),
+        'value' => t('Incompatible'),
+        'description' => t('Unable to install Shopify. Your server is running the 32-bit version of PHP. A 64-bit version is required.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  if ($phase === 'runtime') {
+
+    $client = shopify_get_api_client();
+    if (!$client) {
+      $shopify_api_admin = Url::fromRoute('shopify.api.admin');
+      $requirements['shopify'] = [
+        'title' => t('Shopify (API)'),
+        'value' => t('Unreachable'),
+        'description' => t('The Shopify store could not be reached. <a href=":link">Set up API Credentials</a>.', [
+          ':link' => $shopify_api_admin->toString(),
+        ]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ */
+function shopify_install() {
+  // Upon install, setup shop info.
+  shopify_shop_info(NULL, $refresh = TRUE);
+}
+
+/**
+ * Changes inventory fields from unsigned to signed.
+ */
+function shopify_update_8101() {
+  $schema = Database::getConnection()->schema();
+  $entityTypeDefinition = \Drupal::entityTypeManager()->getDefinition('shopify_product_variant');
+  $spec = [
+    'type' => 'int',
+    'size' => 'normal',
+    'unsigned' => FALSE,
+    'not null' => FALSE,
+  ];
+  $schema->changeField($entityTypeDefinition->getBaseTable(), 'inventory_quantity', 'inventory_quantity', $spec);
+  $schema->changeField($entityTypeDefinition->getBaseTable(), 'old_inventory_quantity', 'old_inventory_quantity', $spec);
+
+  // Update entity definition.
+  \Drupal::service('entity.definition_update_manager')->installEntityType($entityTypeDefinition);
+}
+
+/**
+ * Changes shopify_collection_id field from signed to unsigned.
+ */
+function shopify_update_8102() {
+  $schema = Database::getConnection()->schema();
+  $spec = [
+    'type' => 'int',
+    'size' => 'normal',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ];
+  $schema->changeField('taxonomy_term__field_shopify_collection_id', 'field_shopify_collection_id_value', 'field_shopify_collection_id_value', $spec);
+}
+
+/**
+ * Convert the field_shopify_collection_id to unsigned bigint.
+ */
+function shopify_update_8103(&$sandbox) {
+  $updateManager = \Drupal::entityDefinitionUpdateManager();
+
+  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $last_installed_schema_repository */
+  $last_installed_schema_repository = \Drupal::service('entity.last_installed_schema.repository');
+  $entity_type = $updateManager->getEntityType('taxonomy_term');
+  $field_storage_definitions = $last_installed_schema_repository->getLastInstalledFieldStorageDefinitions('taxonomy_term');
+  $field_storage_definitions['field_shopify_collection_id']->setSetting('unsigned', TRUE);
+  $field_storage_definitions['field_shopify_collection_id']->setSetting('size', 'big');
+  $updateManager->updateFieldableEntityType($entity_type, $field_storage_definitions, $sandbox);
+}

@@ -6,30 +6,54 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
- * Implements hook_help().
+ * Implements hook_ENTITY_TYPE_access().
  */
-function ibase_api_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the ibase_api module.
-    case 'help.page.ibase_api':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Custom api.') . '</p>';
-      return $output;
-
-    default:
+function ibase_api_menu_link_content_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($operation == 'view') {
+    // Check whether user has permission to access menu.
+    if ($account->hasPermission('administer menu')) {
+      return AccessResult::allowed()
+        ->cachePerPermissions()
+        ->addCacheableDependency($entity);
+    }
+    // If menu link is internal, and user has access, grant view access to the menu link.
+    if (($url_object = $entity->getUrlObject()) && ($url_object->isRouted())) {
+      $link_access = \Drupal::accessManager()->checkNamedRoute($url_object->getRouteName(), $url_object->getRouteParameters(), $account, TRUE);
+      if ($link_access->isAllowed()) {
+        return AccessResult::allowed()
+          ->cachePerPermissions()
+          ->addCacheableDependency($entity);
+      }
+    }
+    // Grant view access to external links.
+    elseif ($url_object->isExternal()) {
+      return AccessResult::allowed()
+        ->cachePerPermissions()
+        ->addCacheableDependency($entity);
+    }
   }
+
+  return AccessResult::neutral();
 }
 
 /**
- * Implements hook_theme().
+ * Implements hook_jsonapi_ENTITY_TYPE_filter_access() for 'menu_link_content'.
  */
-function ibase_api_theme() {
-  return [
-    'ibase_api' => [
-      'render element' => 'children',
-    ],
-  ];
+function ibase_api_jsonapi_menu_link_content_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
+  return ([
+    JSONAPI_FILTER_AMONG_ALL => AccessResult::allowed(),
+  ]);
+}
+
+
+function ibase_api_resource_field_enhancer_info_alter(array &$definitions) {
+  $definitions['alias_link']['class'] = 'Drupal\ibase_api\Plugin\jsonapi\FieldEnhancer\FullAliasLinkEnhancer';
 }
