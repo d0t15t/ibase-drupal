@@ -122,7 +122,7 @@ class MenuItemsResource extends ResourceBase {
           'external' => $menuItem->get('external')->getString(),
           'description' => $menuItem->get('description')->getString(),
           'weight' => $menuItem->getWeight(),
-          'parent' => $menuItem->getParentId(),
+          'parentId' => $menuItem->getParentId(),
         ];
       }
     }

@@ -1,0 +1,4 @@
+services:
+  ibase_api.token:
+    class: Drupal\ibase_api\Service\IbaseApiTokenService
+    arguments: ['@token', '@module_handler']

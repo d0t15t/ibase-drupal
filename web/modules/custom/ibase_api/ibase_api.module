@@ -57,3 +57,10 @@ function ibase_api_jsonapi_menu_link_content_filter_access(EntityTypeInterface $
 function ibase_api_resource_field_enhancer_info_alter(array &$definitions) {
   $definitions['alias_link']['class'] = 'Drupal\ibase_api\Plugin\jsonapi\FieldEnhancer\FullAliasLinkEnhancer';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function ibase_api_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $t=1;
+}
