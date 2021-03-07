@@ -1,0 +1,18 @@
+uuid: 353f752b-7bc8-41ed-863e-303a917801bc
+langcode: en
+status: false
+dependencies:
+  module:
+    - basic_auth
+    - ibase_api
+    - serialization
+id: menu_items_resource
+plugin_id: menu_items_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

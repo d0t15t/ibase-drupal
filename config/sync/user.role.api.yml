@@ -7,4 +7,8 @@ label: API
 weight: -7
 is_admin: null
 permissions:
+  - 'add simple_oauth entities'
+  - 'grant simple_oauth codes'
   - 'restful get menu_items_resource'
+  - 'restful get metatags_resource'
+  - 'view own simple_oauth entities'

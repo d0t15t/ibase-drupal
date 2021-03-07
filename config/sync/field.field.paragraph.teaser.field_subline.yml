@@ -9,7 +9,7 @@ id: paragraph.teaser.field_subline
 field_name: field_subline
 entity_type: paragraph
 bundle: teaser
-label: Subline
+label: Sub-title
 description: ''
 required: false
 translatable: false

@@ -1,0 +1,24 @@
+uuid: 20a02786-838d-4fd9-b924-bc40168a6874
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.field_metatags
+    - field.field.node.product.field_shopify_product
+    - node.type.product
+  module:
+    - user
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_metatags: true
+  field_shopify_product: true

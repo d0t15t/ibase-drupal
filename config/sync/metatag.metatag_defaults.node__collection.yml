@@ -1,0 +1,10 @@
+uuid: 06022836-9cf2-4271-b08b-a8185a19f336
+langcode: en
+status: true
+dependencies: {  }
+id: node__collection
+label: 'Content: Collection'
+tags:
+  title: '[node:field_shopify_collection:entity:name] | [site:name]'
+  description: '[node:field_shopify_collection:entity:description]'
+  abstract: '[node:field_shopify_collection:entity:description]'

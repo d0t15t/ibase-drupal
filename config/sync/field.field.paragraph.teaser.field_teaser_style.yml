@@ -1,4 +1,4 @@
-uuid: e14fb75f-c73c-4b4c-9181-97c86b7a81e6
+uuid: c1213132-a6b6-4bd1-a44b-e8bf2cd5f819
 langcode: en
 status: true
 dependencies:
@@ -13,11 +13,9 @@ entity_type: paragraph
 bundle: teaser
 label: 'Teaser style'
 description: ''
-required: true
+required: false
 translatable: false
-default_value:
-  -
-    value: default
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

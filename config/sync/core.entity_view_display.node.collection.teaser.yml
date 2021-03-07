@@ -5,7 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.collection.body
-    - field.field.node.collection.field_collection
+    - field.field.node.collection.field_bool
+    - field.field.node.collection.field_metatags
+    - field.field.node.collection.field_products
+    - field.field.node.collection.field_shopify_collection
     - node.type.collection
   module:
     - text
@@ -29,4 +32,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_collection: true
+  field_bool: true
+  field_metatags: true
+  field_products: true
+  field_shopify_collection: true

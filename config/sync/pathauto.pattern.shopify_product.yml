@@ -7,8 +7,8 @@ dependencies:
 id: shopify_product
 label: 'Shopify product'
 type: 'canonical_entities:shopify_product'
-pattern: 'products/[shopify_product:field_shopify_handle:value]'
+pattern: 'shopify-product-entity/[shopify_product:field_shopify_handle:value]'
 selection_criteria: {  }
 selection_logic: and
-weight: 0
+weight: -6
 relationships: {  }

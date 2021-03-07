@@ -3,14 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.teaser.field_collection
+    - field.field.paragraph.teaser.field_content
     - field.field.paragraph.teaser.field_headline
     - field.field.paragraph.teaser.field_media
-    - field.field.paragraph.teaser.field_page
-    - field.field.paragraph.teaser.field_product
     - field.field.paragraph.teaser.field_subline
     - field.field.paragraph.teaser.field_teaser_style
-    - field.field.paragraph.teaser.field_teaser_type
     - paragraphs.paragraphs_type.teaser
   module:
     - options
@@ -19,8 +16,8 @@ targetEntityType: paragraph
 bundle: teaser
 mode: default
 content:
-  field_collection:
-    weight: 3
+  field_content:
+    weight: 10
     label: above
     settings:
       link: true
@@ -44,22 +41,6 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_page:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_product:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_subline:
     weight: 8
     label: above
@@ -69,14 +50,7 @@ content:
     type: string
     region: content
   field_teaser_style:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_teaser_type:
-    weight: 6
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }

@@ -1,0 +1,18 @@
+uuid: 57fe1c3f-c66f-4709-a2b3-0741d35bdd27
+langcode: en
+status: false
+dependencies:
+  module:
+    - basic_auth
+    - metatag
+    - serialization
+id: entity.metatag_defaults
+plugin_id: 'entity:metatag_defaults'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

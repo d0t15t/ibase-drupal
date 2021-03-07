@@ -3,92 +3,28 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.teaser.field_collection
+    - field.field.paragraph.teaser.field_content
     - field.field.paragraph.teaser.field_headline
     - field.field.paragraph.teaser.field_media
-    - field.field.paragraph.teaser.field_page
-    - field.field.paragraph.teaser.field_product
     - field.field.paragraph.teaser.field_subline
     - field.field.paragraph.teaser.field_teaser_style
-    - field.field.paragraph.teaser.field_teaser_type
     - paragraphs.paragraphs_type.teaser
   module:
     - chosen_field
-    - field_group
     - media_library
-third_party_settings:
-  field_group:
-    group_reference:
-      children:
-        - group_one
-        - group_two
-        - group_three
-      parent_name: ''
-      weight: 4
-      format_type: tabs
-      region: content
-      format_settings:
-        id: ''
-        classes: ''
-        effect: bounceslide
-        direction: vertical
-      label: 'Content link'
-    group_one:
-      children:
-        - field_collection
-      parent_name: group_reference
-      weight: 8
-      format_type: tab
-      region: content
-      format_settings:
-        formatter: closed
-        required_fields: true
-        id: ''
-        classes: ''
-        description: ''
-      label: Collection
-    group_two:
-      children:
-        - field_product
-      parent_name: group_reference
-      weight: 9
-      format_type: tab
-      region: content
-      format_settings:
-        formatter: closed
-        required_fields: true
-        id: ''
-        classes: ''
-        description: ''
-      label: Product
-    group_three:
-      children:
-        - field_page
-      parent_name: group_reference
-      weight: 10
-      format_type: tab
-      region: content
-      format_settings:
-        formatter: closed
-        required_fields: true
-        id: ''
-        classes: ''
-        description: ''
-      label: Page
 id: paragraph.teaser.default
 targetEntityType: paragraph
 bundle: teaser
 mode: default
 content:
-  field_collection:
-    weight: 2
+  field_content:
+    weight: 0
     settings: {  }
-    third_party_settings:
-      conditional_fields: {  }
+    third_party_settings: {  }
     type: chosen_select
     region: content
   field_headline:
-    weight: 0
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -97,28 +33,15 @@ content:
     region: content
   field_media:
     type: media_library_widget
-    weight: 5
+    weight: 1
     settings:
       media_types:
         - image
         - video
     third_party_settings: {  }
     region: content
-  field_page:
-    weight: 4
-    settings: {  }
-    third_party_settings:
-      conditional_fields: {  }
-    type: chosen_select
-    region: content
-  field_product:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: chosen_select
-    region: content
   field_subline:
-    weight: 1
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -126,13 +49,7 @@ content:
     type: string_textfield
     region: content
   field_teaser_style:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_teaser_type:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select

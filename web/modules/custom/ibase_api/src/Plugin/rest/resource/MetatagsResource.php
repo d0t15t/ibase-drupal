@@ -4,14 +4,14 @@ namespace Drupal\ibase_api\Plugin\rest\resource;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\ibase_api\Service\IbaseApiTokenService;
-use Drupal\metatag\MetatagTagPluginManager;
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\Core\Language\LanguageManager;
-use Drupal\core\Entity\EntityInterface;
 use Drupal\rest\Plugin\ResourceBase;
+use Drupal\Component\Utility\Html;
 use Drupal\metatag\MetatagManager;
 use Drupal\rest\ResourceResponse;
+use Drupal\metatag\MetatagToken;
+use Drupal\Core\State\State;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -28,13 +28,13 @@ use Psr\Log\LoggerInterface;
 class MetatagsResource extends ResourceBase {
 
   /** @var MetatagManager */
-  protected $metatagService;
+  protected $metatagManager;
 
-  /** @var MetatagTagPluginManager */
-  protected $tagPluginManager;
-
-  /** @var IbaseApiTokenService */
+  /** @var MetatagToken */
   protected $tokenService;
+
+  /** @var State */
+  protected $state;
 
   /** @var LanguageManager */
   protected $languageManager;
@@ -53,12 +53,12 @@ class MetatagsResource extends ResourceBase {
    *   The available serialization formats.
    * @param LoggerInterface $logger
    *   A logger instance.
-   * @param MetatagManager $metatagService
+   * @param MetatagManager $metatagManager
    *   Metatag manager service.
-   * @param IbaseApiTokenService $tokenService
+   * @param MetatagToken $tokenService
    *   Custom Token service.
-   * @param MetatagTagPluginManager $tagPluginManager
-   *   Metatag plugin manager.
+   * @param State $state
+   *   State.
    * @param LanguageManager $languageManager
    *   Language service.
    * @param EntityTypeManagerInterface $etm
@@ -70,16 +70,22 @@ class MetatagsResource extends ResourceBase {
     $plugin_definition,
     array $serializer_formats,
     LoggerInterface $logger,
-    MetatagManager $metatagService,
-    IbaseApiTokenService $tokenService,
-    MetatagTagPluginManager $tagPluginManager,
+    MetatagManager $metatagManager,
+    MetatagToken $tokenService,
+    State $state,
     LanguageManager $languageManager,
     EntityTypeManagerInterface $etm
   ) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
-    $this->metatagService = $metatagService;
+    parent::__construct(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $serializer_formats,
+      $logger
+    );
+    $this->metatagManager = $metatagManager;
     $this->tokenService = $tokenService;
-    $this->tagPluginManager = $tagPluginManager;
+    $this->state = $state;
     $this->languageManager = $languageManager;
     $this->etm = $etm;
   }
@@ -100,12 +106,14 @@ class MetatagsResource extends ResourceBase {
       $container->getParameter('serializer.formats'),
       $container->get('logger.factory')->get('rest'),
       $container->get('metatag.manager'),
-      $container->get('ibase_api.token'),
-      $container->get('plugin.manager.metatag.tag'),
+      $container->get('metatag.token'),
+      $container->get('state'),
       $container->get('language_manager'),
       \Drupal::entityTypeManager()
     );
   }
+
+  const DEFAULT_LANGCODE = 'en-us';
 
   /**
    * @return \Drupal\rest\ModifiedResourceResponse|\Drupal\rest\ResourceResponse
@@ -114,28 +122,14 @@ class MetatagsResource extends ResourceBase {
    */
   public function get() {
     $query = \Drupal::request()->query->all();
-    $global = $query['q'] ?? NULL;
-    if ($global) {
-      return $this->globalMetaTagsResponse();
-    }
+
     $type = $query['type'] ?? NULL;
     $bundle = $query['bundle'] ?? NULL;
     if ($type && $bundle) {
       return $this->allContentTypeMetaTagsResponse($type, $bundle);
     }
-    return $this->returnResponseError();
-  }
 
-  private $configNameBase = 'metatag.metatag_defaults';
-
-  /**
-   * @return array|string[]
-   */
-  private function getGlobalTagTypes(): array {
-    // Is there a cooler way to do this?
-    return [
-      'global', 'user', 'node', 'user', 'taxonomy_term', 'front', '404', '403',
-    ];
+    return new ResourceResponse(['@todo: global query with paging.']);
   }
 
   /**
@@ -151,105 +145,103 @@ class MetatagsResource extends ResourceBase {
     if (!$storage) {
       return $this->returnResponseError();
     }
-    // @Todo: batch this for large collections?
-    $entities = $storage->loadByProperties([
-      'type' => $bundle,
-      'status' => 1,
-    ]);
+
     $defaultLangcode = $this->languageManager->getDefaultLanguage()->getId();
+    $baseUrl = $this->getBaseUrl();
+    $frontEndUrl = $this->getFrontendUrl();
+
     $nodeTags = [];
-    foreach ($entities as $entity) {
+    foreach ($storage->loadByProperties(['type' => $bundle]) as $entity) {
       /** @var \Drupal\node\Entity\Node $entity */
+      $isStartPage = $this->isStartPage($entity);
       $langcodes = array_keys($entity->getTranslationLanguages());
+      $translationSet = [];
       foreach ($langcodes as $langcode) {
-        $translation = $entity->getTranslation($langcode);
-        $translatedMetatags = $this->getContentMetatagFieldValue($translation);
-        $mergedMetaTags = $this->mergeMetaTagsContext($translatedMetatags, 'node', $langcode);
-        $tokenReplacements = [$translation->getEntityTypeId() => $translation];
-        $finalMetaTags = $this->processMetaTagsTokenValues($mergedMetaTags, $tokenReplacements);
-        $finalMetaTags['article'] = TRUE;
-        $nodeTags[] = [
+        $entityTranslation = $entity->getTranslation($langcode);
+        $metatags = $this->metatagManager->tagsFromEntityWithDefaults($entityTranslation);
+        array_walk($metatags,
+          function(&$value) use ($entityTranslation, $baseUrl, $frontEndUrl) {
+            // Tokenize.
+            $value = $this->tokenService->replace($value, [$entityTranslation->getEntityTypeId() => $entityTranslation]);
+            // Process for frontend base url.
+            $value = str_replace($baseUrl, $frontEndUrl, $value);
+            // Decode html.
+            $value = HTML::decodeEntities($value);
+          });
+
+        if ($isStartPage) {
+          $canonical_langcode = $langcode === $defaultLangcode ? $this::DEFAULT_LANGCODE : $langcode;
+          $metatags['canonical_url'] = sprintf('%s/%s/', $frontEndUrl, $canonical_langcode);
+        }
+
+        $translationSet[$langcode] = [
           'langcode' => $langcode,
+          'lang_id' => $defaultLangcode === $langcode ? $this::DEFAULT_LANGCODE : $langcode,
           'default_lang' => $langcode === $defaultLangcode,
           'metatags_group' => 'content',
-          'drupal_internal__nid' => $translation->id(),
-          'uid' => sprintf('%s-%s', $translation->uuid(), $langcode),
+          'drupal_internal__nid' => $entityTranslation->id(),
+          'uid' => sprintf('%s-%s', $entityTranslation->uuid(), $langcode),
           'entity' => $type,
           'bundle' => $bundle,
-          'metatags' => $finalMetaTags,
+          'metatags' => $metatags
         ];
       }
+      $nodeTags[$entity->id()] = $translationSet;
     }
-    return new ModifiedResourceResponse(['nodes' => $nodeTags]);
-  }
 
-  /**
-   * @return \Drupal\rest\ResourceResponse
-   */
-  private function globalMetaTagsResponse(): ResourceResponse {
-    $configNameBase = $this->configNameBase;
-    $configKeys = $this->getGlobalTagTypes();
-    $langManager = $this->languageManager;
-    $langcodes = array_keys($langManager->getLanguages());
-    $defaultLangcode = $langManager->getDefaultLanguage()->getId();
-    $nodes = [];
-    foreach($configKeys as $configKey) {
-      $configName = sprintf('%s.%s', $configNameBase, $configKey);
-      $defaultTags = $this->getConfigMetaTags($configName);
-      $defaultTags['id'] = sprintf('%s-%s', $configName, $defaultLangcode);
-      $defaultTags['type'] = $configKey;
-      $defaultTags['langcode'] = $defaultLangcode;
-      $defaultTags['lang_default'] = TRUE;
+    $translationTags = array_map(function($translationSet) {
+      $defaultSet = array_filter($translationSet, function($item) {
+        return $item['default_lang'];
+      });
+      $defaultHref = array_shift($defaultSet);
+      $hreflangs = [
+          [
+            'rel' => 'alternative',
+            'hreflang' => 'x-default',
+            'href' => $defaultHref['metatags']['canonical_url'],
+          ]
+        ] + array_map(function($translationTags) {
+          return [
+            'rel' => 'alternative',
+            'hreflang' => $translationTags['lang_id'],
+            'href' => $translationTags['metatags']['canonical_url'],
+          ];
+        }, $translationSet);
+      $translationSet['links'] = array_values($hreflangs);
+      return $translationSet;
+    }, $nodeTags);
 
-      $nodes[] = $defaultTags;
-      foreach($langcodes as $langcode) {
-        if ($langcode === $defaultLangcode) continue;
-        $langTags = $this->getConfigMetaTags($configName, $langcode);
-        $langTags['langcode'] = $langcode;
-        $defaultTags['id'] = sprintf('%s-%s', $configName, $langcode);
-        $langTags['lang_default'] = FALSE;
-
-        $langTagNode = [];
-        foreach($defaultTags as $key => $defaultTag) {
-          // If no tag is set for the language value, fallback to default language value.
-          $langTagNode[$key] = $langTags[$key] ?? $defaultTag;
-        }
-        $nodes[] = $langTagNode;
+    $metatags = [];
+    $languages = array_keys($this->languageManager->getLanguages());
+    foreach ($translationTags as $translationTagSet) {
+      foreach ($languages as $langcode) {
+        if (!isset($translationTagSet[$langcode])) continue;
+        $newSet = $translationTagSet[$langcode];
+        $newSet['links'] = $translationTagSet['links'];
+        $metatags[] = $newSet;
       }
     }
-    $responseData = [
-      'languages' => $langcodes,
-      'lang_default' => $defaultLangcode,
-      'nodes' => $nodes,
-    ];
-    $response = new ResourceResponse($responseData);
-    $account = \Drupal::currentUser();
-    $response->addCacheableDependency($account);
-    return $response;
+
+    return new ModifiedResourceResponse(['nodes' => $metatags]);
   }
 
-  /**
-   * @param array $resolvedTags
-   * @param array $tokenReplacements
-   *
-   * @return array
-   */
-  private function processMetaTagsTokenValues($resolvedTags, $tokenReplacements): array {
-    $processed = [];
-    foreach ($resolvedTags as $tag => $string) {
-      $processed[$tag] = $this->tokenService->replace($string, $tokenReplacements, []);
-    }
-    return $processed;
+  private function getDefaultLangcode() {
+
   }
 
-  /**
-   * @param EntityInterface $entity
-   *
-   * @return array
-   */
-  private function getContentMetatagFieldValue($entity): array {
-    if($entity->get('field_metatags')->isEmpty()) return [];
-    return unserialize($entity->get('field_metatags')->getString());
+  private function getBaseUrl() {
+    return sprintf('%s://%s', \Drupal::request()->getScheme(), \Drupal::request()->getHost());
+  }
+
+  private function getFrontendUrl() {
+    return 'http://golides.test';
+//    return $this->state->get($this->apiService->getSettingsStateKey('frontend_base_path'));
+  }
+
+  private function isStartPage($entity) {
+    if ($entity->bundle() !== 'page') return FALSE;
+    return $entity->id() == 1;
+//    return $entity->id() === $this->apiService->state->get('usu_settings.front_page');
   }
 
   /**
@@ -261,58 +253,4 @@ class MetatagsResource extends ResourceBase {
     return new ResourceResponse();
   }
 
-  /**
-   * @param string $configName
-   * @param null $langcode
-   *
-   * @return array|mixed|null
-   */
-  private function getConfigMetaTags($configName, $langcode = NULL) {
-    if (!$langcode) {
-      return \Drupal::config($configName)->get('tags');
-    }
-    else {
-      return $this->languageManager
-        ->getLanguageConfigOverride($langcode, $configName)
-        ->get('tags');
-    }
-  }
-
-  /**
-   * @param array $tags
-   * @param string $tagType
-   * @param string $langcode
-   *
-   * @return array
-   */
-  private function mergeMetaTagsContext($tags, $tagType, $langcode): array {
-    // No langcode for default.
-    $langcode = $langcode === $this->languageManager->getDefaultLanguage()->getId() ? NULL : $langcode;
-    $resolvedTags = array_merge(
-      $this->getConfigMetaTags($this->configNameBase . '.' . 'global') ?? [], #'globalConfig
-      $this->getConfigMetaTags($this->configNameBase . '.' . 'global', $langcode) ?? [], #globalConfigTrans
-      $this->getConfigMetaTags($this->configNameBase . '.' . $tagType) ?? [], #typeConfig
-      $this->getConfigMetaTags($this->configNameBase . '.' . $tagType, $langcode) ?? [], #typeConfigTrans
-      $tags
-    );
-    return $resolvedTags;
-  }
-
-  private function getTagsDiff($contentTags, $globalTags) {
-
-  }
-
-  /**
-   * @param string $tagKey
-   * @param array $resolverSequence
-   *
-   * @return string
-   */
-  private function resolveMetaTag($tagKey, $resolverSequence): string {
-    // @todo: change to an array merging sequence.
-    foreach($resolverSequence as $set) {
-      if (empty($set[$tagKey])) continue;
-      return $set[$tagKey];
-    }
-  }
 }

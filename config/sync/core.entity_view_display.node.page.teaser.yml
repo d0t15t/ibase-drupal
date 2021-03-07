@@ -6,11 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_blocks
-    - field.field.node.page.field_headline
-    - field.field.node.page.field_hero_media
-    - field.field.node.page.field_hero_text
     - field.field.node.page.field_media
-    - field.field.node.page.field_title_bool
+    - field.field.node.page.field_metatags
     - node.type.page
   module:
     - text
@@ -35,8 +32,5 @@ content:
     region: content
 hidden:
   field_blocks: true
-  field_headline: true
-  field_hero_media: true
-  field_hero_text: true
   field_media: true
-  field_title_bool: true
+  field_metatags: true

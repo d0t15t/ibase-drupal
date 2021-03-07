@@ -13,7 +13,6 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'post comments'
-  - 'restful get menu_items_resource'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'

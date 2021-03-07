@@ -5,26 +5,40 @@
  * Contains goldies_shopify.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Implements hook_entity_update().
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * Implements hook_ENTITY_TYPE_insert().
  */
-function goldies_shopify_entity_insert(EntityInterface $entity) {
-  $t=1;
+function goldies_shopify_taxonomy_term_insert(EntityInterface $entity) {
+  Drupal::service('goldies_shopify.utility')->syncShopifyNode($entity, 'collection');
 }
 
 /**
- * Implements hook_entity_update().
- */
-function goldies_shopify_entity_update(EntityInterface $entity) {
-  $t=1;
-}
-
-/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
  * Implements hook_ENTITY_TYPE_update().
  */
-function goldies_shopify_ENTITY_TYPE_update(Drupal\Core\Entity\EntityInterface $entity) {
+function goldies_shopify_taxonomy_term_update(EntityInterface $entity) {
+  Drupal::service('goldies_shopify.utility')->syncShopifyNode($entity, 'collection');
+}
 
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function goldies_shopify_shopify_product_insert(EntityInterface $entity) {
+  Drupal::service('goldies_shopify.utility')->syncShopifyNode($entity, 'product');
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function goldies_shopify_shopify_product_update(EntityInterface $entity) {
+  Drupal::service('goldies_shopify.utility')->syncShopifyNode($entity, 'product');
 }

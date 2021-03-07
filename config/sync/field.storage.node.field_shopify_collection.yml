@@ -1,0 +1,20 @@
+uuid: bc893b68-4800-474d-92c2-2457647f3591
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_shopify_collection
+field_name: field_shopify_collection
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

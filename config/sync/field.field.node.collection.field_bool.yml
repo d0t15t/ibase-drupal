@@ -1,0 +1,23 @@
+uuid: ac471a19-2c1e-48b6-8721-2d9d274971ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bool
+    - node.type.collection
+id: node.collection.field_bool
+field_name: field_bool
+entity_type: node
+bundle: collection
+label: 'Custom product sellection'
+description: 'Manually select which products belong to this collection.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

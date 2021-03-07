@@ -141,3 +141,9 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  metatag:
+    fieldName: metatag
+    publicName: metatag
+    enhancer:
+      id: ''
+    disabled: false

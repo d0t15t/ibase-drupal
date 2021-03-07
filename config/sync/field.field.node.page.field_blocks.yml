@@ -5,10 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_blocks
     - node.type.page
-    - paragraphs.paragraphs_type.article
-    - paragraphs.paragraphs_type.banner
-    - paragraphs.paragraphs_type.slideshow
-    - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.tiles
   module:
     - entity_reference_revisions
@@ -16,9 +12,9 @@ id: node.page.field_blocks
 field_name: field_blocks
 entity_type: node
 bundle: page
-label: Blocks
+label: Content
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -27,27 +23,23 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      banner: banner
-      slideshow: slideshow
-      article: article
       tiles: tiles
-      text: text
     target_bundles_drag_drop:
       article:
-        enabled: true
         weight: 7
+        enabled: false
       banner:
-        enabled: true
         weight: 5
+        enabled: false
       slideshow:
-        enabled: true
         weight: 6
+        enabled: false
       teaser:
         weight: 7
         enabled: false
       text:
-        enabled: true
         weight: 11
+        enabled: false
       tiles:
         enabled: true
         weight: 8

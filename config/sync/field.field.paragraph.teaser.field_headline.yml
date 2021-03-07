@@ -10,7 +10,7 @@ field_name: field_headline
 entity_type: paragraph
 bundle: teaser
 label: Headline
-description: 'Headline text is displayed over image teaser.'
+description: 'Give a title to this teaser.'
 required: false
 translatable: true
 default_value: {  }

@@ -1,11 +1,11 @@
 uuid: 0ceaa7f3-905d-4f35-8a7a-6f3294a68c02
-name: 'Drush Site-Install'
+name: 'Goldies Natural Beauty'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /user
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

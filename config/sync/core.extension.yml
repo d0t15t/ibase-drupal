@@ -21,7 +21,6 @@ module:
   conditional_fields: 0
   config: 0
   consumers: 0
-  contact: 0
   contextual: 0
   ctools: 0
   datetime: 0
@@ -40,6 +39,7 @@ module:
   file: 0
   filter: 0
   gatsby_extras: 0
+  goldies_shopify: 0
   help: 0
   history: 0
   ibase_api: 0
@@ -54,6 +54,7 @@ module:
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
   node: 0
   options: 0
   page_cache: 0
@@ -68,7 +69,6 @@ module:
   serialization: 0
   shopify: 0
   shortcut: 0
-  simple_oauth: 0
   system: 0
   taxonomy: 0
   taxonomy_menu_ui: 0

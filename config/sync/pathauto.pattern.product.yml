@@ -1,0 +1,22 @@
+uuid: 36607687-dbe0-4bc2-ad14-7dc880a53ad2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product
+label: Product
+type: 'canonical_entities:node'
+pattern: 'products/[node:field_shopify_product:entity:field_shopify_handle:value]'
+selection_criteria:
+  e8fb228f-2674-49bc-b1d2-12f138ab4017:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e8fb228f-2674-49bc-b1d2-12f138ab4017
+selection_logic: and
+weight: -9
+relationships: {  }

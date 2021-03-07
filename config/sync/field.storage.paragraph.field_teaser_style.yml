@@ -1,4 +1,4 @@
-uuid: 51af68ff-896b-4118-a182-8ce143e085c4
+uuid: 82e9b1d7-276d-412a-a864-7fa09dc050cb
 langcode: en
 status: true
 dependencies:
@@ -12,14 +12,8 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: default
-      label: 'Default (Image no text)'
-    -
-      value: headline
-      label: 'Image with headline'
-    -
-      value: overlay
-      label: 'Text over image with bg'
+      value: with_text
+      label: 'Display text'
   allowed_values_function: ''
 module: options
 locked: false

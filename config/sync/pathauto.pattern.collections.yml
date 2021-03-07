@@ -1,6 +1,6 @@
 uuid: 48ba65ba-a0d9-48c8-bad7-2810c4f6803a
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - ctools
@@ -19,5 +19,5 @@ selection_criteria:
       taxonomy_term: taxonomy_term
     uuid: 3c876ed4-7da3-4d0a-bf74-68a093385758
 selection_logic: and
-weight: -5
+weight: -7
 relationships: {  }

@@ -1,0 +1,75 @@
+diff --git a/entity_type_clone.info.yml b/entity_type_clone.info.yml
+index 370ecab..2c8058e 100755
+--- a/entity_type_clone.info.yml
++++ b/entity_type_clone.info.yml
+@@ -1,6 +1,7 @@
+ name: Entity Type Clone
+ type: module
+ description: This module provide option to clone entity types.
++core_version_requirement: ^8 || ^9
+ core: 8.x
+ package: Other
+ configure: entity_type_clone.type
+diff --git a/src/Controller/EntityTypeCloneController.php b/src/Controller/EntityTypeCloneController.php
+index 3f7a979..beea562 100644
+--- a/src/Controller/EntityTypeCloneController.php
++++ b/src/Controller/EntityTypeCloneController.php
+@@ -60,7 +60,7 @@ class EntityTypeCloneController extends ControllerBase {
+     }
+     else if ($display == 'view') {
+       //Save the view display
+-      $entityDisplay = entity_get_display($data['values']['show']['entity_type'], $data['values']['clone_bundle_machine'], $mode);
++      $entityDisplay = \Drupal::service('entity_display.repository')->getViewDisplay($data['values']['show']['entity_type'], $data['values']['clone_bundle_machine'], $mode);
+       if (isset($targetDisplay['content'][$sourceFieldName])) {
+         $entityDisplay->setComponent($sourceFieldName, $targetDisplay['content'][$sourceFieldName]);
+       }
+diff --git a/src/Controller/UUIDController.php b/src/Controller/UUIDController.php
+index 8e4327a..7a86475 100644
+--- a/src/Controller/UUIDController.php
++++ b/src/Controller/UUIDController.php
+@@ -18,7 +18,7 @@ class UUIDController extends ControllerBase {
+     /* @var $definition \Drupal\Core\Entity\EntityTypeInterface */
+     foreach ($entity_type_definations as $definition) {
+       if ($definition instanceof ContentEntityType) {
+-        $content_types = \Drupal::entityManager()->getBundleInfo($definition->id());
++        $content_types = \Drupal::entityTypeManager()->getBundleInfo($definition->id());
+         $entity_type = $definition->getBundleEntityType();
+         if ($entity_type && $content_types) {
+           foreach ($content_types as $type_id => $type) {
+diff --git a/src/Form/CloneEntityType.php b/src/Form/CloneEntityType.php
+index 5a559cf..e07b2e3 100644
+--- a/src/Form/CloneEntityType.php
++++ b/src/Form/CloneEntityType.php
+@@ -91,7 +91,9 @@ class CloneEntityType extends FormBase {
+     ];
+     if (isset($input['show']['entity_type']) || isset($entity_type)) {
+       $entity_type_selected = isset($input['show']['entity_type']) ? $input['show']['entity_type'] : $entity_type;
+-      $default_bundles = entity_get_bundles($entity_type_selected);
++      /** @var \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_manager */
++      $entity_type_bundle_info = \Drupal::service("entity_type.bundle.info");
++      $default_bundles = $entity_type_bundle_info->getBundleInfo($entity_type_selected);
+       // If the current base table support bundles and has more than one (like user).
+       if (!empty($default_bundles)) {
+         // Get all bundles and their human readable names.
+@@ -230,7 +232,7 @@ class CloneEntityType extends FormBase {
+     // Get the existing content type machine names.
+     $entityTypesNames = [];
+     if ($entity_type == 'node') {
+-      $contentTypes = \Drupal::service('entity.manager')->getStorage('node_type')->loadMultiple();
++      $contentTypes = \Drupal::service('entity_type.manager')->getStorage('node_type')->loadMultiple();
+       $entityTypesNames = [];
+       foreach ($contentTypes as $contentType) {
+         $entityTypesNames[] = $contentType->id();
+diff --git a/src/Form/CloneEntityTypeData.php b/src/Form/CloneEntityTypeData.php
+index c66d240..2550363 100644
+--- a/src/Form/CloneEntityTypeData.php
++++ b/src/Form/CloneEntityTypeData.php
+@@ -140,7 +140,7 @@ class CloneEntityTypeData {
+       $message = t('Finished with an error.');
+     }
+     //Send the result message.
+-    drupal_set_message($message, 'status', TRUE);
++    \Drupal::messenger()->addStatus($message, TRUE);
+     //Redirect to the entity type clone page.
+     $response = new RedirectResponse('admin/entity-type-clone');
+     $response->send();

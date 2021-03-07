@@ -5,14 +5,12 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_blocks
-    - field.field.node.page.field_headline
-    - field.field.node.page.field_hero_media
-    - field.field.node.page.field_hero_text
     - field.field.node.page.field_media
-    - field.field.node.page.field_title_bool
+    - field.field.node.page.field_metatags
     - node.type.page
   module:
     - entity_reference_revisions
+    - metatag
     - text
     - user
 _core:
@@ -38,30 +36,6 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_headline:
-    weight: 105
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_hero_media:
-    type: entity_reference_entity_view
-    weight: 111
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_hero_text:
-    weight: 112
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_media:
     type: entity_reference_entity_view
     weight: 107
@@ -71,15 +45,12 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_title_bool:
-    weight: 106
+  field_metatags:
+    weight: 111
     label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+    settings: {  }
     third_party_settings: {  }
-    type: boolean
+    type: metatag_empty_formatter
     region: content
   links:
     weight: 101

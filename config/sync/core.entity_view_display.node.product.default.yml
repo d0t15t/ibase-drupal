@@ -1,0 +1,37 @@
+uuid: 001043c6-d68e-4f26-82c9-3e0c10e96f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.field_metatags
+    - field.field.node.product.field_shopify_product
+    - node.type.product
+  module:
+    - metatag
+    - user
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  field_metatags:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_shopify_product:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
