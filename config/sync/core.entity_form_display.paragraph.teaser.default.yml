@@ -10,7 +10,6 @@ dependencies:
     - field.field.paragraph.teaser.field_teaser_style
     - paragraphs.paragraphs_type.teaser
   module:
-    - chosen_field
     - media_library
 id: paragraph.teaser.default
 targetEntityType: paragraph
@@ -18,10 +17,14 @@ bundle: teaser
 mode: default
 content:
   field_content:
-    weight: 0
-    settings: {  }
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: chosen_select
+    type: entity_reference_autocomplete
     region: content
   field_headline:
     weight: 2

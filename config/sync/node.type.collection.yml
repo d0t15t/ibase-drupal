@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - default_menu_link
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-    parent: 'main:'
+      - collections
+    parent: 'collections:'
+  default_menu_link:
+    default_menu_link_enabled: true
 name: Collection
 type: collection
 description: 'Create a collection page which displays a grid of items - these can be sourced from a Shopify-collection or linked individually to products.'

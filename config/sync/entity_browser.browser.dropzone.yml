@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - media.type.image_ibt
+    - media.type.image
   module:
     - dropzonejs_eb_widget
     - media
@@ -27,7 +27,7 @@ widget_selector_configuration: {  }
 widgets:
   e388c297-bd9a-4d41-a750-dd676c23aa5a:
     settings:
-      media_type: image_ibt
+      media_type: image
       upload_location: 'public://[date:custom:Y]-[date:custom:m]'
       dropzone_description: 'Drop files here to upload them'
       max_filesize: 2M

@@ -1,0 +1,8 @@
+uuid: ccd71a0f-da86-47b2-8302-674f4ed8d3ad
+langcode: en
+status: true
+dependencies: {  }
+id: collections
+label: Collections
+description: ''
+locked: false

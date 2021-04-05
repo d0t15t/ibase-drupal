@@ -1,9 +1,12 @@
 preview:
   page: 0
+  collection: 0
 iframe:
   page: 0
+  collection: 0
 target:
   page: window
+  collection: window
 server_url: ''
 incrementalbuild_url: ''
 build_published: 1

@@ -1,0 +1,71 @@
+uuid: 0698dc01-d1c3-4118-bdb6-6f774ed83d5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - gatsby_fastbuilds
+id: gatsby_log_entity--gatsby_log_entity
+disabled: true
+path: gatsby_log_entity/gatsby_log_entity
+resourceType: gatsby_log_entity--gatsby_log_entity
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  entity_uuid:
+    fieldName: entity_uuid
+    publicName: entity_uuid
+    enhancer:
+      id: ''
+    disabled: false
+  title:
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  entity:
+    fieldName: entity
+    publicName: entity
+    enhancer:
+      id: ''
+    disabled: false
+  bundle:
+    fieldName: bundle
+    publicName: bundle
+    enhancer:
+      id: ''
+    disabled: false
+  action:
+    fieldName: action
+    publicName: action
+    enhancer:
+      id: ''
+    disabled: false
+  json:
+    fieldName: json
+    publicName: json
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false

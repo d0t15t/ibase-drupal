@@ -1,0 +1,21 @@
+uuid: 69f3e876-ceb9-4a67-b5be-14a2f0d2c115
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview.field_view
+    - paragraphs.paragraphs_type.overview
+id: paragraph.overview.default
+targetEntityType: paragraph
+bundle: overview
+mode: default
+content:
+  field_view:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

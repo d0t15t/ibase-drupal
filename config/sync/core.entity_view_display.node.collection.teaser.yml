@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.collection.body
     - field.field.node.collection.field_bool
+    - field.field.node.collection.field_media
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_products
     - field.field.node.collection.field_shopify_collection
@@ -33,6 +34,7 @@ content:
     region: content
 hidden:
   field_bool: true
+  field_media: true
   field_metatags: true
   field_products: true
   field_shopify_collection: true

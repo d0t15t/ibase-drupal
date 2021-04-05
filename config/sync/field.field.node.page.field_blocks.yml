@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_blocks
     - node.type.page
+    - paragraphs.paragraphs_type.overview
     - paragraphs.paragraphs_type.tiles
   module:
     - entity_reference_revisions
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       tiles: tiles
+      overview: overview
     target_bundles_drag_drop:
       article:
         weight: 7
@@ -31,6 +33,9 @@ settings:
       banner:
         weight: 5
         enabled: false
+      overview:
+        enabled: true
+        weight: 10
       slideshow:
         weight: 6
         enabled: false

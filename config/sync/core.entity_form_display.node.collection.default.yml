@@ -3,17 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.dropzone
     - field.field.node.collection.body
     - field.field.node.collection.field_bool
+    - field.field.node.collection.field_media
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_products
     - field.field.node.collection.field_shopify_collection
     - node.type.collection
   module:
-    - chosen_field
     - conditional_fields
+    - entity_browser
     - metatag
     - path
+    - select2
     - text
 id: node.collection.default
 targetEntityType: node
@@ -43,6 +46,20 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  field_media:
+    weight: 27
+    settings:
+      entity_browser: dropzone
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_metatags:
     weight: 26
     settings:
@@ -52,7 +69,11 @@ content:
     region: content
   field_products:
     weight: 11
-    settings: {  }
+    settings:
+      width: 100%
+      autocomplete: true
+      match_operator: CONTAINS
+      match_limit: 10
     third_party_settings:
       conditional_fields:
         7f71fcdb-3ee6-4afb-b16b-45e326725903:
@@ -71,11 +92,15 @@ content:
             selector: ''
           entity_type: node
           bundle: collection
-    type: chosen_select
+    type: select2_entity_reference
     region: content
   field_shopify_collection:
     weight: 10
-    settings: {  }
+    settings:
+      width: 100%
+      autocomplete: true
+      match_operator: CONTAINS
+      match_limit: 10
     third_party_settings:
       conditional_fields:
         a782610e-5b94-4b2d-8bfa-ec6e4c17e457:
@@ -94,7 +119,7 @@ content:
             selector: ''
           entity_type: node
           bundle: collection
-    type: options_select
+    type: select2_entity_reference
     region: content
   path:
     type: path
