@@ -1,0 +1,20 @@
+uuid: ac886531-1bba-4cc6-8a54-b61ea7508f13
+langcode: en
+status: true
+dependencies:
+  module:
+    - build_hooks_netlify
+id: goldies_netlify
+label: 'Goldies netlify'
+weight: 0
+provider: null
+plugin: netlify
+settings:
+  id: netlify
+  label: null
+  provider: build_hooks_netlify
+  api_id: 6408a6af-025d-4f17-85a8-b2cfdb35ce3d
+  branch: main
+  build_hook_url: 'https://api.netlify.com/build_hooks/606c026c5e4010d88477169f'
+url: 'https://goldies-frontend.netlify.app/'
+deployment_strategy: entitysave

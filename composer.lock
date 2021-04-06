@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3bf325ad6fa14609909f90f05786025",
+    "content-hash": "8723f34ead3464853ca68f2499a06db5",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2476,27 +2476,27 @@
         },
         {
             "name": "drupal/build_hooks",
-            "version": "2.5.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/build_hooks.git",
-                "reference": "8.x-2.5"
+                "reference": "3.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/build_hooks-8.x-2.5.zip",
-                "reference": "8.x-2.5",
-                "shasum": "b7b405620b036854f7d389267e75184b0d013f79"
+                "url": "https://ftp.drupal.org/files/projects/build_hooks-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "c1f7af95862cb478187274858105e71bffe47bac"
             },
             "require": {
                 "drupal/core": "^8 || ^9",
-                "drupal/dynamic_entity_reference": "*"
+                "drupal/dynamic_entity_reference": "~1.0|~2.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.5",
-                    "datestamp": "1609815967",
+                    "version": "3.1.1",
+                    "datestamp": "1617654773",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2509,8 +2509,9 @@
             ],
             "authors": [
                 {
-                    "name": "jmolivas",
-                    "homepage": "https://www.drupal.org/user/678770"
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/678770",
+                    "email": "larowlan@395439.no-reply.drupal.org"
                 },
                 {
                     "name": "larowlan",
@@ -2521,7 +2522,7 @@
                     "homepage": "https://www.drupal.org/user/121062"
                 }
             ],
-            "description": "Triggers a build hook on any service provider that supports build hooks.",
+            "description": "Triggers a build hook on service providers when content is updated",
             "homepage": "https://www.drupal.org/project/build_hooks",
             "support": {
                 "source": "https://git.drupalcode.org/project/build_hooks"

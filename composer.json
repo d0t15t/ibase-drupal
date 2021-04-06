@@ -67,7 +67,7 @@
         "drupal/adminimal_theme": "^1.6",
         "drupal/asset_injector": "^2.7",
         "drupal/backup_migrate": "5.0.0-rc2",
-        "drupal/build_hooks": "^2.4",
+        "drupal/build_hooks": "^3.1",
         "drupal/chosen": "^3.0",
         "drupal/color_field": "^2.3",
         "drupal/conditional_fields": "^1.0@alpha",
