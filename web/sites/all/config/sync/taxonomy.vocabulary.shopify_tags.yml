@@ -1,0 +1,8 @@
+uuid: 41062d5d-400c-43e2-828d-e633e121a5b7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Shopify tags'
+vid: shopify_tags
+description: ''
+weight: 0

@@ -1,0 +1,10 @@
+uuid: 9c695c16-3714-4a40-a3bc-8abb983a7738
+langcode: en
+status: true
+dependencies: {  }
+id: product_teasers
+label: 'Product teasers'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

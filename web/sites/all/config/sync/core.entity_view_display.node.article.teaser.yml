@@ -37,4 +37,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_image: true
   field_tags: true

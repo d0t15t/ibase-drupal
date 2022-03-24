@@ -1,0 +1,27 @@
+uuid: b43f06a6-0f62-4a74-8e4d-a07320aa77c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - default_menu_link
+    - gatsby
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - sidebar
+    parent: 'sidebar:'
+  default_menu_link:
+    default_menu_link_enabled: true
+  gatsby:
+    preview: false
+    target: window
+    iframe: false
+name: Collection
+type: collection
+description: 'Create a collection page which displays a grid of items - these can be sourced from a Shopify-collection or linked individually to products.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,23 @@
+uuid: 1af397e9-b219-449e-929b-80a2ebf06439
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bool
+    - node.type.page
+id: node.page.field_bool
+field_name: field_bool
+entity_type: node
+bundle: page
+label: 'Display page info'
+description: 'Check this display the page title and description.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

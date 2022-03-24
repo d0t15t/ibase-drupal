@@ -1,6 +1,6 @@
-uuid: 80be7408-8268-4509-bc0a-9c5e205d0ecb
+uuid: 8e355be1-528e-4b6c-803d-7eef001c50bc
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - filter.format.basic_html
@@ -19,6 +19,13 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
+            - Strike
+            - Blockquote
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
         -
           name: Linking
           items:
@@ -30,26 +37,27 @@ settings:
             - BulletedList
             - NumberedList
         -
-          name: Media
+          name: Alignment
           items:
-            - Blockquote
-            - DrupalImage
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
         -
           name: Tools
           items:
             - Source
+            - ShowBlocks
   plugins:
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

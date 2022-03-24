@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_image
+    - field.field.node.page.field_blocks
+    - field.field.node.page.field_bool
+    - field.field.node.page.field_headline
+    - field.field.node.page.field_media
+    - field.field.node.page.field_metatags
     - node.type.page
   module:
     - text
@@ -23,16 +27,12 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-  field_image:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_blocks: true
+  field_bool: true
+  field_headline: true
+  field_media: true
+  field_metatags: true

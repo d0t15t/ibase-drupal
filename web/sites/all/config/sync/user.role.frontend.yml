@@ -1,0 +1,22 @@
+uuid: 8e134861-38e7-477f-b9ac-ab4276373500
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_type_permissions
+    - system
+id: frontend
+label: Frontend
+weight: -7
+is_admin: null
+permissions:
+  - 'administer menu'
+  - 'view paragraph content article'
+  - 'view paragraph content banner'
+  - 'view paragraph content cart'
+  - 'view paragraph content overview'
+  - 'view paragraph content product_teasers'
+  - 'view paragraph content slideshow'
+  - 'view paragraph content teaser'
+  - 'view paragraph content text'
+  - 'view paragraph content tiles'
