@@ -26,11 +26,16 @@
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/default_menu_link": "^1.0",
+        "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",
+        "drupal/field_group": "^3.2",
         "drupal/gatsby": "^2.0@RC",
-        "drupal/geocoder": "^3.25",
+        "drupal/geocoder": "^3.0@beta",
         "drupal/geofield": "^1.38",
         "drupal/jsonapi_extras": "^3.20",
+        "drupal/jsonapi_menu_items": "^1.2",
+        "drupal/jsonapi_resources": "^1.0@beta",
+        "drupal/jsonapi_views": "^1.0",
         "drupal/metatag": "^1.19",
         "drupal/paragraphs": "^1.13",
         "drupal/pathauto": "^1.9",
@@ -38,7 +43,9 @@
         "drupal/redirect": "^1.7",
         "drupal/shopify": "^1.0@alpha",
         "drupal/svg_image": "^1.16",
-        "drush/drush": "^11.0"
+        "drush/drush": "^11.0",
+        "geocoder-php/google-maps-provider": "^4.6",
+        "geocoder-php/nominatim-provider": "^5.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -110,11 +117,6 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": true,
-        "patches": {
-            "drupal/core": {
-                "foo": "    "
-            }
-        }
+        "enable-patching": true
     }
 }

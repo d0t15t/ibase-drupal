@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#ddev-generated
+## Description: Execute a command inside the folder of the web container, that corresponds to the current folder of the host
+## Usage: cmd [command]
+## Example: "ddev cmd npm install" executed on the host from the project folder "[DDEV_APPROOT]/web/themes/mytheme" effectively runs as "npm install" inside the folder "/var/www/html/web/themes/mytheme" of the web container
+
+cdir=$(pwd -P)
+folder=${cdir#"$DDEV_APPROOT"}
+folder="$folder"
+args=("$@")
+
+ddev exec -d "/var/www/html/$folder" "bash -i -c '${args[*]}'"
