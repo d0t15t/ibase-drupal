@@ -1,0 +1,26 @@
+uuid: e45dd261-d165-49b9-8de2-021dc1ca4658
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_type_permissions
+    - shopify
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'use text format restricted_html'
+  - 'view paragraph content article'
+  - 'view paragraph content banner'
+  - 'view paragraph content cart'
+  - 'view paragraph content overview'
+  - 'view paragraph content product_teasers'
+  - 'view paragraph content slideshow'
+  - 'view paragraph content teaser'
+  - 'view paragraph content text'
+  - 'view paragraph content tiles'
+  - 'view shopify product entities'
+  - 'view shopify product variant entities'

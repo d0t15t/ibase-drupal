@@ -1,0 +1,40 @@
+uuid: 32107a47-cee4-4d03-9145-4d6f79a5a458
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.collection.body
+    - field.field.node.collection.field_description
+    - field.field.node.collection.field_featured_description
+    - field.field.node.collection.field_featured_products
+    - field.field.node.collection.field_media
+    - field.field.node.collection.field_metatags
+    - field.field.node.collection.field_products
+    - node.type.collection
+  module:
+    - text
+    - user
+id: node.collection.default
+targetEntityType: node
+bundle: collection
+mode: default
+content:
+  field_featured_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_description: true
+  field_featured_products: true
+  field_media: true
+  field_metatags: true
+  field_products: true

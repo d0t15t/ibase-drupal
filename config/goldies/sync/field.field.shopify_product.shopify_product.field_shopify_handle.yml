@@ -1,0 +1,20 @@
+uuid: 03afc3a9-a4f5-4ccd-a5a9-3b9dcc7e3504
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.shopify_product.field_shopify_handle
+  module:
+    - shopify
+id: shopify_product.shopify_product.field_shopify_handle
+field_name: field_shopify_handle
+entity_type: shopify_product
+bundle: shopify_product
+label: 'Shopify handle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

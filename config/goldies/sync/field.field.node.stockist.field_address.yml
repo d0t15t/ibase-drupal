@@ -1,0 +1,47 @@
+uuid: 3160ab93-14de-483a-a86e-8618499c0e86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.stockist
+  module:
+    - address
+id: node.stockist.field_address
+field_name: field_address
+entity_type: node
+bundle: stockist
+label: Address
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    langcode: ''
+    country_code: US
+    administrative_area: ''
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: null
+    additional_name: null
+    family_name: null
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    organization:
+      override: required
+  fields: {  }
+field_type: address

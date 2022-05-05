@@ -1,0 +1,39 @@
+uuid: 95af2df1-94a1-43fc-a25b-6432635b85e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.field_media
+    - field.field.node.product.field_metatags
+    - field.field.node.product.field_shopify_product
+    - node.type.product
+  module:
+    - user
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  field_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_shopify_product:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_metatags: true

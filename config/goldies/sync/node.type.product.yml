@@ -1,0 +1,21 @@
+uuid: 0418e613-16d2-4d9b-be75-1e7921f60999
+langcode: en
+status: true
+dependencies:
+  module:
+    - default_menu_link
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  default_menu_link:
+    default_menu_link_enabled: false
+name: Product
+type: product
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,35 @@
+uuid: 4ba7aa01-2cad-419d-aec1-d0ab498315b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cart_teaser
+    - field.field.node.product.field_media
+    - field.field.node.product.field_metatags
+    - field.field.node.product.field_shopify_product
+    - node.type.product
+  module:
+    - user
+id: node.product.cart_teaser
+targetEntityType: node
+bundle: product
+mode: cart_teaser
+content:
+  field_shopify_product:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: store_listing
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_media: true
+  field_metatags: true
+  search_api_excerpt: true
