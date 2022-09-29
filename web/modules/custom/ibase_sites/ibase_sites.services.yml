@@ -1,0 +1,10 @@
+services:
+  
+  logger.channel.ibase_sites:
+    parent: logger.channel_base
+    arguments: ['ibase_sites']
+
+  ibase_sites.utility:
+    class: Drupal\ibase_sites\IbaseSitesUtility
+    arguments: ['@logger.channel.ibase_sites', '@messenger', '@entity_type.manager']
+

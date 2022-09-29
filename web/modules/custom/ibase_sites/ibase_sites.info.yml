@@ -1,0 +1,5 @@
+name: ibase_sites
+type: module
+description: Provides additional functionality for the site.
+package: ibase
+core_version_requirement: ^9 || ^10
