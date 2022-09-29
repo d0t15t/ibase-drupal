@@ -21,10 +21,11 @@
         "drupal/admin_toolbar": "^3.1",
         "drupal/allowed_formats": "^1.4",
         "drupal/backup_migrate": "^5.0",
+        "drupal/build_hooks": "^3.3",
         "drupal/chosen": "^3.0",
         "drupal/color_field": "^2.5",
         "drupal/core-composer-scaffold": "^9.3",
-        "drupal/core-recommended": "^9.3",
+        "drupal/core-recommended": "^9.4.6",
         "drupal/default_menu_link": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",
@@ -32,6 +33,10 @@
         "drupal/gatsby": "^2.0@RC",
         "drupal/geocoder": "^3.0@beta",
         "drupal/geofield": "^1.38",
+        "drupal/gin": "^3.0@beta",
+        "drupal/gin_login": "^1.2",
+        "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.20",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_resources": "^1.0@beta",
@@ -40,9 +45,12 @@
         "drupal/paragraphs": "^1.13",
         "drupal/pathauto": "^1.9",
         "drupal/permissions_filter": "^1.2",
+        "drupal/quick_node_clone": "^1.15",
         "drupal/redirect": "^1.7",
         "drupal/shopify": "^1.0@alpha",
         "drupal/svg_image": "^1.16",
+        "drupal/taxonomy_menu_ui": "^3.0",
+        "drupal/webp": "^1.0@beta",
         "drush/drush": "^11.0",
         "geocoder-php/google-maps-provider": "^4.6",
         "geocoder-php/nominatim-provider": "^5.5"
@@ -65,6 +73,9 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+	    "file-mapping": {
+              "[web-root]/robots.txt": false
             }
         },
         "installer-paths": {
