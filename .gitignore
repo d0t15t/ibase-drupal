@@ -24,25 +24,21 @@
 # Ignore .env files as they are personal
 /.env
 
-/web/modules/README.txt
-/web/profiles/README.txt
-/web/sites/default/default.services.yml
-/web/sites/default/default.settings.php
-/web/sites/example.settings.local.php
-/web/sites/example.sites.php
-/web/sites/README.txt
-/web/themes/README.txt
-/web/.ht.router.php
-/web/autoload.php
-/web/index.php
-/web/INSTALL.txt
-/web/README.md
-/web/update.php
-/web/web.config
-/.editorconfig
-/.gitattributes
-
-.DS_Store
-
+# Custom
 *.sql
-*.sql.*
+*.tar.gz
+web/INSTALL.txt
+web/README.md
+web/autoload.php
+web/index.php
+web/modules/README.txt
+web/profiles/
+# web/sites/
+web/themes/
+web/update.php
+web/web.config
+web/.ht.router.php
+
+#git
+.gitattributes
+
