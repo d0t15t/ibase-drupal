@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - media
+    - paragraphs_type_permissions
     - shopify
     - shortcut
     - system
@@ -18,5 +19,14 @@ permissions:
   - 'access shortcuts'
   - 'use text format basic_html'
   - 'view media'
+  - 'view paragraph content article'
+  - 'view paragraph content banner'
+  - 'view paragraph content cart'
+  - 'view paragraph content overview'
+  - 'view paragraph content product_teasers'
+  - 'view paragraph content slideshow'
+  - 'view paragraph content teaser'
+  - 'view paragraph content text'
+  - 'view paragraph content tiles'
   - 'view shopify product entities'
   - 'view shopify product variant entities'

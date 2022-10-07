@@ -44,8 +44,6 @@ settings:
           items:
             - Source
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: "h2|Headline 2\r\nh3|Headline 3\r\nh4|Headline 4\r\nh5|Headline 5\r\nh6|Headline 6"
 image_upload:

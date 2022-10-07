@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.collection.body
     - field.field.node.collection.field_description
+    - field.field.node.collection.field_display_header
     - field.field.node.collection.field_featured_description
     - field.field.node.collection.field_featured_products
     - field.field.node.collection.field_media
@@ -35,6 +36,7 @@ content:
     region: content
 hidden:
   field_description: true
+  field_display_header: true
   field_featured_description: true
   field_featured_products: true
   field_media: true

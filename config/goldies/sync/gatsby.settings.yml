@@ -1,0 +1,14 @@
+server_url: ''
+preview_callback_url: ''
+path_mapping: ''
+incrementalbuild_url: ''
+contentsync_url: ''
+build_published: true
+log_json: false
+supported_entity_types: {  }
+publish_private_files: null
+log_published: true
+fastbuilds_preview: false
+delete_log_entities: false
+log_expiration: '604800'
+preview_target: ''

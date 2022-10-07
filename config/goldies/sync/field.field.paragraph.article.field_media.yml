@@ -4,11 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_media
-    - media.type.audio
-    - media.type.document
     - media.type.image
     - media.type.remote_video
-    - media.type.video
     - paragraphs.paragraphs_type.article
 id: paragraph.article.field_media
 field_name: field_media
@@ -24,13 +21,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      audio: audio
-      document: document
       image: image
       remote_video: remote_video
-      video: video
     sort:
       field: _none
-    auto_create: true
-    auto_create_bundle: audio
+    auto_create: false
+    auto_create_bundle: null
 field_type: entity_reference

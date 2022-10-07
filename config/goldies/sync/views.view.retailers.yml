@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.stockist
-    - system.menu.main
+    - system.menu.footer-1
   module:
     - draggableviews
     - node
@@ -185,8 +185,9 @@ display:
         title: Retailers
         description: ''
         weight: 0
+        enabled: true
         expanded: false
-        menu_name: main
+        menu_name: footer
         parent: ''
         context: '0'
     cache_metadata:

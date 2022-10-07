@@ -1,6 +1,6 @@
 uuid: 8816fe84-4ecb-4762-8035-58e75a92a3f1
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
@@ -10,9 +10,9 @@ dependencies:
     - node
     - user
 id: products
-label: Products
+label: 'Entity Browser - Products'
 module: views
-description: 'Content type products'
+description: 'Entity Browser for Shopify Products'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -123,7 +123,7 @@ display:
           hide_alter_empty: true
           view_mode: search_index
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 10
@@ -132,6 +132,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -140,6 +142,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -244,6 +247,7 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.collection.default'
         - 'config:core.entity_view_display.node.collection.teaser'
         - 'config:core.entity_view_display.node.cta.default'
         - 'config:core.entity_view_display.node.cta.teaser'
@@ -254,6 +258,7 @@ display:
         - 'config:core.entity_view_display.node.product.cart_teaser'
         - 'config:core.entity_view_display.node.product.default'
         - 'config:core.entity_view_display.node.product.teaser'
+        - 'config:core.entity_view_display.node.stockist.default'
         - 'config:core.entity_view_display.node.stockist.teaser'
   entity_browser_1:
     id: entity_browser_1
@@ -261,7 +266,9 @@ display:
     display_plugin: entity_browser
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        jsonapi_views:
+          enabled: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -274,6 +281,7 @@ display:
         - 'config:core.entity_view_display.node.article.default'
         - 'config:core.entity_view_display.node.article.rss'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.collection.default'
         - 'config:core.entity_view_display.node.collection.teaser'
         - 'config:core.entity_view_display.node.cta.default'
         - 'config:core.entity_view_display.node.cta.teaser'
@@ -284,4 +292,5 @@ display:
         - 'config:core.entity_view_display.node.product.cart_teaser'
         - 'config:core.entity_view_display.node.product.default'
         - 'config:core.entity_view_display.node.product.teaser'
+        - 'config:core.entity_view_display.node.stockist.default'
         - 'config:core.entity_view_display.node.stockist.teaser'

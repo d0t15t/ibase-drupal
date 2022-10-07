@@ -124,7 +124,7 @@ display:
             fail: 'not found'
           validate_options:
             bundles: {  }
-            access: true
+            access: false
             operation: view
             multiple: 0
           break_phrase: false

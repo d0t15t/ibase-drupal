@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.collection.body
     - field.field.node.collection.field_description
+    - field.field.node.collection.field_display_header
     - field.field.node.collection.field_featured_description
     - field.field.node.collection.field_featured_products
     - field.field.node.collection.field_media
@@ -19,6 +20,16 @@ targetEntityType: node
 bundle: collection
 mode: default
 content:
+  field_display_header:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
   field_featured_description:
     type: text_default
     label: above
