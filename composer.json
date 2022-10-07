@@ -22,6 +22,7 @@
         "drupal/allowed_formats": "^1.4",
         "drupal/backup_migrate": "^5.0",
         "drupal/build_hooks": "^3.3",
+        "drupal/change_author_action": "^1.0",
         "drupal/chosen": "^3.0",
         "drupal/color_field": "^2.5",
         "drupal/core-composer-scaffold": "^9.3",
