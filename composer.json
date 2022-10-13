@@ -24,6 +24,7 @@
         "drupal/build_hooks": "^3.3",
         "drupal/change_author_action": "^1.0",
         "drupal/chosen": "^3.0",
+        "drupal/ckeditor_emojione": "^1.4",
         "drupal/color_field": "^2.5",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-recommended": "^9.4.6",
@@ -54,7 +55,8 @@
         "drupal/webp": "^1.0@beta",
         "drush/drush": "^11.0",
         "geocoder-php/google-maps-provider": "^4.6",
-        "geocoder-php/nominatim-provider": "^5.5"
+        "geocoder-php/nominatim-provider": "^5.5",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -67,7 +69,8 @@
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "extra": {
@@ -129,6 +132,11 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "merge-plugin": {
+          "include": [
+            "web/modules/contrib/ckeditor_emojione/composer.libraries.json"
+          ]
+        }
     }
 }
