@@ -31,6 +31,7 @@
         "drupal/default_menu_link": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",
+        "drupal/field_config_cardinality": "^1.1",
         "drupal/field_group": "^3.2",
         "drupal/gatsby": "^2.0@RC",
         "drupal/geocoder": "^3.0@beta",

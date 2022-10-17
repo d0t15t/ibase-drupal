@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00fafd43aefa9e1480e3ae3ac9e92b5c",
+    "content-hash": "1865da737052ab266f08dffb4441802d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3094,6 +3094,66 @@
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_revisions"
+            }
+        },
+        {
+            "name": "drupal/field_config_cardinality",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/field_config_cardinality.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_config_cardinality-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "517fd123b89536dd00db4f1883ace2025c929a4e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1605047068",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Shruthi Shetty M",
+                    "homepage": "https://www.drupal.org/user/3580970"
+                },
+                {
+                    "name": "ayalon",
+                    "homepage": "https://www.drupal.org/user/419226"
+                },
+                {
+                    "name": "dealancer",
+                    "homepage": "https://www.drupal.org/user/243418"
+                },
+                {
+                    "name": "devkinetic",
+                    "homepage": "https://www.drupal.org/user/114708"
+                },
+                {
+                    "name": "eloivaque",
+                    "homepage": "https://www.drupal.org/user/605038"
+                }
+            ],
+            "description": "Allow apply cardinality on Field Config (Cardinality Instance)",
+            "homepage": "https://www.drupal.org/project/field_config_cardinality",
+            "support": {
+                "source": "https://git.drupalcode.org/project/field_config_cardinality"
             }
         },
         {
