@@ -1,0 +1,57 @@
+uuid: 1c2d0c12-59a1-4f49-8303-1a6246f4fa16
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.inline_basic
+  module:
+    - ckeditor
+format: inline_basic
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Styles
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+            - Emojione
+  plugins:
+    stylescombo:
+      styles: "h2|Headline 2\r\nh3|Headline 3\r\nh4|Headline 4\r\nh5|Headline 5\r\nh6|Headline 6"
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

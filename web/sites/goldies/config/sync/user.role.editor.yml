@@ -1,0 +1,108 @@
+uuid: b96e581f-e2cd-4b1c-8769-24f3123783fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full
+    - filter.format.inline
+    - filter.format.inline_basic
+    - media.type.image
+    - media.type.remote_video
+    - node.type.collection
+    - node.type.cta
+    - node.type.page
+    - node.type.product
+    - node.type.stockist
+    - taxonomy.vocabulary.shopify_tags
+  module:
+    - admin_toolbar_search
+    - build_hooks
+    - contextual
+    - entity_browser
+    - file
+    - filter
+    - media
+    - node
+    - paragraphs_type_permissions
+    - path
+    - quick_node_clone
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+id: editor
+label: Editor
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access entity_browser_media entity browser pages'
+  - 'access entity_browser_products entity browser pages'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'clone collection content'
+  - 'create collection content'
+  - 'create cta content'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'create paragraph content overview'
+  - 'create paragraph content product_teasers'
+  - 'create paragraph content teaser'
+  - 'create paragraph content text'
+  - 'create paragraph content tiles'
+  - 'create remote_video media'
+  - 'create stockist content'
+  - 'create terms in shopify_tags'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any collection content'
+  - 'delete any cta content'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any stockist content'
+  - 'delete media'
+  - 'delete own collection content'
+  - 'delete own cta content'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own stockist content'
+  - 'delete paragraph content overview'
+  - 'delete paragraph content product_teasers'
+  - 'delete paragraph content teaser'
+  - 'delete paragraph content text'
+  - 'delete paragraph content tiles'
+  - 'delete terms in shopify_tags'
+  - 'edit any collection content'
+  - 'edit any cta content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any product content'
+  - 'edit any remote_video media'
+  - 'edit any stockist content'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'edit terms in shopify_tags'
+  - 'trigger deployments'
+  - 'update any media'
+  - 'update media'
+  - 'update paragraph content overview'
+  - 'update paragraph content product_teasers'
+  - 'update paragraph content teaser'
+  - 'update paragraph content text'
+  - 'update paragraph content tiles'
+  - 'use admin toolbar search'
+  - 'use text format full'
+  - 'use text format inline'
+  - 'use text format inline_basic'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

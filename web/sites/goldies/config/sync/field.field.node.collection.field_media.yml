@@ -1,0 +1,29 @@
+uuid: 38652a15-4399-478f-934c-fe652993fecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media
+    - media.type.image
+    - node.type.collection
+id: node.collection.field_media
+field_name: field_media
+entity_type: node
+bundle: collection
+label: 'Main image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: image
+field_type: entity_reference

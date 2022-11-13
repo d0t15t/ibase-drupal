@@ -1,0 +1,10 @@
+uuid: 711f4703-2c11-4ba9-b64c-b98af209efc2
+langcode: en
+status: true
+dependencies: {  }
+id: tiles
+label: 'Fancy teasers'
+icon_uuid: null
+icon_default: null
+description: 'A tiled list of teasers.'
+behavior_plugins: {  }

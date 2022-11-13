@@ -1,0 +1,32 @@
+uuid: 8e5177bf-904d-433e-b7c4-de458148e5d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_teasers.field_body
+    - field.field.paragraph.product_teasers.field_content
+    - paragraphs.paragraphs_type.product_teasers
+  module:
+    - text
+id: paragraph.product_teasers.default
+targetEntityType: paragraph
+bundle: product_teasers
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
