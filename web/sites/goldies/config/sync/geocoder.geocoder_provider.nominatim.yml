@@ -1,0 +1,14 @@
+uuid: 1e758842-f9ec-404e-bb0c-5a4e31a29cf9
+langcode: en
+status: true
+dependencies: {  }
+id: nominatim
+label: Nominatim
+plugin: nominatim
+configuration:
+  throttle:
+    period: 10
+    limit: 20
+  rootUrl: 'https://nominatim.openstreetmap.org'
+  userAgent: 'Goldies Natural Beauty'
+  referer: goldiessoap.com

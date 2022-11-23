@@ -1,0 +1,29 @@
+uuid: 969ffe5c-e7e0-4773-a736-b1d37be29af8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.product
+    - taxonomy.vocabulary.shopify_tags
+id: node.product.field_tags
+field_name: field_tags
+entity_type: node
+bundle: product
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      shopify_tags: shopify_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

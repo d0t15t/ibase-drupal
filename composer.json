@@ -25,6 +25,7 @@
         "drupal/build_hooks": "^3.3",
         "drupal/change_author_action": "^1.0",
         "drupal/chosen": "^3.0",
+        "drupal/ckeditor_emojione": "^1.4",
         "drupal/color_field": "^2.5",
         "drupal/config_split": "^2.0@RC",
         "drupal/config_split_ignore": "^1.9",
@@ -34,6 +35,7 @@
         "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",
         "drupal/environment_indicator_ribbon": "^1.0",
+        "drupal/field_config_cardinality": "^1.1",
         "drupal/field_group": "^3.2",
         "drupal/gatsby": "^2.0@RC",
         "drupal/geocoder": "^3.0@beta",
@@ -63,7 +65,8 @@
         "drupal/webp": "^1.0@beta",
         "drush/drush": "^11.0",
         "geocoder-php/google-maps-provider": "^4.6",
-        "geocoder-php/nominatim-provider": "^5.5"
+        "geocoder-php/nominatim-provider": "^5.5",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -76,7 +79,8 @@
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "extra": {
@@ -143,6 +147,11 @@
             "drupal/core": {
                 "Add a hook to modify oEmbed resource data: https://www.drupal.org/project/drupal/issues/3042423": "https://www.drupal.org/files/issues/2022-01-05/3042423-52.patch"
             }
+        },
+        "merge-plugin": {
+          "include": [
+            "web/modules/contrib/ckeditor_emojione/composer.libraries.json"
+          ]
         }
     }
 }

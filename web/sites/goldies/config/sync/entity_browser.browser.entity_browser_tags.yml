@@ -1,0 +1,31 @@
+uuid: 5a436280-9c86-4dc4-bb86-e9fe8a65a9f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.shopify_tags
+  module:
+    - views
+name: entity_browser_tags
+label: 'Entity Browser - Tags'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  b0f771a8-9979-45c0-bdcd-86bf33c3b37d:
+    id: view
+    uuid: b0f771a8-9979-45c0-bdcd-86bf33c3b37d
+    label: Tags
+    weight: 1
+    settings:
+      submit_text: 'Select entities'
+      auto_select: false
+      view: shopify_tags
+      view_display: entity_browser

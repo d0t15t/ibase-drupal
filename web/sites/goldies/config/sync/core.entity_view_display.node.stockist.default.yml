@@ -1,0 +1,35 @@
+uuid: c1125d5f-c17b-45c6-b33b-9f75c4332a9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stockist.field_address
+    - field.field.node.stockist.field_geolocation
+    - field.field.node.stockist.field_link
+    - field.field.node.stockist.field_weight
+    - node.type.stockist
+  module:
+    - user
+id: node.stockist.default
+targetEntityType: node
+bundle: stockist
+mode: default
+content:
+  field_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_address: true
+  field_geolocation: true
+  field_link: true

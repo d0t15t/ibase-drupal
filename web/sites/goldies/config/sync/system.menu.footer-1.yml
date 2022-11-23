@@ -1,0 +1,8 @@
+uuid: d7f196f3-72e0-4c5d-94a6-f9129b128a10
+langcode: en
+status: true
+dependencies: {  }
+id: footer-1
+label: 'Footer contact'
+description: ''
+locked: false
