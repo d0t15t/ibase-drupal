@@ -1,0 +1,22 @@
+uuid: 27cb89ac-0030-46c1-b4f6-c146f839eb72
+langcode: en
+status: true
+dependencies:
+  module:
+    - default_menu_link
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  default_menu_link:
+    default_menu_link_enabled: false
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: Article
+type: article
+description: 'Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

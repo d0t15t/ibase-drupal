@@ -1,0 +1,19 @@
+uuid: 9ac189fb-24a5-49ea-8044-a271961f7d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_json_data
+    - node.type.channel
+id: node.channel.field_json_data
+field_name: field_json_data
+entity_type: node
+bundle: channel
+label: 'Json Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

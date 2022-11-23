@@ -1,0 +1,44 @@
+uuid: 9eccf53a-9157-419c-b069-7aaa7a2d14f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.audio_oembed.field_media_oembed_audio
+    - media.type.audio_oembed
+  module:
+    - media
+    - svg_image
+id: media.audio_oembed.default
+targetEntityType: media
+bundle: audio_oembed
+mode: default
+content:
+  field_media_oembed_audio:
+    type: oembed
+    label: visually_hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  thumbnail:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  uid: true

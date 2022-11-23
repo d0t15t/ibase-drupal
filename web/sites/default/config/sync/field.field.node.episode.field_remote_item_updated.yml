@@ -1,0 +1,19 @@
+uuid: 64d6dbfb-0fe3-47e0-8108-3459eed6706b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remote_item_updated
+    - node.type.episode
+id: node.episode.field_remote_item_updated
+field_name: field_remote_item_updated
+entity_type: node
+bundle: episode
+label: 'Remote item updated'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

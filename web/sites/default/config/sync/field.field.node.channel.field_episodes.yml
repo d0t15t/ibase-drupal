@@ -1,0 +1,29 @@
+uuid: 4fd166b3-6363-48a3-963d-67a524080c74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_episodes
+    - node.type.channel
+    - node.type.episode
+id: node.channel.field_episodes
+field_name: field_episodes
+entity_type: node
+bundle: channel
+label: Episodes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      episode: episode
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

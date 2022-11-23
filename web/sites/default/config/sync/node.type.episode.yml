@@ -1,0 +1,17 @@
+uuid: b4d0e9f4-e7c4-459e-8192-c6bce5cbd5e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Episode
+type: episode
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false
