@@ -122,7 +122,7 @@ class IbaseApiService {
       }, $channel_items_result);
 
       if (isset($json['paging']['next']) && is_string($json['paging']['next'])) {
-//        $this->processChannelRequest($json['paging']['next'], $channel_id, $op_count, $channel_endpoint_data_strings);
+        $this->processChannelRequest($json['paging']['next'], $channel_id, $op_count, $channel_endpoint_data_strings);
       }
       else {
         //@Todo: completion message + logging.
