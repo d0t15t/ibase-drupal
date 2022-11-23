@@ -1,0 +1,13 @@
+local.services.yml
+example.sites.php
+example.settings.local.php
+development.services.yml
+default/default.settings.php
+default.services.yml
+README.*
+*/default.settings.php
+*/tmp
+*/private
+sites.local.php
+
+gsa
