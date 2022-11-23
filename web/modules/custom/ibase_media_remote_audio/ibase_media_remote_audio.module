@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file ibase_media_remote_audio.module
+ */
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\media_library\Form\OEmbedForm;
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function ibase_media_remote_audio_media_source_info_alter(array &$sources) {
+  $sources['oembed:audio'] = [
+    'id' => 'oembed_audio',
+    'label' => new TranslatableMarkup('Audio (oembed)'),
+    'description' => new TranslatableMarkup('Embed remote audio.'),
+    'allowed_field_types' => ['string'],
+    'default_thumbnail_filename' => 'no-thumbnail.png',
+    'providers' => ['MixCloud', 'SoundCloud',],
+    'class' => 'Drupal\media\Plugin\media\Source\OEmbed',
+    'forms' => [
+      'media_library_add' => OEmbedForm::class,
+    ],
+    'provider' => 'ibase_media_remote_audio',
+  ];
+}
+
+/**
+ * Implements hook_oembed_resource_data_alter().
+ */
+function ibase_media_remote_audio_oembed_resource_data_alter(array &$data, $url) {
+  if (isset($data['provider_name']) && $data['provider_name'] === 'Mixcloud') {
+    $data['provider_name'] = 'MixCloud';
+  }
+  if (isset($data['image'])) {
+    $data['thumbnail_uri'] = $data['image'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ibase_media_remote_audio_preprocess_field(&$vars) {
+  if (isset($vars['field_name'])) {
+    switch ($vars['field_name']) {
+      case 'field_media_oembed_audio':
+
+        break;
+      $t=1;
+
+    }
+  }
+}
+

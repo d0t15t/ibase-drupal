@@ -15,6 +15,7 @@
         }
     ],
     "require": {
+        "amazeelabs/silverback_gatsby": "^1.26",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "^1.10",
@@ -26,11 +27,14 @@
         "drupal/chosen": "^3.0",
         "drupal/ckeditor_emojione": "^1.4",
         "drupal/color_field": "^2.5",
+        "drupal/config_split": "^2.0@RC",
+        "drupal/config_split_ignore": "^1.9",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-recommended": "^9.4.6",
         "drupal/default_menu_link": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",
+        "drupal/environment_indicator_ribbon": "^1.0",
         "drupal/field_config_cardinality": "^1.1",
         "drupal/field_group": "^3.2",
         "drupal/gatsby": "^2.0@RC",
@@ -39,20 +43,25 @@
         "drupal/gin": "^3.0@beta",
         "drupal/gin_login": "^1.2",
         "drupal/gin_toolbar": "^1.0@beta",
+        "drupal/graphql": "^4.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.20",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/jsonapi_resources": "^1.0@beta",
         "drupal/jsonapi_views": "^1.0",
         "drupal/metatag": "^1.19",
+        "drupal/modules_weight": "^1.9",
+        "drupal/oembed_providers": "^2.1",
         "drupal/paragraphs": "^1.13",
         "drupal/pathauto": "^1.9",
         "drupal/permissions_filter": "^1.2",
         "drupal/quick_node_clone": "^1.15",
         "drupal/redirect": "^1.7",
+        "drupal/remote_stream_wrapper": "^2.0",
         "drupal/shopify": "^1.0@alpha",
         "drupal/svg_image": "^1.16",
         "drupal/taxonomy_menu_ui": "^3.0",
+        "drupal/typed_data": "^1.0@beta",
         "drupal/webp": "^1.0@beta",
         "drush/drush": "^11.0",
         "geocoder-php/google-maps-provider": "^4.6",
@@ -134,6 +143,11 @@
             ]
         },
         "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "Add a hook to modify oEmbed resource data: https://www.drupal.org/project/drupal/issues/3042423": "https://www.drupal.org/files/issues/2022-01-05/3042423-52.patch"
+            }
+        },
         "merge-plugin": {
           "include": [
             "web/modules/contrib/ckeditor_emojione/composer.libraries.json"
