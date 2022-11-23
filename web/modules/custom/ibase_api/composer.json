@@ -1,0 +1,26 @@
+{
+    "name": "drupal/ibase_api",
+    "description": "iBase API funcitonality..",
+    "type": "drupal-drush",
+    "authors": [
+        {
+            "name": "Isaac Bigsby Trogdon",
+            "email": "mr@dyss.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Drupal\\ibase_api\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
+}

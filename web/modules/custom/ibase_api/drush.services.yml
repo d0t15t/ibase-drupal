@@ -1,0 +1,6 @@
+services:
+  ibase_api.commands:
+    class: Drupal\ibase_api\Commands\IbaseApiCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@logger.channel.ibase_api', '@messenger', '@ibase_api.service']
