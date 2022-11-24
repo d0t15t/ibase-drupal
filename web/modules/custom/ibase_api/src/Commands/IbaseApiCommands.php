@@ -66,4 +66,29 @@ class IbaseApiCommands extends DrushCommands {
       throw new Exception($e->getMessage());
     }
   }
+
+  // @TODO: transition to chunked process with feedback - move recursion into this Class?
+//  public function delete(string $entity_type, $ids = null, array $options = ['bundle' => self::REQ, 'exclude' => self::REQ, 'chunks' => 50]): void
+//  {
+//    $query = $this->getQuery($entity_type, $ids, $options);
+//    $result = $query->execute();
+//
+//    // Don't delete uid=1, uid=0.
+//    if ($entity_type == 'user') {
+//      unset($result[0], $result[1]);
+//    }
+//
+//    if (empty($result)) {
+//      $this->logger()->success(dt('No matching entities found.'));
+//    } else {
+//      $this->io()->progressStart(count($result));
+//      foreach (array_chunk($result, $options['chunks'], true) as $chunk) {
+//        drush_op([$this, 'doDelete'], $entity_type, $chunk);
+//        $this->io()->progressAdvance(count($chunk));
+//      }
+//      $this->io()->progressFinish();
+//      $this->logger()->success(dt("Deleted !type entity Ids: !ids", ['!type' => $entity_type, '!ids' => implode(', ', array_values($result))]));
+//    }
+//  }
+
 }

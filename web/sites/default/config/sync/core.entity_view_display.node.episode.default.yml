@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.episode.field_audio
     - field.field.node.episode.field_channels
     - field.field.node.episode.field_duration
+    - field.field.node.episode.field_json_data
     - field.field.node.episode.field_media_image
     - field.field.node.episode.field_remote_item_created
     - field.field.node.episode.field_remote_item_key
@@ -53,6 +54,13 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 113
+    region: content
+  field_json_data:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 115
     region: content
   field_media_image:
     type: entity_reference_entity_view

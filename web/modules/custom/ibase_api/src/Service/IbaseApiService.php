@@ -83,12 +83,11 @@ class IbaseApiService {
           && $node->hasField($this::FIELD_LABEL_API_ENDPOINT)
           && !$node->get($this::FIELD_LABEL_API_ENDPOINT)->isEmpty()
         ) {
-          $this->logger->info('Begin processing channel %id / %title', ['%id' => $id, '%title' => $node->label()]);
+          $this->logger->info('Begin updating channel %id / %title', ['%id' => $id, '%title' => $node->label()]);
           $endpoint = $node->get($this::FIELD_LABEL_API_ENDPOINT)->getString();
-          $results = $this->processChannelRequest($endpoint, $id);
-          $node->set('field_json_data', $results['json_data']);
-          $node->set('field_episodes', $results['episode_ids']);
-          $node->save();
+          if ($done = $this->processChannelRequest($endpoint, $id)) {
+            $this->logger->info('Successfully processed channel id %id with %count channel items.', ['%id' => $id, '%count' => sizeof($done)]);
+          }
         } else {
           $this->logger->warning('There was an error with the node: %id.', ['%id' => $id]);
         }
@@ -105,37 +104,44 @@ class IbaseApiService {
     string $endpoint,
     string $channel_id,
     $op_count = 0,
-    $channel_endpoint_data_strings = []
-  ): array {
+    $channel_item_nodes = []
+  ): ?array {
     $request = $this->httpClient->request('GET', $endpoint);
     if ($request->getStatusCode() === 200) {
+      $this->logger->info('Successfully contacted: ' . $endpoint);
+
       $op_count++;
       $data = $request->getBody()->getContents();
-      $channel_endpoint_data_strings[] = $data;
-
       $json = $this->json->decode($data);
-      $channel_items_result = isset($json['data']) && is_array($json['data'])
+      $channel_items_data_rows = isset($json['data']) && is_array($json['data'])
         ? $json['data'] : [];
 
-      $channel_item_nodes = array_map(function ($channel_item) use ($channel_id) {
+      if (empty($channel_items_data_rows)) {
+        $this->logger->warning('No results were returned from this request: ' . $endpoint);
+        return [];
+      }
+
+      $processed_channel_item_nodes = array_map(function ($channel_item) use ($channel_id) {
         return $this->processChannelItemData(['channel_id' => $channel_id, ...$channel_item]);
-      }, $channel_items_result);
+      }, $channel_items_data_rows);
+
+      $channel_item_nodes = [...$channel_item_nodes, ...$processed_channel_item_nodes];
 
       if (isset($json['paging']['next']) && is_string($json['paging']['next'])) {
-        $this->processChannelRequest($json['paging']['next'], $channel_id, $op_count, $channel_endpoint_data_strings);
+        $this->processChannelRequest($json['paging']['next'], $channel_id, $op_count, $channel_item_nodes);
       }
       else {
-        //@Todo: completion message + logging.
-//        $node->set('field_json_data', $channel_endpoint_data_string);
+        $episode_ids = array_map(fn ($n) => $n->id(), $channel_item_nodes);
+        $channel_node = $this->etm->getStorage('node')->load($channel_id);
+        $channel_node->set('field_episodes', $episode_ids);
+        $channel_node->save();
+        return $episode_ids;
       }
     }
-
-    return [
-      'episode_ids' => array_map(fn ($n) => $n->id(), $channel_item_nodes ?? []),
-      'json_data' => $channel_endpoint_data_strings,
-      'op_count' => $op_count,
-
-    ];
+    else {
+      $this->logger->warning('Channel API request failed: ' . $endpoint);
+    }
+    return [];
   }
 
   private function processChannelItemData(array $data): ?EntityInterface {
@@ -223,9 +229,6 @@ class IbaseApiService {
     }
   }
 
-  /**
-   * @throws \Exception
-   */
   private function getChannelItemImage(string $url, $name = '', $slug = ''): ?EntityInterface {
     try {
       $media_storage = $this->etm->getStorage('media');
@@ -275,6 +278,7 @@ class IbaseApiService {
       'field_tags' => [$data['channel_id']],
       'field_audio' => [$data['audio']],
       'field_media_image' => [$data['image']],
+      'field_json_data' => $this->json->encode($data),
       'uid' => 1,
     ], fn ($e) => $e);
   }
