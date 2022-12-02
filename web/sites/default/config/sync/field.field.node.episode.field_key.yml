@@ -1,15 +1,15 @@
-uuid: e3c8dc3a-ceec-47a7-9c7d-8d7606e4737a
+uuid: e805e9eb-e535-4c11-8396-3bbf23c11396
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_remote_item_slug
+    - field.storage.node.field_key
     - node.type.episode
-id: node.episode.field_remote_item_slug
-field_name: field_remote_item_slug
+id: node.episode.field_key
+field_name: field_key
 entity_type: node
 bundle: episode
-label: 'Remote item slug'
+label: Key
 description: ''
 required: false
 translatable: false

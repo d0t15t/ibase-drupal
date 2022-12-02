@@ -6,16 +6,20 @@ dependencies:
     - field.field.node.episode.body
     - field.field.node.episode.field_audio
     - field.field.node.episode.field_channels
+    - field.field.node.episode.field_color
     - field.field.node.episode.field_duration
     - field.field.node.episode.field_json_data
+    - field.field.node.episode.field_key
+    - field.field.node.episode.field_link
     - field.field.node.episode.field_media_image
     - field.field.node.episode.field_remote_item_created
-    - field.field.node.episode.field_remote_item_key
-    - field.field.node.episode.field_remote_item_slug
     - field.field.node.episode.field_remote_item_updated
+    - field.field.node.episode.field_slug
     - field.field.node.episode.field_tags
     - node.type.episode
   module:
+    - color_field
+    - link
     - media_library
     - path
     - text
@@ -60,6 +64,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_color:
+    type: color_field_widget_default
+    weight: 141
+    region: content
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
   field_duration:
     type: number
     weight: 133
@@ -75,6 +87,22 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_key:
+    type: string_textfield
+    weight: 139
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 138
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_media_image:
     type: media_library_widget
     weight: 134
@@ -83,32 +111,22 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_remote_item_created:
-    type: string_textfield
-    weight: 128
+    type: number
+    weight: 136
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_remote_item_key:
-    type: string_textfield
-    weight: 126
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_remote_item_slug:
-    type: string_textfield
-    weight: 130
-    region: content
-    settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_remote_item_updated:
+    type: number
+    weight: 137
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_slug:
     type: string_textfield
-    weight: 129
+    weight: 140
     region: content
     settings:
       size: 60

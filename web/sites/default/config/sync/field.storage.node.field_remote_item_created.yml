@@ -1,4 +1,4 @@
-uuid: a21c5dd5-0180-4a41-98db-5c8615bad511
+uuid: e35da428-8bed-49a5-9332-31e31bd8faeb
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: node.field_remote_item_created
 field_name: field_remote_item_created
 entity_type: node
-type: string
+type: integer
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

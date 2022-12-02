@@ -1,4 +1,4 @@
-uuid: fb495275-2226-4cb4-a9e2-046535815a7e
+uuid: 0c970358-a830-42c2-8b72-51853f139c70
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,15 @@ id: node.episode.field_remote_item_created
 field_name: field_remote_item_created
 entity_type: node
 bundle: episode
-label: 'Remote item created'
+label: 'Remote Item Created'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

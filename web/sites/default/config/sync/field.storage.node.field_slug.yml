@@ -1,11 +1,11 @@
-uuid: a81b8046-351c-4bad-9575-6057787cb28c
+uuid: 12d0ee22-7203-4287-8733-da98a354dc41
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_remote_item_key
-field_name: field_remote_item_key
+id: node.field_slug
+field_name: field_slug
 entity_type: node
 type: string
 settings:

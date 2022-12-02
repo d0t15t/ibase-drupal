@@ -6,16 +6,20 @@ dependencies:
     - field.field.node.episode.body
     - field.field.node.episode.field_audio
     - field.field.node.episode.field_channels
+    - field.field.node.episode.field_color
     - field.field.node.episode.field_duration
     - field.field.node.episode.field_json_data
+    - field.field.node.episode.field_key
+    - field.field.node.episode.field_link
     - field.field.node.episode.field_media_image
     - field.field.node.episode.field_remote_item_created
-    - field.field.node.episode.field_remote_item_key
-    - field.field.node.episode.field_remote_item_slug
     - field.field.node.episode.field_remote_item_updated
+    - field.field.node.episode.field_slug
     - field.field.node.episode.field_tags
     - node.type.episode
   module:
+    - color_field
+    - link
     - text
     - user
 id: node.episode.default
@@ -46,6 +50,15 @@ content:
     third_party_settings: {  }
     weight: 112
     region: content
+  field_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
   field_duration:
     type: number_integer
     label: above
@@ -62,6 +75,26 @@ content:
     third_party_settings: {  }
     weight: 115
     region: content
+  field_key:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 118
+    region: content
   field_media_image:
     type: entity_reference_entity_view
     label: above
@@ -72,36 +105,30 @@ content:
     weight: 114
     region: content
   field_remote_item_created:
-    type: string
+    type: number_integer
     label: above
     settings:
-      link_to_entity: false
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    weight: 108
-    region: content
-  field_remote_item_key:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 106
-    region: content
-  field_remote_item_slug:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 110
+    weight: 116
     region: content
   field_remote_item_updated:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_slug:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 109
+    weight: 120
     region: content
   field_tags:
     type: entity_reference_label

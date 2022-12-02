@@ -7,13 +7,15 @@ dependencies:
     - field.field.node.episode.body
     - field.field.node.episode.field_audio
     - field.field.node.episode.field_channels
+    - field.field.node.episode.field_color
     - field.field.node.episode.field_duration
     - field.field.node.episode.field_json_data
+    - field.field.node.episode.field_key
+    - field.field.node.episode.field_link
     - field.field.node.episode.field_media_image
     - field.field.node.episode.field_remote_item_created
-    - field.field.node.episode.field_remote_item_key
-    - field.field.node.episode.field_remote_item_slug
     - field.field.node.episode.field_remote_item_updated
+    - field.field.node.episode.field_slug
     - field.field.node.episode.field_tags
     - node.type.episode
   module:
@@ -40,12 +42,14 @@ content:
 hidden:
   field_audio: true
   field_channels: true
+  field_color: true
   field_duration: true
   field_json_data: true
+  field_key: true
+  field_link: true
   field_media_image: true
   field_remote_item_created: true
-  field_remote_item_key: true
-  field_remote_item_slug: true
   field_remote_item_updated: true
+  field_slug: true
   field_tags: true
   langcode: true
