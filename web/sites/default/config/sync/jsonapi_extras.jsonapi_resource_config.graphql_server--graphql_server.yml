@@ -1,0 +1,123 @@
+uuid: c430f11c-2f34-4e86-8332-1e8d62e7785e
+langcode: en
+status: true
+dependencies:
+  module:
+    - graphql
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: graphql_server--graphql_server
+disabled: true
+path: graphql_server/graphql_server
+resourceType: graphql_server--graphql_server
+resourceFields:
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  dependencies:
+    disabled: false
+    fieldName: dependencies
+    publicName: dependencies
+    enhancer:
+      id: ''
+  third_party_settings:
+    disabled: false
+    fieldName: third_party_settings
+    publicName: third_party_settings
+    enhancer:
+      id: ''
+  _core:
+    disabled: false
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+  name:
+    disabled: false
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  label:
+    disabled: false
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+  schema:
+    disabled: false
+    fieldName: schema
+    publicName: schema
+    enhancer:
+      id: ''
+  schema_configuration:
+    disabled: false
+    fieldName: schema_configuration
+    publicName: schema_configuration
+    enhancer:
+      id: ''
+  persisted_queries_settings:
+    disabled: false
+    fieldName: persisted_queries_settings
+    publicName: persisted_queries_settings
+    enhancer:
+      id: ''
+  endpoint:
+    disabled: false
+    fieldName: endpoint
+    publicName: endpoint
+    enhancer:
+      id: ''
+  debug_flag:
+    disabled: false
+    fieldName: debug_flag
+    publicName: debug_flag
+    enhancer:
+      id: ''
+  caching:
+    disabled: false
+    fieldName: caching
+    publicName: caching
+    enhancer:
+      id: ''
+  batching:
+    disabled: false
+    fieldName: batching
+    publicName: batching
+    enhancer:
+      id: ''
+  disable_introspection:
+    disabled: false
+    fieldName: disable_introspection
+    publicName: disable_introspection
+    enhancer:
+      id: ''
+  query_depth:
+    disabled: false
+    fieldName: query_depth
+    publicName: query_depth
+    enhancer:
+      id: ''
+  query_complexity:
+    disabled: false
+    fieldName: query_complexity
+    publicName: query_complexity
+    enhancer:
+      id: ''

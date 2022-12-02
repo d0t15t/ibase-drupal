@@ -49,7 +49,6 @@ module:
   gin_login: 0
   gin_toolbar: 0
   graphql: 0
-  help: 0
   history: 0
   ibase_api: 0
   ibase_media_remote_audio: 0
@@ -90,7 +89,6 @@ module:
   serialization: 0
   settings_tray: 0
   shortcut: 0
-  statistics: 0
   svg_image: 0
   svg_image_responsive: 0
   syslog: 0
@@ -101,7 +99,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   typed_data: 0
   update: 0
   user: 0

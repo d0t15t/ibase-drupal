@@ -1,0 +1,9 @@
+uuid: 4803c971-6b81-4e6d-baac-f5f99cc0d725
+langcode: en
+status: true
+dependencies: {  }
+id: frontend
+label: Frontend
+weight: -8
+is_admin: null
+permissions: {  }

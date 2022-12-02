@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a588fc27bc16bb2a289cef13cf5dfbf",
+    "content-hash": "c782803224725442a830401713886c81",
     "packages": [
         {
             "name": "amazeelabs/silverback_gatsby",
@@ -3693,6 +3693,53 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/gatsby",
                 "issues": "https://www.drupal.org/project/issues/gatsby"
+            }
+        },
+        {
+            "name": "drupal/gatsby_endpoints-gatsby_endpoints",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gatsby_endpoints.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gatsby_endpoints-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "4cde1cb84fc51f6d98f70dfbf304d4fb1e9b093b"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/gatsby_instantpreview": "*",
+                "drupal/jsonapi_extras": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1623622226",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "codekarate",
+                    "homepage": "https://www.drupal.org/user/506260"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/gatsby_endpoints",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gatsby_endpoints"
             }
         },
         {
@@ -11179,6 +11226,7 @@
     "stability-flags": {
         "drupal/config_split": 5,
         "drupal/gatsby": 5,
+        "drupal/gatsby_endpoints-gatsby_endpoints": 15,
         "drupal/geocoder": 10,
         "drupal/gin": 10,
         "drupal/gin_toolbar": 10,
