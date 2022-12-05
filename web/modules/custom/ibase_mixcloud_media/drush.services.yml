@@ -1,0 +1,6 @@
+services:
+  ibase_mixcloud_media.commands:
+    class: \Drupal\ibase_mixcloud_media\Commands\MixcloudMediaCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@ibase_mixcloud_media.service']

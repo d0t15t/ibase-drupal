@@ -53,7 +53,7 @@ module:
   history: 0
   ibase_default_content: 0
   ibase_media_embed: 0
-  ibase_media_embed_mixcloud: 0
+  ibase_mixcloud_media: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0

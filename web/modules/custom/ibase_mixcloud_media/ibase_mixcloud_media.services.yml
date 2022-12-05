@@ -1,0 +1,7 @@
+services:
+  logger.channel.ibase_mixcloud_media:
+    parent: logger.channel_base
+    arguments: [ 'ibase_mixcloud_media' ]
+  ibase_mixcloud_media.service:
+    class: Drupal\ibase_mixcloud_media\Service\MixcloudMediaService
+    arguments: ['@logger.channel.ibase_mixcloud_media', '@messenger', '@entity_type.manager', '@http_client', '@serialization.json', '@file.repository', '@tempstore.shared', '@batch.storage', '@url_generator', '@link_generator']

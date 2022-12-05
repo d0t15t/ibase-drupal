@@ -1,0 +1,11 @@
+{
+    "name": "org/ibase_mixcloud_media",
+    "type": "drupal-drush",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^11"
+            }
+        }
+    }
+}
