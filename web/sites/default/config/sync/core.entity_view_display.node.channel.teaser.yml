@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.channel.body
     - field.field.node.channel.field_api_endpoint
     - field.field.node.channel.field_episodes
+    - field.field.node.channel.field_remote_schema
     - node.type.channel
   module:
     - text
@@ -32,4 +33,5 @@ content:
 hidden:
   field_api_endpoint: true
   field_episodes: true
+  field_remote_schema: true
   langcode: true

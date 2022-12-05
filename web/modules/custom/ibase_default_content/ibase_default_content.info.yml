@@ -1,0 +1,13 @@
+# ibase_default_content
+name: Ibase default content
+type: module
+description: Provides additional functionality for the site.
+package: Custom
+core_version_requirement: ^9 || ^10
+default_content:
+  node:
+    - 7420c2de-053a-4788-9c6a-fa3a82f2ba01
+    - a4013c5d-236f-4e6c-aeb2-3be29572754a
+    - 75de6415-89dc-4d3e-87a3-766d4c78c3c4
+    - 405cd93d-fcaa-4140-818f-deb862114272
+    - 9c3415c1-5a97-4846-9b25-542b132a4293

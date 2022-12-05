@@ -1,0 +1,20 @@
+uuid: 16738ed5-0fc4-4593-9c81-7f3ceedd8c5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_play_count
+field_name: field_play_count
+entity_type: media
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

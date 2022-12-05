@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_episodes
     - node.type.channel
-    - node.type.episode
 id: node.channel.field_episodes
 field_name: field_episodes
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      episode: episode
+    target_bundles: {  }
     sort:
       field: _none
       direction: ASC

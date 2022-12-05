@@ -2,7 +2,7 @@ label: Systemprotokoll
 description: 'Aktuelle Protokollnachrichten'
 display:
   default:
-    display_title: Standard
+    display_title: Default
     display_options:
       title: 'Aktuelle Protokollnachrichten'
       fields:
@@ -38,10 +38,10 @@ display:
       exposed_form:
         options:
           submit_button: Filter
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area:
           admin_label: 'Keine Protokollnachrichten verfügbar.'

@@ -1,0 +1,7 @@
+services:
+  logger.channel.ibase_media_embed_mixcloud:
+    parent: logger.channel_base
+    arguments: [ 'ibase_media_embed_mixcloud' ]
+  ibase_media_embed_mixcloud.service:
+    class: Drupal\ibase_media_embed_mixcloud\Service\EmbedMixcloudService
+    arguments: ['@logger.channel.ibase_media_embed_mixcloud', '@messenger', '@entity_type.manager', '@http_client', '@serialization.json', '@file.repository', '@tempstore.shared', '@batch.storage', '@url_generator', '@link_generator']

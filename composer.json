@@ -31,6 +31,7 @@
         "drupal/config_split_ignore": "^1.9",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-recommended": "^9.4.6",
+        "drupal/default_content": "^2.0@alpha",
         "drupal/default_menu_link": "^1.0",
         "drupal/draggableviews": "^2.0",
         "drupal/entity_browser": "^2.6",

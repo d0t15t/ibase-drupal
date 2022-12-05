@@ -2,16 +2,16 @@ label: 'Neue Benutzer'
 description: 'Zeigt eine Liste der neuesten Benutzerkonten der Website.'
 display:
   default:
-    display_title: Standard
+    display_title: Default
     display_options:
       title: 'Neue Benutzer'
       exposed_form:
         options:
-          submit_button: Anwenden
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
   block_1:
     display_title: 'Neue Benutzer'
     display_options:

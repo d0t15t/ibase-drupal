@@ -1,0 +1,27 @@
+uuid: 34361607-96b3-494f-94a9-9a58b4dd3c27
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_remote_schema
+field_name: field_remote_schema
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: mixcloud
+      label: MixCloud
+    -
+      value: soundcloud
+      label: Soundcloud
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

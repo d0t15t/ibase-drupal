@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file ibase_media_embed.module
+ */
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\media_library\Form\OEmbedForm;
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function ibase_media_embed_media_source_info_alter(array &$sources) {
+  $sources['oembed'] = [
+    'id' => 'oembed',
+    'label' => new TranslatableMarkup('Embed'),
+    'description' => new TranslatableMarkup('Remote embed code or OEmbed.'),
+    'allowed_field_types' => ['string'],
+    'default_thumbnail_filename' => 'no-thumbnail.png',
+    'providers' => ['MixCloud', 'SoundCloud',],
+    'class' => 'Drupal\media\Plugin\media\Source\OEmbed',
+    'forms' => [
+      'media_library_add' => OEmbedForm::class,
+    ],
+    'provider' => 'ibase_media_embed',
+  ];
+}
+
+/**
+ * Implements hook_oembed_resource_data_alter().
+ */
+function ibase_media_embed_oembed_resource_data_alter(array &$data, $url) {
+  if (isset($data['provider_name']) && $data['provider_name'] === 'Mixcloud') {
+    $data['provider_name'] = 'MixCloud';
+  }
+  if (isset($data['image'])) {
+    $data['thumbnail_uri'] = $data['image'];
+  }
+}

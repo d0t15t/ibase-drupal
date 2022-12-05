@@ -2,7 +2,7 @@ label: Startseite
 description: 'Inhalt, der auf der Startseite veröffentlicht ist.'
 display:
   default:
-    display_title: Standard
+    display_title: Default
     display_options:
       pager:
         options:
@@ -17,11 +17,11 @@ display:
             offset_label: Versatz
       exposed_form:
         options:
-          submit_button: Anwenden
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Es wurde noch kein Inhalt für die Startseite erstellt.<br>Lesen Sie das <a target="_blank" href="https://www.drupal.org/de/docs/user_guide/de/index.html"> Benutzerhandbuch</a>, um mehr über das Erstellen von Websites mit Drupal zu erfahren.'

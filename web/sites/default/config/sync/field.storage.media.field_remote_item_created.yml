@@ -1,0 +1,21 @@
+uuid: bac6fa1b-c235-4b9f-a193-672321f99180
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_remote_item_created
+field_name: field_remote_item_created
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

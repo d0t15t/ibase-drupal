@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.channel.body
     - field.field.node.channel.field_api_endpoint
     - field.field.node.channel.field_episodes
+    - field.field.node.channel.field_remote_schema
     - node.type.channel
   module:
+    - options
     - text
     - user
 id: node.channel.default
@@ -37,6 +39,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_remote_schema:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
     region: content
   links:
     settings: {  }

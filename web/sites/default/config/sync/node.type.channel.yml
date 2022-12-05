@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - default_menu_link
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Oembed Channel'
+  default_menu_link:
+    default_menu_link_enabled: false
+name: 'Media Channel'
 type: channel
 description: ''
 help: ''

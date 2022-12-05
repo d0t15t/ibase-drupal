@@ -1,0 +1,29 @@
+uuid: fa41f088-53c9-4317-b76e-c6671047983e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.mixcloud
+    - taxonomy.vocabulary.tags
+id: media.mixcloud.field_tags
+field_name: field_tags
+entity_type: media
+bundle: mixcloud
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

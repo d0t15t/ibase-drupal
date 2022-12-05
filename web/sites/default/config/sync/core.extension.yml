@@ -29,7 +29,9 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  default_content: 0
   draggableviews: 0
+  drush9_batch_processing: 0
   dynamic_page_cache: 0
   editor: 0
   entity_browser: 0
@@ -50,8 +52,9 @@ module:
   gin_toolbar: 0
   graphql: 0
   history: 0
-  ibase_api: 0
-  ibase_media_remote_audio: 0
+  ibase_default_content: 0
+  ibase_media_embed: 0
+  ibase_media_embed_mixcloud: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0

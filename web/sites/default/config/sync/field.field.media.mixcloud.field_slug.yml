@@ -1,0 +1,19 @@
+uuid: 981affd4-8843-438c-9323-1ebb2f497fe4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_slug
+    - media.type.mixcloud
+id: media.mixcloud.field_slug
+field_name: field_slug
+entity_type: media
+bundle: mixcloud
+label: Slug
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

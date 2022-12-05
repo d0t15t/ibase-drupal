@@ -1,0 +1,23 @@
+uuid: 8c750e34-c5f6-4f8e-8711-d35216194b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_repost_count
+    - media.type.mixcloud
+id: media.mixcloud.field_repost_count
+field_name: field_repost_count
+entity_type: media
+bundle: mixcloud
+label: 'Repost count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

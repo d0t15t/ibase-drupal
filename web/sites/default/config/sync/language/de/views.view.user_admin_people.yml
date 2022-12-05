@@ -2,7 +2,7 @@ label: Benutzer
 description: 'Menschen finden und verwalten, die mit Ihrer Website interagieren.'
 display:
   default:
-    display_title: Standard
+    display_title: Default
     display_options:
       title: Benutzer
       fields:
@@ -23,7 +23,7 @@ display:
             future_format: '@interval'
             past_format: '@interval'
         access:
-          label: 'Letzter Zugriff'
+          label: 'Last access'
           settings:
             future_format: '@interval seit'
             past_format: 'Vor @interval'
@@ -45,10 +45,10 @@ display:
       exposed_form:
         options:
           submit_button: Filter
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Keine Personen verfügbar.'

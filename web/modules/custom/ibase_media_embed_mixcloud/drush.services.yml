@@ -1,0 +1,6 @@
+services:
+  ibase_media_embed_mixcloud.commands:
+    class: \Drupal\ibase_media_embed_mixcloud\Commands\IbaseMediaEmbedMixcloudCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@ibase_media_embed_mixcloud.service']
