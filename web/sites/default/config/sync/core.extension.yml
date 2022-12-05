@@ -31,7 +31,6 @@ module:
   dblog: 0
   default_content: 0
   draggableviews: 0
-  drush9_batch_processing: 0
   dynamic_page_cache: 0
   editor: 0
   entity_browser: 0
