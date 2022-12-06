@@ -1,7 +1,0 @@
-services:
-  logger.channel.ibase_api:
-    parent: logger.channel_base
-    arguments: [ 'ibase_api' ]
-  ibase_api.service:
-    class: Drupal\ibase_api\Service\IbaseApiService
-    arguments: ['@logger.channel.ibase_api', '@messenger', '@entity_type.manager', '@http_client', '@serialization.json', '@file.repository', '@batch.storage', '@url_generator', '@link_generator']

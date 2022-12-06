@@ -73,9 +73,9 @@ class MixcloudMediaCommands extends DrushCommands {
             ->setFinishCallback([MixcloudMediaService::class, 'batchProcessEpisodesFinished'])
             ->setErrorMessage(t('Batch has encountered an error.'));
 
-          foreach ($channel_episode_endpoints as $i => $endpoint) {
-//            if ($i > 0) continue;
-            $batchId = $i + 1;
+          foreach ($channel_episode_endpoints as $batchId => $endpoint) {
+            /* @TODO Uncomment for testing */
+//            if ($batchId > 5) continue;
             $batchBuilder->addOperation([MixcloudMediaService::class, 'batchProcessEpisodeEndpoint'], [
               $endpoint,
               $batchId,
@@ -87,7 +87,7 @@ class MixcloudMediaCommands extends DrushCommands {
           $done = drush_backend_batch_process();
 
           $episode_ids = array_map(fn($e)=> $e['id'], $done[0]);
-          $channel->set('field_episodes', $episode_ids);
+          $channel->set('field_mixcloud_media', $episode_ids);
           $channel->save();
 
           $rows = array_map(function ($e) {

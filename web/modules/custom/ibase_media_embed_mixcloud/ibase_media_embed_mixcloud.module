@@ -1,8 +1,0 @@
-<?php
-
-/**
- * @file ibase_media_embed.module
- */
-
-use Drupal\Core\StringTranslation\TranslatableMarkup;
-use Drupal\media_library\Form\OEmbedForm;

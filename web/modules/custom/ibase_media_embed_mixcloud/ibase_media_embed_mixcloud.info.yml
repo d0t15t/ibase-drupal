@@ -1,8 +1,0 @@
-# ibase_media_embed_mixcloud
-name: IBase media embed Mixcloud
-type: module
-description: Provides additional functionality for the site.
-package: Custom
-core_version_requirement: ^9 || ^10
-#dependencies:
-#  - ibase_media_embed

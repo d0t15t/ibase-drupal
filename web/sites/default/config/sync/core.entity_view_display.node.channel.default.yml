@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.channel.body
     - field.field.node.channel.field_api_endpoint
-    - field.field.node.channel.field_episodes
+    - field.field.node.channel.field_mixcloud_media
     - field.field.node.channel.field_remote_schema
     - node.type.channel
   module:
@@ -32,13 +32,14 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_episodes:
-    type: entity_reference_label
+  field_mixcloud_media:
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 107
     region: content
   field_remote_schema:
     type: list_default

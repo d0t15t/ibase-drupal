@@ -1,15 +1,16 @@
-uuid: 966f9b12-9d54-481c-9d16-6cf2b6c7e7a2
+uuid: baa393e0-e799-4811-922a-43a1280c0890
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-id: node.field_episodes
-field_name: field_episodes
+id: node.field_mixcloud_media
+field_name: field_mixcloud_media
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: media
 module: core
 locked: false
 cardinality: -1

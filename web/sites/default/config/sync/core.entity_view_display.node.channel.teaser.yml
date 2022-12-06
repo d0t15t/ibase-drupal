@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.channel.body
     - field.field.node.channel.field_api_endpoint
-    - field.field.node.channel.field_episodes
+    - field.field.node.channel.field_mixcloud_media
     - field.field.node.channel.field_remote_schema
     - node.type.channel
   module:
@@ -32,6 +32,6 @@ content:
     region: content
 hidden:
   field_api_endpoint: true
-  field_episodes: true
+  field_mixcloud_media: true
   field_remote_schema: true
   langcode: true

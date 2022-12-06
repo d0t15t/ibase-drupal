@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.channel.body
     - field.field.node.channel.field_api_endpoint
-    - field.field.node.channel.field_episodes
+    - field.field.node.channel.field_mixcloud_media
     - field.field.node.channel.field_remote_schema
     - node.type.channel
   module:
@@ -40,9 +40,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_episodes:
+  field_mixcloud_media:
     type: entity_reference_autocomplete
-    weight: 125
+    weight: 127
     region: content
     settings:
       match_operator: CONTAINS

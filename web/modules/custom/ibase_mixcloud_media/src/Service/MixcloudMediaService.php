@@ -2,28 +2,37 @@
 
 namespace Drupal\ibase_mixcloud_media\Service;
 
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Component\Serialization\Json;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Batch\BatchStorageInterface;
 use Drupal\Core\Entity\EntityBase;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Routing\UrlGeneratorInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Session\AccountProxy;
 use Drupal\Core\TempStore\SharedTempStore;
 use Drupal\Core\TempStore\SharedTempStoreFactory;
 use Drupal\Core\Utility\LinkGeneratorInterface;
 use Drupal\file\FileRepositoryInterface;
 use Drupal\ibase_media_embed_mixcloud\Commands\IbaseMediaEmbedMixcloudCommands;
+use Exception;
 use GuzzleHttp\ClientInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\String\UnicodeString;
 
 class MixcloudMediaService {
 
   public LoggerInterface $logger;
 
   protected MessengerInterface $messenger;
+
+  protected AccountProxy $currentUser;
 
   protected EntityTypeManagerInterface $etm;
 
@@ -44,6 +53,7 @@ class MixcloudMediaService {
   public function __construct(
     LoggerInterface $logger,
     MessengerInterface $messenger,
+    AccountProxy $currentUser,
     EntityTypeManagerInterface $etm,
     ClientInterface $httpClient,
     Json $json,
@@ -55,6 +65,7 @@ class MixcloudMediaService {
   ) {
     $this->logger = $logger;
     $this->messenger = $messenger;
+    $this->currentUser = $currentUser;
     $this->etm = $etm;
     $this->httpClient = $httpClient;
     $this->json = $json;
@@ -68,8 +79,6 @@ class MixcloudMediaService {
   const NODE_TYPE_CHANNEL = 'channel';
 
   const MEDIA_TYPE_MIXCLOUD = 'mixcloud';
-
-  const MEDIA_TYPE_OEMBED_AUDIO = 'audio_oembed';
 
   const FIELD_LABEL_API_ENDPOINT = 'field_api_endpoint';
 
@@ -90,7 +99,7 @@ class MixcloudMediaService {
           ? $node : NULL;
       } else $this->logger->warning('Invalid or incomplete channel node.');
     }
-    catch (\Exception $e) {
+    catch (Exception $e) {
       $this->logger->error($e->getMessage());
     }
   }
@@ -107,19 +116,28 @@ class MixcloudMediaService {
     return $this->getTempstore()->get($key);
   }
 
+  /**
+   * Recursive function which saves the paged data of a Mixcloud channel / playlist.
+   * @param string $endpoint
+   * @param array $paged_data
+   * @param int $items_count
+   * @param null $store_label
+   * @param false $done
+   * @return string
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   */
   public function saveChannelPagedData(
-   string $endpoint,
-   $paged_data = [],
-   $items_count = 0,
-   $store_label = NULL,
-   $done = FALSE
-  ) {
+    string $endpoint,
+    array  $paged_data = [],
+    int    $items_count = 0,
+    $store_label = NULL,
+    bool $done = FALSE
+  ): string {
     try {
       $store_label = $store_label ?? 'paged_data:' . time();
-//      if ($done) return $store_label; // ???
       $request = $this->httpClient->request('GET', $endpoint);
       if ($request->getStatusCode() === 200) {
-        $this->logger->info('Successfully contacted: ' . $endpoint);
+        $this->logger->info('Success: ' . $endpoint);
         $data = $request->getBody()->getContents();
         $json = $this->json->decode($data);
         if (isset($json['data']) && is_array($json['data'])) {
@@ -140,12 +158,12 @@ class MixcloudMediaService {
         ]);
       }
       return $store_label;
-    } catch (\Exception $e) {
-      throw new \Exception($e->getMessage());
+    } catch (Exception $e) {
+      throw new Exception($e->getMessage());
     }
   }
 
-  public function getChannelEpisodesEndpoints(array $channel_data) {
+  public function getChannelEpisodesEndpoints(array $channel_data): array {
     return array_reduce($channel_data, function ($agg, $page_data) {
       $endpoints = array_map(fn ($d) => $d['url'] ?? NULL, $page_data);
       return array_merge($agg, $endpoints);
@@ -169,9 +187,10 @@ class MixcloudMediaService {
     if ($media) {
       $context['results'][] = ['title' => $media->label(), 'id' => $media->id()];
       // Optional message displayed under the progressbar.
-      $context['message'] = t('Completed episode batch @id: @details', [
-        '@id' => $batchId,
-        '@details' => $name,
+      $context['message'] = t('Completed batch @batchId of episode media @id: @details', [
+        '@batchId' => $batchId,
+        '@id' => $media->id(),
+        '@details' => $endpoint,
       ]);
     }
   }
@@ -196,6 +215,12 @@ class MixcloudMediaService {
     }
   }
 
+  /**
+   * @throws EntityStorageException
+   * @throws InvalidPluginDefinitionException
+   * @throws PluginNotFoundException
+   * @throws Exception
+   */
   public function processEpisodeData(array $data): ?EntityInterface {
     if ($existing_channel_item = $this->getExistingEpisode($data['endpoint'] ?? '')) {
       //@Todo: response for existing nodes. Test for update time, etc.
@@ -230,12 +255,19 @@ class MixcloudMediaService {
     }
   }
 
+  /**
+   * @throws InvalidPluginDefinitionException
+   * @throws PluginNotFoundException
+   */
   private function getExistingEpisode(string $url): ?EntityBase {
     $items = $this->etm->getStorage('media')
       ->loadByProperties([$this::FIELD_LABEL_EPISODE_ENDPOINT => $url]);
     return sizeof($items) ? reset($items) : NULL;
   }
 
+  /**
+   * @throws Exception
+   */
   private function getEpisodeTag(array $tag_data): EntityInterface {
     try {
       $taxonomy_storage = $this->etm->getStorage('taxonomy_term');
@@ -255,30 +287,8 @@ class MixcloudMediaService {
       else
         return reset($items);
     }
-    catch (\Exception $exception) {
-      throw new \Exception($exception->getMessage());
-    }
-  }
-
-  private function getChannelItemAudio(string $url): EntityInterface {
-    try {
-      $media_storage = $this->etm->getStorage('media');
-      $items = $media_storage->loadByProperties([$this::FIELD_LABEL_MEDIA_OEMBED_REMOTE_URL => $url]);
-      if (empty($items)) {
-        $values = [
-          $this::FIELD_LABEL_MEDIA_OEMBED_REMOTE_URL => $url,
-          'bundle' => $this::MEDIA_TYPE_OEMBED_AUDIO,
-          'uid' => 1,
-        ];
-        $media = $media_storage->create($values);
-        $media->save();
-        return $media;
-      }
-      else
-        return reset($items);
-    }
-    catch (\Exception $exception) {
-      throw new \Exception($exception->getMessage());
+    catch (Exception $exception) {
+      throw new Exception($exception->getMessage());
     }
   }
 
@@ -313,32 +323,35 @@ class MixcloudMediaService {
       else
         return reset($items);
     }
-    catch (\Exception $exception) {
-      throw new \Exception($exception->getMessage());
+    catch (Exception $exception) {
+      throw new Exception($exception->getMessage());
     }
   }
 
+  /**
+   * Returns modified embed code to display the large-format "Picture widget" format of the mixcloud iframe.
+   * @TODO create settings to choose which widget is enforced.
+   */
   private function getEpisodeEmbedCode(string $url): string {
     $endpoint = 'https://www.mixcloud.com/oembed/?url=' . $url;
     $response = $this->httpClient->request('GET', $endpoint);
     $body = $response->getBody()->getContents();
     $json = $this->json->decode($body);
-    $embed = $json['embed'] ?? '';
-    $mod1 = str_replace('height="120"', 'height="600"', $embed);
-    $mod2 = str_replace('&amp;hide_cover=1', '', $mod1);
-    return $mod2;
+    $embed_code = new UnicodeString($json['embed'] ?? '');
+    return $embed_code->replace('height="120"', 'height="600"')
+      ->replace('&amp;hide_cover=1', '');
   }
 
-  private function getMappedChannelItemValues(array $data) {
-    return array_filter([
+  private function getMappedChannelItemValues(array $data): array {
+    return [
       'bundle' => $this::MEDIA_TYPE_MIXCLOUD,
       'name' => $data['name'] ?? t('Unknown title'),
       $this::FIELD_LABEL_EPISODE_ENDPOINT => $data['endpoint'],
       'field_link' => $data['url'],
-      'field_remote_item_created' => $data['created_time'] ?? NULL,
-      'field_remote_item_updated' => $data['updated_time'] ?? NULL,
-      'field_slug' => $data['slug'] ?? NULL,
-      'field_key' => $data['key'] ?? NULL,
+      'field_remote_item_created' => $data['created_time'],
+      'field_remote_item_updated' => $data['updated_time'],
+      'field_slug' => $data['slug'],
+      'field_key' => $data['key'],
       'field_duration' => $data['audio_length'],
       'field_favorite_count' => $data['favorite_count'],
       'field_comments_count' => $data['comment_count'],
@@ -352,8 +365,8 @@ class MixcloudMediaService {
       'field_embed_code' => $data['embed_code'],
       'field_color' => $data['picture_primary_color'],
       'field_description' => $data['description'],
-      'uid' => 1,
-    ], fn ($e) => $e);
+      'uid' => $this->currentUser->id(),
+    ];
   }
 
 

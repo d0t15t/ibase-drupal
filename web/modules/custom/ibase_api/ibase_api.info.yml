@@ -1,5 +1,0 @@
-name: ibase_api
-type: module
-description: API functionality.
-package: Custom
-core_version_requirement: ^9 || ^10
