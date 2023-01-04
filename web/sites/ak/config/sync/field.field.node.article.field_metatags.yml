@@ -1,0 +1,25 @@
+uuid: efb3e17e-241b-4106-8a08-376bfbfd2189
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.article
+  module:
+    - field_config_cardinality
+    - metatag
+third_party_settings:
+  field_config_cardinality:
+    cardinality_config: '1'
+id: node.article.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: article
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

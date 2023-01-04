@@ -1,0 +1,12 @@
+uuid: 2ebe7b3b-181e-49f6-8e17-2140c8f89c52
+langcode: en
+status: true
+dependencies: {  }
+id: website_feedback
+label: Contact
+recipients:
+  - atelierhof-kreuzberg@t-online.de
+reply: ''
+weight: 0
+message: ''
+redirect: ''

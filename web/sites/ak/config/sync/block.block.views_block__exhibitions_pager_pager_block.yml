@@ -1,0 +1,32 @@
+uuid: f4a24362-1a6c-45af-9fea-59440e07be66
+langcode: de
+status: true
+dependencies:
+  config:
+    - views.view.exhibitions_pager
+  module:
+    - node
+    - views
+  theme:
+    - ak
+id: views_block__exhibitions_pager_pager_block
+theme: ak
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:exhibitions_pager-pager_block'
+settings:
+  id: 'views_block:exhibitions_pager-pager_block'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article

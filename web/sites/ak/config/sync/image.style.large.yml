@@ -1,0 +1,17 @@
+uuid: a459fe95-facd-4f5e-b7f5-2fb208fd0b00
+langcode: de
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: J2n0RpFzS0-bgSyxjs6rSdgxB1rb-bTAgqywNx_964M
+name: large
+label: large
+effects:
+  da93137b-2069-4b30-8800-4eefcc248cb5:
+    uuid: da93137b-2069-4b30-8800-4eefcc248cb5
+    id: image_scale
+    weight: 0
+    data:
+      width: 900
+      height: 700
+      upscale: false

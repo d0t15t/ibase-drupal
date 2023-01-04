@@ -1,0 +1,18 @@
+uuid: cbc0a750-6e96-451d-9aa9-03c5039690e0
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.metatag
+field_name: metatag
+entity_type: node
+bundle: article
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

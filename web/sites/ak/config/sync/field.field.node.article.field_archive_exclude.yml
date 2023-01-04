@@ -1,0 +1,23 @@
+uuid: 33af1e6c-e31d-4e2f-900b-6960314c6793
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archive_exclude
+    - node.type.article
+id: node.article.field_archive_exclude
+field_name: field_archive_exclude
+entity_type: node
+bundle: article
+label: 'Exclude from archive'
+description: 'Check this to exclude the item from the archive.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: ''
+  off_label: ''
+field_type: boolean
