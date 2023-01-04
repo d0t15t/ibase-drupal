@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the ak theme.
+ */
+/**
+ * Implements hook_theme().
+ */
+function ak_theme($existing, $type, $theme, $path) {
+  return [
+    'exhibition_years' => [
+      'variables' => [
+        'years' => [],
+        'title' => [],
+        'current' => [],
+      ],
+      'template' => 'element/exhibition-years',
+    ],
+  ];
+}
+
+function ak_preprocess_html(&$vars) {
+  _ak_theme_set_global_vars($vars);
+}
+
+function ak_preprocess_page(&$vars) {
+  _ak_theme_set_global_vars($vars);
+}
+
+function ak_preprocess_block(&$vars) {
+  _ak_theme_set_global_vars($vars);
+  switch ($vars["elements"]["#id"]) {
+    case 'description':
+
+      $t=1;
+      $vars['block_body'] = isset($vars["elements"]["content"]["#block_content"]->get('body')->first()->getValue()['value'])
+        ? [
+          '#type' => 'markup',
+          '#markup' => $vars["elements"]["content"]["#block_content"]->get('body')->first()->getValue()['value'],
+        ]
+        : NULL;
+      break;
+  }
+}
+
+function ak_preprocess_node(&$vars) {
+  _ak_theme_set_global_vars($vars);
+}
+
+function _ak_theme_set_global_vars(&$vars) {
+  $path = \Drupal::service('path.current')->getPath();
+  $vars['path'] = $path;
+  $is_frontpage = $path === \Drupal::config('system.site')->get('page.front');
+  $vars['is_frontpage'] = $is_frontpage;
+}

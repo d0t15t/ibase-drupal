@@ -1,0 +1,100 @@
+/*!* Header layout *!*/
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  /*max-width: var(--breakpoint-large);*/
+  margin: auto;
+}
+
+.layout-container .layout-content {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.layout-container nav.menu--main {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.layout-container main .region-content {
+  border-bottom: 1px solid black;
+}
+
+.layout-container main .region-breadcrumb {
+  border-bottom: 1px solid black;
+}
+
+@media only screen and (min-width: 992px) {
+  .layout-container main {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .layout-container main aside {
+    flex: 1;
+    padding: 0;
+  }
+
+  .layout-container main .region-content{
+    border-bottom: 0;
+  }
+
+  .layout-container header .region,
+  .layout-container main,
+  .layout-container .menu--main .inner {
+    max-width: var(--breakpoint-large);
+    margin: 0 auto;
+  }
+}
+
+/*.layout-container header {*/
+/*  padding: var(--spacing-layout);*/
+/*  padding-bottom: 0;*/
+/*  position: sticky;*/
+/*  top: 0;*/
+/*}*/
+
+/*#block-ak-breadcrumbs {*/
+/*  display: none;*/
+/*}*/
+
+/*.layout-container .region-primary-menu {*/
+/*  padding: var(--spacing-layout) 0;*/
+/*  font-size: var(--font-size--footer);*/
+/*  letter-spacing: var(--letter-spacing--headline);*/
+/*  font-weight: bold;*/
+/*  position: fixed;*/
+/*  left: 0;*/
+/*  bottom: 0;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.layout-container .region-primary-menu nav {*/
+/*  max-width: 960px;*/
+/*  margin: auto;*/
+/*}*/
+
+/*.layout-container main {*/
+/*  display: flex;*/
+/*  gap: var(--spacing-layout);*/
+/*  padding-right: var(--spacing-layout);*/
+/*  padding-bottom: calc(var(--spacing-layout) * 5);*/
+/*}*/
+
+/*.layout-container main .layout-content {*/
+/*  width: calc(100% / 3 * 2);*/
+/*}*/
+
+/*.layout-container main aside {*/
+/*  position: sticky;*/
+/*  top: 0;*/
+/*  width: calc(100% / 3);*/
+/*  !*padding: var(--spacing-layout);*!*/
+/*  !*padding-top: 0;*!*/
+/*}*/
+

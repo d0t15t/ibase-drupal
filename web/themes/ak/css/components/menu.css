@@ -1,0 +1,41 @@
+ul, ul.menu {
+  margin: 0;
+}
+
+nav.menu--main {
+  padding: var(--spacing-layout--sm) var(--spacing-layout);
+  background-color: black;
+  color: white;
+}
+
+nav.menu--main ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.menu--main ul li.menu-item {
+  padding-top: 0;
+  letter-spacing: 3px;
+}
+
+nav.menu--main ul li.menu-item a {
+  line-height: 0;
+}
+
+nav.menu--main ul li.menu-item a.is-active {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+nav.menu--main ul li.menu-item a:hover {
+  text-decoration: underline;
+}
+
+nav.menu--main ul li + li {
+  padding-left: var(--spacing-layout);
+}
+
+nav.menu--main ul li + li:before {
+  /*content: '|';*/
+  /*padding-right: var(--spacing-layout--sm);*/
+}

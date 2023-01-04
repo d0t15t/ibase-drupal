@@ -36,7 +36,6 @@ web/index.php
 web/modules/README.txt
 web/profiles/
 # web/sites/
-web/themes/
 web/update.php
 web/web.config
 web/.ht.router.php

@@ -1,0 +1,46 @@
+
+article.node .node__content {
+  padding: 0 var(--spacing-layout) var(--spacing-layout) var(--spacing-layout);
+}
+
+@media only screen and (min-width: 992px) {
+  article.node .node__content {
+    padding: 0;
+  }
+}
+
+article.node--view-mode-teaser + article {
+  margin-top: var(--spacing-layout);
+}
+
+article.node--view-mode-teaser + article.node--view-mode-teaser {
+  border-top: 1px solid black;
+}
+
+article.node--view-mode-teaser h4 a {
+  position: absolute;
+  margin: 10px;
+  background-color: white;
+  padding: 5px 10px;
+}
+
+article.node--type-article img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+article.node--type-article .field--name-field-dates {
+  margin-top: var(--spacing-layout);
+}
+
+article.node .node__links li {
+  padding: 0;
+}
+article.node--type-article .node__content .field--type-image {
+  padding-top: var(--spacing-layout);
+}
+
+article.node--type-article .node__content .field--type-image > *:first-child {
+  display: none;
+}

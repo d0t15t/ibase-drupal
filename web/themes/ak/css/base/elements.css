@@ -1,0 +1,51 @@
+:root {
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-layout--sm: 10px;
+  --spacing-layout: 18px;
+  --spacing-layout--lg: 36px;
+
+  --font-size--headline: 2em;
+  --font-size--footer: 2em;
+  /*--font-size--headline: 3em;*/
+  /*--font-size--footer: 2em;*/
+
+  --breakpoint-large: 992px;
+
+  --letter-spacing--headline: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.5em;
+  font-size:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+  line-height: 1em;
+}
+
+
+/*header a, header a:link, header a:visited,*/
+/*nav a, nav a:link, nav a:visited,*/
+/*footer a, footer a:link, footer a:visited,*/
+/*main a, main a:link, main a:visited,*/
+a, a:link, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main a, main a:link, main a:visited {
+  text-decoration: underline;
+}
+
+main a:hover {
+  text-decoration: none;
+}
