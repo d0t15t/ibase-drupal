@@ -67,6 +67,7 @@
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.7",
         "drupal/remote_stream_wrapper": "^2.0",
+        "drupal/shield": "^1.7",
         "drupal/shopify": "^1.0@alpha",
         "drupal/svg_image": "^1.16",
         "drupal/swiper_formatter": "^1.0",
