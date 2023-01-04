@@ -1,0 +1,53 @@
+uuid: 66f7f918-2214-4f3f-812e-a07c883ce8db
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_statistics_node_counter
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node counter'
+source:
+  plugin: node_counter
+process:
+  nid:
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_node_complete_article
+        - upgrade_d7_node_complete_page
+        - upgrade_d7_node_complete_panel
+      source: nid
+    -
+      plugin: node_complete_node_lookup
+    -
+      plugin: skip_on_empty
+      method: row
+  totalcount:
+    -
+      plugin: get
+      source: totalcount
+  daycount:
+    -
+      plugin: get
+      source: daycount
+  timestamp:
+    -
+      plugin: get
+      source: timestamp
+destination:
+  plugin: node_counter
+migration_dependencies:
+  required: {  }
+  optional:
+    - upgrade_d7_node_complete_article
+    - upgrade_d7_node_complete_page
+    - upgrade_d7_node_complete_panel
+    - upgrade_d7_node_complete_article
+    - upgrade_d7_node_complete_page
+    - upgrade_d7_node_complete_panel

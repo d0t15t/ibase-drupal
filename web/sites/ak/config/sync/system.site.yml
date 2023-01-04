@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: de
+uuid: 089ef606-f496-4aff-b5c5-2d41ec59752e
+name: 'Atelierhof Kreuzberg'
+mail: atelierhof-kreuzberg@t-online.de
+slogan: 'Gemeinnütziger Ausstellungsraum und Atelierhof in Berlin Kreuzberg seit 2008.'
+page:
+  403: ''
+  404: ''
+  front: /upcoming
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: de

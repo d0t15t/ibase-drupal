@@ -1,0 +1,46 @@
+_core:
+  default_config_hash: STRgdpOYmFpN-9l0BzKctVMbBhaWxC-IFx91A65X3-M
+id: null
+label: null
+description: null
+enabled: true
+source: remote
+autoHeight: true
+width: null
+height: null
+observer: false
+direction: horizontal
+effect: slide
+loop: false
+rewind: false
+centeredSlides: false
+speed: 300
+slidesPerView: 1
+loopedSlides: 1
+noSwipingSelector: '.no-swipe, button, input'
+grabCursor: false
+cssMode: false
+autoplay:
+  enabled: false
+  delay: 4000
+  disableOnInteraction: true
+  pauseOnMouseEnter: false
+  reverseDirection: false
+  stopOnLastSlide: false
+  waitForTransition: true
+navigation:
+  enabled: false
+  hideOnClick: false
+pagination:
+  enabled: false
+  type: bullets
+  dynamicBullets: false
+  clickable: false
+lazy:
+  enabled: false
+  checkInView: false
+  loadOnTransitionStart: false
+  loadPrevNext: false
+  loadPrevNextAmount: 1
+  scrollingElement: window
+langcode: de

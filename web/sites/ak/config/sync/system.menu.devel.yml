@@ -1,0 +1,8 @@
+uuid: 2ac151bb-9fff-4de4-853b-eb078ea12529
+langcode: en
+status: true
+dependencies: {  }
+id: devel
+label: Development
+description: 'Development link'
+locked: false

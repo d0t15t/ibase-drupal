@@ -1,0 +1,8 @@
+uuid: f76c51f1-d696-45e0-bf02-c5a7179d8f19
+langcode: en
+status: true
+dependencies: {  }
+name: Artists
+vid: tags
+description: 'Use tags to group articles on similar topics into categories.'
+weight: 0

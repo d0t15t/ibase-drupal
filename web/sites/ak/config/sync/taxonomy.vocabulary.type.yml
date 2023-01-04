@@ -1,0 +1,8 @@
+uuid: 9849f2e7-9333-4e92-bb98-b9c370c35d0e
+langcode: en
+status: true
+dependencies: {  }
+name: Type
+vid: type
+description: 'Is this post an exhibition, news, etc.'
+weight: 0
