@@ -27,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 2
     region: content
     settings:
       rows: 9
@@ -50,7 +50,7 @@ content:
     third_party_settings: {  }
   field_dates:
     type: daterange_datelist
-    weight: 2
+    weight: 1
     region: content
     settings:
       increment: 15
@@ -67,7 +67,7 @@ content:
     third_party_settings: {  }
   field_metatags:
     type: metatag_firehose
-    weight: 51
+    weight: 14
     region: content
     settings:
       sidebar: true
@@ -75,7 +75,7 @@ content:
     third_party_settings: {  }
   field_type:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -85,34 +85,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 13
+    weight: 12
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 9
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -141,7 +141,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
