@@ -2,14 +2,12 @@
 .layout-container {
   display: flex;
   flex-direction: column;
-  /*max-width: var(--breakpoint-large);*/
   margin: auto;
 }
 
 .layout-container .layout-content {
   max-width: 500px;
-  margin: auto;
-  margin-bottom: 50px;
+  margin: auto auto;
 }
 
 .layout-container nav.menu--main {
@@ -29,6 +27,11 @@
 }
 
 @media only screen and (min-width: 992px) {
+
+  .region-secondary-menu {
+    margin-top: var(--spacing-layout);
+  }
+
   .layout-container main {
     display: flex;
     align-items: stretch;
@@ -46,10 +49,16 @@
 
   .layout-container header .region,
   .layout-container main,
-  .layout-container .menu--main .inner {
+  .layout-container .menu--main .inner,
+  .layout-container .region-secondary-menu > * {
     max-width: var(--breakpoint-large);
     margin: 0 auto;
   }
+
+  .layout-container .layout-content {
+    margin-bottom: 50px;
+  }
+
 }
 
 /*.layout-container header {*/

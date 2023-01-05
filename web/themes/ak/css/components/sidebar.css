@@ -14,7 +14,8 @@ aside.layout-sidebar-first .block + .block {
 
 @media only screen and (min-width: 992px) {
   aside.layout-sidebar-first .block > * {
-    margin: var(--spacing-layout) 0;
+    /*margin: var(--spacing-layout) 0;*/
+    margin: 0;
   }
 
   aside.layout-sidebar-first .block + .block {

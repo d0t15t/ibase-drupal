@@ -1,4 +1,3 @@
-{% set h = is_frontpage == true ? 'h1' : 'h2' %}
 {% if site_logo %}
   <a href="{{ path('<front>') }}" rel="home" class="site-logo">
     <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
@@ -8,11 +7,11 @@
   {% if is_frontpage %}
       <h1>{{ site_name }}</h1>
     {% else %}
-      <{{ h }}><a href="{{ path('<front>') }}" rel="home">
-      {{ site_name }}
-      </a></{{ h }}>
+      <h2>
+        <a href="{{ path('<front>') }}" rel="home">{{ site_name }}</a>
+      </h2>
     {% endif %}
 {% endif %}
-{% if site_slogan %}
-  <div class="site-slogan">{{ site_slogan }}</div>
+{% if site_slogan and is_frontpage %}
+  <h2 class="site-slogan">{{ site_slogan }}</h2>
 {% endif %}

@@ -35,7 +35,23 @@ nav.menu--main ul li + li {
   padding-left: var(--spacing-layout);
 }
 
-nav.menu--main ul li + li:before {
-  /*content: '|';*/
-  /*padding-right: var(--spacing-layout--sm);*/
+.region-secondary-menu ul {
+  margin: 0;
+  border-bottom: 1px solid grey;
+  max-width: 500px;
+}
+
+.region-secondary-menu ul li a,
+.region-secondary-menu ul li a:link,
+.region-secondary-menu ul li a:visited {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  background-color: grey;
+  transition: all 50ms;
+}
+
+.region-secondary-menu ul li a:hover {
+  background-color: rgba(0,0,255,0.3);
+  color: black;
 }
