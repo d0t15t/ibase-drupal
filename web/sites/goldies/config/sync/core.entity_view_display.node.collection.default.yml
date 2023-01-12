@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.collection.field_media
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_products
+    - field.field.node.collection.field_tags
     - node.type.collection
   module:
     - text
@@ -36,6 +37,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

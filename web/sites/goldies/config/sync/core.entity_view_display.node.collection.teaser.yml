@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.collection.field_media
     - field.field.node.collection.field_metatags
     - field.field.node.collection.field_products
+    - field.field.node.collection.field_tags
     - node.type.collection
   module:
     - text
@@ -42,4 +43,5 @@ hidden:
   field_media: true
   field_metatags: true
   field_products: true
+  field_tags: true
   search_api_excerpt: true
