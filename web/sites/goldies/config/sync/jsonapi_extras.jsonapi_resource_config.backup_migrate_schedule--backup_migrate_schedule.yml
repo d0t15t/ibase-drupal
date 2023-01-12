@@ -1,0 +1,101 @@
+uuid: 8185b6b8-fce4-42e8-acee-0f99e45da152
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate
+id: backup_migrate_schedule--backup_migrate_schedule
+disabled: true
+path: backup_migrate_schedule/backup_migrate_schedule
+resourceType: backup_migrate_schedule--backup_migrate_schedule
+resourceFields:
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  dependencies:
+    disabled: false
+    fieldName: dependencies
+    publicName: dependencies
+    enhancer:
+      id: ''
+  third_party_settings:
+    disabled: false
+    fieldName: third_party_settings
+    publicName: third_party_settings
+    enhancer:
+      id: ''
+  _core:
+    disabled: false
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  label:
+    disabled: false
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+  enabled:
+    disabled: false
+    fieldName: enabled
+    publicName: enabled
+    enhancer:
+      id: ''
+  keep:
+    disabled: false
+    fieldName: keep
+    publicName: keep
+    enhancer:
+      id: ''
+  period:
+    disabled: false
+    fieldName: period
+    publicName: period
+    enhancer:
+      id: ''
+  cron:
+    disabled: false
+    fieldName: cron
+    publicName: cron
+    enhancer:
+      id: ''
+  source_id:
+    disabled: false
+    fieldName: source_id
+    publicName: source_id
+    enhancer:
+      id: ''
+  destination_id:
+    disabled: false
+    fieldName: destination_id
+    publicName: destination_id
+    enhancer:
+      id: ''
+  settings_profile_id:
+    disabled: false
+    fieldName: settings_profile_id
+    publicName: settings_profile_id
+    enhancer:
+      id: ''

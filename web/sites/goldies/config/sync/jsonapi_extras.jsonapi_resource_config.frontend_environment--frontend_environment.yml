@@ -1,13 +1,13 @@
-uuid: 59738633-b6d0-4ba9-b301-17d36d28496f
+uuid: 398a21ba-f405-4506-a429-95fac08f79e4
 langcode: en
 status: true
 dependencies:
   module:
-    - metatag
-id: metatag_defaults--metatag_defaults
-disabled: false
-path: metatag_defaults/metatag_defaults
-resourceType: metatag_defaults--metatag_defaults
+    - build_hooks
+id: frontend_environment--frontend_environment
+disabled: true
+path: frontend_environment/frontend_environment
+resourceType: frontend_environment--frontend_environment
 resourceFields:
   uuid:
     disabled: false
@@ -57,9 +57,39 @@ resourceFields:
     publicName: label
     enhancer:
       id: ''
-  tags:
+  weight:
     disabled: false
-    fieldName: tags
-    publicName: tags
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+  provider:
+    disabled: false
+    fieldName: provider
+    publicName: provider
+    enhancer:
+      id: ''
+  plugin:
+    disabled: false
+    fieldName: plugin
+    publicName: plugin
+    enhancer:
+      id: ''
+  settings:
+    disabled: false
+    fieldName: settings
+    publicName: settings
+    enhancer:
+      id: ''
+  url:
+    disabled: false
+    fieldName: url
+    publicName: url
+    enhancer:
+      id: ''
+  deployment_strategy:
+    disabled: false
+    fieldName: deployment_strategy
+    publicName: deployment_strategy
     enhancer:
       id: ''

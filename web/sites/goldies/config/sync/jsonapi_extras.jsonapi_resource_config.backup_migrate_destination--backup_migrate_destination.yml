@@ -1,13 +1,13 @@
-uuid: 59738633-b6d0-4ba9-b301-17d36d28496f
+uuid: dda434e4-c8ef-44c2-8f1a-9fe40a420a70
 langcode: en
 status: true
 dependencies:
   module:
-    - metatag
-id: metatag_defaults--metatag_defaults
-disabled: false
-path: metatag_defaults/metatag_defaults
-resourceType: metatag_defaults--metatag_defaults
+    - backup_migrate
+id: backup_migrate_destination--backup_migrate_destination
+disabled: true
+path: backup_migrate_destination/backup_migrate_destination
+resourceType: backup_migrate_destination--backup_migrate_destination
 resourceFields:
   uuid:
     disabled: false
@@ -57,9 +57,15 @@ resourceFields:
     publicName: label
     enhancer:
       id: ''
-  tags:
+  type:
     disabled: false
-    fieldName: tags
-    publicName: tags
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  config:
+    disabled: false
+    fieldName: config
+    publicName: config
     enhancer:
       id: ''
