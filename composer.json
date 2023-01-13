@@ -159,6 +159,9 @@
             "drupal/core": {
                 "Add a hook to modify oEmbed resource data: https://www.drupal.org/project/drupal/issues/3042423": "https://www.drupal.org/files/issues/2022-12-15/3042423-68.patch",
                 "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2022-12-14/2671162-9.5.x-116.patch"
+            },
+            "drupal/metatag": {
+                "Support JSON API, REST, GraphQL and custom normalizations: https://www.drupal.org/project/metatag/issues/2945817": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
             }
         },
         "merge-plugin": {
