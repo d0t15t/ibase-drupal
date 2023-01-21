@@ -1,0 +1,11 @@
+{
+    "name": "org/ibase_gatsby_deploy",
+    "type": "drupal-drush",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^11"
+            }
+        }
+    }
+}

@@ -23,6 +23,7 @@
         "drupal/allowed_formats": "^1.4",
         "drupal/antibot": "^2.0",
         "drupal/backup_migrate": "^5.0",
+        "drupal/batch_resize_image": "^2.0",
         "drupal/build_hooks": "^3.3",
         "drupal/change_author_action": "^1.0",
         "drupal/chosen": "^3.0",

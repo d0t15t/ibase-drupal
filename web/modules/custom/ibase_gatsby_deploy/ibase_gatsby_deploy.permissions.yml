@@ -1,0 +1,8 @@
+ibase_gatsby_deploy build start:
+  title: 'Administer ibase_gatsby_deploy configuration'
+  description: 'Deploy with drush .'
+  restrict access: true
+ibase_gatsby_deploy administer settings:
+  title: 'Administer ibase_gatsby_deploy settings'
+  description: 'Access the form at "/admin/config/system/gatsby-deploy".'
+  restrict access: true

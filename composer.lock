@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "640082e27dbca1fd4af5e15088e3abac",
+    "content-hash": "d2f546ca36205fd13038018b4b21f646",
     "packages": [
         {
             "name": "amazeelabs/silverback_gatsby",
@@ -1969,6 +1969,67 @@
                 "source": "https://git.drupalcode.org/project/backup_migrate",
                 "issues": "https://www.drupal.org/project/issues/backup_migrate",
                 "slack": "https://drupal.slack.com/messages/C7C4M4QJV/details/"
+            }
+        },
+        {
+            "name": "drupal/batch_resize_image",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/batch_resize_image.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/batch_resize_image-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "fbeedb9e896bb249202d14c5352c4e8af11ca678"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1661152869",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "gaurav.kapoor",
+                    "homepage": "https://www.drupal.org/user/3495331"
+                },
+                {
+                    "name": "hkirsman",
+                    "homepage": "https://www.drupal.org/user/1860980"
+                },
+                {
+                    "name": "jimyhuang",
+                    "homepage": "https://www.drupal.org/user/26666"
+                },
+                {
+                    "name": "junsuwhy",
+                    "homepage": "https://www.drupal.org/user/2761079"
+                },
+                {
+                    "name": "poliphilop",
+                    "homepage": "https://www.drupal.org/user/2686263"
+                }
+            ],
+            "description": "A easy way to resize images in files folder.",
+            "homepage": "https://www.drupal.org/project/batch_resize_image",
+            "support": {
+                "source": "http://cgit.drupalcode.org/batch_resize_image",
+                "issues": "https://www.drupal.org/project/issues/batch_resize_image"
             }
         },
         {
@@ -11868,5 +11929,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

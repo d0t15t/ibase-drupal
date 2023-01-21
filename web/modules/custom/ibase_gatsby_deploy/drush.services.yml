@@ -1,0 +1,5 @@
+services:
+  ibase_gatsby_deploy.commands:
+    class: \Drupal\ibase_gatsby_deploy\Commands\IbaseGatsbyDeployCommands
+    tags:
+      - { name: drush.command }
