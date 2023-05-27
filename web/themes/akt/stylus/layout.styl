@@ -1,96 +1,68 @@
 @require 'vars'
 
 .layout-container
-  //position: relative;
-  //display: flex;
-  //flex-direction: column;
 
-header
-  text-align center;
-  text-transform uppercase;
-  margin-top: $spacing_layout--md;
-  //margin-bottom: $spacing_layout--sm;
-  @media $up_tablet
-    margin-bottom: $spacing_layout--md
+  nav.menu--main
+    padding-bottom: $spacing_layout--xsm;
 
-  .region-header
-    //display flex
-    //flex-direction column-reverse
+    ul
+      padding 0
+      list-style none
+      display: flex;
+      justify-content: center;
+      gap: $spacing_layout--sm;
 
-    h1
-      border-bottom 2px solid
-      display inline-block
-      padding-bottom $spacing_layout--xsm
-      margin-bottom $spacing_layout--sm
+      @media $up_tablet
+        justify-content unset
+        flex-direction column
+        margin-bottom $spacing_layout--md
 
-  @media $up_tablet
-    text-align unset
+      li
+        a, a:link, a:visited
+          //color: $color_black;
 
+  aside.layout-sidebar-first
+    padding-bottom $spacing_layout--lg
+    min-width 300px
 
-    //@media $up_tablet
-    //flex-direction column
+    .region
+      nav.pager, .block
+        padding 0 $spacing_layout--md
+        //background-color red
 
-nav.menu--main
-  padding-bottom: $spacing_layout--xsm;
+      .view-exhibitions-pager, .block-views-pager
+        padding 0
+        nav.pager
+          @extend .base--pager-block
+          p
+            margin 0
 
-  ul
-    padding 0
-    list-style none
-    display: flex;
-    justify-content: center;
-    gap: $spacing_layout--sm;
+  main
+    .block-system-main-block
+      margin-bottom $spacing_layout--md
+      padding-bottom $spacing_layout--md
+      border-bottom 1px solid
 
     @media $up_tablet
-      justify-content unset
-      flex-direction column
-      margin-bottom $spacing_layout--md
+      display flex
+      flex-direction row-reverse
+      justify-content left
 
-    li
-      a, a:link, a:visited
-        //color: $color_black;
+      aside.layout-sidebar-first
+        width 33%
 
-aside.layout-sidebar-first
-  padding-bottom $spacing_layout--lg
-  min-width 300px
-
-  .region
-    nav.pager, .block
-      padding 0 $spacing_layout--md
-      //background-color red
-
-    .view-exhibitions-pager, .block-views-pager
-      padding 0
-      nav.pager
-        @extend .base--pager-block
-        p
-          margin 0
-
-main
-  .block-system-main-block
-    margin-bottom $spacing_layout--md
-    padding-bottom $spacing_layout--md
-    border-bottom 1px solid
-
-  @media $up_tablet
-    display flex
-    flex-direction row-reverse
-    justify-content left
-
-    aside.layout-sidebar-first
-      width 33%
-
-    .layout-content
-      padding-right $spacing_layout--lg
+      .layout-content
+        padding-right $spacing_layout--lg
 
 
-main .block-system-main-block
-  .view-exhibitions
-    .view-header
-      text-align center
-      magin-bottom: $spacing_layout--sm;
+  main .block-system-main-block
+    .view-exhibitions
+      .view-header
+        text-align center
+        magin-bottom: $spacing_layout--sm;
 
-      h3
-        display inline-block
-        border-top 2px solid
-        padding-top $spacing_layout--xsm
-        margin-bottom $spacing_layout--xsm
+        h3
+          display inline-block
+          border-top 2px solid
+          padding-top $spacing_layout--xsm
+          margin-bottom $spacing_layout--sm

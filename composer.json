@@ -89,6 +89,7 @@
         "drupal/typed_data": "^1.0@beta",
         "drupal/webform": "^6.1",
         "drupal/webform_iban_field": "^2.0",
+        "drupal/views_pager_as_block": "^1.0@beta",
         "drupal/webp": "^1.0@beta",
         "drupal/yaml_editor": "^1.1",
         "drupal/yearonly": "^9.1",
@@ -109,7 +110,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "cweagans/composer-patches": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "php-http/discovery": true
         }
     },
     "extra": {

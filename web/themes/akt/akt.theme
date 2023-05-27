@@ -45,6 +45,11 @@ function akt_preprocess_page(&$vars) {
   _akk_theme_set_global_vars($vars);
 }
 
+
+function akt_preprocess_region(&$vars) {
+  _akk_theme_set_global_vars($vars);
+}
+
 function akt_preprocess_block(&$vars) {
   _akk_theme_set_global_vars($vars);
   switch ($vars["elements"]["#id"]) {

@@ -9,8 +9,9 @@ base:
     - core/once
   css:
     theme:
-      css/global.css: { }
-      css/sections.css: { }
+      css/global.css:
+        weight: 1
+      css/sections.css: {}
     component:
       css/components/action-links.css:
         weight: -10
@@ -29,6 +30,8 @@ base:
       css/components/field.css:
         weight: -10
       css/components/form.css:
+        weight: -10
+      css/components/header.css:
         weight: -10
       css/components/icons.css:
         weight: -10
@@ -82,17 +85,17 @@ image:
   version: VERSION
   css:
     component:
-      css/components/image.css: {  }
+      css/components/image.css: {}
 image-widget:
   version: VERSION
   css:
     component:
-      css/components/image-widget.css: {  }
+      css/components/image-widget.css: {}
 indented:
   version: VERSION
   css:
     component:
-      css/components/indented.css: {  }
+      css/components/indented.css: {}
 messages:
   version: VERSION
   css:
@@ -115,7 +118,7 @@ search-results:
   version: VERSION
   css:
     component:
-      css/components/search-results.css: {  }
+      css/components/search-results.css: {}
 user:
   version: VERSION
   css:
@@ -126,12 +129,12 @@ layout:
   version: VERSION
   css:
     component:
-      css/layout.css: { }
+      css/layout.css: {}
 
 years-menu:
   version: VERSION
   js:
-    js/components/years-menu.js: { }
+    js/components/years-menu.js: {}
   dependencies:
     - core/drupal
     - core/once

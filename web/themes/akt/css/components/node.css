@@ -22,7 +22,7 @@ article.node--view-mode-teaser {
   position: relative;
 }
 article.node--view-mode-teaser + article.node--view-mode-teaser {
-  margin-top: 24px;
+  margin-top: 15px;
   border-top: 1px solid rgba(221,221,221,0.9);
 }
 article.node--view-mode-teaser h4 {

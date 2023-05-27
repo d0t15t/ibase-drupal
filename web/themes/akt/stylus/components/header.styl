@@ -1,0 +1,52 @@
+@require 'vars.styl'
+  
+header
+  .region-header
+    // margin-top: $spacing_layout--md;
+    // display: grid
+    // grid-template-columns: 100%;
+    // grid-template-rows: auto;
+    *
+      text-align center;
+      text-transform uppercase;
+
+    h2
+      grid-area: 1 / 1 / 2 / 2;
+  
+    > *
+      display: inline
+
+      &:nth-child(1), &:nth-child(2)
+        border-bottom 2px solid;
+
+  
+    h1, h2
+      font-weight: bold
+
+
+  
+  // @media $up_tablet
+  //   margin-bottom: $spacing_layout--md
+
+  //   h1
+  //     border-bottom 2px solid
+  //     display inline-block
+  //     padding-bottom $spacing_layout--xsm
+  //     margin-bottom $spacing_layout--sm
+
+// header
+//   padding 0 $spacing_layout--sm
+
+//   @media $up_tablet
+//     padding 0 $spacing_layout--lg
+
+//   h1, h2
+//     // font-size: $font_size_headline;
+//     font-weight 700
+
+//     @media $up_tablet
+//       font-size 2.2em
+
+//   h1.page-title
+//     font-size 1.2em
+//     font-weight inherit
