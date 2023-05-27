@@ -50,6 +50,7 @@ module:
   goldies_retailers: 0
   goldies_shopify: 0
   help: 0
+  ibase_gatsby_deploy: 0
   ibase_sites: 0
   image: 0
   inline_entity_form: 0
