@@ -1,0 +1,105 @@
+.base--pager-block,
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager,
+aside.layout-sidebar-first .region .block-views-pager nav.pager {
+  border-bottom: 1px solid;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.base--pager-block ul,
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul,
+aside.layout-sidebar-first .region .block-views-pager nav.pager ul,
+.base--pager-block p,
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager p,
+aside.layout-sidebar-first .region .block-views-pager nav.pager p {
+  padding-bottom: 18px;
+}
+.base--pager-block ul + ul,
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul + ul,
+aside.layout-sidebar-first .region .block-views-pager nav.pager ul + ul,
+.base--pager-block ul + p,
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul + p,
+aside.layout-sidebar-first .region .block-views-pager nav.pager ul + p {
+  padding-top: 0;
+}
+header {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+@media (min-width: 768px) {
+  header {
+    margin-bottom: 18px;
+  }
+}
+header .region-header h1 {
+  border-bottom: 2px solid;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  header {
+    text-align: unset;
+  }
+}
+nav.menu--main {
+  padding-bottom: 6px;
+}
+nav.menu--main ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  nav.menu--main ul {
+    justify-content: unset;
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+}
+aside.layout-sidebar-first {
+  padding-bottom: 24px;
+  min-width: 300px;
+}
+aside.layout-sidebar-first .region nav.pager,
+aside.layout-sidebar-first .region .block {
+  padding: 0 18px;
+}
+aside.layout-sidebar-first .region .view-exhibitions-pager,
+aside.layout-sidebar-first .region .block-views-pager {
+  padding: 0;
+}
+aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager p,
+aside.layout-sidebar-first .region .block-views-pager nav.pager p {
+  margin: 0;
+}
+main .block-system-main-block {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid;
+}
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+  }
+  main aside.layout-sidebar-first {
+    width: 33%;
+  }
+  main .layout-content {
+    padding-right: 24px;
+  }
+}
+main .block-system-main-block .view-exhibitions .view-header {
+  text-align: center;
+  magin-bottom: 10px;
+}
+main .block-system-main-block .view-exhibitions .view-header h3 {
+  display: inline-block;
+  border-top: 2px solid;
+  padding-top: 6px;
+  margin-bottom: 6px;
+}

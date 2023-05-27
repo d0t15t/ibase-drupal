@@ -1,0 +1,90 @@
+.base--pager-block {
+  border-bottom: 1px solid;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.base--pager-block ul,
+.base--pager-block p {
+  padding-bottom: 18px;
+}
+.base--pager-block ul + ul,
+.base--pager-block ul + p {
+  padding-top: 0;
+}
+ul.menu {
+  margin: 0;
+}
+main .region-content nav.pager ul + ul,
+main .region-content nav.pager ul + p {
+  padding-top: 0;
+}
+nav.menu--main {
+  font-weight: bold;
+}
+.block-ak-theme-exhibition-years nav {
+  text-align: center;
+  margin-top: -10px;
+}
+.block-ak-theme-exhibition-years nav > small {
+  padding-bottom: 6px;
+  display: inline-block;
+}
+.block-ak-theme-exhibition-years nav button {
+  border: none;
+  background-color: transparent;
+  padding-bottom: 6px;
+}
+.block-ak-theme-exhibition-years nav button.button-state--clicked:before {
+  color: #808080;
+  display: inline;
+  content: 'x';
+}
+.block-ak-theme-exhibition-years nav ul {
+  padding: 0 10px 10px;
+  justify-content: center;
+  transition: max-height 100ms ease-in;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: auto;
+  opacity: 1;
+}
+.block-ak-theme-exhibition-years nav ul.closed {
+  max-height: 0;
+  opacity: 0;
+}
+.block-ak-theme-exhibition-years nav ul li {
+  padding: 4px 10px;
+}
+/****/
+/* * @file*/
+/* * Visual styles for menu.*/
+/* *!*/
+/*ul.menu {*/
+/*  margin-left: 1em; !* LTR *!*/
+/*  padding: 0;*/
+/*  list-style: none outside;*/
+/*  text-align: left; !* LTR *!*/
+/*}*/
+/*[dir="rtl"] ul.menu {*/
+/*  margin-right: 1em;*/
+/*  margin-left: 0;*/
+/*  text-align: right;*/
+/*}*/
+/*.menu-item--expanded {*/
+/*  list-style-type: circle;*/
+/*  list-style-image: url("../../images/icons/menu-expanded.png");*/
+/*}*/
+/*.menu-item--collapsed {*/
+/*  list-style-type: disc;*/
+/*  list-style-image: url("../../images/icons/menu-collapsed.png"); !* LTR *!*/
+/*}*/
+/*[dir="rtl"] .menu-item--collapsed {*/
+/*  list-style-image: url("../../images/icons/menu-collapsed-rtl.png");*/
+/*}*/
+/*.menu-item {*/
+/*  margin: 0;*/
+/*  padding-top: 0.2em;*/
+/*}*/
+/*ul.menu a.is-active {*/
+/*  color: #000;*/
+/*}*/

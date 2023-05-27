@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Visual styles for nodes.
+ */
+
+@require 'vars'
+
+.node--unpublished
+  background-color: #fff4f4;
+
+
+article.node--view-mode-teaser
+  position: relative;
+
+  + article.node--view-mode-teaser
+    margin-top: $spacing_layout--lg;
+    border-top $divider-style
+
+  h4
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: $spacing_layout--xxsm $spacing_layout--xsm;
+    margin: 12px 0 0 8px;
+
+    &.field--type--image
+      background-color red
+
+  .field--type-image
+    img, picture
+      max-height 400px
+
+
+  .node__content
+    position relative;
+    padding $spacing_layout--md
+    padding-bottom: 0
+
+    @media $up_tablet
+      padding $spacing_layout--md $spacing_layout--md 0 0
+
+article.node--view-mode-full
+  .field:not(.field--type-image)
+    padding 0 $spacing_layout--lg
+
+  .field--type-image
+    padding-bottom $spacing_layout--md

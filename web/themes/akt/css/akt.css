@@ -1,0 +1,13 @@
+.path-frontpage {
+  background-color: #00f;
+  border-radius: 5px;
+}
+.example {
+  display: grid;
+  transition: all 0.5s;
+  user-select: none;
+  background: linear-gradient(to bottom, #fff, #000);
+}
+.example .foo {
+  border: 1px solid #000;
+}

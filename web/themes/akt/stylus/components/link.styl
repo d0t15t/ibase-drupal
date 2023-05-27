@@ -1,0 +1,44 @@
+@require 'vars'
+.layout-container
+  button.link {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    font-size: 1em;
+  }
+
+  label button.link {
+    font-weight: bold;
+  }
+
+  .text-formatted
+    a
+      &:link, &:visited
+        color $color_grey
+      &:hover
+        color $color_red
+
+  ul.links
+    li
+      a
+        color $color_grey
+        &:hover
+          color $color_red
+
+  nav.menu--main, nav.menu--years-menu--nav
+    ul.menu
+      li
+        a
+          &.is-active
+            border-bottom 1px solid
+          &:hover
+            color $color_red
+
+  .entity-pager
+    ul
+      li
+        a
+          &:hover
+            color $color_red
