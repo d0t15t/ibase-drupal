@@ -1,0 +1,13 @@
+uuid: 0038e539-cb79-49aa-8ac2-486e713be303
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.teaser
+  theme:
+    - olivero
+id: teaser
+label: Teaser
+image_style_mappings: {  }
+breakpoint_group: olivero
+fallback_image_style: teaser

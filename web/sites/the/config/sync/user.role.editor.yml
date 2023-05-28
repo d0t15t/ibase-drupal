@@ -1,0 +1,34 @@
+uuid: 1025e8b7-9bc3-4a02-84fb-b1f8cd1a1b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.mediums
+  module:
+    - path
+    - rabbit_hole
+    - redirect
+    - statistics
+    - system
+    - taxonomy
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access site in maintenance mode'
+  - 'administer menu'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'change own username'
+  - 'create terms in mediums'
+  - 'delete terms in mediums'
+  - 'edit terms in mediums'
+  - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
+  - 'rabbit hole bypass taxonomy_term'
+  - 'rabbit hole bypass user'
+  - 'view post access counter'
+  - 'view the administration theme'

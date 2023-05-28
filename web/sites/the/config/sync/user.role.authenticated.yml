@@ -1,0 +1,78 @@
+uuid: ba6c120c-60a9-45b4-8ad4-929201752636
+langcode: de
+status: true
+dependencies:
+  config:
+    - filter.format.basic
+    - filter.format.html
+    - media.type.document
+    - media.type.image
+    - node.type.artist
+    - node.type.artwork
+    - node.type.exhibition
+    - node.type.page
+    - node.type.workgroup
+  module:
+    - entity_browser
+    - file
+    - filter
+    - media
+    - media_pdf_thumbnail
+    - node
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access artist_content entity browser pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access content_artworks entity browser pages'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access media_documents entity browser pages'
+  - 'access media_images entity browser pages'
+  - 'access shortcuts'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'add pdf image entity entities'
+  - 'create artist content'
+  - 'create artwork content'
+  - 'create document media'
+  - 'create exhibition content'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'create workgroup content'
+  - 'customize shortcut links'
+  - 'delete media'
+  - 'delete own artwork content'
+  - 'delete own document media'
+  - 'delete own exhibition content'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own workgroup content'
+  - 'edit own artist content'
+  - 'edit own artwork content'
+  - 'edit own document media'
+  - 'edit own exhibition content'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own workgroup content'
+  - 'edit pdf image entity entities'
+  - 'update media'
+  - 'use text format basic'
+  - 'use text format html'
+  - 'view media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view private pdf thumbnails'
+  - 'view published pdf image entity entities'
+  - 'view unpublished pdf image entity entities'

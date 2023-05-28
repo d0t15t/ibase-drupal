@@ -1,0 +1,42 @@
+uuid: 2a7383a9-970c-47bc-b81f-d67a4150bed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_content
+  module:
+    - entity_browser_entity_form
+    - views
+name: artist_content
+label: 'Artist content'
+display: modal
+display_configuration:
+  width: '1500'
+  height: '1500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  50fea9de-cb76-4e51-a148-b27a134c8163:
+    id: view
+    uuid: 50fea9de-cb76-4e51-a148-b27a134c8163
+    label: 'Select artists from library'
+    weight: 1
+    settings:
+      submit_text: Select
+      auto_select: false
+      view: entity_browser_content
+      view_display: artists
+  e63f5d0d-bc6c-429d-bf09-667831b58dca:
+    id: entity_form
+    uuid: e63f5d0d-bc6c-429d-bf09-667831b58dca
+    label: 'Add new artist'
+    weight: 2
+    settings:
+      submit_text: 'Save artist'
+      entity_type: node
+      bundle: artist
+      form_mode: entity_browser

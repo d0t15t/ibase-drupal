@@ -1,0 +1,71 @@
+uuid: b43b8ab4-7d85-4219-a420-464d1d101845
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.exhibition.body
+    - field.field.node.exhibition.field_artists
+    - field.field.node.exhibition.field_artworks
+    - field.field.node.exhibition.field_date
+    - field.field.node.exhibition.field_dates
+    - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_properties
+    - image.style.wide
+    - node.type.exhibition
+  module:
+    - datetime_range
+    - field_formatter_range
+    - media
+    - user
+id: node.exhibition.teaser
+targetEntityType: node
+bundle: exhibition
+mode: teaser
+content:
+  field_artists:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_dates:
+    type: daterange_default
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_images:
+    type: media_thumbnail
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 1
+        offset: 0
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_artworks: true
+  field_date: true
+  field_duration: true
+  field_properties: true
+  langcode: true

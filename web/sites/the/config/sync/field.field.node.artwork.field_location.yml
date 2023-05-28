@@ -1,0 +1,26 @@
+uuid: b46d6cf3-0832-41c0-bc19-4e3380df1f96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.artwork
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - html
+id: node.artwork.field_location
+field_name: field_location
+entity_type: node
+bundle: artwork
+label: Location
+description: 'Address, crate number, etc.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

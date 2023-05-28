@@ -1,0 +1,84 @@
+.base--pager-block,
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager {
+  border-bottom: 1px solid;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.base--pager-block ul,
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager ul,
+.base--pager-block p,
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager p,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager p {
+  padding-bottom: 18px;
+}
+.base--pager-block ul + ul,
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul + ul,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager ul + ul,
+.base--pager-block ul + p,
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager ul + p,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager ul + p {
+  padding-top: 0;
+}
+.layout-container nav.menu--main {
+  padding-bottom: 6px;
+}
+.layout-container nav.menu--main ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .layout-container nav.menu--main ul {
+    justify-content: unset;
+    flex-direction: column;
+    margin-bottom: 18px;
+  }
+}
+.layout-container aside.layout-sidebar-first {
+  padding-bottom: 24px;
+  min-width: 300px;
+}
+.layout-container aside.layout-sidebar-first .region nav.pager,
+.layout-container aside.layout-sidebar-first .region .block {
+  padding: 0 18px;
+}
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager,
+.layout-container aside.layout-sidebar-first .region .block-views-pager {
+  padding: 0;
+}
+.layout-container aside.layout-sidebar-first .region .view-exhibitions-pager nav.pager p,
+.layout-container aside.layout-sidebar-first .region .block-views-pager nav.pager p {
+  margin: 0;
+}
+.layout-container main .block-system-main-block {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid;
+}
+@media (min-width: 768px) {
+  .layout-container main {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+  }
+  .layout-container main aside.layout-sidebar-first {
+    width: 33%;
+  }
+  .layout-container main .layout-content {
+    padding-right: 24px;
+  }
+}
+.layout-container main .block-system-main-block .view-exhibitions .view-header {
+  text-align: center;
+  magin-bottom: 10px;
+}
+.layout-container main .block-system-main-block .view-exhibitions .view-header h3 {
+  display: inline-block;
+  border-top: 2px solid;
+  padding-top: 6px;
+  margin-bottom: 10px;
+}

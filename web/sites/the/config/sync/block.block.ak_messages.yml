@@ -1,0 +1,22 @@
+uuid: 0e862274-29a2-43e9-abe7-ba50ef6e590d
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ak
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: ak_messages
+theme: ak
+region: header
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

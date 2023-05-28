@@ -1,0 +1,21 @@
+uuid: 5e4be6a8-ebe2-499b-a9ab-251b1509977d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_properties
+    - node.type.exhibition
+  module:
+    - options
+id: node.exhibition.field_properties
+field_name: field_properties
+entity_type: node
+bundle: exhibition
+label: Properties
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

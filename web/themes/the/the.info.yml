@@ -1,0 +1,23 @@
+name: the
+type: theme
+'base theme': stable9
+starterkit: true
+version: VERSION
+libraries:
+  - the/base
+  - the/layout
+  - the/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - the/user
+  core/drupal.dropbutton:
+    - the/dropbutton
+  core/drupal.dialog:
+    - the/dialog
+  file/drupal.file:
+    - the/file
+  core/drupal.progress:
+    - the/progress
+core_version_requirement: ^9
+generator: 'starterkit_theme:9.5.3'

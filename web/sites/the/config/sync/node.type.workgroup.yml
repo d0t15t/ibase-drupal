@@ -1,0 +1,23 @@
+uuid: 3fd0ac1d-62e4-4017-b029-a730e81334c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - autotitle
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  autotitle:
+    enabled: false
+    field: body
+    fallback_title: 'Untitled []'
+    headings: {  }
+name: Workgroup
+type: workgroup
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

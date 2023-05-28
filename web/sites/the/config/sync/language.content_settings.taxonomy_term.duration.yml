@@ -1,0 +1,16 @@
+uuid: 08970ace-5ae6-44f8-8813-b50e82c6c007
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.duration
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.duration
+target_entity_type_id: taxonomy_term
+target_bundle: duration
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,26 @@
+uuid: 9d7aeafb-a336-4c6a-9246-56d8e72a8ca3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_info
+    - node.type.workgroup
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - html
+id: node.workgroup.field_info
+field_name: field_info
+entity_type: node
+bundle: workgroup
+label: 'Mission statement'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

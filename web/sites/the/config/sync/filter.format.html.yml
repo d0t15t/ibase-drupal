@@ -1,0 +1,61 @@
+uuid: a7d68972-85d8-47cd-97b1-db7cc3ed9112
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+    - entity_embed
+    - media
+name: HTML
+format: html
+weight: -10
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <img src alt data-entity-type data-entity-uuid> <strong> <em> <u> <code> <s> <sub> <sup> <blockquote> <a href> <ul> <ol reversed start> <li> <hr> <drupal-media data-entity-type data-entity-uuid alt>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 0
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 100
+    settings: {  }

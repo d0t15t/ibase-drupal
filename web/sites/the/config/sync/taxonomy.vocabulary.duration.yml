@@ -1,0 +1,8 @@
+uuid: 64b14a69-7e4e-41a6-bfa5-a85583d8d14b
+langcode: en
+status: true
+dependencies: {  }
+name: Duration
+vid: duration
+description: 'length/duration of time-based artwork, like video, performance, etc.'
+weight: 0

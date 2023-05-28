@@ -1,0 +1,19 @@
+uuid: 84df5398-53b1-473e-8c77-029d4b24a5c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - price
+id: node.field_offset_cost
+field_name: field_offset_cost
+entity_type: node
+type: price
+settings: {  }
+module: price
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
