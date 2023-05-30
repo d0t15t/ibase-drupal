@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+function the_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_artist_edit_form' || $form_id == 'node_artist_form') {
+    $form['actions']['submit']['#submit'][] = '_the_content_artist_form_submit_handler';
+  }
+}
+
+/**
+ * Custom submit handler for the 'artist' node type.
+ */
+function _the_content_artist_form_submit_handler(&$form, FormStateInterface $form_state) {
+  try {
+    $node = $form_state->getFormObject()->getEntity();
+    $name_fields = ['field_name', 'field_name_asian'];
+    $name_fields_values = array_map(function ($f) use ($node) {
+      if (!$node->hasField($f)) return '';
+      if ($node->get($f)->isEmpty()) return '';
+      $field_values = $node->get($f)->get(0)->getValue();
+      unset($field_values['title']);
+      return trim(array_reduce($field_values, fn($c, $e) => "$c $e"));
+    }, $name_fields);
+    $node_title = trim(array_reduce($name_fields_values, fn($c, $f) => "$c $f"));
+    $node->setTitle($node_title);
+    $node->save();
+  } catch (\Exception $e) {
+    \Drupal::logger('the_content')->error('An error occurred: @message', ['@message' => $e->getMessage()]);
+  }
+}

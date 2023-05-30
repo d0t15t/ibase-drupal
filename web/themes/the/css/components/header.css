@@ -11,21 +11,10 @@
 .base--pager-block ul + p {
   padding-top: 0;
 }
-header .region-header * {
-  text-align: center;
-  text-transform: uppercase;
+header {
+  display: flex;
 }
-header .region-header h2 {
-  grid-area: 1/1/2/2;
-}
-header .region-header > * {
-  display: inline;
-}
-header .region-header > *:nth-child(1),
-header .region-header > *:nth-child(2) {
-  border-bottom: 2px solid;
-}
-header .region-header h1,
-header .region-header h2 {
-  font-weight: bold;
+header .region-header #site-logo {
+  width: 200px;
+  max-width: 200px;
 }

@@ -13,6 +13,10 @@ base:
         weight: 1
       css/sections.css: {}
     component:
+      #custom
+      css/elements/cards.css:
+        weight: -9
+      #stable9
       css/components/action-links.css:
         weight: -10
       css/components/breadcrumb.css:
@@ -63,6 +67,14 @@ base:
         weight: -10
       css/components/ui-dialog.css:
         weight: -10
+#custom
+cards:
+  version: VERSION
+  css:
+    component:
+      css/elements/cards.css:
+        weight: -9
+#stable9
 dialog:
   version: VERSION
   css:

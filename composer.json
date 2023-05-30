@@ -26,6 +26,7 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/batch_resize_image": "^2.0",
         "drupal/build_hooks": "^3.3",
+        "drupal/cer": "^5.0@beta",
         "drupal/change_author_action": "^1.0",
         "drupal/chosen": "^3.0",
         "drupal/ckeditor_emojione": "^1.4",
@@ -83,13 +84,15 @@
         "drupal/remote_stream_wrapper": "^2.0",
         "drupal/shield": "^1.7",
         "drupal/shopify": "^1.0@alpha",
+        "drupal/stage_file_proxy": "^2.0",
         "drupal/svg_image": "^1.16",
         "drupal/swiper_formatter": "^1.0",
         "drupal/taxonomy_menu_ui": "^3.0",
         "drupal/typed_data": "^1.0@beta",
+        "drupal/views_pager_as_block": "^1.0@beta",
+        "drupal/viewsreference": "^2.0@beta",
         "drupal/webform": "^6.1",
         "drupal/webform_iban_field": "^2.0",
-        "drupal/views_pager_as_block": "^1.0@beta",
         "drupal/webp": "^1.0@beta",
         "drupal/yaml_editor": "^1.1",
         "drupal/yearonly": "^9.1",
@@ -178,8 +181,8 @@
             "drupal/core": {
                 "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2022-12-14/2671162-9.5.x-116.patch"
             },
-            "drupal/metatag": {
-                "Support JSON API, REST, GraphQL and custom normalizations: https://www.drupal.org/project/metatag/issues/2945817": "https://www.drupal.org/files/issues/2022-10-13/metatag-data-type-support-2945817-154.patch"
+            "drupal/cer": {
+                "Update existing references on save: https://www.drupal.org/project/cer/issues/3240535": "https://www.drupal.org/files/issues/2021-10-03/cer-ignore-original-entity-in-differences-calculation-2846318-14-reroll.patch"
             }
         },
         "merge-plugin": {

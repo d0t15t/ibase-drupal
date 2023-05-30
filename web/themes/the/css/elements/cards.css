@@ -11,11 +11,12 @@
 .base--pager-block ul + p {
   padding-top: 0;
 }
-.layout-container {
-  margin: 50px 75px;
-}
-.layout-container .region-primary-menu {
+ul.cards {
   display: flex;
-  flex-direction: column;
-  align-items: bottom;
+  flex-wrap: wrap;
+}
+ul.cards li {
+  max-width: 300px;
+  width: 300px;
+  height: 400px;
 }
