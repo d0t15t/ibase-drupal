@@ -3,17 +3,11 @@ langcode: en
 status: true
 dependencies:
   module:
-    - autotitle
     - menu_ui
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-  autotitle:
-    enabled: true
-    field: field_instagam_handle
-    fallback_title: '[node:field_name] [node:field_name_asian]'
-    headings: {  }
 name: Artist
 type: artist
 description: ''

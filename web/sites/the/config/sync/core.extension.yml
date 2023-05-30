@@ -8,7 +8,6 @@ module:
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
-  autotitle: 0
   backup_migrate: 0
   block: 0
   block_content: 0
