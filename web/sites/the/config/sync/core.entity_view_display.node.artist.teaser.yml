@@ -20,8 +20,10 @@ dependencies:
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
     - field.field.node.artist.field_ust_id_number
+    - image.style.teaser
     - node.type.artist
   module:
+    - media
     - user
 id: node.artist.teaser
 targetEntityType: node
@@ -29,11 +31,13 @@ bundle: artist
 mode: teaser
 content:
   field_portrait:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: teaser
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

@@ -1,7 +1,3 @@
-/**
- * @file
- * Visual styles for nodes.
- */
 .base--pager-block {
   border-bottom: 1px solid;
   margin-bottom: 24px;
@@ -15,45 +11,18 @@
 .base--pager-block ul + p {
   padding-top: 0;
 }
-.node--unpublished {
-  background-color: #fff4f4;
+.visually-hidden,
+.node.node--type-artist.node--view-mode-full > .node__content > .field--name-field-artist-artworks .field__label {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
 }
-article.node--view-mode-teaser {
-  position: relative;
+.node.node--type-artist.node--view-mode-full > .node__content > .field + .field {
+  margin-top: 20px;
 }
-article.node--view-mode-teaser + article.node--view-mode-teaser {
-  margin-top: 15px;
-  border-top: 1px solid rgba(221,221,221,0.9);
-}
-article.node--view-mode-teaser h4 {
-  background-color: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding: 4px 6px;
-  margin: 12px 0 0 8px;
-}
-article.node--view-mode-teaser h4.field--type--image {
-  background-color: #f00;
-}
-article.node--view-mode-teaser .field--type-image img,
-article.node--view-mode-teaser .field--type-image picture {
-  max-height: 400px;
-}
-article.node--view-mode-teaser .node__content {
-  position: relative;
-  padding: 18px;
-  padding-bottom: 0;
-}
-@media (min-width: 768px) {
-  article.node--view-mode-teaser .node__content {
-    padding: 18px 18px 0 0;
-  }
-}
-article.node--view-mode-full .field:not(.field--type-image) {
-  padding: 0 24px;
-}
-article.node--view-mode-full .field--type-image {
-  padding-bottom: 18px;
+.node.node--type-artist.node--view-mode-full > .node__content > .field:not(.field--name-field-artist-artworks) {
+  width: 60%;
 }

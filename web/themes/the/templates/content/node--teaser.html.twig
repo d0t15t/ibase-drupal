@@ -8,29 +8,20 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
-{{ attach_library('akt/node') }}
+{{ attach_library('the/node') }}
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if label and not page %}
+  {% if label %}
     <h4{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h4>
   {% endif %}
   {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-  {{ content.field_image }}
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_image') }}
+    <a href="{{ url }}">
+      {{ content }}
+    </a>
   </div>
 
 </article>

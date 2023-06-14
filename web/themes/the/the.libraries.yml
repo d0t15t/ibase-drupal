@@ -7,6 +7,8 @@ base:
     - core/drupal
     - core/drupal.debounce
     - core/once
+    - the/cards
+    - the/split-page
   css:
     theme:
       css/global.css:
@@ -14,8 +16,8 @@ base:
       css/sections.css: {}
     component:
       #custom
-      css/elements/cards.css:
-        weight: -9
+#      css/elements/cards.css:
+#        weight: -9
       #stable9
       css/components/action-links.css:
         weight: -10
@@ -74,6 +76,15 @@ cards:
     component:
       css/elements/cards.css:
         weight: -9
+
+split-page:
+  version: VERSION
+  css:
+    component:
+      css/layouts/split-page.css: {}
+  js:
+    js/layouts/split-page.js: {}
+
 #stable9
 dialog:
   version: VERSION
@@ -142,12 +153,3 @@ layout:
   css:
     component:
       css/layout.css: {}
-
-years-menu:
-  version: VERSION
-  js:
-    js/components/years-menu.js: {}
-  dependencies:
-    - core/drupal
-    - core/once
-    - core/jquery

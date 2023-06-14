@@ -1,9 +1,23 @@
 @require 'vars'
 
 .layout-container
-  margin: 50px 75px
+  margin: 50px 0 75px 50px;
+  max-width: 1366px;
 
+
+  header
+    margin-bottom 50px
   .region-primary-menu
     display flex
-    flex-direction column
-    align-items bottom
+    align-items center
+    //flex-direction column
+    //align-items flex-bottom
+
+  main
+    display flex
+    flex-direction row-reverse
+
+    > aside
+      width 300px
+      min-width 300px
+      max-width 300px

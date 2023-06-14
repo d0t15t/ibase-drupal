@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Artworks by artist'
+      title: ''
       fields:
         title:
           id: title

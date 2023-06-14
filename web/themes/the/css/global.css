@@ -11,6 +11,14 @@
 .base--pager-block ul + p {
   padding-top: 0;
 }
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
 .layout-container * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -43,9 +51,6 @@
 .layout-container h6 {
   margin: 0;
   padding: 0;
-}
-.layout-container h3.section-header {
-  text-transform: uppercase;
 }
 .layout-container a:link,
 .layout-container a:visited {

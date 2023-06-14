@@ -39,7 +39,7 @@ content:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: content
+      image_link: ''
       image_style: teaser
       image_loading:
         attribute: lazy
@@ -49,11 +49,6 @@ content:
         limit: 1
         offset: 0
     weight: 0
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   body: true
@@ -76,3 +71,4 @@ hidden:
   field_workgroups: true
   field_year: true
   langcode: true
+  links: true

@@ -3,7 +3,7 @@ $tablet = '(min-width 768px) and (max-width: 1365px)';
 $up_tablet = '(min-width 768px)';
 $desktop ='(min-width: 1366px)';
 
-$color_grey = grey;
+$color_grey = #aaa;
 $color_black = black;
 $color_red = red;
 
@@ -20,6 +20,8 @@ $spacing_layout--sm = 10px
 $spacing_layout--md = 18px
 $spacing_layout--lg = 24px
 
+$border_cards = 1px solid rgba(black, 75%)
+
 $divider-style = 1px solid rgba(#ddd, 90%);
 
 .base--pager-block
@@ -33,6 +35,16 @@ $divider-style = 1px solid rgba(#ddd, 90%);
 
   ul + ul, ul + p
     padding-top 0
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
 
 //
 //:root {
