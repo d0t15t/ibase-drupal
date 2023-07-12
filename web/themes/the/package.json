@@ -31,5 +31,7 @@
     "stylelint-stylus": "^0.18.0",
     "stylus": "^0.59.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@glidejs/glide": "^3.6.0"
+  }
 }

@@ -9,6 +9,7 @@ base:
     - core/once
     - the/cards
     - the/split-page
+    - the/slider
   css:
     theme:
       css/global.css:
@@ -84,6 +85,23 @@ split-page:
       css/layouts/split-page.css: {}
   js:
     js/layouts/split-page.js: {}
+
+slider:
+  version: VERSION
+  css:
+    component:
+      css/elements/slider.css: { }
+  js:
+    js/components/slider.js: { attributes: { type: module } }
+  dependencies:
+    - the/glidejs
+
+glidejs:
+  version: VERSION
+  css:
+    theme:
+      node_modules/@glidejs/glide/dist/css/glide.core.min.css: {}
+      node_modules/@glidejs/glide/dist/css/glide.theme.min.css: {}
 
 #stable9
 dialog:

@@ -1,7 +1,56 @@
-$mobile = '(max-width 767px)';
-$tablet = '(min-width 768px) and (max-width: 1365px)';
-$up_tablet = '(min-width 768px)';
-$desktop ='(min-width: 1366px)';
+$font_20th = twentieth-century
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Tw-Cen-MT-W01-Light.woff2) format('woff2');
+  font-style: light;
+  font-weight: 100;
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Twentieth-Century.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 400;
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Twentieth-Century.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 600;
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Twentieth-Century.woff2) format('woff2');
+  font-style: italic;
+  font-weight: 400;
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Twentieth-Century-Bold.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 700;
+
+@font-face
+  font-family: $font_20th;
+  src: url(../fonts/Twentieth-Century-Bold-Italic.woff2) format('woff2');
+  font-style: italic;
+  font-weight: 700;
+
+$max_width = 1200px
+
+//$mobile = '(max-width 767px)';
+//$tablet = '(min-width 768px) and (max-width: 1365px)';
+//$up_tablet = '(min-width 768px)';
+//$desktop ='(min-width: 1366px)';
+//
+
+$mobile-breakpoint = 480px
+$tablet-breakpoint = 768px
+$large-screen-breakpoint = $max_width
+
+$max-width-mobile = 100%
+$max-width-tablet = 768px
+$max-width-large-screen = $max_width
 
 $color_grey = #aaa;
 $color_black = black;
@@ -36,30 +85,10 @@ $divider-style = 1px solid rgba(#ddd, 90%);
   ul + ul, ul + p
     padding-top 0
 
-.visually-hidden {
+.visually-hidden
   position: absolute !important;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   width: 1px;
   height: 1px;
   word-wrap: normal;
-}
-
-
-//
-//:root {
-//  --spacing-sm: 4px;
-//  --spacing-md: 8px;
-//  --spacing-layout--sm: 10px;
-//  --spacing-layout: 18px;
-//  --spacing-layout--lg: 36px;
-//
-//  --font-size--headline: 2em;
-//  --font-size--footer: 2em;
-//  /*--font-size--headline: 3em;*/
-//  /*--font-size--footer: 2em;*/
-//
-//  --breakpoint-large: 992px;
-//
-//  --letter-spacing--headline: 8px;
-//}

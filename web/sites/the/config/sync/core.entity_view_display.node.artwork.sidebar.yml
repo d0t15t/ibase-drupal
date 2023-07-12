@@ -1,8 +1,9 @@
-uuid: cd204f84-b402-44c2-89bd-7af8ba6400b4
+uuid: e9b739e5-9f96-4e38-b151-c72c23210798
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.sidebar
     - field.field.node.artwork.body
     - field.field.node.artwork.field_artists
     - field.field.node.artwork.field_artists_catalog_number
@@ -23,25 +24,22 @@ dependencies:
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
-    - image.style.wide
     - node.type.artwork
   module:
-    - field_formatter_range
-    - media
+    - dimension
+    - text
     - user
-id: node.artwork.default
+    - yearonly
+id: node.artwork.sidebar
 targetEntityType: node
 bundle: artwork
-mode: default
+mode: sidebar
 content:
-  field_images:
-    type: media_thumbnail
-    label: above
+  field_artists:
+    type: entity_reference_label
+    label: visually_hidden
     settings:
-      image_link: ''
-      image_style: wide
-      image_loading:
-        attribute: eager
+      link: true
     third_party_settings:
       field_formatter_range:
         order: 0
@@ -49,25 +47,69 @@ content:
         offset: 0
     weight: 0
     region: content
+  field_dimensions:
+    type: volume_components_field_formatter
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_edition:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_history:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_medium:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 1
+    region: content
+  field_version:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_year:
+    type: yearonly_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   body: true
-  field_artists: true
   field_artists_catalog_number: true
   field_condition: true
-  field_dimensions: true
-  field_edition: true
   field_files: true
   field_gallery_reference_number: true
-  field_history: true
+  field_images: true
   field_info: true
   field_insurance_value: true
   field_location: true
-  field_medium: true
   field_offset_cost: true
   field_owner: true
   field_sale_price: true
-  field_version: true
   field_workgroups: true
-  field_year: true
   langcode: true
   links: true

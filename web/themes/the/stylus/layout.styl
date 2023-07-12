@@ -2,8 +2,7 @@
 
 .layout-container
   margin: 50px 0 75px 50px;
-  max-width: 1366px;
-
+  max-width $max_width
 
   header
     margin-bottom 50px
@@ -14,10 +13,26 @@
     //align-items flex-bottom
 
   main
-    display flex
-    flex-direction row-reverse
+    width 100% // For mobile (default)
+    max-width $max-width-tablet // For tablet and larger screens
+    .layout-content
+      flex 1
+      max-width: 100%;
 
     > aside
       width 300px
       min-width 300px
       max-width 300px
+
+    @media (min-width: $mobile-breakpoint)
+      max-width $max-width-mobile
+
+    @media (min-width: $tablet-breakpoint)
+      max-width $max-width-tablet
+
+    @media (min-width: $large-screen-breakpoint)
+      max-width $max-width-large-screen
+    display flex
+
+    //flex-direction row-reverse
+

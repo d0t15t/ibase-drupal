@@ -1,3 +1,39 @@
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Tw-Cen-MT-W01-Light.woff2") format('woff2');
+  font-style: light;
+  font-weight: 100;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold-Italic.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 700;
+}
 .base--pager-block {
   border-bottom: 1px solid;
   margin-bottom: 24px;
@@ -21,7 +57,7 @@
 }
 .layout-container {
   margin: 50px 0 75px 50px;
-  max-width: 1366px;
+  max-width: 1200px;
 }
 .layout-container header {
   margin-bottom: 50px;
@@ -31,11 +67,31 @@
   align-items: center;
 }
 .layout-container main {
+  width: 100%;
+  max-width: 768px;
   display: flex;
-  flex-direction: row-reverse;
+}
+.layout-container main .layout-content {
+  flex: 1;
+  max-width: 100%;
 }
 .layout-container main > aside {
   width: 300px;
   min-width: 300px;
   max-width: 300px;
+}
+@media (min-width: 480px) {
+  .layout-container main {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .layout-container main {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1200px) {
+  .layout-container main {
+    max-width: 1200px;
+  }
 }

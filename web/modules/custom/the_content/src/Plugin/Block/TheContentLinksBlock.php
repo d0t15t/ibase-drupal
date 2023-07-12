@@ -3,9 +3,12 @@
 namespace Drupal\the_content\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\node\NodeInterface;
+use JetBrains\PhpStorm\ArrayShape;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -50,13 +53,22 @@ class TheContentLinksBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * {@inheritdoc}
    */
-  public function build(): ?array {
+  public function build(&$build = []) {
     $node = \Drupal::routeMatch()->getParameter('node');
-    $is_node = $node instanceof \Drupal\node\NodeInterface;
-    $label = $is_node ? $node->label() : NULL;
-    return $is_node ? [
-      '#markup' => "<h4><a href='#node-content'>$label</a></h4>",
-    ] : NULL;
+    if (!$node instanceof \Drupal\node\NodeInterface) return $build;
+    $build += match ($node->bundle()) {
+      'artist' => $this->_artist_block($node),
+//      'artwork' => $this->_artwork_block($node),
+    };
+    return $build;
+  }
+
+  private function _artist_block(NodeInterface $node) {
+    return ["#markup" => "<h4><a href='#node-content'>{$node->label()}</a></h4>",];
+  }
+
+  private function _artwork_block(NodeInterface $node){
+    return ["#markup" => "<h4><a href='#node-content'>{$node->label()}</a></h4>",];
   }
 
 }
