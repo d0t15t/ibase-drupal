@@ -1,14 +1,14 @@
 @require 'vars'
 @require 'components/image'
 
-.slider.artwork-slider
-
+.slider
+  //max-width: 100%;
   .glide__track
-    @extend .full-image-display-wrapper
+    //@extend .full-image-display-wrapper
 
     ul.glide__slides
       li.glide__slide
-        @extend .full-image-display-wrapper--inner
+        //@extend .full-image-display-wrapper--inner
 
   .glide__arrows
     button.glide__arrow
@@ -36,4 +36,3 @@
 
         > span:nth-child(1)
           transform rotate(90deg)
-

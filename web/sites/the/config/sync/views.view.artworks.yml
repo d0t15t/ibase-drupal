@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_images
     - image.style.teaser
     - node.type.artwork
-    - system.menu.main
   module:
     - media
     - node
@@ -236,9 +235,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role: {  }
       cache:
         type: tag
         options: {  }
@@ -457,7 +456,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_artists'
         - 'config:field.storage.node.field_images'
@@ -473,11 +472,14 @@ display:
           tokenize: false
       path: artworks
       menu:
-        type: normal
+        type: none
         title: Artworks
+        description: ''
         weight: -47
+        expanded: false
         menu_name: main
         parent: ''
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -486,7 +488,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_artists'
         - 'config:field.storage.node.field_images'

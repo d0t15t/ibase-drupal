@@ -18,10 +18,11 @@
     'visually-hidden'
   ]
 %}
+
 <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
 <div{{ attributes.addClass(classes) }}>
   {% if has_slider %}
-    <div data-glide-el="track" class="glide__track">
+    <div data-glide-el="track" class="glide__track image-container--background">
       <ul{{ attributes.addClass(classes, 'field__items', 'glide__slides') }}>
         {% for item in items %}
           <li{{ item.attributes.addClass('field__item', 'glide__slide') }}>{{ item.content }}</li>

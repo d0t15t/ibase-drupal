@@ -1,4 +1,7 @@
 @require 'vars'
+@require 'layouts/split-page'
+@require 'components/image'
+
 .node.node--type-artist.node--view-mode-full
   > .node__content
     > .field + .field
@@ -11,6 +14,43 @@
       .field__label
         @extend .visually-hidden
 
+.node.node--type-artwork.node--view-mode-full
+  .field--name-field-images--glider
+    .image-container--background
+      @extend .full-image-display-wrapper
+      width: $content_width
+
+      li
+        @extend .full-image-display-wrapper--inner
+        width: $content_width
+
+
 .node.node--view-mode-sidebar
   h4
     font-weight normal
+
+.view-exhibitions
+  .node--type-exhibition.node--view-mode-teaser
+    .node__content--wrapper
+      @extend .split-page-wrapper
+
+      .node--type-exhibition.node--view-mode-sidebar
+        @extend .split-page-wrapper--sidebar
+
+      .field--name-field-image
+        @extend .split-page-wrapper--content
+        width: $content_width
+        @extend .full-image-display-wrapper
+
+        img {
+          //@extend .full-image-display-wrapper--inner
+          width: $content_width
+          height 680px
+          object-fit contain
+        }
+
+  .glide__bullets
+    margin-left: 150px;
+
+  button.glide__arrow--left
+    left $sidebar_width !important

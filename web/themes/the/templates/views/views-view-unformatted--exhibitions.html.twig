@@ -1,0 +1,32 @@
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% set classes = [
+  'glide', 'exhibitions-slider', 'slider'
+] %}
+<div{{ create_attribute().addClass(classes) }}>
+  <div class="glide__track" data-glide-el="track">
+    <ul{{ create_attribute().addClass('glide__slides') }}>
+      {% for row in rows %}
+        {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+          'glide__slide'
+        ]
+        %}
+        <li{{ row.attributes.addClass(row_classes) }}>
+          {{- row.content -}}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>^</span><span>Previous Image</span></button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>^</span><span>Next Image</span></button>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    {% for row  in rows %}
+      <button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+    {% endfor %}
+  </div>
+</div>

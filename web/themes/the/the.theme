@@ -5,92 +5,7 @@
  * Functions to support theming.
  */
 
-/**
- * Implements hook_preprocess_image_widget().
- */
-//function akt_preprocess_image_widget(array &$variables) {
-//  $data = &$variables['data'];
-//
-//  // This prevents image widget templates from rendering preview container HTML
-//  // to users that do not have permission to access these previews.
-//  // @todo revisit in https://drupal.org/node/953034
-//  // @todo revisit in https://drupal.org/node/3114318
-//  if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
-//    unset($data['preview']);
-//  }
-//}
-//
-///**
-// * Implements hook_theme().
-// */
-//function akt_theme($existing, $type, $theme, $path) {
-//  return [
-//    'exhibition_years' => [
-//      'variables' => [
-//        'years' => [],
-//        'title' => NULL,
-//        'current' => NULL,
-//        'is_active' => NULL,
-//      ],
-//      'template' => 'element/exhibition-years',
-//    ],
-//  ];
-//}
-//
-//function akt_preprocess_html(&$vars) {
-//  _akk_theme_set_global_vars($vars);
-//}
-//
-//function akt_preprocess_page(&$vars) {
-//  _akk_theme_set_global_vars($vars);
-//}
-//
-//
-//function akt_preprocess_region(&$vars) {
-//  _akk_theme_set_global_vars($vars);
-//}
-//
-//function akt_preprocess_block(&$vars) {
-//  _akk_theme_set_global_vars($vars);
-//  switch ($vars["elements"]["#id"]) {
-//    case 'description':
-//      break;
-//  }
-//}
-//
-//function akt_preprocess_node(&$vars) {
-//  _akk_theme_set_global_vars($vars);
-//}
-//
-//function _akk_theme_set_global_vars(&$vars) {
-//  $path = \Drupal::service('path.current')->getPath();
-//  $vars['path'] = $path;
-//  $is_frontpage = $path === \Drupal::config('system.site')->get('page.front');
-//  $vars['is_frontpage'] = $is_frontpage;
-//}
-//
-//function akt_preprocess_views_view(&$vars) {
-//  switch($vars['id']) {
-//    case 'exhibitions':
-//      // Pager is shown as a block.
-//      $vars['pager'] = NULL;
-//      break;
-//    default:
-//  }
-//}
-//
-///**
-// * Implements template_preprocess_menu__main().
-// */
-//function akt_preprocess_menu__main(&$variables) {
-//  if (\Drupal::service('path.matcher')->isFrontPage()) {
-//    foreach ($variables['items'] ?? [] as $key => &$item) {
-//      if ($item['url']->toString() == '/') {
-//        unset($variables['items'][$key]);
-//      }
-//    }
-//  }
-//}
+use Drupal\Core\Entity\EntityBase;
 
 /**
  * Implements hook_theme_suggestions_alter().
@@ -106,5 +21,20 @@ function the_theme_suggestions_field_alter(array &$suggestions, array $vars) {
   if ($vars['element']['#field_name'] === 'field_images' && $vars['element']['#bundle'] == 'artwork') {
     $display_mode = $vars['element']['#view_mode'];
     $suggestions[] = join('__', ['field', 'node', 'field_images', 'artwork', $display_mode]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function the_preprocess_node(&$vars) {
+  if (!isset($vars['node'])) return;
+  /** @var EntityBase $node */
+  $node = $vars['node'];
+
+  if ($node->bundle() === 'exhibition' && $vars['view_mode'] === 'teaser') {
+    $vars['sidebar_node_display'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->view($node, 'sidebar');
   }
 }

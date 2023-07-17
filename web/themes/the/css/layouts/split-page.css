@@ -1,0 +1,86 @@
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Tw-Cen-MT-W01-Light.woff2") format('woff2');
+  font-style: light;
+  font-weight: 100;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold-Italic.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 700;
+}
+.base--pager-block {
+  border-bottom: 1px solid;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.base--pager-block ul,
+.base--pager-block p {
+  padding-bottom: 18px;
+}
+.base--pager-block ul + ul,
+.base--pager-block ul + p {
+  padding-top: 0;
+}
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+.split-page-wrapper {
+  width: 100%;
+  max-width: 768px;
+}
+@media (min-width: 480px) {
+  .split-page-wrapper {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .split-page-wrapper {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1200px) {
+  .split-page-wrapper {
+    max-width: 1200px;
+    display: flex;
+  }
+}
+.split-page-wrapper--sidebar {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+}
+.split-page-wrapper--content {
+  flex: 1;
+  max-width: 100%;
+}

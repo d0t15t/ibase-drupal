@@ -1,4 +1,5 @@
 @require 'vars'
+@require 'layouts/split-page'
 
 .layout-container
   margin: 50px 0 75px 50px;
@@ -6,33 +7,16 @@
 
   header
     margin-bottom 50px
+
   .region-primary-menu
     display flex
     align-items center
-    //flex-direction column
-    //align-items flex-bottom
 
   main
-    width 100% // For mobile (default)
-    max-width $max-width-tablet // For tablet and larger screens
+    @extend .split-page-wrapper
+
     .layout-content
-      flex 1
-      max-width: 100%;
+      @extend .split-page-wrapper--content
 
     > aside
-      width 300px
-      min-width 300px
-      max-width 300px
-
-    @media (min-width: $mobile-breakpoint)
-      max-width $max-width-mobile
-
-    @media (min-width: $tablet-breakpoint)
-      max-width $max-width-tablet
-
-    @media (min-width: $large-screen-breakpoint)
-      max-width $max-width-large-screen
-    display flex
-
-    //flex-direction row-reverse
-
+      @extend .split-page-wrapper--sidebar
