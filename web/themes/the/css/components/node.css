@@ -132,6 +132,9 @@
 .node.node--type-artist.node--view-mode-full > .node__content > .field:not(.field--name-field-artist-artworks) {
   width: 60%;
 }
+.node.node--type-artwork.node--view-mode-full .field--name-field-images {
+  width: 900px;
+}
 .node.node--type-artwork.node--view-mode-full .field--name-field-images--glider .image-container--background {
   width: 900px;
 }

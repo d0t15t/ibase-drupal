@@ -4,9 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_image
     - field.field.node.page.field_images
+    - field.field.node.page.field_link
+    - image.style.wide
     - node.type.page
   module:
+    - link
+    - media
     - text
     - user
 id: node.page.default
@@ -19,20 +24,36 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  field_images:
-    type: entity_reference_label
-    label: above
+  field_image:
+    type: media_thumbnail
+    label: visually_hidden
     settings:
-      link: true
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 102
+    weight: 2
+    region: content
+  field_link:
+    type: link_separate
+    label: visually_hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_images: true
   langcode: true

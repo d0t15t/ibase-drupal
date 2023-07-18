@@ -71,6 +71,12 @@ base:
       css/components/ui-dialog.css:
         weight: -10
 #custom
+bg-image:
+  version: VERSION
+  css:
+    component:
+      css/elements/bg-image.css:
+        weight: -9
 cards:
   version: VERSION
   css:

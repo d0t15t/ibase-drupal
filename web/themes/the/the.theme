@@ -7,11 +7,13 @@
 
 use Drupal\Core\Entity\EntityBase;
 
-/**
- * Implements hook_theme_suggestions_alter().
- */
-function the_theme_suggestions_alter(array &$suggestions, array $vars, $hook) {
-
+function the_theme_suggestions_node_alter(array &$suggestions, array $vars) {
+  $node = $vars['elements']['#node'] ?? NULL;
+  if (!$node) return;
+  $display_mode = $vars['elements']['#view_mode'] ?? NULL;
+  if (\Drupal::service('path.matcher')->isFrontPage() && $display_mode === 'full' && $node->bundle() === 'page'){
+    $suggestions[] = 'node__page__full__frontpage';
+  }
 }
 
 /**

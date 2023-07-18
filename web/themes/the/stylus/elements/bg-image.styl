@@ -1,0 +1,29 @@
+@require 'vars'
+
+.bg-image
+
+  > *
+
+    &:first-child
+      z-index 1
+      background-color white
+      width $sidebar_width
+      position: absolute;
+      margin-top 50px
+      left 50px
+      padding 30px
+
+  img
+    width 100%
+    height: auto;
+    display block
+
+  /* Set rules to fill background */
+  //min-height: 100%
+  //min-width: 100%
+  //width: 100%
+  //height: auto
+
+  //@media screen and (max-width: 1024px) /* Specific to this particular image */
+  //  left: 50%
+  //  margin-left: -512px   /* 50% */
