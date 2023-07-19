@@ -59,14 +59,11 @@ ul.cards li > article .node__links {
 ul.cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  justify-content: space-between;
 }
 ul.cards li {
-  border: 1px solid rgba(0,0,0,0.75);
   overflow: hidden;
-  margin-bottom: 20px;
-  max-width: 300px;
-  width: 300px;
   height: 400px;
 }
 ul.cards li > article {
@@ -75,18 +72,14 @@ ul.cards li > article {
   align-items: end;
 }
 ul.cards li > article .node__content {
-  max-width: 400px;
-  width: 400px;
   height: 400px;
 }
 ul.cards li > article .node__content > a {
-  background-color: #aaa;
   height: 400px;
   display: block;
 }
 ul.cards.artworks li {
   max-width: 400px;
-  width: 400px;
   height: 400px;
 }
 ul.cards.artworks li > article > .node__content a .field--name-field-images .field__item {
@@ -96,8 +89,6 @@ ul.cards.artworks li > article > .node__content a .field--name-field-images .fie
   margin: auto;
 }
 ul.cards.artists li {
-  max-width: 300px;
-  width: 300px;
   height: 400px;
 }
 ul.cards.artists li > article > * {

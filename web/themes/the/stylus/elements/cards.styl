@@ -3,14 +3,15 @@
 ul.cards
   display: flex
   flex-wrap wrap
-  gap 20px
+  gap 30px
+  justify-content space-between
 
   li
-    border $border_cards
+    //border $border_cards
     overflow hidden
-    margin-bottom 20px
-    max-width 300px
-    width 300px
+    //margin-bottom 20px
+    //max-width 300px
+    //width 300px
     height 400px
 
     > article
@@ -19,12 +20,11 @@ ul.cards
       align-items end
 
       .node__content
-        max-width 400px
-        width 400px
+        //max-width 400px
+        //width 400px
         height 400px
 
         > a
-          background-color $color_grey
           height 400px
           display block
 
@@ -34,7 +34,7 @@ ul.cards
   &.artworks
     li
       max-width 400px
-      width 400px
+      //width 400px
       height 400px
 
       > article
@@ -47,8 +47,8 @@ ul.cards
 
   &.artists
     li
-      max-width 300px
-      width 300px
+      //max-width 300px
+      //width 300px
       height 400px
 
       > article

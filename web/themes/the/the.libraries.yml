@@ -177,3 +177,4 @@ layout:
   css:
     component:
       css/layout.css: {}
+      css/components/overview.css: {}

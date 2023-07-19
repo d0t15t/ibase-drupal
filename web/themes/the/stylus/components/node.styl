@@ -17,42 +17,31 @@
 .node.node--type-artwork.node--view-mode-full
   .field--name-field-images
     width: $content_width
+
+    img
+      height $content_height
+      width auto
+      max-width: $content_width
+
   .field--name-field-images--glider
+    li
+      display flex
     .image-container--background
-      @extend .full-image-display-wrapper
+      height $content_height
       width: $content_width
 
+
+      img
+        margin auto
+        width: auto
+        max-width 100%
+        height $content_height
+
       li
-        @extend .full-image-display-wrapper--inner
+        //@extend .full-image-display-wrapper--inner
         width: $content_width
 
 
 .node.node--view-mode-sidebar
   h4
     font-weight normal
-
-.view-exhibitions
-  .node--type-exhibition.node--view-mode-teaser
-    .node__content--wrapper
-      @extend .split-page-wrapper
-
-      .node--type-exhibition.node--view-mode-sidebar
-        @extend .split-page-wrapper--sidebar
-
-      .field--name-field-image
-        @extend .split-page-wrapper--content
-        width: $content_width
-        @extend .full-image-display-wrapper
-
-        img {
-          //@extend .full-image-display-wrapper--inner
-          width: $content_width
-          height 680px
-          object-fit contain
-        }
-
-  .glide__bullets
-    margin-left: 150px;
-
-  button.glide__arrow--left
-    left $sidebar_width !important
