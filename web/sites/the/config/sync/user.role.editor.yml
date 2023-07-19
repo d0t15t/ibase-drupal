@@ -3,8 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - media.type.document
+    - media.type.image
+    - node.type.artist
+    - node.type.artwork
+    - node.type.exhibition
+    - node.type.page
+    - node.type.workgroup
     - taxonomy.vocabulary.mediums
   module:
+    - content_translation
+    - media
+    - node
     - path
     - rabbit_hole
     - redirect
@@ -25,10 +35,20 @@ permissions:
   - 'change own username'
   - 'create terms in mediums'
   - 'delete terms in mediums'
+  - 'edit any artist content'
+  - 'edit any artwork content'
+  - 'edit any document media'
+  - 'edit any exhibition content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any workgroup content'
   - 'edit terms in mediums'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
   - 'rabbit hole bypass user'
+  - 'translate document media'
+  - 'translate image media'
+  - 'translate mediums taxonomy_term'
   - 'view post access counter'
   - 'view the administration theme'
