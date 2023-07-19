@@ -106,13 +106,10 @@ module:
   views: 10
   minimal: 1000
 theme:
-  stark: 0
   claro: 0
-  olivero: 0
   gin: 0
   stable: 0
   classy: 0
-  ak: 0
   stable9: 0
   the: 0
 profile: minimal
