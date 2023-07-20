@@ -60,7 +60,7 @@ ul.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 ul.cards li {
   overflow: hidden;
