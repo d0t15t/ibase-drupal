@@ -1,9 +1,9 @@
-uuid: d8b0e97b-4e89-4f8d-b462-077328bd0c0b
+uuid: 848c0f46-c3e8-44b4-9996-760a4b1d9352
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.custom
+    - shortcut.set.default
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: block_content.custom
-target_entity_type_id: block_content
-target_bundle: custom
+id: shortcut.default
+target_entity_type_id: shortcut
+target_bundle: default
 default_langcode: site_default
 language_alterable: false

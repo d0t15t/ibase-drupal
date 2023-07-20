@@ -6,7 +6,7 @@ session:
 url:
   source: path_prefix
   prefixes:
-    en: en
+    en: ''
     de: de
     zh-hans: zh-hans
   domains:

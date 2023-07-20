@@ -1,18 +1,17 @@
-uuid: d8b0e97b-4e89-4f8d-b462-077328bd0c0b
+uuid: 1a8bb245-6dcc-47ff-90d0-0b4b03e5136e
 langcode: en
 status: true
 dependencies:
-  config:
-    - block_content.type.custom
   module:
     - content_translation
+    - menu_link_content
 third_party_settings:
   content_translation:
     enabled: false
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: block_content.custom
-target_entity_type_id: block_content
-target_bundle: custom
+id: menu_link_content.menu_link_content
+target_entity_type_id: menu_link_content
+target_bundle: menu_link_content
 default_langcode: site_default
 language_alterable: false
