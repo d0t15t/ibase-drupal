@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.artwork.field_artists_catalog_number
     - field.field.node.artwork.field_condition
     - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_variable
+    - field.field.node.artwork.field_duration
     - field.field.node.artwork.field_edition
     - field.field.node.artwork.field_files
     - field.field.node.artwork.field_gallery_reference_number
@@ -34,6 +36,24 @@ targetEntityType: node
 bundle: artwork
 mode: default
 content:
+  field_dimensions_variable:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_duration:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_images:
     type: media_thumbnail
     label: above

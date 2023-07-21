@@ -14,6 +14,7 @@ module:
   breakpoint: 0
   cer: 0
   ckeditor5: 0
+  conditional_fields: 0
   contact: 0
   contextual: 0
   ctools: 0

@@ -1,0 +1,23 @@
+uuid: db8a97c1-fca1-4209-8907-0e52a741b59f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dimensions_variable
+    - node.type.artwork
+id: node.artwork.field_dimensions_variable
+field_name: field_dimensions_variable
+entity_type: node
+bundle: artwork
+label: 'Dimensions variable'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

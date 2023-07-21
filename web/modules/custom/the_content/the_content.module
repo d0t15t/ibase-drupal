@@ -6,6 +6,23 @@ function the_content_form_alter(&$form, FormStateInterface $form_state, $form_id
   if ($form_id == 'node_artist_edit_form' || $form_id == 'node_artist_form') {
     $form['actions']['submit']['#submit'][] = '_the_content_artist_form_submit_handler';
   }
+
+  if (isset($form["field_dimensions"]['widget'][0])) {
+    $arr = $form["field_dimensions"]['widget'][0];
+    $order = ['height', 'width', 'length'];
+    $newOrder = [];
+    foreach ($order as $key) {
+      if (isset($arr[$key])) {
+        $newOrder[$key] = $arr[$key];
+      }
+    }
+    foreach ($arr as $key => $value) {
+      if (!in_array($key, $order)) {
+        $newOrder[$key] = $value;
+      }
+    }
+    $form["field_dimensions"]['widget'][0] = $newOrder;
+  }
 }
 
 /**

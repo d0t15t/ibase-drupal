@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.artwork.field_artists_catalog_number
     - field.field.node.artwork.field_condition
     - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_variable
+    - field.field.node.artwork.field_duration
     - field.field.node.artwork.field_edition
     - field.field.node.artwork.field_files
     - field.field.node.artwork.field_gallery_reference_number
@@ -27,6 +29,7 @@ dependencies:
     - node.type.artwork
   module:
     - allowed_formats
+    - conditional_fields
     - dimension
     - entity_browser
     - field_group
@@ -58,7 +61,9 @@ third_party_settings:
       children:
         - title
         - field_year
+        - field_dimensions_variable
         - field_dimensions
+        - field_duration
         - field_artists_catalog_number
         - field_gallery_reference_number
         - field_edition
@@ -187,7 +192,7 @@ content:
     third_party_settings: {  }
   field_artists:
     type: entity_reference_autocomplete
-    weight: 38
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -231,6 +236,39 @@ content:
         placeholder: ''
         label: Height
         description: ''
+    third_party_settings:
+      conditional_fields:
+        a50610fd-2b0a-4971-9fbe-63c3ce69912b:
+          entity_type: node
+          bundle: artwork
+          dependee: field_dimensions_variable
+          settings:
+            state: '!visible'
+            reset: false
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_dimensions_variable:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_duration:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_edition:
     type: string_textfield
@@ -323,7 +361,7 @@ content:
         hide_guidelines: '1'
   field_medium:
     type: entity_reference_autocomplete
-    weight: 39
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -356,7 +394,7 @@ content:
     third_party_settings: {  }
   field_version:
     type: entity_browser_entity_reference
-    weight: 40
+    weight: 12
     region: content
     settings:
       entity_browser: content_artworks
@@ -370,7 +408,7 @@ content:
     third_party_settings: {  }
   field_workgroups:
     type: entity_reference_autocomplete
-    weight: 41
+    weight: 13
     region: content
     settings:
       match_operator: CONTAINS
@@ -380,7 +418,7 @@ content:
     third_party_settings: {  }
   field_year:
     type: yearonly_default
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
