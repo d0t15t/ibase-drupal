@@ -58,6 +58,7 @@
         "drupal/gin_login": "^1.2",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/graphql": "^4.4",
+        "drupal/httpswww": "^2.1",
         "drupal/iban_field": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.20",
