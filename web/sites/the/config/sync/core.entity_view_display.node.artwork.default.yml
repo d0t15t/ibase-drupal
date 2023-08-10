@@ -36,24 +36,6 @@ targetEntityType: node
 bundle: artwork
 mode: default
 content:
-  field_dimensions_variable:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_duration:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_images:
     type: media_thumbnail
     label: above
@@ -75,6 +57,8 @@ hidden:
   field_artists_catalog_number: true
   field_condition: true
   field_dimensions: true
+  field_dimensions_variable: true
+  field_duration: true
   field_edition: true
   field_files: true
   field_gallery_reference_number: true

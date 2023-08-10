@@ -70,7 +70,6 @@ third_party_settings:
         - field_artists
         - field_medium
         - field_version
-        - field_workgroups
       label: Information
       region: content
       parent_name: group_tabs
@@ -406,16 +405,6 @@ content:
       field_widget_display_settings: {  }
       selection_mode: selection_append
     third_party_settings: {  }
-  field_workgroups:
-    type: entity_reference_autocomplete
-    weight: 13
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_year:
     type: yearonly_default
     weight: 3
@@ -484,4 +473,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_workgroups: true
