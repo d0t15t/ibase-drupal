@@ -77,6 +77,13 @@ bg-image:
     component:
       css/elements/bg-image.css:
         weight: -9
+
+burger:
+  version: VERSION
+  css:
+    component:
+      css/elements/burger.css:
+        weight: -9
 cards:
   version: VERSION
   css:

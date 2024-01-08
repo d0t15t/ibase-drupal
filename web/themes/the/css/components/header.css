@@ -55,9 +55,11 @@
   height: 1px;
   word-wrap: normal;
 }
-header {
-  display: flex;
-  justify-content: space-between;
+@media (min-width: 1280px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 header .region-header #site-logo {
   width: 200px;

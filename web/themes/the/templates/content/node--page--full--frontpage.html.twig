@@ -12,15 +12,17 @@
 %}
 {{ attach_library('the/node') }}
 {% set link = content.field_link[0]['#url'] ? content.field_link[0]['#url'] : null %}
-{% if link %}
-  <a href="{{ link }}">
- {% endif %}
 <article{{ attributes.addClass(classes) }}>
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without(content.field_image, content.field_link) }}
-  </div>
-  {{ content.field_image }}
+  {% if link %}
+    <a href="{{ link }}">
+   {% endif %}
+    <div{{ content_attributes.addClass('box-display') }}>
+      <div{{ create_attribute().addClass('box-display--inner') }}>
+        {{ content|without(content.field_image, content.field_link) }}
+      </div>
+    </div>
+    {{ content.field_image }}
+  {% if link %}
+    </a>
+  {% endif %}
 </article>
-{% if link %}
-  </a>
-{% endif %}

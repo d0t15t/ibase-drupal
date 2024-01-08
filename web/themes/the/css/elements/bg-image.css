@@ -55,17 +55,53 @@
   height: 1px;
   word-wrap: normal;
 }
-.bg-image > *:first-child {
-  z-index: 1;
-  background-color: #fff;
-  width: 300px;
-  position: absolute;
-  margin-top: 50px;
-  left: 50px;
-  padding: 30px;
+.bg-image {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.bg-image img {
+.bg-image > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bg-image .box-display {
+  z-index: 1;
   width: 100%;
-  height: auto;
-  display: block;
+  border-top: 1px solid;
+}
+@media (min-width: 480px) {
+  .bg-image .box-display {
+    border: none;
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+}
+.bg-image .box-display .box-display--inner {
+  background-color: #fff;
+  padding: 10px;
+}
+@media (min-width: 480px) {
+  .bg-image .box-display .box-display--inner {
+    padding: 18px;
+  }
+}
+.bg-image .field--name-field-image .field__item {
+  display: flex;
+}
+.bg-image .field--name-field-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 480px) {
+  .bg-image .field--name-field-image img {
+    object-fit: unset;
+    width: 100%;
+    height: auto;
+  }
 }

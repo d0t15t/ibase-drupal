@@ -18,6 +18,7 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
+{{ attach_library('the/burger') }}
 {% import _self as menus %}
 
 {#
@@ -25,12 +26,16 @@
   @see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0) }}
-
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
+<div id="menuToggle">
+  <input type="checkbox" />
+  <span></span>
+  <span></span>
+  <span></span>
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
+      <ul{{ attributes.addClass('menu').addClass('burger') }}>
     {% else %}
       <ul class="menu">
     {% endif %}
@@ -52,4 +57,5 @@
     {% endfor %}
     </ul>
   {% endif %}
+</div>
 {% endmacro %}
