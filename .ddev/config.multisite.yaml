@@ -1,0 +1,6 @@
+#see https://github.com/drud/ddev-contrib/tree/master/recipes/drupal8-multisite
+additional_hostnames:
+  - gsa.ibase
+  - ak.ibase
+  - axb.ibase
+  - the.ibase
