@@ -1,0 +1,7 @@
+nav.exhibition-years {
+  margin-bottom: 20px;
+
+  .exhibition-years--row + .exhibition-years--row {
+    margin-top: 10px;
+  }
+}

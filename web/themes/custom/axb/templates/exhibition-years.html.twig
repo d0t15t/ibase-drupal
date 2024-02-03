@@ -1,0 +1,27 @@
+{% set menu_path_is_active = is_active is not empty and is_active == '1' %}
+
+<nav{{ create_attribute().addClass(
+  'exhibition-years', 'btn-toolbar'
+).setAttribute('role', 'toolbar').setAttribute('aria-label', "Filter exhibitions by year") }}>
+  {% if menu_path_is_active %}
+    <small{{ create_attribute().addClass('no-link') }}>{{ title }}</small>
+  {% else %}
+{#    <button{{ create_attribute().setAttribute('id','years-menu--nav__button')}}>#}
+      <small{{ create_attribute().addClass('visually-hidden') }}>{{ title }}</small>
+{#    </button>#}
+  {% endif %}
+{#    {% for y in years %}#}
+{#      <a type="button" href="{{ y.uri }}" {{ create_attribute().addClass(y.current ? 'is-active', 'btn', 'btn-outline-dark') }}>{{ y.title }}</a>#}
+{#    {% endfor %}#}
+  {%  for batch in years|batch(10) %}
+    <div{{ create_attribute().addClass('exhibition-years--row', menu_path_is_active ?: 'closed', 'btn-group')
+      .setAttribute('role', 'toolbar') }}>
+    {% for y in batch %}
+      <a type="button" href="{{ y.uri }}" {{ create_attribute().addClass(y.current ? 'is-active', 'btn', 'btn-outline-dark') }}>{{ y.title }}</a>
+    {% endfor %}
+    </div>
+  {% endfor %}
+
+
+{#  </div>#}
+</nav>

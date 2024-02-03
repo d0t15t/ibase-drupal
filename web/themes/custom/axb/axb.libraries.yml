@@ -9,5 +9,4 @@ global-styling:
     component:
       css/style.css: {}
   dependencies:
-    - core/jquery
     - core/drupal

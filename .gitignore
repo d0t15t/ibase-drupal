@@ -40,6 +40,7 @@ web/profiles/
 web/update.php
 web/web.config
 web/.ht.router.php
+web/.htaccess
 
 #git
 .gitattributes

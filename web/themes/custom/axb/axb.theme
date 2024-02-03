@@ -30,3 +30,20 @@ function axb_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
     'bg-transparent' => t('Transparent'),
   );
 }
+
+/**
+ * Implements hook_theme().
+ */
+function axb_theme($existing, $type, $theme, $path) {
+  return [
+    'exhibition_years' => [
+      'variables' => [
+        'years' => [],
+        'title' => NULL,
+        'current' => NULL,
+        'is_active' => NULL,
+      ],
+      'template' => 'exhibition-years',
+    ],
+  ];
+}

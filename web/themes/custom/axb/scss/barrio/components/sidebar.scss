@@ -1,0 +1,29 @@
+/* ------------------ Sidebar ----------------- */
+
+.sidebar {
+    .block {
+        .content {
+            font-size: $font-size-base;
+            line-height: $line-height-base;
+        }
+    }
+    h2 {
+        margin: 0 0 ($spacer * .5);
+        border-bottom: $border-width solid $border-color;
+        padding-bottom: 5px;
+        text-shadow: 0 $border-width 0 $white;
+        font-size: $font-size-lg;
+        line-height: $headings-line-height;
+    }
+    tbody {
+        border: none;
+    }
+    tr.even,
+    tr.odd {
+        background: none;
+        //border-bottom: $border-width solid $border-color;
+    }
+    nav ul.nav {
+        margin: 0 (-($spacer));
+    }
+}
