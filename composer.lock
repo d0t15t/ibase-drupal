@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2123bf13f99880096dcd68cd8fae0386",
+    "content-hash": "245ab90b6520bceefe8bda424b5fee0f",
     "packages": [
         {
             "name": "amazeelabs/silverback_gatsby",
@@ -4794,6 +4794,136 @@
             }
         },
         {
+            "name": "drupal/file_entity",
+            "version": "2.0.0-rc5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/file_entity.git",
+                "reference": "8.x-2.0-rc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/file_entity-8.x-2.0-rc5.zip",
+                "reference": "8.x-2.0-rc5",
+                "shasum": "ee72a72d427207f5bc6082f3ce10e9e064b242ae"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "drupal/token": "^1",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "drupal/hal": " ^9 || ^1 || ^2",
+                "drupal/pathauto": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-rc5",
+                    "datestamp": "1702413481",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "aaron",
+                    "homepage": "https://www.drupal.org/user/33420"
+                },
+                {
+                    "name": "arthurf",
+                    "homepage": "https://www.drupal.org/user/27259"
+                },
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "cboyden",
+                    "homepage": "https://www.drupal.org/user/657902"
+                },
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Devin Carlson",
+                    "homepage": "https://www.drupal.org/user/290182"
+                },
+                {
+                    "name": "Drupal media CI",
+                    "homepage": "https://www.drupal.org/user/3057985"
+                },
+                {
+                    "name": "Drupal Media Team",
+                    "homepage": "https://www.drupal.org/user/3260690"
+                },
+                {
+                    "name": "dsnopek",
+                    "homepage": "https://www.drupal.org/user/266527"
+                },
+                {
+                    "name": "dsutter",
+                    "homepage": "https://www.drupal.org/user/3357810"
+                },
+                {
+                    "name": "effulgentsia",
+                    "homepage": "https://www.drupal.org/user/78040"
+                },
+                {
+                    "name": "JacobSingh",
+                    "homepage": "https://www.drupal.org/user/68912"
+                },
+                {
+                    "name": "JeffM2001",
+                    "homepage": "https://www.drupal.org/user/262092"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                },
+                {
+                    "name": "mpotter",
+                    "homepage": "https://www.drupal.org/user/616192"
+                },
+                {
+                    "name": "mxr576",
+                    "homepage": "https://www.drupal.org/user/315522"
+                },
+                {
+                    "name": "ParisLiakos",
+                    "homepage": "https://www.drupal.org/user/1011436"
+                },
+                {
+                    "name": "robeano",
+                    "homepage": "https://www.drupal.org/user/67660"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                },
+                {
+                    "name": "taran2L-1",
+                    "homepage": "https://www.drupal.org/user/364424"
+                }
+            ],
+            "description": "Extends Drupal file entities to be fieldable and viewable.",
+            "homepage": "https://www.drupal.org/project/file_entity",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_entity"
+            }
+        },
+        {
             "name": "drupal/gatsby",
             "version": "2.0.0-rc6",
             "source": {
@@ -5922,6 +6052,115 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/limited_field_widgets",
                 "issues": "https://www.drupal.org/project/issues/limited_field_widgets"
+            }
+        },
+        {
+            "name": "drupal/media_download",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_download.git",
+                "reference": "1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_download-1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": "0e8d48cc9e98af4d56ad023001b4255952e2de12"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10",
+                "php": ">=7.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.0",
+                    "datestamp": "1671570845",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "enable-patching": true,
+                "patches": []
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Clay Freeman",
+                    "homepage": "https://www.drupal.org/user/860806",
+                    "email": "clay@librarymarket.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "jeremyvii",
+                    "homepage": "https://www.drupal.org/user/3626035"
+                }
+            ],
+            "description": "Adds support for direct downloads of media entities when using their canonical path.",
+            "homepage": "https://www.drupal.org/project/media_download",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_download"
+            }
+        },
+        {
+            "name": "drupal/media_entity_download",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_entity_download.git",
+                "reference": "8.x-2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_entity_download-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "5d141a250c0e57688ae7e3d35726e01874f0ce03"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.2",
+                    "datestamp": "1680549623",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "This module provides a route for linking to media assets by URI for users to download without worrying about the actual file path.",
+            "homepage": "https://www.drupal.org/project/media_entity_download",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/media_entity_download",
+                "issues": "https://www.drupal.org/project/issues/media_entity_download"
             }
         },
         {
@@ -13769,6 +14008,7 @@
         "drupal/config_split": 5,
         "drupal/default_content": 15,
         "drupal/entity_pager": 15,
+        "drupal/file_entity": 5,
         "drupal/gatsby": 5,
         "drupal/gatsby_endpoints-gatsby_endpoints": 15,
         "drupal/geocoder": 10,

@@ -1,0 +1,40 @@
+<style>
+.zeigen-front {
+  max-width: 600px;
+  
+  padding: 0 20px 20px 20px;
+
+
+  @media (min-width: 445px) {
+    padding: 0 50px 50px 50px;
+  }
+}
+.zeigen-front .block-field-blocknodepagebody {
+  padding: 20px 0;
+}
+</style>
+{{ attach_library('the/bg-image') }}
+{%
+  set classes = [
+    'zeigen-front',
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('the/node') }}
+{% set link = content.field_link[0]['#url'] ? content.field_link[0]['#url'] : null %}
+{% if link %}
+  <a href="{{ link }}">
+ {% endif %}
+<article{{ attributes.addClass(classes) }} >
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+</article>
+{% if link %}
+  </a>
+{% endif %}
