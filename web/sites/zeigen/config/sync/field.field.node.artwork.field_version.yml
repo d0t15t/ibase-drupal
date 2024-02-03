@@ -1,0 +1,28 @@
+uuid: ab3e534e-3680-483e-b8b8-d6d3d9527be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_version
+    - node.type.artwork
+id: node.artwork.field_version
+field_name: field_version
+entity_type: node
+bundle: artwork
+label: Version
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artwork: artwork
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

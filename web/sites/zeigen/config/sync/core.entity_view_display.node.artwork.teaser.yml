@@ -1,0 +1,78 @@
+uuid: da4557fd-35b3-462c-868f-0034fbb597ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artwork.body
+    - field.field.node.artwork.field_artists
+    - field.field.node.artwork.field_artists_catalog_number
+    - field.field.node.artwork.field_condition
+    - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_variable
+    - field.field.node.artwork.field_duration
+    - field.field.node.artwork.field_edition
+    - field.field.node.artwork.field_files
+    - field.field.node.artwork.field_gallery_reference_number
+    - field.field.node.artwork.field_history
+    - field.field.node.artwork.field_images
+    - field.field.node.artwork.field_info
+    - field.field.node.artwork.field_insurance_value
+    - field.field.node.artwork.field_location
+    - field.field.node.artwork.field_medium
+    - field.field.node.artwork.field_offset_cost
+    - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_sale_price
+    - field.field.node.artwork.field_version
+    - field.field.node.artwork.field_workgroups
+    - field.field.node.artwork.field_year
+    - image.style.teaser
+    - node.type.artwork
+  module:
+    - field_formatter_range
+    - media
+    - user
+id: node.artwork.teaser
+targetEntityType: node
+bundle: artwork
+mode: teaser
+content:
+  field_images:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: teaser
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 1
+        offset: 0
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_artists: true
+  field_artists_catalog_number: true
+  field_condition: true
+  field_dimensions: true
+  field_dimensions_variable: true
+  field_duration: true
+  field_edition: true
+  field_files: true
+  field_gallery_reference_number: true
+  field_history: true
+  field_info: true
+  field_insurance_value: true
+  field_location: true
+  field_medium: true
+  field_offset_cost: true
+  field_owner: true
+  field_sale_price: true
+  field_version: true
+  field_workgroups: true
+  field_year: true
+  langcode: true
+  links: true

@@ -1,0 +1,56 @@
+uuid: 1025e8b7-9bc3-4a02-84fb-b1f8cd1a1b56
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - node.type.artist
+    - node.type.artwork
+    - node.type.exhibition
+    - node.type.page
+    - node.type.workgroup
+    - taxonomy.vocabulary.mediums
+  module:
+    - content_translation
+    - file_entity
+    - media
+    - node
+    - path
+    - rabbit_hole
+    - redirect
+    - statistics
+    - system
+    - taxonomy
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access site in maintenance mode'
+  - 'administer menu'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'change own username'
+  - 'create terms in mediums'
+  - 'delete terms in mediums'
+  - 'edit any artist content'
+  - 'edit any artwork content'
+  - 'edit any document media'
+  - 'edit any exhibition content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any workgroup content'
+  - 'edit terms in mediums'
+  - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
+  - 'rabbit hole bypass taxonomy_term'
+  - 'rabbit hole bypass user'
+  - 'translate document media'
+  - 'translate image media'
+  - 'translate mediums taxonomy_term'
+  - 'view files'
+  - 'view post access counter'
+  - 'view the administration theme'

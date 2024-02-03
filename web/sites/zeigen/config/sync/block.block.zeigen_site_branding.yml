@@ -1,0 +1,25 @@
+uuid: ee8d916b-454a-4dac-85b4-e612e4f55ad6
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zeigen
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: zeigen_site_branding
+theme: zeigen
+region: header
+weight: -2
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

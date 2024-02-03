@@ -1,0 +1,8 @@
+uuid: 6cbf52b9-0394-42f4-80cf-cfbb92c699b4
+langcode: en
+status: true
+dependencies: {  }
+name: Mediums
+vid: mediums
+description: 'Painting, video, sculture, etc...'
+weight: 0

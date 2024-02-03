@@ -1,0 +1,119 @@
+uuid: 5a7b746b-c460-46e1-b3ca-70ba2a0343d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar_private
+    - field.field.node.artwork.body
+    - field.field.node.artwork.field_artists
+    - field.field.node.artwork.field_artists_catalog_number
+    - field.field.node.artwork.field_condition
+    - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_variable
+    - field.field.node.artwork.field_duration
+    - field.field.node.artwork.field_edition
+    - field.field.node.artwork.field_files
+    - field.field.node.artwork.field_gallery_reference_number
+    - field.field.node.artwork.field_history
+    - field.field.node.artwork.field_images
+    - field.field.node.artwork.field_info
+    - field.field.node.artwork.field_insurance_value
+    - field.field.node.artwork.field_location
+    - field.field.node.artwork.field_medium
+    - field.field.node.artwork.field_offset_cost
+    - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_sale_price
+    - field.field.node.artwork.field_version
+    - field.field.node.artwork.field_workgroups
+    - field.field.node.artwork.field_year
+    - node.type.artwork
+  module:
+    - price
+    - text
+    - user
+id: node.artwork.sidebar_private
+targetEntityType: node
+bundle: artwork
+mode: sidebar_private
+content:
+  field_artists_catalog_number:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_condition:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_gallery_reference_number:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_insurance_value:
+    type: price_default
+    label: visually_hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_location:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_offset_cost:
+    type: price_default
+    label: visually_hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_owner:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_sale_price:
+    type: price_default
+    label: visually_hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  body: true
+  field_artists: true
+  field_dimensions: true
+  field_dimensions_variable: true
+  field_duration: true
+  field_edition: true
+  field_files: true
+  field_history: true
+  field_images: true
+  field_info: true
+  field_medium: true
+  field_version: true
+  field_workgroups: true
+  field_year: true
+  langcode: true
+  links: true

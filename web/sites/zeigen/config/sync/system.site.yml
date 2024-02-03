@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: de
+uuid: 6655b585-44ab-453e-ba24-92c1ac3febda
+name: 'THE Gallery'
+mail: mr@dyss.net
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/165
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

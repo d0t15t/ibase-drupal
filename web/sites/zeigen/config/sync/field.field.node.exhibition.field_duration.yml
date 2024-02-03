@@ -1,0 +1,19 @@
+uuid: 9a5d5c9b-7df2-422e-bcc5-f66a70e3750c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duration
+    - node.type.exhibition
+id: node.exhibition.field_duration
+field_name: field_duration
+entity_type: node
+bundle: exhibition
+label: Duration
+description: 'E.g.: "99 days".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

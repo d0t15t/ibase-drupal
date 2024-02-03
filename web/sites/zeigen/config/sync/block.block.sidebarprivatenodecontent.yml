@@ -1,0 +1,36 @@
+uuid: 0c61fb2f-a071-46bb-a40c-84323360cc8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - the_content
+    - user
+  theme:
+    - the
+id: sidebarprivatenodecontent
+theme: the
+region: sidebar_first
+weight: 0
+provider: null
+plugin: the_content_sidebar_private_node_content
+settings:
+  id: the_content_sidebar_private_node_content
+  label: 'Sidebar Private Node Content'
+  label_display: '0'
+  provider: the_content
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      artwork: artwork

@@ -1,0 +1,20 @@
+uuid: c675cf9d-30f7-4b48-ab74-157d6775a319
+langcode: de
+status: true
+dependencies:
+  theme:
+    - zeigen
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: zeigen_page_title
+theme: zeigen
+region: header
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

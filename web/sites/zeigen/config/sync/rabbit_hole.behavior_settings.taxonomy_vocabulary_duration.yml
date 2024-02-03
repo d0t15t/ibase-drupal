@@ -1,0 +1,14 @@
+uuid: e19cc7dc-59ef-4d61-9e53-a4a574c6320c
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.duration
+id: taxonomy_vocabulary_duration
+entity_type_id: taxonomy_vocabulary
+entity_id: duration
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

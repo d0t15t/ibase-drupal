@@ -1,0 +1,28 @@
+uuid: 7ac91e9e-7b45-49b9-a972-29cb5bdecebb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - the_content
+  theme:
+    - the
+id: thecontentlinks
+theme: the
+region: sidebar_first
+weight: -6
+provider: null
+plugin: the_content_the_content_links
+settings:
+  id: the_content_the_content_links
+  label: 'THE content links'
+  label_display: '0'
+  provider: the_content
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      artist: artist

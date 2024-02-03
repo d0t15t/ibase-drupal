@@ -1,0 +1,26 @@
+uuid: d1d6d1cc-b7d7-4f24-a13a-5eee469952d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.exhibition
+  module:
+    - datetime_range
+id: node.exhibition.field_dates
+field_name: field_dates
+entity_type: node
+bundle: exhibition
+label: Dates
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    default_end_date_type: relative
+    default_end_date: '+90 days'
+default_value_callback: ''
+settings: {  }
+field_type: daterange

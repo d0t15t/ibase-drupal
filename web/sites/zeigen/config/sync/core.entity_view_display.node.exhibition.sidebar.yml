@@ -1,0 +1,61 @@
+uuid: 9033a2a1-7940-47b5-80ae-eebf79c5dd65
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar
+    - field.field.node.exhibition.body
+    - field.field.node.exhibition.field_artists
+    - field.field.node.exhibition.field_artworks
+    - field.field.node.exhibition.field_date
+    - field.field.node.exhibition.field_dates
+    - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_image
+    - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_properties
+    - node.type.exhibition
+  module:
+    - datetime_range
+    - field_formatter_range
+    - user
+id: node.exhibition.sidebar
+targetEntityType: node
+bundle: exhibition
+mode: sidebar
+content:
+  field_artists:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 1
+    region: content
+  field_dates:
+    type: daterange_default
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_artworks: true
+  field_date: true
+  field_duration: true
+  field_image: true
+  field_images: true
+  field_properties: true
+  langcode: true
