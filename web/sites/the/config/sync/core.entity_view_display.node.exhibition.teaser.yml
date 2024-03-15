@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.exhibition.field_date
     - field.field.node.exhibition.field_dates
     - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_duration_text
     - field.field.node.exhibition.field_image
     - field.field.node.exhibition.field_images
     - field.field.node.exhibition.field_properties
@@ -41,6 +42,7 @@ hidden:
   field_date: true
   field_dates: true
   field_duration: true
+  field_duration_text: true
   field_images: true
   field_properties: true
   langcode: true

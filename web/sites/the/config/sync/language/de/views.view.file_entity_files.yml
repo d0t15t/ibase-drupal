@@ -1,0 +1,94 @@
+description: 'Find and manage files.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        bulk_form:
+          action_title: 'With selection'
+        fid:
+          label: Fid
+        filename:
+          label: Name
+          separator: ', '
+        type:
+          label: Typ
+        filemime:
+          label: 'MIME type'
+        filesize:
+          label: Size
+        status:
+          label: Status
+          settings:
+            format_custom_false: Temporary
+            format_custom_true: Permanent
+        changed:
+          label: 'Changed date'
+        created:
+          label: Created
+        count:
+          label: 'Used in'
+        operations:
+          label: Aktionen
+      filters:
+        filename:
+          expose:
+            label: Filename
+        status:
+          expose:
+            label: Status
+        type:
+          expose:
+            label: Typ
+      title: Files
+      empty:
+        area_text_custom:
+          content: 'No files available.'
+  overview:
+    display_title: 'Files overview'
+    display_options:
+      menu:
+        title: Files
+  usage:
+    display_title: 'File usage'
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        entity_label:
+          label: Entity
+        type:
+          label: 'Entity type'
+        module:
+          label: 'Registering module'
+        count:
+          label: 'Use count'
+      title: 'File usage'
+      arguments:
+        fid:
+          exception:
+            title: All
+          title: 'File usage information for {{ arguments.fid }}'

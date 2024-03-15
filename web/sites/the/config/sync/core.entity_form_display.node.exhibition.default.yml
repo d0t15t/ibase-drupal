@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.exhibition.field_date
     - field.field.node.exhibition.field_dates
     - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_duration_text
     - field.field.node.exhibition.field_image
     - field.field.node.exhibition.field_images
     - field.field.node.exhibition.field_properties
@@ -46,6 +47,7 @@ third_party_settings:
         - langcode
         - field_dates
         - field_date
+        - field_duration_text
         - field_duration
         - field_properties
       label: Information
@@ -127,7 +129,7 @@ content:
         hide_guidelines: '1'
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -172,12 +174,23 @@ content:
     third_party_settings: {  }
   field_duration:
     type: string_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_duration_text:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_image:
     type: entity_browser_entity_reference
     weight: 29
@@ -212,7 +225,7 @@ content:
         limit_values: '0'
   field_properties:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -225,27 +238,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -259,13 +272,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_browser_entity_reference
-    weight: 3
+    weight: 1
     region: content
     settings:
       entity_browser: null
@@ -278,7 +291,7 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic
     - filter.format.html
+    - filter.format.webform_default
     - media.type.document
     - media.type.image
     - node.type.artist
@@ -15,6 +16,7 @@ dependencies:
   module:
     - entity_browser
     - file
+    - file_entity
     - filter
     - media
     - media_pdf_thumbnail
@@ -70,6 +72,8 @@ permissions:
   - 'update media'
   - 'use text format basic'
   - 'use text format html'
+  - 'use text format webform_default'
+  - 'view files'
   - 'view media'
   - 'view own unpublished content'
   - 'view own unpublished media'

@@ -13,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.mediums
   module:
     - content_translation
+    - file_entity
     - media
     - node
     - path
@@ -50,5 +51,6 @@ permissions:
   - 'translate document media'
   - 'translate image media'
   - 'translate mediums taxonomy_term'
+  - 'view files'
   - 'view post access counter'
   - 'view the administration theme'

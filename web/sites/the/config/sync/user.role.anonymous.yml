@@ -3,6 +3,7 @@ langcode: de
 status: true
 dependencies:
   module:
+    - file_entity
     - media
     - media_pdf_thumbnail
     - system
@@ -14,5 +15,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'view files'
   - 'view media'
   - 'view published pdf image entity entities'

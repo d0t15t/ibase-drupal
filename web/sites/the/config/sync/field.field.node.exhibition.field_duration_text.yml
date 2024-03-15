@@ -1,0 +1,26 @@
+uuid: ab39df1c-7db7-4b37-9e0e-bf1ba2091392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duration_text
+    - node.type.exhibition
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic
+id: node.exhibition.field_duration_text
+field_name: field_duration_text
+entity_type: node
+bundle: exhibition
+label: 'Opening and duration text'
+description: 'Enter information about the dates and times for the exhibition.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.exhibition.field_date
     - field.field.node.exhibition.field_dates
     - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_duration_text
     - field.field.node.exhibition.field_image
     - field.field.node.exhibition.field_images
     - field.field.node.exhibition.field_properties
@@ -75,6 +76,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_duration_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_image:
     type: entity_reference_entity_view

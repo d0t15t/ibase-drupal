@@ -1,0 +1,216 @@
+uuid: 37a4a82c-0ccd-42e6-8517-507eaea8d52a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.entity_browser_artist_artworks
+    - entity_browser.browser.media_images
+    - field.field.node.artwork.body
+    - field.field.node.artwork.field_artists
+    - field.field.node.artwork.field_artists_catalog_number
+    - field.field.node.artwork.field_condition
+    - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_variable
+    - field.field.node.artwork.field_duration
+    - field.field.node.artwork.field_edition
+    - field.field.node.artwork.field_files
+    - field.field.node.artwork.field_gallery_reference_number
+    - field.field.node.artwork.field_history
+    - field.field.node.artwork.field_images
+    - field.field.node.artwork.field_info
+    - field.field.node.artwork.field_insurance_value
+    - field.field.node.artwork.field_location
+    - field.field.node.artwork.field_medium
+    - field.field.node.artwork.field_offset_cost
+    - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_sale_price
+    - field.field.node.artwork.field_version
+    - field.field.node.artwork.field_workgroups
+    - field.field.node.artwork.field_year
+    - node.type.artwork
+  module:
+    - entity_browser
+    - field_group
+    - limited_field_widgets
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_information
+        - group_details
+        - group_images
+        - group_financial
+        - group_files
+      label: Tabs
+      region: hidden
+      parent_name: ''
+      weight: 6
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_information:
+      children:
+        - title
+        - field_year
+        - field_dimensions_variable
+        - field_dimensions
+        - field_duration
+        - field_artists_catalog_number
+        - field_gallery_reference_number
+        - field_edition
+        - field_artists
+        - field_medium
+        - field_version
+      label: Information
+      region: hidden
+      parent_name: group_tabs
+      weight: 31
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_details:
+      children:
+        - body
+        - field_condition
+        - field_location
+        - field_history
+        - field_info
+      label: Details
+      region: hidden
+      parent_name: group_tabs
+      weight: 32
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_images:
+      children:
+        - field_images
+      label: Images
+      region: hidden
+      parent_name: group_tabs
+      weight: 34
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_financial:
+      children:
+        - field_owner
+        - field_sale_price
+        - field_insurance_value
+        - field_offset_cost
+      label: Financial
+      region: hidden
+      parent_name: group_tabs
+      weight: 35
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_files:
+      children:
+        - field_files
+      label: Files
+      region: hidden
+      parent_name: group_tabs
+      weight: 37
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_language:
+      children:
+        - langcode
+      label: Language
+      region: hidden
+      parent_name: ''
+      weight: 1
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+id: node.artwork.entity_browser_artist_artworks
+targetEntityType: node
+bundle: artwork
+mode: entity_browser_artist_artworks
+content:
+  field_images:
+    type: entity_browser_entity_reference
+    weight: 0
+    region: content
+    settings:
+      entity_browser: media_images
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: entity_browser
+      selection_mode: selection_append
+    third_party_settings:
+      limited_field_widgets:
+        limit_values: '0'
+hidden:
+  body: true
+  created: true
+  field_artists: true
+  field_artists_catalog_number: true
+  field_condition: true
+  field_dimensions: true
+  field_dimensions_variable: true
+  field_duration: true
+  field_edition: true
+  field_files: true
+  field_gallery_reference_number: true
+  field_history: true
+  field_info: true
+  field_insurance_value: true
+  field_location: true
+  field_medium: true
+  field_offset_cost: true
+  field_owner: true
+  field_sale_price: true
+  field_version: true
+  field_workgroups: true
+  field_year: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  translation: true
+  uid: true
+  url_redirects: true

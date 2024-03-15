@@ -31,7 +31,6 @@ dependencies:
     - path
     - telephone
     - text
-    - viewsreference
 third_party_settings:
   field_group:
     group_tabs:
@@ -182,28 +181,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_artist_artworks:
-    type: viewsreference_autocomplete
-    weight: 31
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_artworks:
     type: entity_browser_entity_reference
     weight: 1
     region: content
     settings:
-      entity_browser: content_artworks
-      field_widget_display: label
+      entity_browser: content_artist_artworks
+      field_widget_display: rendered_entity
       field_widget_edit: false
       field_widget_remove: true
       field_widget_replace: false
       open: true
-      field_widget_display_settings: {  }
+      field_widget_display_settings:
+        view_mode: entity_browser
       selection_mode: selection_append
     third_party_settings:
       limited_field_widgets:
@@ -335,12 +325,13 @@ content:
     region: content
     settings:
       entity_browser: media_images
-      field_widget_display: label
+      field_widget_display: rendered_entity
       field_widget_edit: false
       field_widget_remove: true
       field_widget_replace: false
       open: true
-      field_widget_display_settings: {  }
+      field_widget_display_settings:
+        view_mode: entity_browser
       selection_mode: selection_append
     third_party_settings: {  }
   field_telephone:
@@ -413,4 +404,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_artist_artworks: true
   title: true
