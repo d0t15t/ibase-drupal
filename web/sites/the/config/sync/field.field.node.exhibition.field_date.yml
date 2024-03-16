@@ -11,8 +11,8 @@ id: node.exhibition.field_date
 field_name: field_date
 entity_type: node
 bundle: exhibition
-label: 'Opening Date'
-description: ''
+label: Opening
+description: 'Date and time of the opening.'
 required: false
 translatable: false
 default_value: {  }

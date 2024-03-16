@@ -8,7 +8,7 @@
   "scripts": {
     "watch_foo": "stylus ./stylus/* --out ./css --watch",
     "watch": "node js/watch.js stylus",
-    "reload": "livereload ./css",
+    "reload": "node_modules/livereload/bin/livereload.js ./css -d",
     "compile_foo": "node js/compile.js stylus css",
     "compile": "node -e 'require(\"./js/compile\").compileProject({inputDir: \"stylus\", outputDir: \"css\"})'"
   },
@@ -32,6 +32,7 @@
     "stylus": "^0.59.0"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.6.0"
+    "@glidejs/glide": "^3.6.0",
+    "livereload": "^0.9.3"
   }
 }

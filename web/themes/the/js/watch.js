@@ -23,13 +23,17 @@ try {
 
   const directories = args.map((dir, i) => `./${dir}`)
     .filter((dir) => fs.existsSync(dir));
+
   log(`Begin watching: ${directories}`);
-  const watcher = chokidar.watch(directories, {
+
+  chokidar.watch(directories, {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
   }).on('change', pathToFile => {
     const destinationPath = pathToFile.replace('stylus', 'css');//@todo - add to options?
     renderStylusCSS(pathToFile, destinationPath)
+    log(pathToFile, destinationPath)
   });
+
 } catch (e) {
   console.error(e);
 }
