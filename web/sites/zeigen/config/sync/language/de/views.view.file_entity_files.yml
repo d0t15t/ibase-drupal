@@ -92,3 +92,5 @@ display:
           exception:
             title: All
           title: 'File usage information for {{ arguments.fid }}'
+      menu:
+        title: Verwendung

@@ -12,6 +12,7 @@ settings:
   toolbar:
     items:
       - heading
+      - style
       - bold
       - italic
       - '|'
@@ -26,6 +27,7 @@ settings:
       - horizontalLine
       - blockQuote
       - sourceEditing
+      - document
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -34,6 +36,11 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Application link'
+          element: '<a class="appy-link">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<img src alt data-entity-type data-entity-uuid>'

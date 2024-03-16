@@ -23,7 +23,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <img src alt data-entity-type data-entity-uuid> <strong> <em> <u> <code> <s> <sub> <sup> <blockquote> <a href> <ul> <ol reversed start> <li> <hr> <drupal-media data-entity-type data-entity-uuid alt>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <a class="appy-link" href> <img src alt data-entity-type data-entity-uuid> <strong> <em> <u> <code> <s> <sub> <sup> <blockquote> <ul> <ol reversed start> <li> <hr> <drupal-media data-entity-type data-entity-uuid alt> <drupal-entity alt title data-align data-caption data-entity-embed-display data-entity-embed-display-settings data-view-mode data-entity-uuid data-langcode data-embed-button="document node" data-entity-type="media node">'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:

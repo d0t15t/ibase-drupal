@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Artist
+name: News
 type: artist
-description: ''
+description: '(equivalent to ''artist'' on THEgallery).'
 help: ''
 new_revision: true
 preview_mode: 0
