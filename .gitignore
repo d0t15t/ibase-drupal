@@ -44,3 +44,4 @@ web/.ht.router.php
 #git
 .gitattributes
 
+web/sites/default.settings.php

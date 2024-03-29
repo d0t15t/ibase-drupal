@@ -176,6 +176,180 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 14
             additional: {  }
+          046b9e20-d27f-47db-8dd7-72a7a2043388:
+            uuid: 046b9e20-d27f-47db-8dd7-72a7a2043388
+            region: content
+            configuration:
+              id: 'extra_field_block:node:exhibition:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          4920b448-06a9-4b16-bee4-c7fd72ab8a73:
+            uuid: 4920b448-06a9-4b16-bee4-c7fd72ab8a73
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          f473f5e4-0cd8-4c25-825b-68c182faa937:
+            uuid: f473f5e4-0cd8-4c25-825b-68c182faa937
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_date'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: above
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1ba950fe-c065-4b6b-9118-e8b33cb6302e:
+            uuid: 1ba950fe-c065-4b6b-9118-e8b33cb6302e
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_dates'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: daterange_default
+                label: visually_hidden
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                  separator: '-'
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          cee400c4-3250-4641-8a4b-c5eeb9e660a4:
+            uuid: cee400c4-3250-4641-8a4b-c5eeb9e660a4
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_duration'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          9ebb48ce-796c-4d8b-b408-546c69a30522:
+            uuid: 9ebb48ce-796c-4d8b-b408-546c69a30522
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_artists'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          653dc5b2-36d7-4f1a-b7c9-66daafe0b3ef:
+            uuid: 653dc5b2-36d7-4f1a-b7c9-66daafe0b3ef
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_properties'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          46df0cdd-ed43-46ed-b29e-bc3b73619298:
+            uuid: 46df0cdd-ed43-46ed-b29e-bc3b73619298
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_images'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: media_thumbnail
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          5ae18ef8-2f4c-49ca-9118-e727eb784835:
+            uuid: 5ae18ef8-2f4c-49ca-9118-e727eb784835
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_artworks'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          0d333b5c-469c-46a6-8891-9c2993ece93d:
+            uuid: 0d333b5c-469c-46a6-8891-9c2993ece93d
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          93e60632-19b2-4fc4-9910-2818743b6843:
+            uuid: 93e60632-19b2-4fc4-9910-2818743b6843
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_duration_text'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 10
+            additional: {  }
         third_party_settings: {  }
 id: node.exhibition.default
 targetEntityType: node
