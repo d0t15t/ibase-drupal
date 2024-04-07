@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * @file
+ * Defines the functionalities for the 'price' module.
+ */
+
+use Drupal\language\Entity\ConfigurableLanguage;
+use Drupal\price\Plugin\Field\FieldFormatter\PriceCalculatedFormatter;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\field\EntityField;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function price_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.price':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Price field with currencies.') . '</p>';
+      $output .= '<p>' . t('Use bellow links to add new currency to your project.') . '</p>';
+      $output .= '<p>' . t('Started as a decoupling commerce_price from commerce.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function price_theme() {
+  return [
+    'price_plain' => [
+      'variables' => [
+        'number' => 0,
+        'currency' => NULL,
+      ],
+      'template' => 'price-plain',
+    ],
+    'price_calculated' => [
+      'variables' => [
+        'calculated_price' => NULL,
+        'entity' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for 'configurable_language'.
+ */
+function price_configurable_language_insert(ConfigurableLanguage $language) {
+  if (!\Drupal::isConfigSyncing()) {
+    // Import currency translations for the new language.
+    $importer = \Drupal::service('price.currency_importer');
+    $importer->importTranslations([$language->getId()]);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Removes the "Calculated price" formatter from views field options, if
+ * it is not applicable. Since the formatter is entity specific,
+ * this prevents it from accidentally being used on other entity types.
+ *
+ * @todo Remove when https://www.drupal.org/node/2991660 gets fixed.
+ */
+function price_form_views_ui_config_item_form_alter(&$form, FormStateInterface $form_state) {
+  /** @var \Drupal\views\Plugin\views\field\EntityField $handler */
+  $handler = $form_state->get('handler');
+  if ($handler instanceof EntityField && !empty($handler->definition['entity_type'])) {
+    $entity_type_id = $handler->definition['entity_type'];
+    $field_name = $handler->definition['field_name'];
+    /** @var \Drupal\Core\Entity\EntityFieldManagerInterface $field_manager */
+    $field_manager = \Drupal::service('entity_field.manager');
+    $field_definitions = $field_manager->getFieldStorageDefinitions($entity_type_id);
+    $field_definition = $field_definitions[$field_name] ?? NULL;
+    if (!$field_definition || $field_definition->getType() != 'price') {
+      return;
+    }
+    // Remove the formatter from configurable fields, and non-applicable ones.
+    if (!($field_definition instanceof BaseFieldDefinition) || !PriceCalculatedFormatter::isApplicable($field_definition)) {
+      unset($form['options']['type']['#options']['price_calculated']);
+    }
+  }
+}

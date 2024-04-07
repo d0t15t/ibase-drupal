@@ -19,5 +19,5 @@ libraries-extend:
     - the/file
   core/drupal.progress:
     - the/progress
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 generator: 'starterkit_theme:9.5.3'

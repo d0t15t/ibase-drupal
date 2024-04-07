@@ -1,0 +1,11 @@
+--- composer.json
++++ composer.json
+@@ -5,7 +5,7 @@
+     "homepage": "http://drupal.org/project/price",
+     "license": "GPL-2.0+",
+     "require": {
+-        "commerceguys/intl": "^1.0.0"
++        "commerceguys/intl": "2.0.*"
+     },
+     "minimum-stability": "dev"
+ }

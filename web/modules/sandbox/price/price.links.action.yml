@@ -1,0 +1,11 @@
+entity.price_currency.import:
+  route_name: entity.price_currency.import
+  title: 'Add currency'
+  appears_on:
+    - entity.price_currency.collection
+
+entity.price_currency.add_form:
+  route_name: entity.price_currency.add_form
+  title: 'Add custom currency'
+  appears_on:
+    - entity.price_currency.collection

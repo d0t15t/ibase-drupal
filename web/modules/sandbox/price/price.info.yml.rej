@@ -1,0 +1,8 @@
+--- price.info.yml
++++ price.info.yml
+@@ -2,4 +2,4 @@ name: Price
+ type: module
+ description: 'Defines the Price field with different modifications and the Currency entity.'
+ package: Field types
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^9.3 || ^10

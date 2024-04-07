@@ -1,0 +1,84 @@
+diff --git a/src/Plugin/Field/FieldFormatter/PriceCalculatedFormatter.php b/src/Plugin/Field/FieldFormatter/PriceCalculatedFormatter.php
+index f9165f2..4dd2bef 100644
+--- a/src/Plugin/Field/FieldFormatter/PriceCalculatedFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/PriceCalculatedFormatter.php
+@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  *   id = "price_calculated",
+  *   label = @Translation("Price Calculated"),
+  *   field_types = {
+- *     "price"
++ *     "price_price"
+  *   }
+  * )
+  */
+diff --git a/src/Plugin/Field/FieldFormatter/PriceDefaultFormatter.php b/src/Plugin/Field/FieldFormatter/PriceDefaultFormatter.php
+index 3175bd9..8fe3c49 100644
+--- a/src/Plugin/Field/FieldFormatter/PriceDefaultFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/PriceDefaultFormatter.php
+@@ -15,10 +15,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  * Plugin implementation of the 'price_default' formatter.
+  *
+  * @FieldFormatter(
+- *   id = "price_default",
++ *   id = "price_price_default",
+  *   label = @Translation("Price Default"),
+  *   field_types = {
+- *     "price"
++ *     "price_price"
+  *   }
+  * )
+  */
+diff --git a/src/Plugin/Field/FieldFormatter/PricePlainFormatter.php b/src/Plugin/Field/FieldFormatter/PricePlainFormatter.php
+index 0335c7f..06b2668 100644
+--- a/src/Plugin/Field/FieldFormatter/PricePlainFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/PricePlainFormatter.php
+@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  *   id = "price_plain",
+  *   label = @Translation("Price Plain"),
+  *   field_types = {
+- *     "price"
++ *     "price_price"
+  *   }
+  * )
+  */
+diff --git a/src/Plugin/Field/FieldType/PriceItem.php b/src/Plugin/Field/FieldType/PriceItem.php
+index bb9a6de..72b0a07 100644
+--- a/src/Plugin/Field/FieldType/PriceItem.php
++++ b/src/Plugin/Field/FieldType/PriceItem.php
+@@ -13,12 +13,12 @@ use Drupal\Core\TypedData\DataDefinition;
+  * Plugin implementation of the 'price' field type.
+  *
+  * @FieldType(
+- *   id = "price",
++ *   id = "price_price",
+  *   label = @Translation("Price"),
+  *   description = @Translation("Stores a decimal number and a three letter currency code."),
+  *   category = @Translation("Price"),
+- *   default_widget = "price_default",
+- *   default_formatter = "price_default",
++ *   default_widget = "price_price_default",
++ *   default_formatter = "price_price_default",
+  * )
+  */
+ class PriceItem extends FieldItemBase {
+diff --git a/src/Plugin/Field/FieldWidget/PriceDefaultWidget.php b/src/Plugin/Field/FieldWidget/PriceDefaultWidget.php
+index c44977e..d80ea6e 100644
+--- a/src/Plugin/Field/FieldWidget/PriceDefaultWidget.php
++++ b/src/Plugin/Field/FieldWidget/PriceDefaultWidget.php
+@@ -7,13 +7,13 @@ use Drupal\Core\Field\WidgetBase;
+ use Drupal\Core\Form\FormStateInterface;
+ 
+ /**
+- * Plugin implementation of the 'price_default' widget.
++ * Plugin implementation of the 'price_price_default' widget.
+  *
+  * @FieldWidget(
+- *   id = "price_default",
++ *   id = "price_price_default",
+  *   label = @Translation("Price"),
+  *   field_types = {
+- *     "price"
++ *     "price_price"
+  *   }
+  * )
+  */
