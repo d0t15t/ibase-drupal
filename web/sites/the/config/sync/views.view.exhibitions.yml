@@ -177,7 +177,10 @@ display:
       menu:
         type: normal
         title: Exhibitions
+        description: ''
         weight: -49
+        enabled: true
+        expanded: false
         menu_name: main
         parent: ''
     cache_metadata:

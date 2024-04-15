@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.exhibition.field_image
     - field.field.node.exhibition.field_images
     - field.field.node.exhibition.field_properties
-    - field.field.node.exhibition.layout_builder__layout
     - node.type.exhibition
   module:
     - allowed_formats
@@ -296,5 +295,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  layout_builder__layout: true
+hidden: {  }

@@ -1,0 +1,8 @@
+uuid: 4f6417ce-b455-4bcf-85a7-25f23c4cfde6
+langcode: en
+status: true
+dependencies: {  }
+id: frontend-main
+label: 'Frontend Main'
+description: 'Frontend Gatsby Links'
+locked: false

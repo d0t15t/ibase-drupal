@@ -76,6 +76,9 @@
 .node--type-artwork.node--view-mode-full .field--name-field-images > * > * {
   margin: auto;
 }
+.slider {
+  overflow: hidden;
+}
 .slider .glide__arrows button.glide__arrow {
   border: none;
   box-shadow: none;

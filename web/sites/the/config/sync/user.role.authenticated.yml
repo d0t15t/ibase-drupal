@@ -18,6 +18,7 @@ dependencies:
     - file
     - file_entity
     - filter
+    - help
     - media
     - media_pdf_thumbnail
     - node
@@ -38,6 +39,7 @@ permissions:
   - 'access content overview'
   - 'access content_artworks entity browser pages'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access media_documents entity browser pages'
   - 'access media_images entity browser pages'
@@ -58,6 +60,7 @@ permissions:
   - 'delete own artwork content'
   - 'delete own document media'
   - 'delete own exhibition content'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own page content'
   - 'delete own workgroup content'

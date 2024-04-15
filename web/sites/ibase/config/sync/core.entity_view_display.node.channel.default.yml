@@ -1,0 +1,57 @@
+uuid: 1bc646ba-7387-42e7-971e-86271e6c5160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.channel.body
+    - field.field.node.channel.field_api_endpoint
+    - field.field.node.channel.field_mixcloud_media
+    - field.field.node.channel.field_remote_schema
+    - node.type.channel
+  module:
+    - options
+    - text
+    - user
+id: node.channel.default
+targetEntityType: node
+bundle: channel
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_api_endpoint:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_mixcloud_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_remote_schema:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

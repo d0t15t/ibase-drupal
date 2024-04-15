@@ -5,9 +5,11 @@ dependencies:
   config:
     - entity_browser.browser.media_images
     - field.field.node.page.body
+    - field.field.node.page.field_feature
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - entity_browser
@@ -34,6 +36,16 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_feature:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: entity_browser_entity_reference
@@ -122,3 +134,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_images: true
+  layout_builder__layout: true

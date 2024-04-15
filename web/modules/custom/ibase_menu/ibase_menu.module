@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Ibase Menu module.
+ */
+
+function ibase_menu_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if ($variables['menu_name'] === 'main') {
+    $suggestions[] = 'menu__main__the';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ibase_menu_theme($existing, $type, $theme, $path) {
+  return [
+    'menu__main__the' => [
+      'base hook' => 'menu',
+    ],
+  ];
+}

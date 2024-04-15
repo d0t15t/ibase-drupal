@@ -57,37 +57,14 @@
 }
 .split-page-wrapper,
 .view-exhibitions .node--type-exhibition.node--view-mode-teaser .node__content--wrapper {
-  width: 100%;
-  max-width: 768px;
-}
-@media (min-width: 480px) {
-  .split-page-wrapper,
-  .view-exhibitions .node--type-exhibition.node--view-mode-teaser .node__content--wrapper {
-    max-width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .split-page-wrapper,
-  .view-exhibitions .node--type-exhibition.node--view-mode-teaser .node__content--wrapper {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1280px) {
-  .split-page-wrapper,
-  .view-exhibitions .node--type-exhibition.node--view-mode-teaser .node__content--wrapper {
-    max-width: 1280px;
-    display: flex;
-  }
+  display: inherit;
 }
 .split-page-wrapper--sidebar,
 .view-exhibitions .node--type-exhibition.node--view-mode-teaser .node__content--wrapper .node--type-exhibition.node--view-mode-sidebar {
-  width: 300px;
-  min-width: 300px;
-  max-width: 300px;
+  display: inherit;
 }
 .split-page-wrapper--content {
-  flex: 1;
-  max-width: 100%;
+  display: inherit;
 }
 .field--type-image .field__item > a {
   display: block;

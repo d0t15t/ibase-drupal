@@ -1,0 +1,11 @@
+uuid: 3b446188-d513-48a9-8602-dec163f9940a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.slider
+label: Slider
+description: 'Use a slider script.'
+targetEntityType: node
+cache: true

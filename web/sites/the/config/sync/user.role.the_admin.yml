@@ -14,13 +14,13 @@ dependencies:
   module:
     - content_translation
     - entity_browser
+    - file
     - file_entity
     - language
     - locale
     - media
     - node
     - path
-    - price
     - rabbit_hole
     - redirect
     - statistics
@@ -41,7 +41,6 @@ permissions:
   - 'administer languages'
   - 'administer menu'
   - 'administer nodes'
-  - 'administer price_currency'
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer taxonomy'
@@ -59,6 +58,7 @@ permissions:
   - 'delete any page content'
   - 'delete any workgroup content'
   - 'delete content translations'
+  - 'delete own files'
   - 'delete terms in mediums'
   - 'edit any artist content'
   - 'edit any artwork content'

@@ -9,7 +9,7 @@ _core:
 id: the_secondary_local_tasks
 theme: the
 region: header
-weight: -3
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

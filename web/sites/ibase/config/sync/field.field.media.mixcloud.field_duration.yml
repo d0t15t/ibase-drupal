@@ -1,0 +1,23 @@
+uuid: 281b1f9c-a3cd-440c-93ab-19435b67692c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_duration
+    - media.type.mixcloud
+id: media.mixcloud.field_duration
+field_name: field_duration
+entity_type: media
+bundle: mixcloud
+label: Duration
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

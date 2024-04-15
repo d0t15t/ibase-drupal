@@ -1,0 +1,20 @@
+uuid: 8161e023-110d-4dc6-8744-aad330fdc5f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: media.field_channels
+field_name: field_channels
+entity_type: media
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -12,7 +12,7 @@ dependencies:
 id: artists
 label: Artists
 module: views
-description: 'An overview of the gallery''s artists.'
+description: "An overview of the gallery's artists."
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -189,7 +189,10 @@ display:
       menu:
         type: normal
         title: Artists
+        description: ''
         weight: -50
+        enabled: true
+        expanded: false
         menu_name: main
         parent: ''
     cache_metadata:

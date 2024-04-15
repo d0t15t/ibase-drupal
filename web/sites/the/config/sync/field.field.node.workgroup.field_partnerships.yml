@@ -4,15 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_partnerships
+    - filter.format.html
+    - filter.format.plain_text
     - node.type.workgroup
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - html
-      - plain_text
 id: node.workgroup.field_partnerships
 field_name: field_partnerships
 entity_type: node
@@ -23,5 +19,8 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - html
+    - plain_text
 field_type: text_long

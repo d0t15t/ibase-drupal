@@ -11,7 +11,7 @@ _core:
 id: the_messages
 theme: the
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:

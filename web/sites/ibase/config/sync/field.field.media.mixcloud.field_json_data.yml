@@ -1,0 +1,19 @@
+uuid: e5590ef0-2510-497f-bb4a-dc3c9f5193c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_json_data
+    - media.type.mixcloud
+id: media.mixcloud.field_json_data
+field_name: field_json_data
+entity_type: media
+bundle: mixcloud
+label: 'JSON data'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

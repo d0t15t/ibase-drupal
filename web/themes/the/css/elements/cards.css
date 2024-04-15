@@ -48,7 +48,7 @@
   padding-top: 0;
 }
 .visually-hidden,
-ul.cards li > article .node__links {
+ul.cards .node__links {
   position: absolute !important;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
@@ -62,45 +62,18 @@ ul.cards {
   gap: 30px;
   justify-content: flex-start;
 }
-ul.cards li {
-  overflow: hidden;
-  height: 400px;
-}
 ul.cards li > article {
   display: grid;
   grid: 100%/auto;
   align-items: end;
 }
-ul.cards li > article .node__content {
-  height: 400px;
-}
-ul.cards li > article .node__content > a {
-  height: 400px;
-  display: block;
-}
-ul.cards.artworks li {
+.artworks li {
   max-width: 400px;
   height: 400px;
 }
-ul.cards.artworks li > article > .node__content a .field--name-field-images .field__item {
+.artworks li > article > .node__content a .field--name-field-images .field__item {
   display: flex;
 }
-ul.cards.artworks li > article > .node__content a .field--name-field-images .field__item img {
+.artworks li > article > .node__content a .field--name-field-images .field__item img {
   margin: auto;
-}
-ul.cards.artists li {
-  height: 400px;
-}
-ul.cards.artists li > article > * {
-  grid-area: 1/1/2/2;
-}
-ul.cards.artists li > article h4 {
-  z-index: 1;
-  background-color: #fff;
-  padding: 5px 10px 8px;
-}
-ul.cards.artists li > article .node__content > a {
-  background-color: #aaa;
-  height: 400px;
-  display: block;
 }

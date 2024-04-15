@@ -1,0 +1,15 @@
+block.settings.the_pager:
+  type: block_settings
+  label: 'THE Pager block'
+  mapping:
+    example:
+      type: string
+      label: Example
+
+block.settings.the_pager_foooo:
+  type: block_settings
+  label: 'FOOOO block'
+  mapping:
+    example:
+      type: string
+      label: Example

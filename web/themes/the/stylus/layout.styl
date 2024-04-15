@@ -1,43 +1,7 @@
 @require 'vars'
-@require 'layouts/split-page'
 
 .layout-container
-  margin: 50px 0 75px 50px;
-  max-width $max_width
+  display inherit
 
-  header
-    margin-bottom 50px
-
-  .region-primary-menu
-    display flex
-    align-items center
-
-  main
-    @extend .split-page-wrapper
-
-    .layout-content
-      @extend .split-page-wrapper--content
-
-    > aside
-      @extend .split-page-wrapper--sidebar
-
-    .node--type-exhibition.node--view-mode-full
-      .layout--twocol-section
-        .layout__region--second
-          overflow hidden
-
-
-.path-frontpage
-  .layout-container
-    margin 0
-    max-width unset
-    width 100%
-
-    header
-      padding-top 50px
-      padding-left: 50px;
-      max-width: $max_width;
-
-    main
-      width 100%
-      max-width: 100%;
+  .layout__region
+    overflow hidden

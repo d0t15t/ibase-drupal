@@ -1,0 +1,21 @@
+uuid: d99c137e-8926-4c03-89f3-05504f21a3d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_remote_schema
+    - node.type.channel
+  module:
+    - options
+id: node.channel.field_remote_schema
+field_name: field_remote_schema
+entity_type: node
+bundle: channel
+label: 'Remote schema'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

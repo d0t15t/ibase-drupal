@@ -34,17 +34,12 @@ content:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: ''
+      image_link: content
       image_style: teaser
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 0
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   body: true
@@ -63,3 +58,4 @@ hidden:
   field_telephone: true
   field_ust_id_number: true
   langcode: true
+  links: true

@@ -1,0 +1,23 @@
+uuid: f86512d4-b805-4e9a-b848-907d14ee9efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.channel
+  module:
+    - text
+id: node.channel.body
+field_name: body
+entity_type: node
+bundle: channel
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

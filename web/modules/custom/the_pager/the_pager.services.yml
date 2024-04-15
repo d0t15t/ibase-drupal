@@ -1,0 +1,4 @@
+services:
+  the_pager.utility:
+    class: Drupal\the_pager\ThePagerUtility
+    arguments: ['@pager.manager', '@entity_type.manager']

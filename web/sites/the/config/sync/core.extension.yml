@@ -13,17 +13,22 @@ module:
   backup_migrate: 0
   block: 0
   block_content: 0
+  block_style_plugins: 0
+  block_styles: 0
   breakpoint: 0
   cer: 0
+  cheeseburger_menu: 0
   ckeditor5: 0
   conditional_fields: 0
   config: 0
   contact: 0
   contextual: 0
   ctools: 0
+  custom_field: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  devel_generate: 0
   dimension: 0
   dynamic_page_cache: 0
   editor: 0
@@ -31,6 +36,7 @@ module:
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_embed: 0
+  entity_pager: 0
   field: 0
   field_formatter_range: 0
   field_group: 0
@@ -45,6 +51,8 @@ module:
   history: 0
   httpswww: 0
   iban_field: 0
+  ibase_block_styles: 0
+  ibase_menu: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -52,6 +60,7 @@ module:
   language: 0
   layout_builder: 0
   layout_builder_extra_templates: 0
+  layout_builder_styles: 0
   layout_discovery: 0
   link: 0
   locale: 0
@@ -70,10 +79,10 @@ module:
   path: 0
   path_alias: 0
   permissions_filter: 0
-  price: 0
+  phpass: 0
   rabbit_hole: 0
   redirect: 0
-  responsive_image: 0
+  responsive_layout_builder: 0
   rh_media: 0
   rh_node: 0
   rh_taxonomy: 0
@@ -81,6 +90,7 @@ module:
   search: 0
   shortcut: 0
   statistics: 0
+  styles_api: 0
   svg_image: 0
   syslog: 0
   system: 0
@@ -88,6 +98,7 @@ module:
   telephone: 0
   text: 0
   the_content: 0
+  the_pager: 0
   token: 0
   toolbar: 0
   update: 0

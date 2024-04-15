@@ -1,0 +1,21 @@
+uuid: bbfbd684-db1d-4aa8-bf45-9fc3076305e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_remote_item_updated
+field_name: field_remote_item_updated
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<ul{{ attributes.addClass('cards') }}>
+  {% for row in rows %}
+    <li{{ row.attributes.addClass('card') }}>
+      {{ row.content }}
+    </li>
+  {% endfor %}
+</ul>

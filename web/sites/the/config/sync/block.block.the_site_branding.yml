@@ -11,7 +11,7 @@ _core:
 id: the_site_branding
 theme: the
 region: header
-weight: -2
+weight: -7
 provider: null
 plugin: system_branding_block
 settings:

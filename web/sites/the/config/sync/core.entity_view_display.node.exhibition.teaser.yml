@@ -14,17 +14,141 @@ dependencies:
     - field.field.node.exhibition.field_image
     - field.field.node.exhibition.field_images
     - field.field.node.exhibition.field_properties
-    - field.field.node.exhibition.layout_builder__layout
     - image.style.wide
     - node.type.exhibition
   module:
+    - field_formatter_range
+    - layout_builder
     - media
+    - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Teaser exhibition'
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          4f1b01f2-26c2-47be-8f34-420e98131cf0:
+            uuid: 4f1b01f2-26c2-47be-8f34-420e98131cf0
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          eb9988c5-797f-4be4-8a88-292fa04f3077:
+            uuid: eb9988c5-797f-4be4-8a88-292fa04f3077
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          686fc9e1-8eb0-410d-a05d-9d59935e5cb4:
+            uuid: 686fc9e1-8eb0-410d-a05d-9d59935e5cb4
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          003442bc-978a-42f4-92b2-75249a31e220:
+            uuid: 003442bc-978a-42f4-92b2-75249a31e220
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_duration_text'
+              label: 'Opening and duration text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
 id: node.exhibition.teaser
 targetEntityType: node
 bundle: exhibition
 mode: teaser
 content:
+  field_artists:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 0
+    region: content
+  field_duration_text:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_image:
     type: media_thumbnail
     label: hidden
@@ -34,18 +158,19 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
-    weight: 0
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   body: true
-  field_artists: true
   field_artworks: true
   field_date: true
   field_dates: true
   field_duration: true
-  field_duration_text: true
   field_images: true
   field_properties: true
   langcode: true
-  layout_builder__layout: true
-  links: true

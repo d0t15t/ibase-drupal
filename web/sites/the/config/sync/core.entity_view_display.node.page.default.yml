@@ -4,16 +4,52 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_feature
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.layout_builder__layout
     - image.style.wide
     - node.type.page
   module:
+    - layout_builder
+    - layout_discovery
     - link
     - media
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Page main'
+          context_mapping: {  }
+        components:
+          c67c1e2a-983b-4180-9aa5-058cff5de167:
+            uuid: c67c1e2a-983b-4180-9aa5-058cff5de167
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -55,5 +91,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_feature: true
   field_images: true
   langcode: true
+  layout_builder__layout: true

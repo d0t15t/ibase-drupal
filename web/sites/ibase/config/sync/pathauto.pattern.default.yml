@@ -1,0 +1,16 @@
+uuid: 73faa8bc-5790-4079-8389-4178fec18227
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default
+label: Content
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: -9
+relationships:
+  'node:langcode:language':
+    label: Language

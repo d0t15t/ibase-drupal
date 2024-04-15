@@ -1,0 +1,14 @@
+main_menu:
+  js:
+    js/the-main-menu.js: {}
+
+  css:
+    component:
+      css/the-main-menu.css: {}
+
+  dependencies:
+    - ibase_menu/fontawesome
+
+fontawesome:
+  js:
+    https://kit.fontawesome.com/686cf5c3b5.js: { type: external, minified: true }

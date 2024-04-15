@@ -13,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.mediums
   module:
     - content_translation
+    - file
     - file_entity
     - layout_builder
     - media
@@ -37,6 +38,7 @@ permissions:
   - 'change own username'
   - 'create and edit custom blocks'
   - 'create terms in mediums'
+  - 'delete own files'
   - 'delete terms in mediums'
   - 'edit any artist content'
   - 'edit any artwork content'

@@ -16,21 +16,189 @@ dependencies:
     - field.field.node.artwork.field_history
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_info
-    - field.field.node.artwork.field_insurance_value
     - field.field.node.artwork.field_location
     - field.field.node.artwork.field_medium
-    - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
-    - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
     - image.style.wide
     - node.type.artwork
+    - views.view.pager
   module:
     - field_formatter_range
+    - layout_builder
     - media
     - user
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: Main
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          7fc0e57b-3222-4b0f-805d-67a04c3768c6:
+            uuid: 7fc0e57b-3222-4b0f-805d-67a04c3768c6
+            region: second
+            configuration:
+              id: 'field_block:node:artwork:field_images'
+              label: Images
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: eager
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          d08a55b3-d992-4b04-984c-37fd81abda2d:
+            uuid: d08a55b3-d992-4b04-984c-37fd81abda2d
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          ffe5eaa4-fd54-4454-b13c-ee1943afb517:
+            uuid: ffe5eaa4-fd54-4454-b13c-ee1943afb517
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_medium'
+              label: Medium
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          a23fce5e-8cbe-492c-ad02-783f7f4394b4:
+            uuid: a23fce5e-8cbe-492c-ad02-783f7f4394b4
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_dimensions'
+              label: Dimensions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: volume_components_field_formatter
+                label: visually_hidden
+                settings:
+                  link_to_entity: 0
+                third_party_settings: {  }
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          7135d593-274b-4d4a-9d00-34e8c785e0cc:
+            uuid: 7135d593-274b-4d4a-9d00-34e8c785e0cc
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:body'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          5850c2a6-c535-4fba-bceb-602907ec5e33:
+            uuid: 5850c2a6-c535-4fba-bceb-602907ec5e33
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          1734a0a2-e9a8-439f-9a6c-e976bda572a5:
+            uuid: 1734a0a2-e9a8-439f-9a6c-e976bda572a5
+            region: first
+            configuration:
+              id: 'views_block:pager-block_3'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 5
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
 id: node.artwork.default
 targetEntityType: node
 bundle: artwork
@@ -64,12 +232,9 @@ hidden:
   field_gallery_reference_number: true
   field_history: true
   field_info: true
-  field_insurance_value: true
   field_location: true
   field_medium: true
-  field_offset_cost: true
   field_owner: true
-  field_sale_price: true
   field_version: true
   field_workgroups: true
   field_year: true

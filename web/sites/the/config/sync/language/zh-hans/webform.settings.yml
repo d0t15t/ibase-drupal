@@ -7,6 +7,8 @@ settings:
   dialog_options:
     narrow:
       title: 窄
+    normal:
+      title: 标准的
     wide:
       title: 宽
 element:
