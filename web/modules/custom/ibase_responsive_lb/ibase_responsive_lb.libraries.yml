@@ -1,0 +1,28 @@
+# Main theme library.
+global:
+  js:
+    js/ibase-responsive-lb.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
+    - core/drupalSettings
+#  css:
+#    base:
+#      css/base/elements.css: {}
+#    component:
+#      css/components/block.css: {}
+#      css/components/breadcrumb.css: {}
+#      css/components/field.css: {}
+#      css/components/form.css: {}
+#      css/components/header.css: {}
+#      css/components/menu.css: {}
+#      css/components/messages.css: {}
+#      css/components/node.css: {}
+#      css/components/sidebar.css: {}
+#      css/components/table.css: {}
+#      css/components/tabs.css: {}
+#      css/components/buttons.css: {}
+#    layout:
+#      css/layouts/layout.css: {}
+#    theme:
+#      css/theme/print.css: { media: print }

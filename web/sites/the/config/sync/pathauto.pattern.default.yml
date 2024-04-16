@@ -7,12 +7,12 @@ dependencies:
 id: default
 label: Default
 type: 'canonical_entities:node'
-pattern: '[node:content-type]/[node:title]'
+pattern: '[node:content-type]s/[node:title]'
 selection_criteria:
-  af244974-0b7a-4ee0-97e2-0fd4ccb18966:
+  5e24badb-865a-4025-b169-42583d3712fb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: af244974-0b7a-4ee0-97e2-0fd4ccb18966
+    uuid: 5e24badb-865a-4025-b169-42583d3712fb
     context_mapping:
       node: node
     bundles:

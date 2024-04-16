@@ -10,7 +10,7 @@
   font-size: 1.5em !important;
   position: relative;
   z-index: 1000;
-  padding: 20px;
+  padding: 10px 10px 0 0;
 }
 
 ul.the-main-menu--menu {
@@ -23,13 +23,13 @@ ul.the-main-menu--menu {
   padding: 40px 30px;
   color: white;
   margin: 0;
-  z-index: 999;
+  z-index: 1;
 }
 
 ul.the-main-menu--menu li {
   width: 100px;
   display: block;
-  font-size: 3em;
+  font-siize: 3em;
 }
 
 ul.the-main-menu--menu.the-main-menu--menu--closed {

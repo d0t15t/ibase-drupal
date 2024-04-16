@@ -103,3 +103,8 @@
 .layout-container small.small-text {
   font-size: 80%;
 }
+.layout-container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

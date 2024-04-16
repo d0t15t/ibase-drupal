@@ -40,3 +40,10 @@ function the_preprocess_node(&$vars) {
       ->view($node, 'sidebar');
   }
 }
+
+function the_preprocess_field(&$vars) {
+  if ($vars['field_name'] === 'field_artworks'
+  && isset($vars['element']['#object']) && $vars['element']['#object']->bundle() === 'exhibition') {
+    $vars['button_title'] = t('Exhibition artworks');
+  }
+}

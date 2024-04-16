@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for IBase Responsive LB module.
+ */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function ibase_responsive_lb_page_attachments_alter(array &$attachments) {
+  $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('ibase_responsive_lb');
+  if (!empty($breakpoints)) {
+    $media_queries = array_map(fn($b) => $b->getMediaQuery(), $breakpoints);
+    $attachments['#attached']['drupalSettings']['responsive']['breakpoints'] = $media_queries;
+    $attachments['#attached']['library'][] = 'ibase_responsive_lb/global';
+  }
+}

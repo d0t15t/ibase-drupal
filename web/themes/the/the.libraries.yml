@@ -101,6 +101,7 @@ slider:
     js/components/slider.js: { attributes: { type: module } }
   dependencies:
     - the/glidejs
+    - ibase_menu/fontawesome
 
 glidejs:
   version: VERSION

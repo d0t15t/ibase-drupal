@@ -17,7 +17,6 @@ module:
   block_styles: 0
   breakpoint: 0
   cer: 0
-  cheeseburger_menu: 0
   ckeditor5: 0
   conditional_fields: 0
   config: 0
@@ -31,6 +30,7 @@ module:
   devel_generate: 0
   dimension: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   embed: 0
   entity_browser: 0
@@ -53,6 +53,7 @@ module:
   iban_field: 0
   ibase_block_styles: 0
   ibase_menu: 0
+  ibase_responsive_lb: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -82,7 +83,6 @@ module:
   phpass: 0
   rabbit_hole: 0
   redirect: 0
-  responsive_layout_builder: 0
   rh_media: 0
   rh_node: 0
   rh_taxonomy: 0

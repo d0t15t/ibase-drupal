@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.exhibition.field_properties
     - image.style.large
     - node.type.exhibition
+    - views.view.pager
   module:
     - datetime
     - datetime_range
@@ -24,6 +25,7 @@ dependencies:
     - options
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -60,9 +62,10 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-              rlb_breakpoint_group: the
+              rlb_breakpoint_group: toolbar
               rlb_breakpoints:
-                - the.sm
+                - toolbar.narrow
+                - toolbar.standard
               rlb_load_hidden: 0
           6294c643-2958-4be9-9a09-95063fc7ae74:
             uuid: 6294c643-2958-4be9-9a09-95063fc7ae74
@@ -85,41 +88,10 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-              rlb_breakpoint_group: the
+              rlb_breakpoint_group: toolbar
               rlb_breakpoints:
-                - the.sm
-              rlb_load_hidden: 0
-          1173d85c-5c4c-4332-a3e2-1d86e4614258:
-            uuid: 1173d85c-5c4c-4332-a3e2-1d86e4614258
-            region: content
-            configuration:
-              id: 'field_block:node:exhibition:field_images'
-              label: Images
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: media_thumbnail
-                label: visually_hidden
-                settings:
-                  image_link: ''
-                  image_style: large
-                  image_loading:
-                    attribute: lazy
-                third_party_settings:
-                  field_formatter_range:
-                    order: 0
-                    limit: 0
-                    offset: 0
-            weight: 3
-            additional:
-              layout_builder_styles_style:
-                slider: slider
-              rlb_breakpoint_group: the
-              rlb_breakpoints:
-                - the.sm
+                - toolbar.narrow
+                - toolbar.standard
               rlb_load_hidden: 0
           26a40b8a-7ec0-466c-80af-27689bc7c997:
             uuid: 26a40b8a-7ec0-466c-80af-27689bc7c997
@@ -137,13 +109,44 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
+            weight: 6
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.narrow
+                - toolbar.standard
+              rlb_load_hidden: 0
+          cdd8a62f-145b-45d2-af66-8ee2fcd82ad0:
+            uuid: cdd8a62f-145b-45d2-af66-8ee2fcd82ad0
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_artworks'
+              label: Artworks
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: visually_hidden
+                settings:
+                  view_mode: image_feature
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
             weight: 5
             additional:
               layout_builder_styles_style:
                 slider: 0
-              rlb_breakpoint_group: the
+              rlb_breakpoint_group: toolbar
               rlb_breakpoints:
-                - the.sm
+                - toolbar.narrow
+                - toolbar.standard
               rlb_load_hidden: 0
         third_party_settings: {  }
       -
@@ -184,8 +187,12 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 1
-            additional: {  }
+            weight: 3
+            additional:
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.wide
+              rlb_load_hidden: 0
           2c5b5e70-77b7-45a0-98f7-3e8caf78c6e8:
             uuid: 2c5b5e70-77b7-45a0-98f7-3e8caf78c6e8
             region: second
@@ -203,20 +210,16 @@ third_party_settings:
                 settings:
                   view_mode: slider
                 third_party_settings:
-                  field_formatter_class:
-                    class: ''
                   field_formatter_range:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 0
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: 0
               rlb_breakpoint_group: toolbar
               rlb_breakpoints:
-                - toolbar.narrow
-                - toolbar.standard
                 - toolbar.wide
               rlb_load_hidden: 0
           3a70c844-3296-4b47-aa0f-82c51ef9af59:
@@ -233,28 +236,11 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 5
-            additional: {  }
-          2bc07bb7-a0ae-464d-a6b4-5c9038b2770b:
-            uuid: 2bc07bb7-a0ae-464d-a6b4-5c9038b2770b
-            region: first
-            configuration:
-              id: 'field_block:node:exhibition:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: visually_hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
             additional:
-              layout_builder_styles_style:
-                slider: 0
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.wide
+              rlb_load_hidden: 0
           7746279c-dedd-4a73-834f-ba4b26ad133a:
             uuid: 7746279c-dedd-4a73-834f-ba4b26ad133a
             region: first
@@ -275,6 +261,54 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.wide
+              rlb_load_hidden: 0
+          2bc07bb7-a0ae-464d-a6b4-5c9038b2770b:
+            uuid: 2bc07bb7-a0ae-464d-a6b4-5c9038b2770b
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.wide
+              rlb_load_hidden: 0
+          7ce070b9-e489-444c-9842-717f321b3d2d:
+            uuid: 7ce070b9-e489-444c-9842-717f321b3d2d
+            region: second
+            configuration:
+              id: 'views_block:pager-block_4'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+              rlb_breakpoint_group: toolbar
+              rlb_breakpoints:
+                - toolbar.wide
+              rlb_load_hidden: 0
         third_party_settings: {  }
 id: node.exhibition.default
 targetEntityType: node

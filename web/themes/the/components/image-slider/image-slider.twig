@@ -9,9 +9,7 @@
   'field--type-' ~ field_type|clean_class,
   'field--label-' ~ label_display,
   label_display == 'inline' ? 'clearfix',
-  has_slider ? 'glide',
-  has_slider ? 'artwork-slider',
-  has_slider ? 'slider'
+  has_slider ? 'slider',
 ]
 %}
 {%
@@ -24,6 +22,15 @@
 <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
 <div{{ attributes.addClass(classes) }}>
   {% if has_slider %}
+
+    <div class="glide__arrows navigation" data-glide-el="controls">
+      <button class="" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i><span class="visually-hidden">Previous Image</span></button>
+      {% if button_title %}<span>{{ button_title }}</span>{% endif %}
+      <button class="" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i><span class="visually-hidden">Next Image</span></button>
+{#      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-angle-left"></i><span class="visually-hidden">Previous Image</span></button>#}
+{#      <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-angle-right"></i><span class="visually-hidden">Next Image</span></button>#}
+    </div>
+
     <div data-glide-el="track" class="glide__track image-container--background">
       <ul{{ attributes.addClass(classes, 'field__items', 'glide__slides') }}>
         {% for item in items %}
@@ -31,10 +38,7 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><span>^</span><span>Previous Image</span></button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><span>^</span><span>Next Image</span></button>
-    </div>
+
     <div class="glide__bullets" data-glide-el="controls[nav]">
       {% for item in items %}
         <button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>

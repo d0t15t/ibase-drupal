@@ -1,38 +1,52 @@
 @require 'vars'
 @require 'components/image'
 
-.slider
+.glide--slider
   overflow hidden
+
   .glide__track
-    //@extend .full-image-display-wrapper
+    padding 0
 
-    ul.glide__slides
-      li.glide__slide
-        //@extend .full-image-display-wrapper--inner
+    .glide__slide
+      max-width 100%
 
-  .glide__arrows
-    button.glide__arrow
-      border none
-      box-shadow none
-      padding 0
+      img
+        max-height 500px
+        max-width 100%
+        object-fit: contain
 
-      > span:nth-child(1)
-        color $color_black
-        display block
-        font-size 4em
-        font-weight 100
 
-      > span:nth-child(2)
-        @extend .visually-hidden
-
-      &--left
-        left 0
-
-        > span:nth-child(1)
-          transform rotate(270deg)
-
-      &--right
-        right 0
-
-        > span:nth-child(1)
-          transform rotate(90deg)
+    //padding 50px
+  //  //@extend .full-image-display-wrapper
+  //  padding 50px
+  //
+  //  ul.glide__slides
+  //    li.glide__slide
+  //      //@extend .full-image-display-wrapper--inner
+  //
+  //.glide__arrows
+  //  button.glide__arrow
+  //    border none
+  //    box-shadow none
+  //    padding 0
+  //
+  //    > span:nth-child(1)
+  //      color $color_black
+  //      display block
+  //      font-size 4em
+  //      font-weight 100
+  //
+  //    > span:nth-child(2)
+  //      @extend .visually-hidden
+  //
+  //    &--left
+  //      left 0
+  //
+  //      > span:nth-child(1)
+  //        transform rotate(270deg)
+  //
+  //    &--right
+  //      right 0
+  //
+  //      > span:nth-child(1)
+  //        transform rotate(90deg)

@@ -4,6 +4,8 @@
  */
 .breadcrumb {
   padding-bottom: 0.5em;
+  font-size: 0.875em;
+  color: #666;
 }
 .breadcrumb ol {
   margin: 0;

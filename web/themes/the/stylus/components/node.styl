@@ -1,48 +1,60 @@
 @require 'vars'
-@require 'layouts/split-page'
 @require 'components/image'
 
-.node.node--type-artist.node--view-mode-full
-  > .node__content
-    > .field + .field
-      margin-top 20px
+.node--view-mode-full
+  .field__label
+    color $color_grey
+    font-weight lighter
 
-    > .field:not(.field--name-field-artist-artworks)
-      width 60%
-
-    > .field--name-field-artist-artworks
-      .field__label
-        @extend .visually-hidden
-
-.node.node--type-artwork.node--view-mode-full,
-.block-field-blocknodeexhibitionfield-images
-  .field--name-field-images
-    width: $content_width
-
-    img
-      height $content_height
-      width auto
-      max-width: $content_width
-
-  .field--name-field-images--glider
-    li
-      display flex
-    .image-container--background
-      height $content_height
-      width: $content_width
+  h1
+    font-size 2em
+    line-height 1em
+    //margin-bottom 0.5em
 
 
-      img
-        margin auto
-        width: auto
-        max-width 100%
-        height $content_height
-
-      li
-        //@extend .full-image-display-wrapper--inner
-        width: $content_width
 
 
-.node.node--view-mode-sidebar
-  h4
-    font-weight normal
+//.node.node--type-artist.node--view-mode-full
+//  > .node__content
+//    > .field + .field
+//      margin-top 20px
+//
+//    > .field:not(.field--name-field-artist-artworks)
+//      width 60%
+//
+//    > .field--name-field-artist-artworks
+//      .field__label
+//        @extend .visually-hidden
+//
+//.node.node--type-artwork.node--view-mode-full,
+//.block-field-blocknodeexhibitionfield-images
+//  .field--name-field-images
+//    width: $content_width
+//
+//    img
+//      height $content_height
+//      width auto
+//      max-width: $content_width
+//
+//  .field--name-field-images--glider
+//    li
+//      display flex
+//    .image-container--background
+//      height $content_height
+//      width: $content_width
+//
+//
+//      img
+//        margin auto
+//        width: auto
+//        max-width 100%
+//        height $content_height
+//
+//      li
+//        //@extend .full-image-display-wrapper--inner
+//        width: $content_width
+//
+//
+//.node.node--view-mode-sidebar
+//  h4
+//    font-weight normal

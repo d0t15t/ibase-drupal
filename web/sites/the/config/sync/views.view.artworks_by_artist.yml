@@ -243,10 +243,11 @@ display:
       tags: {  }
   block:
     id: block
-    display_title: Block
+    display_title: 'Artworks by artist '
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -443,6 +444,27 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_artists'
+  block_2:
+    id: block_2
+    display_title: 'Artworks by exhibition '
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   embed_1:
     id: embed_1
     display_title: Embed

@@ -3,9 +3,10 @@ import Glide, { Anchors, Controls } from '../../node_modules/@glidejs/glide/dist
 ((Drupal, once) => {
   Drupal.behaviors.glideSlider = {
     attach: function (context, settings) {
-      once('glideSlider', '.glide.slider', context).forEach((el) => {
+      once('glideSlider', '.glide__track ', context).forEach((el) => {
         if (el.querySelectorAll('ul.glide__slides li').length > 1) {
-          new Glide('.glide.slider').mount({ Anchors, Controls })
+          // get the parent of .glide__track
+          new Glide(el.parentNode).mount({ Anchors, Controls })
         }
       });
     }

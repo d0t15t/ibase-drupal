@@ -1,9 +1,9 @@
-uuid: 59aa6a01-aa37-4b7d-8818-54bc930b5e9d
+uuid: 88fe2740-2fc3-4668-89cf-bdb8845f7e75
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.slider
+    - core.entity_view_mode.node.image_feature
     - field.field.node.artwork.body
     - field.field.node.artwork.field_artists
     - field.field.node.artwork.field_artists_catalog_number
@@ -34,23 +34,23 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.artwork.slider
+id: node.artwork.image_feature
 targetEntityType: node
 bundle: artwork
-mode: slider
+mode: image_feature
 content:
   field_images:
     type: media_thumbnail
-    label: hidden
+    label: visually_hidden
     settings:
       image_link: ''
       image_style: wide
       image_loading:
-        attribute: eager
+        attribute: lazy
     third_party_settings:
       field_formatter_range:
         order: 0
-        limit: 1
+        limit: 0
         offset: 0
     weight: 0
     region: content
