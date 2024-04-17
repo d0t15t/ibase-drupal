@@ -2,36 +2,42 @@
 @require 'layouts/split-page'
 @require 'components/image'
 
-.view-exhibitions
-  .node--type-exhibition.node--view-mode-teaser
-    height $content_height
+//.view-exhibitions
+//  .node--type-exhibition.node--view-mode-teaser
+//    height $content_height
 
-    .node__content--wrapper
-      @extend .split-page-wrapper
+//    .node__content--wrapper
+//      @extend .split-page-wrapper
+//
+//      .node--type-exhibition.node--view-mode-sidebar
+//        @extend .split-page-wrapper--sidebar
+//
+//      .field--name-field-image
+//        width: $content_width
+//        height $content_height
+//
+//        *
+//          width: $content_width
+//        img
+//          object-fit contain
+//          height auto
+//          object-position: 50% 50%;
+//
+//  .glide__bullets
+//    margin-left: 150px;
+//
+//  button.glide__arrow--left
+//    left $sidebar_width !important
+//
+//.view-artists
+//  ul
+//    gap 20px
+//
+//    li
+//      border 1px solid
 
-      .node--type-exhibition.node--view-mode-sidebar
-        @extend .split-page-wrapper--sidebar
-
-      .field--name-field-image
-        width: $content_width
-        height $content_height
-
-        *
-          width: $content_width
-        img
-          object-fit contain
-          height auto
-          object-position: 50% 50%;
-
-  .glide__bullets
-    margin-left: 150px;
-
-  button.glide__arrow--left
-    left $sidebar_width !important
-
-.view-artists
-  ul
-    gap 20px
-
-    li
-      border 1px solid
+.field--name-field-image
+  img
+    object-fit contain
+    height auto
+    object-position: top center

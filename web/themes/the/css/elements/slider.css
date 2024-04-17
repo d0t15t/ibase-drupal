@@ -85,7 +85,7 @@
   max-width: 100%;
 }
 .glide--slider .glide__track .glide__slide img {
-  max-height: 500px;
   max-width: 100%;
   object-fit: contain;
+  max-height: 500px;
 }

@@ -1,0 +1,30 @@
+@require 'vars'
+
+.breadcrumb {
+  margin-bottom: 10px;
+  //font-size: 0.875em;
+  color: $color_grey;
+  font-weight: lighter;
+}
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+[dir="rtl"] .breadcrumb ol {
+/* This is required to win over specificity of [dir="rtl"] ol */
+  margin-right: 0;
+}
+.breadcrumb li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* IE8 does not support :not() and :last-child. */
+.breadcrumb li:before {
+  content: " \BB ";
+  color: $color_black;
+}
+.breadcrumb li:first-child:before {
+  content: none;
+}

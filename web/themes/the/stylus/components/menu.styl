@@ -1,16 +1,18 @@
-//@require 'vars'
-//
-//ul.menu
-//  margin 0
-//
-//main
-//  .region-content
-//    nav.pager
-//      ul + ul, ul + p
-//        padding-top 0
-//
-//nav.menu--main
-//  ul.menu
-//    display flex
-//    gap 30px
-//    text-transform lowercase
+@require 'vars'
+@require 'mq'
+
+@media ($mq_up_large)
+  ul.menu
+    margin 0
+
+  main
+    .region-content
+      nav.pager
+        ul + ul, ul + p
+          padding-top 0
+
+  nav.menu--main
+    ul.menu
+      display flex
+      gap 30px
+      text-transform lowercase

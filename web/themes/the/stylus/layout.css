@@ -68,25 +68,27 @@
 .layout-container .breadcrumb {
   padding: 0 10px;
 }
-.layout--onecol .layout__region--content .block {
-  padding: 0 10px;
+.layout .layout__region--content .block {
+  padding: 0 20px;
 }
-.layout--onecol .layout__region--content .block + .block {
-  margin-top: 7px;
+.layout .layout__region--content .block + .block {
+  margin-top: 5px;
 }
-.layout--onecol .layout__region--content .block + .block.block-views-blockpager-block-4 {
+.layout .layout__region--content .block + .block.block-views-blockpager-block-4 {
   margin-top: 0;
 }
-.layout--onecol .layout__region--content .block-field-blocknodeexhibitionfield-artworks {
+.layout .layout__region--content .block-field-blocknodeexhibitionfield-artworks {
   padding: 0;
 }
-.layout--onecol .layout__region--content .block-field-blocknodeexhibitionfield-artworks .navigation {
+.layout .layout__region--content .block-field-blocknodeexhibitionfield-artworks .navigation {
   margin-bottom: 10px;
+  padding-left: 10px;
 }
-.layout--onecol .layout__region--content .entity-pager *,
-.layout--onecol .layout__region--content .glide__arrows.navigation * {
+.layout .layout__region--content .entity-pager *,
+.layout .layout__region--content .glide__arrows.navigation * {
   color: #aaa;
+  margin-left: 5px;
 }
-.layout--onecol .layout__region--content .entity-pager .entity-pager-list {
+.layout .layout__region--content .entity-pager .entity-pager-list {
   text-align: right;
 }
