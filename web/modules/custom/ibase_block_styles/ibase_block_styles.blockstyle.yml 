@@ -1,0 +1,7 @@
+sample_block_style:
+  label: 'Sample Block Style'
+  form:
+    field_name:
+      '#type': 'textfield'
+      '#title': 'Add a custom css class'
+      '#default_value': 'my-class'
