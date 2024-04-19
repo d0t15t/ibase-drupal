@@ -8,8 +8,8 @@ dependencies:
     - the
 id: the_breadcrumbs_2
 theme: the
-region: content
-weight: -6
+region: highlighted
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:

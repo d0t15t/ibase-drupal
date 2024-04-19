@@ -14,10 +14,10 @@ bundle: page
 label: Link
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: 0
+  title: 1
   link_type: 1
 field_type: link

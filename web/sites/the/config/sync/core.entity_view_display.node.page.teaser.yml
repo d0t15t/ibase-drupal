@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
-    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - text
@@ -38,4 +37,3 @@ hidden:
   field_images: true
   field_link: true
   langcode: true
-  layout_builder__layout: true
