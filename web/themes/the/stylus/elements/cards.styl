@@ -6,6 +6,9 @@ ul.cards
   margin 0 auto !important
   width 100%
   padding-left 4px
+  display grid
+  grid-template-columns: repeat(2, 1fr);
+  list-style none
 
   @media $mq_up_xl
     display grid
@@ -13,80 +16,31 @@ ul.cards
     gap 20px
 
   li
-    display inline-block
+    //display inline-block
     border 1px solid black
-    width calc(50% - 10px)
+    //width calc(50% - 10px)
     box-sizing border-box
-    margin 0 5px 10px 0
+    margin 0 15px 10px 0
 
     h4
         padding 0 0 3px 7px
 
-    @media $mq_up_lxl
-      width 300px
+    //@media $mq_up_lxl
+    //  width 300px
 
     img
       max-width 100%
       height auto
       width 100%
 
-  //box-sizing border-box
+.view-artworks-by-artist
+  padding-top 20px
+  .view-content
+    ul.cards
+      li
+        border 0
 
-//@media $mq_up_lxl
-//  ul.cards
-//    grid-template-columns: repeat(4, 1fr);
-//
-//
-//ul.cards
-//  li
-//    list-style none
-//    border 1px solid black
-//    //width calc(25% - 30px)
-//
-//    *
-//      max-width 100%
-//
-//    img
-//        max-width 100%
-//        height auto
-//
-//    //> article
-//
-//    //  display grid
-//    //  grid 100% / auto;
-//    //  align-items end
-//
-//
-//  &.artworks
-//    li
-//      max-width 25%
-//      //width 400px
-//      height 400px
-//
-//      > article
-//        > .node__content a
-//          .field--name-field-images .field__item
-//            display flex
-//
-//            img
-//              margin auto
-//
-////&.artists
-//  //li
-//    //max-width 300px
-//    //width 300px
-//    //height 400px
-//
-//    //> article
-//    //  > *
-//    //    grid-area 1 / 1 / 2 / 2
-//    //
-//    //  h4
-//    //    z-index: 1;
-//    //    background-color white
-//    //    padding 5px 10px 8px
-//
-//      //.node__content > a
-//      //  background-color $color_grey
-//      //  height 400px
-//      //  display block
+      @media $mq_up_lxl
+        display grid
+        width 100%
+        grid-template-columns: repeat(3, 1fr);

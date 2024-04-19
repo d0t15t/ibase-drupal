@@ -59,6 +59,9 @@ ul.cards {
   margin: 0 auto !important;
   width: 100%;
   padding-left: 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
 }
 @media all and (min-width: 992px) {
   ul.cards {
@@ -68,22 +71,28 @@ ul.cards {
   }
 }
 ul.cards li {
-  display: inline-block;
   border: 1px solid #000;
-  width: calc(50% - 10px);
   box-sizing: border-box;
-  margin: 0 5px 10px 0;
+  margin: 0 15px 10px 0;
 }
 ul.cards li h4 {
   padding: 0 0 3px 7px;
-}
-@media all and (min-width: 768px) {
-  ul.cards li {
-    width: 300px;
-  }
 }
 ul.cards li img {
   max-width: 100%;
   height: auto;
   width: 100%;
+}
+.view-artworks-by-artist {
+  padding-top: 20px;
+}
+.view-artworks-by-artist .view-content ul.cards li {
+  border: 0;
+}
+@media all and (min-width: 768px) {
+  .view-artworks-by-artist .view-content ul.cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

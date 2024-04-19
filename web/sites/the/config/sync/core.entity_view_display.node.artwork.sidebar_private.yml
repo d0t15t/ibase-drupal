@@ -1,6 +1,6 @@
 uuid: 5a7b746b-c460-46e1-b3ca-70ba2a0343d0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.sidebar_private

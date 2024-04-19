@@ -24,18 +24,123 @@ dependencies:
     - field.field.node.artwork.field_year
     - image.style.wide
     - node.type.artwork
-    - views.view.pager
   module:
     - field_formatter_range
     - layout_builder
+    - layout_discovery
     - media
     - user
-    - views
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: false
     sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Small screen'
+          context_mapping: {  }
+        components:
+          11fd0f7b-7dbd-4b2e-89d4-cbf270181c3d:
+            uuid: 11fd0f7b-7dbd-4b2e-89d4-cbf270181c3d
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          c741e3d4-c0b5-41a8-9d25-a4ee6a5bfd17:
+            uuid: c741e3d4-c0b5-41a8-9d25-a4ee6a5bfd17
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          f7c4e089-65e0-4afd-9ccb-165c36a37550:
+            uuid: f7c4e089-65e0-4afd-9ccb-165c36a37550
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_medium'
+              label: Medium
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          ce49a0bf-a5ac-4cde-9d70-7965e2d81385:
+            uuid: ce49a0bf-a5ac-4cde-9d70-7965e2d81385
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_images'
+              label: Images
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
@@ -180,21 +285,6 @@ third_party_settings:
                   link_to_entity: false
                 third_party_settings: {  }
             weight: 0
-            additional:
-              layout_builder_styles_style:
-                slider: 0
-          1734a0a2-e9a8-439f-9a6c-e976bda572a5:
-            uuid: 1734a0a2-e9a8-439f-9a6c-e976bda572a5
-            region: first
-            configuration:
-              id: 'views_block:pager-block_3'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 5
             additional:
               layout_builder_styles_style:
                 slider: 0

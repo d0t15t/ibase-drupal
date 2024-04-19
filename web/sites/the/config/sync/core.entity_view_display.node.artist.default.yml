@@ -23,6 +23,7 @@ dependencies:
     - views.view.artworks_by_artist
   module:
     - layout_builder
+    - layout_discovery
     - metatag
     - text
     - user
@@ -33,6 +34,69 @@ third_party_settings:
     enabled: true
     allow_custom: false
     sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Small screen'
+          context_mapping: {  }
+        components:
+          29a32d3d-f164-4932-a725-8487c86e6dab:
+            uuid: 29a32d3d-f164-4932-a725-8487c86e6dab
+            region: content
+            configuration:
+              id: 'field_block:node:artist:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          77a5a6b6-66de-4909-a896-c7d0df891bf7:
+            uuid: 77a5a6b6-66de-4909-a896-c7d0df891bf7
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_biography'
+              label: Biography
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          eddc0c71-ce31-4c7b-adf3-71916d94d5b6:
+            uuid: eddc0c71-ce31-4c7b-adf3-71916d94d5b6
+            region: content
+            configuration:
+              id: 'views_block:artworks_by_artist-block'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
       -
         layout_id: layout_twocol_section
         layout_settings:
