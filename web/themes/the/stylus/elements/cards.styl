@@ -1,66 +1,92 @@
 @require 'vars'
+@require 'mq'
 
 ul.cards
-  display: flex
-  flex-wrap wrap
-  gap 30px
-  justify-content flex-start
+
+  margin 0 auto !important
+  width 100%
+  padding-left 4px
+
+  @media $mq_up_xl
+    display grid
+    grid-template-columns: repeat(4, 1fr);
+    gap 20px
 
   li
-    //border $border_cards
-    //overflow hidden
-    //margin-bottom 20px
-    //max-width 300px
-    //width 300px
-    //height 400px
+    display inline-block
+    border 1px solid black
+    width calc(50% - 10px)
+    box-sizing border-box
+    margin 0 5px 10px 0
 
-    > article
-      display grid
-      grid 100% / auto;
-      align-items end
+    h4
+        padding 0 0 3px 7px
 
-      //.node__content
-        //max-width 400px
-        //width 400px
-        //height 400px
+    @media $mq_up_lxl
+      width 300px
 
-        //> a
-          //height 400px
-          //display block
+    img
+      max-width 100%
+      height auto
+      width 100%
 
-      .node__links
-        @extend .visually-hidden;
+  //box-sizing border-box
 
-  &.artworks
-    li
-      max-width 400px
-      //width 400px
-      height 400px
-
-      > article
-        > .node__content a
-          .field--name-field-images .field__item
-            display flex
-
-            img
-              margin auto
-
-  //&.artists
-    //li
-      //max-width 300px
-      //width 300px
-      //height 400px
-
-      //> article
-      //  > *
-      //    grid-area 1 / 1 / 2 / 2
-      //
-      //  h4
-      //    z-index: 1;
-      //    background-color white
-      //    padding 5px 10px 8px
-
-        //.node__content > a
-        //  background-color $color_grey
-        //  height 400px
-        //  display block
+//@media $mq_up_lxl
+//  ul.cards
+//    grid-template-columns: repeat(4, 1fr);
+//
+//
+//ul.cards
+//  li
+//    list-style none
+//    border 1px solid black
+//    //width calc(25% - 30px)
+//
+//    *
+//      max-width 100%
+//
+//    img
+//        max-width 100%
+//        height auto
+//
+//    //> article
+//
+//    //  display grid
+//    //  grid 100% / auto;
+//    //  align-items end
+//
+//
+//  &.artworks
+//    li
+//      max-width 25%
+//      //width 400px
+//      height 400px
+//
+//      > article
+//        > .node__content a
+//          .field--name-field-images .field__item
+//            display flex
+//
+//            img
+//              margin auto
+//
+////&.artists
+//  //li
+//    //max-width 300px
+//    //width 300px
+//    //height 400px
+//
+//    //> article
+//    //  > *
+//    //    grid-area 1 / 1 / 2 / 2
+//    //
+//    //  h4
+//    //    z-index: 1;
+//    //    background-color white
+//    //    padding 5px 10px 8px
+//
+//      //.node__content > a
+//      //  background-color $color_grey
+//      //  height 400px
+//      //  display block

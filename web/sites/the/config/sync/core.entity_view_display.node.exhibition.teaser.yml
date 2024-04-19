@@ -17,8 +17,10 @@ dependencies:
     - image.style.wide
     - node.type.exhibition
   module:
+    - datetime
     - field_formatter_range
     - layout_builder
+    - layout_discovery
     - media
     - text
     - user
@@ -28,15 +30,53 @@ third_party_settings:
     allow_custom: false
     sections:
       -
-        layout_id: layout_twocol_section
+        layout_id: layout_onecol
         layout_settings:
-          label: 'Teaser exhibition'
-          context_mapping: {  }
-          column_widths: 33-67
+          label: ''
         components:
-          4f1b01f2-26c2-47be-8f34-420e98131cf0:
-            uuid: 4f1b01f2-26c2-47be-8f34-420e98131cf0
-            region: second
+          3671caef-cdff-4c77-a404-1682c0cd06d1:
+            uuid: 3671caef-cdff-4c77-a404-1682c0cd06d1
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          88b98cbb-509c-4d6a-ae6b-337a9bd06181:
+            uuid: 88b98cbb-509c-4d6a-ae6b-337a9bd06181
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_duration_text'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          544b78bb-692f-4851-9f41-ad4b12f4a46a:
+            uuid: 544b78bb-692f-4851-9f41-ad4b12f4a46a
+            region: content
             configuration:
               id: 'field_block:node:exhibition:field_image'
               label: 'Featured Image'
@@ -47,19 +87,58 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: media_thumbnail
-                label: visually_hidden
+                label: hidden
                 settings:
-                  image_link: ''
+                  image_link: content
                   image_style: wide
                   image_loading:
-                    attribute: lazy
+                    attribute: eager
+                third_party_settings: {  }
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          8d28c85b-19aa-4e6b-b5ec-fcde393ddb56:
+            uuid: 8d28c85b-19aa-4e6b-b5ec-fcde393ddb56
+            region: content
+            configuration:
+              id: 'extra_field_block:node:exhibition:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
+          46bec048-5a11-4c9e-95ad-347d207d3c48:
+            uuid: 46bec048-5a11-4c9e-95ad-347d207d3c48
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: true
                 third_party_settings: {  }
             weight: 0
             additional:
               layout_builder_styles_style:
                 slider: 0
-          eb9988c5-797f-4be4-8a88-292fa04f3077:
-            uuid: eb9988c5-797f-4be4-8a88-292fa04f3077
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Large screen'
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          db0e8df0-02a4-4ef4-9c58-4fc413bd994e:
+            uuid: db0e8df0-02a4-4ef4-9c58-4fc413bd994e
             region: first
             configuration:
               id: 'field_block:node:exhibition:title'
@@ -73,14 +152,14 @@ third_party_settings:
                 type: string
                 label: visually_hidden
                 settings:
-                  link_to_entity: false
+                  link_to_entity: true
                 third_party_settings: {  }
             weight: 0
             additional:
               layout_builder_styles_style:
                 slider: 0
-          686fc9e1-8eb0-410d-a05d-9d59935e5cb4:
-            uuid: 686fc9e1-8eb0-410d-a05d-9d59935e5cb4
+          9e8f081e-bf13-4361-b633-dec6bbd4f663:
+            uuid: 9e8f081e-bf13-4361-b633-dec6bbd4f663
             region: first
             configuration:
               id: 'field_block:node:exhibition:field_artists'
@@ -104,9 +183,9 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-          003442bc-978a-42f4-92b2-75249a31e220:
-            uuid: 003442bc-978a-42f4-92b2-75249a31e220
-            region: second
+          70c5f788-259c-4b37-b8b8-43815456b2c2:
+            uuid: 70c5f788-259c-4b37-b8b8-43815456b2c2
+            region: first
             configuration:
               id: 'field_block:node:exhibition:field_duration_text'
               label: 'Opening and duration text'
@@ -117,10 +196,34 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: text_default
-                label: above
+                label: visually_hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 1
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          e3e7f8ab-8ca4-496a-881c-287e76483e30:
+            uuid: e3e7f8ab-8ca4-496a-881c-287e76483e30
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: content
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -142,12 +245,21 @@ content:
         offset: 0
     weight: 0
     region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_duration_text:
     type: text_default
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_image:
     type: media_thumbnail
@@ -158,17 +270,16 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
   body: true
   field_artworks: true
-  field_date: true
   field_dates: true
   field_duration: true
   field_images: true

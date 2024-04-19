@@ -86,6 +86,7 @@
 }
 .field--name-field-image img {
   object-fit: contain;
-  height: auto;
   object-position: top center;
+  max-width: 100%;
+  height: auto;
 }

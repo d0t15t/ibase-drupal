@@ -15,8 +15,6 @@ dependencies:
     - field.field.node.exhibition.field_properties
     - image.style.large
     - node.type.exhibition
-    - views.view.artworks_by_exhibition
-    - views.view.pager
   module:
     - datetime
     - datetime_range
@@ -26,19 +24,11 @@ dependencies:
     - options
     - text
     - user
-    - views
 third_party_settings:
   layout_builder:
     enabled: true
     allow_custom: false
     sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components: {  }
-        third_party_settings: {  }
       -
         layout_id: layout_onecol
         layout_settings:
@@ -53,7 +43,7 @@ third_party_settings:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-            weight: 6
+            weight: 11
             additional: {  }
           429b7f66-e167-4f83-ba3b-9ce4b7028035:
             uuid: 429b7f66-e167-4f83-ba3b-9ce4b7028035
@@ -75,27 +65,6 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-          dbb0a398-2ed0-4ef1-a397-ab25262b83e7:
-            uuid: dbb0a398-2ed0-4ef1-a397-ab25262b83e7
-            region: content
-            configuration:
-              id: 'field_block:node:exhibition:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: visually_hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional:
-              layout_builder_styles_style:
-                slider: 0
           ed6513f0-1e1c-4c5e-9f62-5afd1b7f5581:
             uuid: ed6513f0-1e1c-4c5e-9f62-5afd1b7f5581
             region: content
@@ -112,49 +81,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          4a316b91-35fe-4f33-99f8-9cf93eeec63e:
-            uuid: 4a316b91-35fe-4f33-99f8-9cf93eeec63e
-            region: content
-            configuration:
-              id: 'field_block:node:exhibition:field_duration'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
           a18b7b75-d87f-4478-b6c2-1847c2276d43:
             uuid: a18b7b75-d87f-4478-b6c2-1847c2276d43
             region: content
             configuration:
               id: 'field_block:node:exhibition:field_duration_text'
+              label: 'Opening and duration text'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: text_default
-                label: above
+                label: visually_hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          57842bfe-b04c-4d6c-a90b-2eb9edd79caf:
-            uuid: 57842bfe-b04c-4d6c-a90b-2eb9edd79caf
-            region: content
-            configuration:
-              id: 'views_block:artworks_by_exhibition-block_1'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 8
+            weight: 10
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -179,22 +122,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 10
-            additional:
-              layout_builder_styles_style:
-                slider: 0
-          5f4ac8c9-bc22-444b-bc5b-24602f891d2f:
-            uuid: 5f4ac8c9-bc22-444b-bc5b-24602f891d2f
-            region: content
-            configuration:
-              id: 'views_block:pager-block_4'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 11
+            weight: 8
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -205,7 +133,125 @@ third_party_settings:
           label: 'Large screen'
           context_mapping: {  }
           column_widths: 33-67
-        components: {  }
+        components:
+          b92c2aea-7b6e-4086-b9c4-661121fae628:
+            uuid: b92c2aea-7b6e-4086-b9c4-661121fae628
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_artworks'
+              label: Artworks
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: visually_hidden
+                settings:
+                  view_mode: slider
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: slider
+          cbc43025-b7b8-4338-852f-e693e26d639b:
+            uuid: cbc43025-b7b8-4338-852f-e693e26d639b
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          52121cc0-ab52-4058-94a2-f7c775462a4e:
+            uuid: 52121cc0-ab52-4058-94a2-f7c775462a4e
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:field_duration_text'
+              label: 'Opening and duration text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          d85f5a8b-c6c2-481c-9f07-f3286376c755:
+            uuid: d85f5a8b-c6c2-481c-9f07-f3286376c755
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          17233807-f2a6-4197-8313-7e6685030b07:
+            uuid: 17233807-f2a6-4197-8313-7e6685030b07
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_images'
+              label: Images
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
         third_party_settings: {  }
 id: node.exhibition.default
 targetEntityType: node

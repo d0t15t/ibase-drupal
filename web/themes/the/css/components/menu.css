@@ -55,17 +55,25 @@
   height: 1px;
   word-wrap: normal;
 }
-@media ($mq_up_large) {
-  ul.menu {
+.menu--main {
+  text-transform: lowercase;
+}
+.menu--main ul li + li {
+  padding-top: 20px;
+}
+@media all and (min-width: 768px) {
+  .menu--main {
+    text-align: right;
+  }
+  ul.the-main-menu--menu {
     margin: 0;
-  }
-  main .region-content nav.pager ul + ul,
-  main .region-content nav.pager ul + p {
-    padding-top: 0;
-  }
-  nav.menu--main ul.menu {
     display: flex;
     gap: 30px;
-    text-transform: lowercase;
+  }
+  ul.the-main-menu--menu li + li {
+    padding-top: 0;
+  }
+  ul.the-main-menu--menu + .menu-toggle {
+    text-align: right;
   }
 }

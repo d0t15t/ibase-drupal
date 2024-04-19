@@ -47,8 +47,7 @@
 .base--pager-block ul + p {
   padding-top: 0;
 }
-.visually-hidden,
-ul.cards .node__links {
+.visually-hidden {
   position: absolute !important;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
@@ -57,23 +56,34 @@ ul.cards .node__links {
   word-wrap: normal;
 }
 ul.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: flex-start;
+  margin: 0 auto !important;
+  width: 100%;
+  padding-left: 4px;
 }
-ul.cards li > article {
-  display: grid;
-  grid: 100%/auto;
-  align-items: end;
+@media all and (min-width: 992px) {
+  ul.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 }
-.artworks li {
-  max-width: 400px;
-  height: 400px;
+ul.cards li {
+  display: inline-block;
+  border: 1px solid #000;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  margin: 0 5px 10px 0;
 }
-.artworks li > article > .node__content a .field--name-field-images .field__item {
-  display: flex;
+ul.cards li h4 {
+  padding: 0 0 3px 7px;
 }
-.artworks li > article > .node__content a .field--name-field-images .field__item img {
-  margin: auto;
+@media all and (min-width: 768px) {
+  ul.cards li {
+    width: 300px;
+  }
+}
+ul.cards li img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
 }

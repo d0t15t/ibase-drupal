@@ -75,11 +75,31 @@
 .node--type-artwork.node--view-mode-full .field--name-field-images > * > * {
   margin: auto;
 }
-.node--view-mode-full .field__label {
+.field--name-field-image img {
+  object-fit: contain;
+  object-position: top center;
+  max-width: 100%;
+  height: auto;
+}
+article.node--view-mode-full .field__label {
   color: #aaa;
   font-weight: lighter;
 }
-.node--view-mode-full h1 {
+article.node--view-mode-full h1 {
   font-size: 2em;
   line-height: 1em;
+  padding-left: 10px;
+}
+@media all and (min-width: 768px) {
+  article.node--view-mode-full h1 {
+    padding-left: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  article.node--view-mode-full {
+    margin-top: 20px;
+  }
+  article.node--view-mode-full + h1 {
+    margin-bottom: 10px;
+  }
 }

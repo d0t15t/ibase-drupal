@@ -75,6 +75,12 @@
 .node--type-artwork.node--view-mode-full .field--name-field-images > * > * {
   margin: auto;
 }
+.field--name-field-image img {
+  object-fit: contain;
+  object-position: top center;
+  max-width: 100%;
+  height: auto;
+}
 .glide--slider {
   overflow: hidden;
 }
@@ -83,9 +89,16 @@
 }
 .glide--slider .glide__track .glide__slide {
   max-width: 100%;
+  width: 100%;
 }
 .glide--slider .glide__track .glide__slide img {
   max-width: 100%;
   object-fit: contain;
+  object-position: top center;
   max-height: 500px;
+}
+@media all and (min-width: 768px) {
+  .glide--slider .glide__track .glide__slide img {
+    max-height: 800px;
+  }
 }

@@ -1,18 +1,48 @@
 @require 'vars'
 @require 'mq'
 
-@media ($mq_up_large)
-  ul.menu
+.menu--main
+  text-transform lowercase
+
+  ul
+    li + li
+      padding-top 20px
+
+@media $mq_up_lxl
+  .menu--main
+    text-align right
+
+  ul.the-main-menu--menu
     margin 0
+    display flex
+    gap 30px
 
-  main
-    .region-content
-      nav.pager
-        ul + ul, ul + p
-          padding-top 0
+    li + li
+      padding-top 0
 
-  nav.menu--main
-    ul.menu
-      display flex
-      gap 30px
-      text-transform lowercase
+    + .menu-toggle
+      text-align right
+
+
+
+
+  //
+  //@media ($mq_up_large)
+  //  ul.menu
+  //    margin 0
+  //
+  //  //main
+  //  //  .region-content
+  //  //    nav.pager
+  //  //      ul + ul, ul + p
+  //  //        padding-top 0
+  //
+  //  nav
+  //    .menu--main
+  //      padding-right 20px
+  //      ul.menu
+  //        background purple
+  //        padding-right: 30px;
+  //        display flex
+  //        gap 30px
+  //        text-transform lowercase

@@ -2,30 +2,38 @@
 @require 'mq'
 
 .layout-container
+  max-width 1280px
+  width 100%
   display inherit
   margin-bottom 50px
 
   .layout__region
     overflow hidden
 
-  header #site-logo
-    padding 5px 0 0 10px
-
   .breadcrumb
     padding 0 10px
 
 
-.layout
-  .layout__region--content
-    .block
-      padding 0 20px
+@media $mq_up_xl
+  .layout-container
+    margin 30px auto 100px
 
+
+.layout
+  .layout__region
     .block + .block
       margin-top 5px
 
       &.block-views-blockpager-block-4
         margin-top 0
 
+
+  .layout__region--content
+    .block
+      padding 0 10px
+
+
+// Exhibitions.
     .block-field-blocknodeexhibitionfield-artworks
       padding 0
 
@@ -41,5 +49,44 @@
       .entity-pager-list
         text-align right
 
-  //.field--name---glider .glide__arrows
-  //    padding 0
+    .glide__arrows.navigation
+      text-align right
+      padding-bottom 10px
+
+    .node--view-mode-slider
+      .field--name-field-images
+        img
+          max-width 100%
+          height auto
+
+// General layout.
+@media $mq_up_lxl
+  .layout--twocol-section
+    .layout__region--first
+        padding 0 20px 0 0
+
+// Exhibitions overview
+.view-exhibitions
+
+  .glide__arrows.navigation
+    padding-bottom 10px
+    text-align right
+
+  .block-field-blocknodeexhibitionfield-image > .field
+    margin-top 20px
+
+    @media $mq_up_lxl
+      margin-top 0
+
+
+
+// Artists
+//#block-the-content
+//  .view-artists
+//    .view-content
+//      ul.cards
+//        padding 0 !important
+//        margin 0 !important
+//      //margin-bottom 20px
+//      //width 100%
+//

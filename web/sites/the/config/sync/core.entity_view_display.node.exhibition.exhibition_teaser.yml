@@ -1,0 +1,225 @@
+uuid: 776a6267-771a-4846-a89a-d8325e372d8e
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.exhibition_teaser
+    - field.field.node.exhibition.body
+    - field.field.node.exhibition.field_artists
+    - field.field.node.exhibition.field_artworks
+    - field.field.node.exhibition.field_date
+    - field.field.node.exhibition.field_dates
+    - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_duration_text
+    - field.field.node.exhibition.field_image
+    - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_properties
+    - image.style.large
+    - node.type.exhibition
+  module:
+    - datetime
+    - datetime_range
+    - layout_builder
+    - layout_discovery
+    - media
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c319ec70-e4fb-4726-b331-960e61581cd7:
+            uuid: c319ec70-e4fb-4726-b331-960e61581cd7
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 6
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          0faf4b37-e057-4dc6-b562-fb4bb09754df:
+            uuid: 0faf4b37-e057-4dc6-b562-fb4bb09754df
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: content
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 8
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          d341330d-25ac-4ed0-8402-ac017dea6cfe:
+            uuid: d341330d-25ac-4ed0-8402-ac017dea6cfe
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_duration_text'
+              label: 'Opening and duration text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          fb732fb8-1d37-41b6-a116-861ad1e6c1c4:
+            uuid: fb732fb8-1d37-41b6-a116-861ad1e6c1c4
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+            weight: 5
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
+id: node.exhibition.exhibition_teaser
+targetEntityType: node
+bundle: exhibition
+mode: exhibition_teaser
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_artists:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_artworks:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_dates:
+    type: daterange_default
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_duration:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_duration_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_images:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_properties:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

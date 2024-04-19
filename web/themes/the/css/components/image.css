@@ -75,3 +75,9 @@
 .node--type-artwork.node--view-mode-full .field--name-field-images > * > * {
   margin: auto;
 }
+.field--name-field-image img {
+  object-fit: contain;
+  object-position: top center;
+  max-width: 100%;
+  height: auto;
+}

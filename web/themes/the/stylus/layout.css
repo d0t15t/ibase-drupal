@@ -56,39 +56,68 @@
   word-wrap: normal;
 }
 .layout-container {
+  max-width: 1280px;
+  width: 100%;
   display: inherit;
   margin-bottom: 50px;
 }
 .layout-container .layout__region {
   overflow: hidden;
 }
-.layout-container header #site-logo {
-  padding: 5px 0 0 10px;
-}
 .layout-container .breadcrumb {
   padding: 0 10px;
 }
-.layout .layout__region--content .block {
-  padding: 0 20px;
+@media all and (min-width: 992px) {
+  .layout-container {
+    margin: 30px auto 100px;
+  }
 }
-.layout .layout__region--content .block + .block {
+.layout .layout__region .block + .block {
   margin-top: 5px;
 }
-.layout .layout__region--content .block + .block.block-views-blockpager-block-4 {
+.layout .layout__region .block + .block.block-views-blockpager-block-4 {
   margin-top: 0;
 }
-.layout .layout__region--content .block-field-blocknodeexhibitionfield-artworks {
+.layout .layout__region--content .block {
+  padding: 0 10px;
+}
+.block-field-blocknodeexhibitionfield-artworks {
   padding: 0;
 }
-.layout .layout__region--content .block-field-blocknodeexhibitionfield-artworks .navigation {
+.block-field-blocknodeexhibitionfield-artworks .navigation {
   margin-bottom: 10px;
   padding-left: 10px;
 }
-.layout .layout__region--content .entity-pager *,
-.layout .layout__region--content .glide__arrows.navigation * {
+.entity-pager *,
+.glide__arrows.navigation * {
   color: #aaa;
   margin-left: 5px;
 }
-.layout .layout__region--content .entity-pager .entity-pager-list {
+.entity-pager .entity-pager-list {
   text-align: right;
+}
+.glide__arrows.navigation {
+  text-align: right;
+  padding-bottom: 10px;
+}
+.node--view-mode-slider .field--name-field-images img {
+  max-width: 100%;
+  height: auto;
+}
+@media all and (min-width: 768px) {
+  .layout--twocol-section .layout__region--first {
+    padding: 0 20px 0 0;
+  }
+}
+.view-exhibitions .glide__arrows.navigation {
+  padding-bottom: 10px;
+  text-align: right;
+}
+.view-exhibitions .block-field-blocknodeexhibitionfield-image > .field {
+  margin-top: 20px;
+}
+@media all and (min-width: 768px) {
+  .view-exhibitions .block-field-blocknodeexhibitionfield-image > .field {
+    margin-top: 0;
+  }
 }

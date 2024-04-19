@@ -108,3 +108,7 @@
   background: none;
   cursor: pointer;
 }
+.entity-pager *,
+.glide__arrows.navigation * {
+  color: #aaa;
+}

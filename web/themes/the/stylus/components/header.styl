@@ -5,9 +5,21 @@ $logo_width = 200px
 header
   display flex
   justify-content space-between
+  padding 5px 0 0 10px
 
   .region-header
 
     #site-logo
       width $logo_width
       max-width $logo_width
+
+
+@media all and (min-width: 768px)
+  header
+    padding 0
+    #site-logo
+      padding 0
+      margin 0
+
+  .layout-container .breadcrumb[role="navigation"]
+    padding 0

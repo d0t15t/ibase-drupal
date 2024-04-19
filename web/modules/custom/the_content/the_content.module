@@ -46,3 +46,21 @@ function _the_content_artist_form_submit_handler(&$form, FormStateInterface $for
     \Drupal::logger('the_content')->error('An error occurred: @message', ['@message' => $e->getMessage()]);
   }
 }
+
+function the_content_preprocess_field(&$vars) {
+  # @TODO - move this into a separate module or class.
+  // Provide functionality for the 'field_biography' Read More functions.
+  if (($field_name = $vars["element"]["#field_name"])
+    && $field_name === 'field_biography'
+    && ($formatter = $vars["element"]["#formatter"])
+    && ($entity = $vars["element"]["#object"])
+    && !$entity->get('field_biography')->isEmpty()
+  ) {
+    if ($formatter === 'text_trimmed') {
+      $vars["items"][0]['content']['#suffix'] = '<p><a href="#biography" class="the-read-more-link">Read more</p>';
+    }
+    else {
+      $vars['attributes']['id'] = 'biography';
+    }
+  }
+}

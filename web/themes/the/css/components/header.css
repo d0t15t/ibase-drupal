@@ -58,8 +58,21 @@
 header {
   display: flex;
   justify-content: space-between;
+  padding: 5px 0 0 10px;
 }
 header .region-header #site-logo {
   width: 200px;
   max-width: 200px;
+}
+@media all and (min-width: 768px) {
+  header {
+    padding: 0;
+  }
+  header #site-logo {
+    padding: 0;
+    margin: 0;
+  }
+  .layout-container .breadcrumb[role="navigation"] {
+    padding: 0;
+  }
 }
