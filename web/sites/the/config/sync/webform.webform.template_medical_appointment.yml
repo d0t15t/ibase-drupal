@@ -14,8 +14,8 @@ uid: null
 template: true
 archive: false
 id: template_medical_appointment
-title: 'Request a Medical Appointment'
-description: 'A medical appointment request webform template.'
+title: 'Einen Arzttermin anfragen'
+description: 'Eine Vorlage für eine Terminanfrage bei einem Arzt als Webformular.'
 categories: {  }
 elements: |
   introduction:
@@ -315,9 +315,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_url: '<front>'
-  confirmation_title: 'Thank You'
-  confirmation_message: 'Your request has been sent. A care specialist will call you back within XX hours to schedule an appointment.'
+  confirmation_url: '&lt;front&gt;'
+  confirmation_title: Danke
+  confirmation_message: 'Ihre Anforderung ist gesendet worden. Ein medizinischer Mitarbeiter wird sie innerhalb von XX Stunden zurückrufen, um einen Termin zu vereinbaren.'
   confirmation_attributes: {  }
   confirmation_back: false
   confirmation_back_label: ''
@@ -397,7 +397,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

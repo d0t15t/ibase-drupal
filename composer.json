@@ -87,6 +87,7 @@
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
         "drupal/permissions_filter": "^1.6",
+        "drupal/price": "3.0.x-dev@dev",
         "drupal/quick_node_clone": "*",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.9",
@@ -192,13 +193,16 @@
             },
             "drupal/cer": {
                 "Update existing references on save: https://www.drupal.org/project/cer/issues/3240535": "https://www.drupal.org/files/issues/2021-10-03/cer-ignore-original-entity-in-differences-calculation-2846318-14-reroll.patch"
-            }
+            },
+	    "drupal/price": {
+	        "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
+	    }
         },
         "merge-plugin": {
           
         },
         "drupal-lenient": {
-            "allowed-list": ["drupal/addressing"]
+            "allowed-list": ["drupal/addressing", "drupal/price"]
         }
     }
 }

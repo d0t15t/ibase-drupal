@@ -14,67 +14,67 @@ uid: null
 template: true
 archive: false
 id: template_issue
-title: Issue
-description: 'An issue webform template.'
+title: Ausgabe
+description: 'Vorlage für einen neuen Problembericht innerhalb eines Ticketsystems als Webformular.'
 categories: {  }
 elements: |
   meta_data_details:
-    '#title': 'Issue Meta Data'
+    '#title': 'Meta-Daten zum Problem'
     '#type': details
     '#open': true
     meta_data_01:
       '#type': webform_flexbox
       title:
         '#type': textfield
-        '#title': Title
+        '#title': Titel
         '#required': true
       project:
         '#type': select
-        '#title': Project
+        '#title': Projekt
         '#required': true
         '#options':
-          'Project I': 'Project I'
-          'Project II': 'Project II'
-          'Project III': 'Project III'
+          'Project I': 'Projekt I'
+          'Project II': 'Projekt II'
+          'Project III': 'Projekt III'
     meta_data_02:
       '#type': webform_flexbox
       category:
         '#type': select
-        '#title': Category
+        '#title': Kategorie
         '#required': true
         '#options':
-          'Bug report': 'Bug report'
+          'Bug report': 'Bug-Report'
           Task: Task
-          'Feature request': 'Feature request'
-          'Support request': 'Support request'
+          'Feature request': 'Feature-Anfrage'
+          'Support request': 'Support-Anfrage'
           Plan: Plan
       priority:
         '#type': select
-        '#title': Priority
+        '#title': Priorität
         '#required': true
         '#options':
-          4: Critical
-          3: Major
+          4: Kritisch
+          3: Wichtig
           2: Normal
-          1: Minor
+          1: 'Weniger wichtig'
       status:
         '#type': webform_select_other
         '#title': Status
         '#required': true
         '#options':
-          Active: Active
-          'Needs work': 'Needs work'
-          'Needs review': 'Needs review'
-          'Reviewed & tested by the community': 'Reviewed & tested by the community'
-          'Patch (to be ported)': 'Patch (to be ported)'
-          Fixed: Fixed
-          Postponed: Postponed
-          'Postponed (maintainer needs more info)': 'Postponed (maintainer needs more info)'
-          'Closed (duplicate)': 'Closed (duplicate)'
-          'Closed (won''t fix)': 'Closed (won''t fix)'
-          'Closed (works as designed)': 'Closed (works as designed)'
-          'Closed (cannot reproduce)': 'Closed (cannot reproduce)'
-          'Closed (outdated)': 'Closed (outdated)'
+          Active: Aktiv
+          'Needs work': 'Maßnahmen erforderlich'
+          'Needs review': 'Prüfung erforderlich'
+          'Reviewed & tested by the community': 'Durch die Community geprüft und getestet'
+          'Patch (to be ported)': 'Patch (zu portieren)'
+          Fixed: Behoben
+          Postponed: Zurückgestellt
+          'Postponed (maintainer needs more info)': 'Zurückgestellt (Betreuer braucht mehr Info)'
+          'Closed (duplicate)': 'Geschlossen (Duplikat)'
+          'Closed (won''t fix)': 'Geschlossen (wird nicht behoben)'
+          'Closed (works as designed)': 'Geschlossen (funktioniert wie vorgesehen)'
+          'Closed (cannot reproduce)': 'Geschlossen (nicht reproduzierbar)'
+          'Closed (outdated)': 'Geschlossen (veraltet)'
       version:
         '#type': webform_autocomplete
         '#title': Version
@@ -82,16 +82,16 @@ elements: |
         '#autocomplete_existing': true
       component:
         '#type': webform_select_other
-        '#title': Component
+        '#title': Komponente
         '#required': true
         '#options':
           Code: Code
-          Documentation: Documentation
-          Miscellaneous: Miscellaneous
-          'User interface': 'User interface'
+          Documentation: Dokumentation
+          Miscellaneous: Verschiedenes
+          'User interface': 'Benutzerschnittstelle'
       assigned:
         '#type': entity_autocomplete
-        '#title': Assigned
+        '#title': Zugewiesen
         '#target_type': user
         '#selection_handler': 'default:user'
         '#selection_settings':
@@ -100,8 +100,8 @@ elements: |
       '#type': webform_flexbox
       tags:
         '#type': entity_autocomplete
-        '#title': 'Issue Tags'
-        '#description': 'Do <strong>NOT</strong> use tags for adding random keywords or duplicating any other fields.  Separate terms with a comma, not a space.'
+        '#title': 'Problem-Tags'
+        '#description': 'Tags <strong>NICHT</strong> für hinzuzufügen zufälliger Schlüsselwörter oder Duplizieren anderer Felder verwenden.  Begriffe mit Kommata trennen, nicht mit Leerzeichen.'
         '#tags': true
         '#target_type': taxonomy_term
         '#selection_handler': 'default:taxonomy_term'
@@ -111,20 +111,20 @@ elements: |
           auto_create: 1
           auto_create_bundle: tags
   summary_and_relationshsips_details:
-    '#title': 'Issue Summary'
+    '#title': 'Problemzusammenfassung'
     '#type': details
     '#open': true
     summary:
       '#type': text_format
-      '#title': Summary
-      '#description': 'An issue summary is a concise overview of a full issue report. Issue summaries need to be written if the issue has more than a few comments and/or an average developer cannot understand the subject matter after a few minutes of study. These summaries are key sources of information for core developers, patch reviewers and users who need to skim large amounts of issues and information quickly.'
+      '#title': Zusammenfassung
+      '#description': 'Eine Problemzusammenfassung ist eine kurze Übersicht zu einem ausführlichem Problembericht. Problemzusammenfassungen müssen erstellt werden, wenn das Problem mehr als nur einige Kommentare hat bzw. ein durchschnittlicher Entwickler das Thema nicht in wenigen Minuten erfassen kann. Diese Zusammenfassungen sind für Core-Entwickler, Überprüfer von Patches und Benutzer, die große Mengen an Problemen und Informationen rasch überfliegen müssen, wichtige Informationsquellen.'
   files_details:
-    '#title': Files
+    '#title': Dateien
     '#type': details
     '#open': true
     files:
       '#type': managed_file
-      '#title': Files
+      '#title': Dateien
       '#multiple': true
 css: ''
 javascript: ''

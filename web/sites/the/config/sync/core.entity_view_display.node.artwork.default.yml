@@ -16,9 +16,12 @@ dependencies:
     - field.field.node.artwork.field_history
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_info
+    - field.field.node.artwork.field_insurance_value
     - field.field.node.artwork.field_location
     - field.field.node.artwork.field_medium
+    - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
@@ -29,6 +32,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - media
+    - price
     - user
 third_party_settings:
   layout_builder:
@@ -140,6 +144,80 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          ac5dc949-20b0-4771-8c1e-7883a65ee438:
+            uuid: ac5dc949-20b0-4771-8c1e-7883a65ee438
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_images'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: media_thumbnail
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: eager
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 4
+            additional: {  }
+          0799b4c2-1a50-477c-b25e-074f606366d4:
+            uuid: 0799b4c2-1a50-477c-b25e-074f606366d4
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_insurance_value'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: price_price_default
+                label: above
+                settings:
+                  strip_trailing_zeroes: false
+                  currency_display: symbol
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          e3157363-c3ec-4715-8d51-47034ad70b5d:
+            uuid: e3157363-c3ec-4715-8d51-47034ad70b5d
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_offset_cost'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: price_price_default
+                label: above
+                settings:
+                  strip_trailing_zeroes: false
+                  currency_display: symbol
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          5c7c05eb-f79e-40fc-8665-61c24ba6d342:
+            uuid: 5c7c05eb-f79e-40fc-8665-61c24ba6d342
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_sale_price'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: price_price_default
+                label: above
+                settings:
+                  strip_trailing_zeroes: false
+                  currency_display: symbol
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -308,6 +386,33 @@ content:
         limit: 0
         offset: 0
     weight: 0
+    region: content
+  field_insurance_value:
+    type: price_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_offset_cost:
+    type: price_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sale_price:
+    type: price_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   body: true

@@ -14,30 +14,10 @@ uid: null
 template: true
 archive: false
 id: template_contact
-title: 'Contact Us'
-description: 'A basic contact webform template.'
+title: 'Kontaktieren Sie uns'
+description: 'Einfache Kontaktformular-Vorlage als Webformular.'
 categories: {  }
-elements: |
-  name:
-    '#title': 'Your Name'
-    '#type': textfield
-    '#required': true
-  email:
-    '#title': 'Your Email'
-    '#type': email
-    '#required': true
-  subject:
-    '#title': Subject
-    '#type': textfield
-    '#required': true
-  message:
-    '#title': Message
-    '#type': textarea
-    '#required': true
-  actions:
-    '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': 'Send message'
+elements: "name:\r\n  '#title': 'Ihr Name'\r\n  '#type': textfield\r\n  '#required': true\r\nemail:\r\n  '#title': 'Ihre E-Mail'\r\n  '#type': email\r\n  '#required': true\r\nsubject:\r\n  '#title': Betreff\r\n  '#type': textfield\r\n  '#required': true\r\nmessage:\r\n  '#title': Nachricht\r\n  '#type': textarea\r\n  '#required': true\r\nactions:\r\n  '#type': webform_actions\r\n  '#title': 'Absende-Button(s)'\r\n  '#submit__label': 'Nachricht senden'\n"
 css: ''
 javascript: ''
 settings:
@@ -143,7 +123,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url_message
-  confirmation_url: '<front>'
+  confirmation_url: '&lt;front&gt;'
   confirmation_title: ''
   confirmation_message: 'Your message has been sent.'
   confirmation_attributes: {  }
@@ -225,7 +205,7 @@ handlers:
   email_confirmation:
     id: email
     handler_id: email_confirmation
-    label: 'Email confirmation'
+    label: 'Bestätigung via E-Mail'
     notes: ''
     status: true
     conditions: {  }
@@ -262,7 +242,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

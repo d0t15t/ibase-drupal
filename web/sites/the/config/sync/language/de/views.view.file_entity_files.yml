@@ -44,12 +44,16 @@ display:
           label: Created
         count:
           label: 'Used in'
+          format_plural_string: !!binary MSBTdGVsbGUDQGNvdW50IFN0ZWxsZW4=
         operations:
           label: Operations
       filters:
         filename:
           expose:
             label: Filename
+        filemime:
+          expose:
+            label: MIME-Typ
         status:
           expose:
             label: Status
@@ -86,9 +90,12 @@ display:
           label: 'Registering module'
         count:
           label: 'Use count'
+          format_plural_string: !!binary MSBTdGVsbGUDQGNvdW50IFN0ZWxsZW4=
       title: 'File usage'
       arguments:
         fid:
           exception:
             title: All
           title: 'File usage information for {{ arguments.fid }}'
+      menu:
+        title: Verwendung

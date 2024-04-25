@@ -94,7 +94,7 @@ third_party_settings:
                   image_loading:
                     attribute: eager
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -106,7 +106,7 @@ third_party_settings:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-            weight: 4
+            weight: 5
             additional: {  }
           46bec048-5a11-4c9e-95ad-347d207d3c48:
             uuid: 46bec048-5a11-4c9e-95ad-347d207d3c48

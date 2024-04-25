@@ -17,9 +17,12 @@ dependencies:
     - field.field.node.artwork.field_history
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_info
+    - field.field.node.artwork.field_insurance_value
     - field.field.node.artwork.field_location
     - field.field.node.artwork.field_medium
+    - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
@@ -31,6 +34,7 @@ dependencies:
     - entity_browser
     - field_group
     - path
+    - price
     - text
     - yearonly
 third_party_settings:
@@ -337,6 +341,12 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_insurance_value:
+    type: price_price_default
+    weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_location:
     type: text_textarea
     weight: 12
@@ -358,6 +368,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_offset_cost:
+    type: price_price_default
+    weight: 39
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_owner:
     type: text_textarea
     weight: 25
@@ -369,6 +385,12 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_sale_price:
+    type: price_price_default
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_version:
     type: entity_browser_entity_reference
     weight: 12

@@ -14,35 +14,35 @@ uid: null
 template: true
 archive: false
 id: template_feedback
-title: Feedback
-description: 'A basic feedback template.'
+title: Rückmeldung
+description: 'Eine grundlegende Feedback-Vorlage.'
 categories: {  }
 elements: |
   type:
-    '#title': 'Type of Feedback'
+    '#title': 'Art des Feedbacks'
     '#type': webform_radios_other
     '#required': true
     '#options':
-      Comments: Comments
-      'Report a Bug': 'Report a Bug'
-      Questions: Questions
+      Comments: Kommentare
+      'Report a Bug': 'Einen Bug melden'
+      Questions: Fragen
     '#options_display': side_by_side
   comments:
-    '#title': 'Your Feedback'
+    '#title': 'Ihr Feedback'
     '#type': textarea
     '#required': true
   name:
-    '#title': 'Your Name'
+    '#title': 'Ihr Name'
     '#type': textfield
     '#required': true
   email:
-    '#title': 'Your Email'
+    '#title': 'Ihre E-Mail'
     '#type': email
     '#required': true
   actions:
     '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': 'Submit feedback'
+    '#title': 'Absende-Button(s)'
+    '#submit__label': 'Feedback senden'
 css: ''
 javascript: ''
 settings:
@@ -148,9 +148,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: page
-  confirmation_url: '<front>'
+  confirmation_url: '&lt;front&gt;'
   confirmation_title: ''
-  confirmation_message: 'Thank you for your feedback.'
+  confirmation_message: 'Vielen Dank für Ihr Feedback.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -230,7 +230,7 @@ handlers:
   email_confirmation:
     id: email
     handler_id: email_confirmation
-    label: 'Email confirmation'
+    label: 'Bestätigung via E-Mail'
     notes: ''
     status: true
     conditions: {  }
@@ -267,7 +267,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

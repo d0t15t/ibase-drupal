@@ -8,20 +8,7 @@ dependencies:
 _core:
   default_config_hash: cR3A6XXinVGC9g5vLS-vVvTC2ppZXRNXLPWA8xBUMew
 id: province_codes
-label: 'Province codes'
-category: Geographic
+label: 'Abkürzungen der Provinzen'
+category: Geografisch
 likert: false
-options: |
-  AB: Alberta
-  BC: 'British Columbia'
-  MB: Manitoba
-  NB: 'New Brunswick'
-  NL: 'Newfoundland and Labrador'
-  NS: 'Nova Scotia'
-  NT: 'Northwest Territories'
-  NU: Nunavut
-  'ON': Ontario
-  PE: 'Prince Edward Island'
-  QC: Quebec
-  SK: Saskatchewan
-  YT: Yukon
+options: "AB: Alberta\r\nBC: 'British Columbia'\r\nMB: Manitoba\r\nNB: 'New Brunswick'\r\nNL: 'Newfoundland and Labrador'\r\nNS: 'Nova Scotia'\r\nNT: 'Northwest Territories'\r\nNU: Nunavut\r\n'ON': Ontario\r\nPE: 'Prince Edward Island'\r\nQC: Quebec\r\nSK: Saskatchewan\r\nYT: Yukon\n"

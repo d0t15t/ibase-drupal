@@ -14,8 +14,8 @@ uid: null
 template: true
 archive: false
 id: template_user_profile
-title: 'User Profile'
-description: 'A user profile webform template.'
+title: Benutzerprofil
+description: 'Vorlage für ein Benutzerprofil als Webformular.'
 categories: {  }
 elements: |
   account_information:
@@ -315,7 +315,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email Notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

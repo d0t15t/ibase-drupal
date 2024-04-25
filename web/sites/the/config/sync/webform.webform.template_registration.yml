@@ -14,47 +14,47 @@ uid: null
 template: true
 archive: false
 id: template_registration
-title: Registration
-description: 'A registration webform template.'
+title: Registrierung
+description: 'Registrierungs-Vorlage als Webformular.'
 categories: {  }
 elements: |
   personal_information:
-    '#title': 'Your Personal Information'
+    '#title': 'Ihre persönlichen Angaben'
     '#type': webform_section
     first_name:
-      '#title': 'First Name'
+      '#title': 'Vorname'
       '#type': textfield
       '#required': true
     last_name:
-      '#title': 'Last Name'
+      '#title': 'Nachname'
       '#type': textfield
       '#required': true
   contact_information:
-    '#title': 'Your Contact Information'
+    '#title': 'Ihre Kontaktinformationen'
     '#type': webform_section
     contact:
       '#type': webform_contact
-      '#title': Contact
+      '#title': Kontakt
       '#title_display': invisible
       '#name__access': false
       '#company__access': false
   mailinglist:
-    '#title': 'Mailing List'
+    '#title': 'Mailingliste'
     '#type': webform_section
     subscribe:
-      '#title': 'Please subscribe me to your mailing list.'
+      '#title': 'Bitte tragen Sie mich in Ihre Maillingliste ein.'
       '#type': checkbox
   additional_information:
-    '#title': 'Additional Information'
+    '#title': 'Zusätzliche Angaben'
     '#type': webform_section
     '#open': true
     notes:
-      '#title': Comments
+      '#title': Kommentare
       '#type': textarea
   actions:
     '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': Register
+    '#title': 'Absende-Button(s)'
+    '#submit__label': Anmelden
 css: ''
 javascript: ''
 settings:
@@ -162,7 +162,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Thank you for registering.'
+  confirmation_message: 'Vielen Dank, dass Sie sich angemeldet haben.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -242,7 +242,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email Notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

@@ -8,12 +8,7 @@ dependencies:
 _core:
   default_config_hash: swmYtBVUbwq7aHJWWDN7ODByuvur9vMkexDC9h64NZ8
 id: likert_quality
-label: 'Likert: Quality'
+label: 'Likert: Qualität'
 category: Likert
 likert: true
-options: |
-  1: Poor
-  2: Fair
-  3: Good
-  4: Very good
-  5: Excellent
+options: "1: Sehr schlecht\r\n2: Schlecht\r\n3: Neutral \r\n4: Gut\r\n5: Sehr gut\n"

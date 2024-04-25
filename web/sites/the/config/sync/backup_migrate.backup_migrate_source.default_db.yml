@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: I0ambmTIGFVABBaGMLbQcw-a5eWKxnsz7k2COEPKga4
 id: default_db
-label: 'Default Drupal Database'
+label: Standard-Drupal-Datenbank
 type: DefaultDB
 config:
   name: 'Default Drupal Database'

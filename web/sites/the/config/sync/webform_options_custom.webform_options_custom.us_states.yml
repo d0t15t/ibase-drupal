@@ -5,10 +5,10 @@ dependencies: {  }
 _core:
   default_config_hash: Sh8c2Sw3otCGTZSWsmgf1c9vvzsHu1g6YWT-9ySgeb0
 id: us_states
-label: 'U.S. states'
-category: Maps
-description: 'A clickable map of U.S. states.'
-help: 'A clickable map of U.S. states.'
+label: US-Bundesstaaten
+category: Karten
+description: 'Eine anklickbare Karte der U.S.-Bundesstaaten.'
+help: 'Eine anklickbare Karte der U.S.-Bundesstaaten.'
 type: url
 template: ''
 url: us_states.svg

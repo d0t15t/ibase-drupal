@@ -14,8 +14,8 @@ uid: null
 template: true
 archive: false
 id: template_job_application
-title: 'Job Application'
-description: 'A job application webform template.'
+title: Job-Bewerbung
+description: 'Vorlage für das Hochladen von Bewerbungsunterlagen als Webformular.'
 categories: {  }
 elements: |
   information:
@@ -193,7 +193,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Thank you for applying.'
+  confirmation_message: 'Vielen Dank für Ihre Bewerbung.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -273,7 +273,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email Notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

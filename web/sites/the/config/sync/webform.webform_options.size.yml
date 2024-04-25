@@ -12,8 +12,8 @@ label: Size
 category: General
 likert: false
 options: |
-  Extra Small: Extra Small
-  Small: Small
-  Medium: Medium
-  Large: Large
-  Extra Large: Extra Large
+  Extra klein: Extra klein
+  Klein: Klein
+  Mittel: Mittel
+  Groß: Groß
+  Extra groß: Extra groß

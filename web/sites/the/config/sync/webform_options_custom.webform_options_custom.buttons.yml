@@ -7,7 +7,7 @@ _core:
 id: buttons
 label: Buttons
 category: Buttons
-description: 'An example of custom buttons.'
+description: 'Ein Beispiel für benutzerdefinierte Buttons.'
 help: ''
 type: template
 template: |

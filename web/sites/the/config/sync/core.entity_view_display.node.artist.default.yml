@@ -96,6 +96,93 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          9f8ffb43-ff7d-41b6-9a2f-61bfab2ac9fe:
+            uuid: 9f8ffb43-ff7d-41b6-9a2f-61bfab2ac9fe
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_artist_artworks'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewsreference_formatter
+                label: above
+                settings:
+                  plugin_types:
+                    - block
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          45fb7df8-a4bd-4809-b34e-827b47e2af95:
+            uuid: 45fb7df8-a4bd-4809-b34e-827b47e2af95
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_biography'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          195f5813-cb89-4e87-8ecd-a2689acc3853:
+            uuid: 195f5813-cb89-4e87-8ecd-a2689acc3853
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_cv'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          860a82ab-fff3-4892-9b44-4978ed199bc5:
+            uuid: 860a82ab-fff3-4892-9b44-4978ed199bc5
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_bibliography'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          8c94dd24-d27c-4321-8deb-96281bf194c1:
+            uuid: 8c94dd24-d27c-4321-8deb-96281bf194c1
+            region: content
+            configuration:
+              id: 'extra_field_block:node:artist:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 8
+            additional: {  }
+          bcb9d11a-3733-40be-8eda-de6546d2bea9:
+            uuid: bcb9d11a-3733-40be-8eda-de6546d2bea9
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_metatags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section

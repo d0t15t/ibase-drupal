@@ -14,78 +14,10 @@ uid: null
 template: true
 archive: false
 id: template_job_seeker_profile
-title: 'Job Seeker Profile'
-description: 'A job seeker profile webform template.'
+title: Bewerberprofil
+description: 'Vorlage für ein Bewerberprofil als Webformular.'
 categories: {  }
-elements: |
-  introduction:
-    '#markup': |
-      <p>Creating a job seeker profile will help companies find you:</p>
-      <ul>
-      <li>Upload a resume</li>
-      <li>Providing more information gives a better picture to employers</li>
-      <li>Salary requirements, location preferences and skill level are all important factors in the hiring decision</li>
-      </ul>
-      
-  information:
-    '#title': 'Job Seeker Information'
-    '#type': webform_section
-    first_name:
-      '#title': 'First Name'
-      '#type': textfield
-      '#required': true
-    last_name:
-      '#title': 'Last Name'
-      '#type': textfield
-      '#required': true
-    address:
-      '#type': webform_address
-      '#required': true
-    current_title:
-      '#type': textfield
-      '#title': 'Current Job Title'
-    current_organization:
-      '#type': textfield
-      '#title': 'Current Place of Occupation'
-    positions:
-      '#type': textfield
-      '#title': 'Position you are looking for'
-    relocation:
-      '#type': checkbox
-      '#title': 'Willing to relocate'
-    salary:
-      '#title': 'Salary Minimum'
-      '#type': textfield
-      '#description': 'Add currency sign/currency code if desired. e.g. 500,000 USD, 500,000 CAD, ¥ 100,000'
-    skill:
-      '#title': 'Skill Level'
-      '#type': radios
-      '#options_display': two_columns
-      '#options':
-        Novice/Beginner: Novice/Beginner
-        Intermediate/Proficient: Intermediate/Proficient
-        Expert/Advanced: Expert/Advanced
-    categories:
-      '#title': 'Job Categories'
-      '#type': checkboxes
-      '#options_display': two_columns
-      '#options':
-        'Account Manager': 'Account Manager'
-        Back-End: Back-End
-        Designer: Designer
-        DevOps: DevOps
-        Front-End: Front-End
-        'Project Manager': 'Project Manager'
-        Sales: Sales
-        'Site Builder': 'Site Builder'
-        Themer: Themer
-    resume:
-      '#type': managed_file
-      '#title': Resume
-    url:
-      '#type': url
-      '#title': Website
-      '#description': 'Enter your existing profile/resume/portfolio link.'
+elements: "introduction:\r\n  '#markup': |\r\n    <p>Wenn Sie ein Profil für Arbeitssuchende erstellen, können Unternehmen Sie leichter finden:</p>\r\n    <ul>\r\n    <li>Hochladen eines Lebenslaufs</li>\r\n    <li>Die Bereitstellung von mehr Informationen vermittelt den Arbeitgebern ein besseres Bild</li>\r\n    <li>Gehaltsvorstellungen, Standortpräferenzen und Qualifikationsniveau sind wichtige Faktoren für die Einstellungsentscheidung</li>\r\n    </ul>\r\n    \r\ninformation:\r\n  '#title': 'Informationen zum arbeitssuchenden'\r\n  '#type': webform_section\r\n  first_name:\r\n    '#title': 'Vorname'\r\n    '#type': textfield\r\n    '#required': true\r\n  last_name:\r\n    '#title': 'Nachname'\r\n    '#type': textfield\r\n    '#required': true\r\n  address:\r\n    '#type': webform_address\r\n    '#required': true\r\n  current_title:\r\n    '#type': textfield\r\n    '#title': 'Bezeichnung Ihres aktuellen Jobs'\r\n  current_organization:\r\n    '#type': textfield\r\n    '#title': 'Gegenwärtiger Arbeitsort'\r\n  positions:\r\n    '#type': textfield\r\n    '#title': 'Position, die Sie suchen'\r\n  relocation:\r\n    '#type': checkbox\r\n    '#title': 'Bereitschaft zum Wohnortwechsel'\r\n  salary:\r\n    '#title': 'Gehalt Minimum'\r\n    '#type': textfield\r\n    '#description': 'Falls gewünscht, Währungszeichen/Währungscode hinzufügen. z.B. 500,000 USD, 500,000 CAD, ¥ 100,000'\r\n  skill:\r\n    '#title': 'Qualifikationsniveau'\r\n    '#type': radios\r\n    '#options_display': two_columns\r\n    '#options':\r\n      Anfänger: Anfänger Mittelstufe/Professionell: Mittelstufe/Professionell Experte/Fortgeschrittener: Experte/Fortgeschrittener  \r\ncategories:\r\n    '#title': 'Job-Kategorien'\r\n    '#type': checkboxes\r\n    '#options_display': two_columns\r\n    '#options':\r\n      'Account Manager': 'Kundenbetreuer'\r\n      Back-End: Back-End\r\n      Designer: Designer\r\n      DevOps: DevOps\r\n      Front-End: Front-End-Entwickler\r\n      'Project Manager': 'Projekt-Manager'\r\n      Sales: Verkauf\r\n      'Site Builder': 'Site Builder'\r\n      Themer: Themer\r\n  resume:\r\n    '#type': managed_file\r\n    '#title': Bewerbung\r\n  url:\r\n    '#type': url\r\n    '#title': Webseite\r\n    '#description': 'Geben Sie den Link zu Ihrem bestehenden Profil/Lebenslauf/Portfolio ein.'\n"
 css: ''
 javascript: ''
 settings:
@@ -193,7 +125,7 @@ settings:
   confirmation_type: page
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Thank you for applying.'
+  confirmation_message: 'Vielen Dank für Ihre Bewerbung.'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -273,7 +205,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email Notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

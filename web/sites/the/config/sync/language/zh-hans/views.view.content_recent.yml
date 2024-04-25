@@ -1,4 +1,5 @@
 label: 最新内容
+description: 最近的内容。
 display:
   default:
     display_title: 默认

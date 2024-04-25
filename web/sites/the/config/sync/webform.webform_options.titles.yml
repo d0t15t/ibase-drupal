@@ -8,12 +8,12 @@ dependencies:
 _core:
   default_config_hash: PEUoedWrfYEX7oZ8CcOukfBTVxar1cPSROX8534esuU
 id: titles
-label: Titles
-category: Demographic
+label: Titel
+category: Demographisch
 likert: false
 options: |
-  Miss: Miss
-  Ms: Ms
-  Mr: Mr
+  Fräulein: Fräulein
+  Frau: Frau
+  Herr: Herr
   Mrs: Mrs
   Dr: Dr

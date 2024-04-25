@@ -14,23 +14,23 @@ uid: null
 template: false
 archive: false
 id: example_options_custom
-title: 'Example: Custom Options'
-description: 'Example of a custom options element.'
+title: 'Beispiel: Benutzerdefinierte Optionen'
+description: 'Beispiel für ein benutzerdefiniertes Optionselement.'
 categories:
-  - Example
+  - Beispiel
 elements: |
   states:
     '#type': 'webform_options_custom:us_states'
-    '#title': 'U.S. States'
+    '#title': 'U.S.-Bundesstaaten'
     '#required': true
   button:
     '#type': 'webform_options_custom:buttons'
     '#title': 'Buttons'
     '#required': true
     '#options':
-      one: One -- This is the number 1.
-      two: Two -- This is the number 2.
-      three:  Three -- This is the number 3.
+      one: Eins -- Dies ist die Nummer 1.
+      two: Zwei -- Dies ist die Nummer 2.
+      three:  Drei -- Dies ist die Nummer 3.
 css: ''
 javascript: ''
 settings:
