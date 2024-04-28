@@ -1,0 +1,5 @@
+name: 'THE Update'
+type: module
+description: 'The updates.'
+package: Custom
+core_version_requirement: ^10 || ^11

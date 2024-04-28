@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the THE Update module.
+ */
+
+/**
+ * Re-Add values for field_insurance_value & field_sale_price.
+ */
+function the_update_update_10000(&$sandbox) {
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('the_update')->getPath();
+  include $module_path . '/updates/10000/10000.php';
+}
