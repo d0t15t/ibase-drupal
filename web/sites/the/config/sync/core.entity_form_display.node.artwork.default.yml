@@ -61,8 +61,8 @@ third_party_settings:
       children:
         - title
         - field_year
+        - group_measure
         - field_dimensions_variable
-        - field_dimensions
         - field_duration
         - field_artists_catalog_number
         - field_gallery_reference_number
@@ -119,9 +119,9 @@ third_party_settings:
     group_financial:
       children:
         - field_owner
-        - field_sale_price
         - field_insurance_value
         - field_offset_cost
+        - field_sale_price
       label: Financial
       region: content
       parent_name: group_tabs
@@ -165,6 +165,51 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: 0
+    group_measure:
+      children:
+        - group_volume
+        - group_area
+      label: Measure
+      region: content
+      parent_name: group_information
+      weight: 4
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_volume:
+      children:
+        - field_dimensions
+      label: Volume
+      region: content
+      parent_name: group_measure
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_area:
+      children:
+        - field_area
+      label: Area
+      region: hidden
+      parent_name: group_measure
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.artwork.default
 targetEntityType: node
 bundle: artwork
@@ -191,7 +236,7 @@ content:
     third_party_settings: {  }
   field_artists:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -201,7 +246,7 @@ content:
     third_party_settings: {  }
   field_artists_catalog_number:
     type: string_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
@@ -220,7 +265,7 @@ content:
         hide_guidelines: '1'
   field_dimensions:
     type: volume_field_widget
-    weight: 5
+    weight: 6
     region: content
     settings:
       length:
@@ -256,14 +301,14 @@ content:
             selector: ''
   field_dimensions_variable:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_duration:
     type: string_textfield
-    weight: 6
+    weight: 7
     region: content
     settings:
       size: 60
@@ -271,7 +316,7 @@ content:
     third_party_settings: {  }
   field_edition:
     type: string_textfield
-    weight: 9
+    weight: 10
     region: content
     settings:
       size: 60
@@ -296,7 +341,7 @@ content:
         limit_values: '0'
   field_gallery_reference_number:
     type: string_textfield
-    weight: 8
+    weight: 9
     region: content
     settings:
       size: 60
@@ -360,7 +405,7 @@ content:
         hide_guidelines: '1'
   field_medium:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -393,7 +438,7 @@ content:
     third_party_settings: {  }
   field_version:
     type: entity_browser_entity_reference
-    weight: 12
+    weight: 13
     region: content
     settings:
       entity_browser: content_artworks
