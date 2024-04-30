@@ -13,3 +13,16 @@ function the_update_update_10000(&$sandbox) {
   $module_path = $module_handler->getModule('the_update')->getPath();
   include $module_path . '/updates/10000/10000.php';
 }
+
+/**
+ * Update the field_dimensions_unit.
+ */
+function the_update_update_10001(&$sandbox) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $node_storage = $entity_type_manager->getStorage('node');
+  $artworks = $node_storage->loadByProperties(['type' => 'artwork', 'status' => 1]);
+  foreach ($artworks as $artwork) {
+    $artwork->set('field_dimensions_unit', 'cm');
+    $artwork->save();
+  }
+}
