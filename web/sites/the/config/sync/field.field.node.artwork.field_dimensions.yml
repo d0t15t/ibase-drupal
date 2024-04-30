@@ -11,10 +11,10 @@ id: node.artwork.field_dimensions
 field_name: field_dimensions
 entity_type: node
 bundle: artwork
-label: Volume
-description: 'The 3 dimensional measure of an artwork.'
+label: Dimensions
+description: 'The dimensional measures of an artwork.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -23,19 +23,19 @@ settings:
     min: ''
     max: ''
     prefix: ''
-    suffix: cm
+    suffix: ''
   width:
     factor: '1'
     min: ''
     max: ''
     prefix: ''
-    suffix: cm
+    suffix: ''
   height:
     factor: '1'
     min: ''
     max: ''
     prefix: ''
-    suffix: cm
+    suffix: ''
   value:
     factor: 1
     min: ''

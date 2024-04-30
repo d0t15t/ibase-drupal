@@ -30,15 +30,6 @@ function the_theme_suggestions_field_alter(array &$suggestions, array $vars) {
  * Implements hook_preprocess_HOOK().
  */
 function the_preprocess_node(&$vars) {
-  if (!isset($vars['node'])) return;
-  /** @var EntityBase $node */
-  $node = $vars['node'];
-
-  if ($node->bundle() === 'exhibition' && $vars['view_mode'] === 'teaser') {
-    $vars['sidebar_node_display'] = \Drupal::entityTypeManager()
-      ->getViewBuilder('node')
-      ->view($node, 'sidebar');
-  }
 }
 
 function the_preprocess_field(&$vars) {

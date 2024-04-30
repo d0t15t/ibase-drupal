@@ -45,7 +45,7 @@
         "drupal/core-recommended": "^10.2.4",
         "drupal/custom_field": "^3.0@RC",
         "drupal/default_content": "^2.0@alpha",
-        "drupal/devel": "^5.1",
+        "drupal/devel": "^5.0",
         "drupal/dimension": "^2.0",
         "drupal/draggableviews": "^2.0",
         "drupal/easy_breadcrumb": "^2.0",
@@ -194,9 +194,12 @@
             "drupal/cer": {
                 "Update existing references on save: https://www.drupal.org/project/cer/issues/3240535": "https://www.drupal.org/files/issues/2021-10-03/cer-ignore-original-entity-in-differences-calculation-2846318-14-reroll.patch"
             },
-	    "drupal/price": {
-	        "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
-	    }
+            "drupal/price": {
+               "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
+            },
+            "drupal/dimension": {
+               "Support units in theme function": "patches/dimensions-add-unit.patch"
+            }
         },
         "merge-plugin": {
           

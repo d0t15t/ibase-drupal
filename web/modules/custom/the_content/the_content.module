@@ -9,6 +9,7 @@ function the_content_form_alter(&$form, FormStateInterface $form_state, $form_id
 
   if (isset($form["field_dimensions"]['widget'][0])) {
     $arr = $form["field_dimensions"]['widget'][0];
+    $arr['value']['#access'] = FALSE;
     $order = ['height', 'width', 'length'];
     $newOrder = [];
     foreach ($order as $key) {
@@ -63,4 +64,38 @@ function the_content_preprocess_field(&$vars) {
       $vars['attributes']['id'] = 'biography';
     }
   }
+
+  if ($field_name === 'field_dimensions') {
+    // Hide empty length values.
+    if (isset($vars["items"][0]["content"]["#length"]) && $vars["items"][0]["content"]["#length"] === '0.00') {
+      $vars["items"][0]["content"]["#length"] = NULL;
+    }
+    // Show dimensions unit from parent.
+    if (isset($vars["element"]["#object"])) {
+      $parent = $vars["element"]["#object"];
+      if ($parent->hasField('field_dimensions_unit') && !$parent->get('field_dimensions_unit')->isEmpty()) {
+        $unit = $parent->get('field_dimensions_unit')->getString();
+        $vars["items"][0]['content']['#unit']  = $unit;
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function the_content_theme_suggestions_volume_components_field_formatter_alter(array &$suggestions, array &$variables) {
+  $suggestions[] = 'volume_components_field_formatter__the';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function the_content_theme($existing, $type, $theme, $path) {
+  return [
+    'volume-components-field-formatter--the' => [
+      'base hook' => 'volume-components-field-formatter',
+    ],
+  ];
 }

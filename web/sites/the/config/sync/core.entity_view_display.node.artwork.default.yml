@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.artwork.field_artists_catalog_number
     - field.field.node.artwork.field_condition
     - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_unit
     - field.field.node.artwork.field_dimensions_variable
     - field.field.node.artwork.field_duration
     - field.field.node.artwork.field_edition
@@ -32,6 +33,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - media
+    - options
     - price
     - user
 third_party_settings:
@@ -87,7 +89,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 1
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -112,12 +114,33 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 2
+            weight: 3
             additional:
               layout_builder_styles_style:
                 slider: 0
-          ce49a0bf-a5ac-4cde-9d70-7965e2d81385:
-            uuid: ce49a0bf-a5ac-4cde-9d70-7965e2d81385
+          2ee6b8ba-1091-4057-b0fb-ec9e4b0bce41:
+            uuid: 2ee6b8ba-1091-4057-b0fb-ec9e4b0bce41
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_dimensions'
+              label: Dimensions
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: volume_components_field_formatter
+                label: visually_hidden
+                settings:
+                  link_to_entity: 0
+                third_party_settings: {  }
+            weight: 4
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          7a14d541-e015-448f-9204-d69486733bac:
+            uuid: 7a14d541-e015-448f-9204-d69486733bac
             region: content
             configuration:
               id: 'field_block:node:artwork:field_images'
@@ -129,7 +152,7 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: media_thumbnail
-                label: visually_hidden
+                label: hidden
                 settings:
                   image_link: ''
                   image_style: large
@@ -140,84 +163,10 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 3
+            weight: 6
             additional:
               layout_builder_styles_style:
                 slider: 0
-          ac5dc949-20b0-4771-8c1e-7883a65ee438:
-            uuid: ac5dc949-20b0-4771-8c1e-7883a65ee438
-            region: content
-            configuration:
-              id: 'field_block:node:artwork:field_images'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: media_thumbnail
-                label: above
-                settings:
-                  image_link: ''
-                  image_style: wide
-                  image_loading:
-                    attribute: eager
-                third_party_settings:
-                  field_formatter_range:
-                    order: 0
-                    limit: 0
-                    offset: 0
-            weight: 4
-            additional: {  }
-          0799b4c2-1a50-477c-b25e-074f606366d4:
-            uuid: 0799b4c2-1a50-477c-b25e-074f606366d4
-            region: content
-            configuration:
-              id: 'field_block:node:artwork:field_insurance_value'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: price_price_default
-                label: above
-                settings:
-                  strip_trailing_zeroes: false
-                  currency_display: symbol
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          e3157363-c3ec-4715-8d51-47034ad70b5d:
-            uuid: e3157363-c3ec-4715-8d51-47034ad70b5d
-            region: content
-            configuration:
-              id: 'field_block:node:artwork:field_offset_cost'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: price_price_default
-                label: above
-                settings:
-                  strip_trailing_zeroes: false
-                  currency_display: symbol
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          5c7c05eb-f79e-40fc-8665-61c24ba6d342:
-            uuid: 5c7c05eb-f79e-40fc-8665-61c24ba6d342
-            region: content
-            configuration:
-              id: 'field_block:node:artwork:field_sale_price'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: price_price_default
-                label: above
-                settings:
-                  strip_trailing_zeroes: false
-                  currency_display: symbol
-                third_party_settings: {  }
-            weight: 7
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -341,7 +290,7 @@ third_party_settings:
                 label: visually_hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 4
+            weight: 5
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -372,6 +321,13 @@ targetEntityType: node
 bundle: artwork
 mode: default
 content:
+  field_dimensions_unit:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_images:
     type: media_thumbnail
     label: above

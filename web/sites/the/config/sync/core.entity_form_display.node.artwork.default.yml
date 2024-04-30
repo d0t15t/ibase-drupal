@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.artwork.field_artists_catalog_number
     - field.field.node.artwork.field_condition
     - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_unit
     - field.field.node.artwork.field_dimensions_variable
     - field.field.node.artwork.field_duration
     - field.field.node.artwork.field_edition
@@ -61,7 +62,8 @@ third_party_settings:
       children:
         - title
         - field_year
-        - group_measure
+        - field_dimensions
+        - field_dimensions_unit
         - field_dimensions_variable
         - field_duration
         - field_artists_catalog_number
@@ -165,51 +167,6 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: 0
-    group_measure:
-      children:
-        - group_volume
-        - group_area
-      label: Measure
-      region: content
-      parent_name: group_information
-      weight: 4
-      format_type: tabs
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        direction: horizontal
-        width_breakpoint: 640
-    group_volume:
-      children:
-        - field_dimensions
-      label: Volume
-      region: content
-      parent_name: group_measure
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_area:
-      children:
-        - field_area
-      label: Area
-      region: hidden
-      parent_name: group_measure
-      weight: 21
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
 id: node.artwork.default
 targetEntityType: node
 bundle: artwork
@@ -265,7 +222,7 @@ content:
         hide_guidelines: '1'
   field_dimensions:
     type: volume_field_widget
-    weight: 6
+    weight: 4
     region: content
     settings:
       length:
@@ -299,9 +256,33 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+  field_dimensions_unit:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        6576250e-bcc0-4e92-a23b-bf38c3ee960d:
+          entity_type: node
+          bundle: artwork
+          dependee: field_dimensions_variable
+          settings:
+            state: '!visible'
+            reset: false
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              value: false
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_dimensions_variable:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -377,7 +358,7 @@ content:
         limit_values: '0'
   field_info:
     type: text_textarea
-    weight: 14
+    weight: 15
     region: content
     settings:
       rows: 5

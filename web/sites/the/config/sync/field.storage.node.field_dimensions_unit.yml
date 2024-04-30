@@ -1,0 +1,33 @@
+uuid: 6aae9227-198e-490a-9c0b-b55c0cdc1517
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_dimensions_unit
+field_name: field_dimensions_unit
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: cm
+      label: cm
+    -
+      value: meters
+      label: meters
+    -
+      value: inches
+      label: inches
+    -
+      value: feet
+      label: feet
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

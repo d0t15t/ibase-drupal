@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.artwork.field_artists_catalog_number
     - field.field.node.artwork.field_condition
     - field.field.node.artwork.field_dimensions
+    - field.field.node.artwork.field_dimensions_unit
     - field.field.node.artwork.field_dimensions_variable
     - field.field.node.artwork.field_duration
     - field.field.node.artwork.field_edition
@@ -82,6 +83,7 @@ content:
 hidden:
   field_condition: true
   field_dimensions: true
+  field_dimensions_unit: true
   field_dimensions_variable: true
   field_duration: true
   field_edition: true
