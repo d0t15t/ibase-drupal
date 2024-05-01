@@ -1,6 +1,6 @@
 uuid: a03b2422-55a0-49e3-90a7-3cefa353ef5a
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -12,7 +12,7 @@ dependencies:
 id: artists
 label: Artists
 module: views
-description: 'An overview of the gallery''s artists.'
+description: "An overview of the gallery's artists."
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Artists
+      title: ''
       fields:
         title:
           id: title
@@ -175,12 +175,31 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
+      enabled: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }

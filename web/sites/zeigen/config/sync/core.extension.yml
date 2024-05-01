@@ -23,7 +23,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  devel: 0
   dimension: 0
   dynamic_page_cache: 0
   editor: 0
@@ -45,6 +44,7 @@ module:
   history: 0
   httpswww: 0
   iban_field: 0
+  ibase_menu: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -107,6 +107,7 @@ module:
   webform_ui: 0
   webp: 0
   yearonly: 0
+  zeigen_update: 0
   limited_field_widgets: 1
   pathauto: 1
   content_translation: 10

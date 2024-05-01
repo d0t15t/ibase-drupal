@@ -14,10 +14,15 @@ mode: default
 content:
   field_view:
     type: viewsreference_formatter
-    label: above
+    label: hidden
     settings:
       plugin_types:
-        - block
+        default: default
+        block: '0'
+        page: '0'
+        entity_browser: '0'
+        feed: '0'
+        embed: '0'
     third_party_settings: {  }
     weight: 1
     region: content

@@ -1,24 +1,26 @@
-uuid: 8f6ccaf5-9eb8-4f5d-9d8a-eb85d3554a51
+uuid: b64ac677-7e38-48ba-9580-ca282fabc7d4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_artworks
-    - node.type.artist
-id: node.artist.field_artworks
-field_name: field_artworks
+    - field.storage.node.field_images
+    - media.type.image
+    - node.type.project
+id: node.project.field_images
+field_name: field_images
 entity_type: node
-bundle: artist
-label: Artworks
+bundle: project
+label: Images
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'default:media'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      image: image
     sort:
       field: _none
       direction: ASC

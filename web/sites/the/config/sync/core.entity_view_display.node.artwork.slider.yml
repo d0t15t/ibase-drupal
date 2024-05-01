@@ -47,7 +47,7 @@ content:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: ''
+      image_link: content
       image_style: wide
       image_loading:
         attribute: eager

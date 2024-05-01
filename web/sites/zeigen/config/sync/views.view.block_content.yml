@@ -526,7 +526,7 @@ display:
       path: admin/structure/block/block-content
       menu:
         type: tab
-        title: 'Custom block library'
+        title: Blöcke
         description: ''
         weight: 0
         menu_name: admin

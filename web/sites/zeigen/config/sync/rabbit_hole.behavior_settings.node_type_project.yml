@@ -1,0 +1,14 @@
+uuid: 7f13b912-fdfe-4193-8a7b-0ad28a39bd4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.project
+id: node_type_project
+entity_type_id: node_type
+entity_id: project
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied
