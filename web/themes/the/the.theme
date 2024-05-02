@@ -50,9 +50,7 @@ function the_preprocess_field(&$vars) {
   }
 
   // Provide functionality for the 'field_biography' Read More functions.
-  if ($vars['field_name'] === 'field_biography' && $vars['element']['#formatter'] === 'text_trimmed') {
-    $vars['items'][0]['content']['#suffix'] = '<p><a href="#biography" class="the-read-more-link">' . t('Read more') . '</p>';
-  } else {
+  if ($vars['field_name'] === 'field_biography' && $vars['element']['#formatter'] !== 'text_trimmed') {
     $vars['attributes']['id'] = 'biography';
   }
 }
