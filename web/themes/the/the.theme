@@ -24,6 +24,17 @@ function the_theme_suggestions_field_alter(array &$suggestions, array $vars) {
     $display_mode = $vars['element']['#view_mode'];
     $suggestions[] = join('__', ['field', 'node', 'field_images', 'artwork', $display_mode]);
   }
+
+  if ($vars["element"]["#field_type"] === 'text_long') {
+    if (isset($vars["element"]["#formatter"]))
+      $suggestions[] = join('__', [
+        $vars["element"]['#theme'],
+        $vars["element"]['#entity_type'],
+        $vars["element"]['#field_name'],
+        $vars["element"]['#bundle'],
+        $vars["element"]["#formatter"],
+      ]);
+  }
 }
 
 /**
@@ -36,5 +47,12 @@ function the_preprocess_field(&$vars) {
   if ($vars['field_name'] === 'field_artworks'
   && isset($vars['element']['#object']) && $vars['element']['#object']->bundle() === 'exhibition') {
     $vars['button_title'] = t('Exhibition artworks');
+  }
+
+  // Provide functionality for the 'field_biography' Read More functions.
+  if ($vars['field_name'] === 'field_biography' && $vars['element']['#formatter'] === 'text_trimmed') {
+    $vars['items'][0]['content']['#suffix'] = '<p><a href="#biography" class="the-read-more-link">' . t('Read more') . '</p>';
+  } else {
+    $vars['attributes']['id'] = 'biography';
   }
 }
