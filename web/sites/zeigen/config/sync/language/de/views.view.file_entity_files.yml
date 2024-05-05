@@ -6,19 +6,19 @@ display:
       exposed_form:
         options:
           submit_button: Filter
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           tags:
             previous: '‹ previous'
             next: 'next ›'
           expose:
-            items_per_page_label: 'Elemente pro Seite'
-            items_per_page_options_all_label: '- Alle -'
-            offset_label: Versatz
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         bulk_form:
           action_title: 'With selection'
@@ -28,7 +28,7 @@ display:
           label: Name
           separator: ', '
         type:
-          label: Typ
+          label: Type
         filemime:
           label: 'MIME type'
         filesize:
@@ -45,7 +45,7 @@ display:
         count:
           label: 'Used in'
         operations:
-          label: Aktionen
+          label: Operations
       filters:
         filename:
           expose:
@@ -55,7 +55,7 @@ display:
             label: Status
         type:
           expose:
-            label: Typ
+            label: Type
       title: Files
       empty:
         area_text_custom:
@@ -74,9 +74,9 @@ display:
             previous: '‹ previous'
             next: 'next ›'
           expose:
-            items_per_page_label: 'Elemente pro Seite'
-            items_per_page_options_all_label: '- Alle -'
-            offset_label: Versatz
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         entity_label:
           label: Entity

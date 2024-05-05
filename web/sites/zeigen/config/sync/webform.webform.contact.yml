@@ -1,12 +1,12 @@
-uuid: 3d15fb6b-090a-4959-b7fd-31b69f73a6a7
-langcode: de
+uuid: 459fe482-dd22-40d5-a5dd-1b478f955f95
+langcode: en
 status: open
 dependencies:
   enforced:
     module:
       - webform
 _core:
-  default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
+  default_config_hash: _je-MWeeJB6gfm6iECiqjcyNetfMFbn-YIInYwZ1gIk
 weight: 0
 open: null
 close: null
@@ -17,7 +17,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 categories: {  }
-elements: |
+elements: |-
   name:
     '#title': 'Your Name'
     '#type': textfield
@@ -28,6 +28,22 @@ elements: |
     '#type': email
     '#required': true
     '#default_value': '[current-user:mail]'
+  telephone:
+    '#type': tel
+    '#title': 'Your Telephone'
+    '#access_create_roles':
+      - anonymous
+    '#access_update_roles':
+      - anonymous
+    '#access_view_roles':
+      - anonymous
+    '#international': true
+    '#international_initial_country': DE
+    '#international_preferred_countries':
+      - CN
+      - DE
+      - US
+    '#telephone_validation_format': '0'
   subject:
     '#title': Subject
     '#type': textfield

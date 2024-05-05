@@ -1,0 +1,44 @@
+title: Rückmeldung
+description: 'Eine grundlegende Feedback-Vorlage.'
+elements: |
+  type:
+    '#title': 'Art des Feedbacks'
+    '#type': webform_radios_other
+    '#required': true
+    '#options':
+      Comments: Kommentare
+      'Report a Bug': 'Einen Bug melden'
+      Questions: Fragen
+    '#options_display': side_by_side
+  comments:
+    '#title': 'Ihr Feedback'
+    '#type': textarea
+    '#required': true
+  name:
+    '#title': 'Ihr Name'
+    '#type': textfield
+    '#required': true
+  email:
+    '#title': 'Ihre E-Mail'
+    '#type': email
+    '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Absende-Button(s)'
+    '#submit__label': 'Feedback senden'
+settings:
+  confirmation_message: 'Vielen Dank für Ihr Feedback.'
+  confirmation_url: '&lt;front&gt;'
+handlers:
+  email_confirmation:
+    label: 'Bestätigung via E-Mail'
+    settings:
+      from_name: _default
+      subject: _default
+      body: '[webform_submission:values:comments:value]'
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:name:raw]'
+      subject: _default
+      body: '[webform_submission:values:comments:value]'

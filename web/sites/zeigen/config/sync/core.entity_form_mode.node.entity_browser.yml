@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.entity_browser
 label: 'Entity Browser'
+description: ''
 targetEntityType: node
 cache: true

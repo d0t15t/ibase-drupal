@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.field_view
     - field.field.node.page.layout_builder__layout
     - image.style.wide
     - node.type.page
@@ -18,6 +19,7 @@ dependencies:
     - media
     - text
     - user
+    - viewsreference
 third_party_settings:
   layout_builder:
     enabled: true
@@ -69,6 +71,47 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          46f5b37f-95f1-4177-80f3-afcdd8aebcc3:
+            uuid: 46f5b37f-95f1-4177-80f3-afcdd8aebcc3
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_view'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewsreference_formatter
+                label: above
+                settings:
+                  plugin_types:
+                    - block
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          55292f95-e8f7-4bf0-9c2d-58eabb85445d:
+            uuid: 55292f95-e8f7-4bf0-9c2d-58eabb85445d
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_view'
+              label: View
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: viewsreference_formatter
+                label: hidden
+                settings:
+                  plugin_types:
+                    block: block
+                    default: '0'
+                    page: '0'
+                    feed: '0'
+                    embed: '0'
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
@@ -113,6 +156,15 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_view:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }

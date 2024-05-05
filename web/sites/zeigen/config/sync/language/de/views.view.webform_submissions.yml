@@ -1,142 +1,180 @@
+label: Webformular-Eingaben
+description: 'Standardansichten für die Anzeige von Webformular-Eingaben.'
 display:
   default:
     display_title: Master
     display_options:
       exposed_form:
         options:
-          submit_button: Anwenden
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           tags:
             previous: ‹‹
             next: ››
-            first: '« Anfang'
-            last: 'Ende »'
+            first: '« First'
+            last: 'Last »'
           expose:
-            items_per_page_label: 'Elemente pro Seite'
-            items_per_page_options_all_label: '- Alle -'
-            offset_label: Versatz
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Entwurf
           separator: ', '
         created:
-          label: Erstellt
+          label: Created
           separator: ', '
         remote_addr:
-          label: IP-Adresse
+          label: 'IP address'
           separator: ', '
         view_webform_submission:
-          label: Aktionen
-          text: Ansicht
+          label: Operations
+          text: view
       header:
         result:
-          content: '@start - @end von @total wird angezeigt'
+          content: 'Displaying @start - @end of @total'
+      empty:
+        area_text_custom:
+          content: 'Keine Eingaben verfügbar.'
       arguments:
         in_draft:
           exception:
-            title: Alle
-  embed_administer:
+            title: All
+      title: Webformular-Eingaben
+  embed_default:
+    display_title: 'Eingebettet: Standard'
     display_options:
+      display_description: 'Webformular-Eingaben anzeigen.'
+  embed_administer:
+    display_title: 'Eingebettet: Administrator'
+    display_options:
+      display_description: 'Webformular-Eingaben verwalten'
       fields:
         webform_submission_bulk_form:
-          action_title: Aktion
+          label: 'Massenverarbeitungsformular für Webformular-Eingaben'
+          action_title: Action
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Entwurf
           separator: ', '
         sticky:
-          label: 'am Anfang von Listen'
+          label: Sticky
           separator: ', '
         locked:
-          label: Gesperrt
+          label: Locked
           separator: ', '
         created:
-          label: Erstellt
+          label: Created
           separator: ', '
         completed:
+          label: Abgeschlossen
           separator: ', '
         remote_addr:
-          label: IP-Adresse
+          label: 'IP address'
           separator: ', '
         operations:
-          label: Aktionen
+          label: Operations
       filters:
+        in_draft:
+          expose:
+            label: 'Ist Entwurf'
         sticky:
           expose:
-            label: 'am Anfang von Listen'
+            label: Sticky
         locked:
           expose:
-            label: Gesperrt
+            label: Locked
   embed_manage:
+    display_title: 'Eingebettet: Verwalten'
     display_options:
+      display_description: 'Webformular-Eingaben verwalten'
       fields:
         webform_submission_bulk_form:
-          action_title: Aktion
+          label: 'Massenverarbeitungsformular für Webformular-Eingaben'
+          action_title: Action
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Entwurf
           separator: ', '
         sticky:
-          label: 'am Anfang von Listen'
+          label: Sticky
           separator: ', '
         locked:
-          label: Gesperrt
+          label: Locked
           separator: ', '
         created:
-          label: Erstellt
+          label: Created
           separator: ', '
         completed:
+          label: Abgeschlossen
           separator: ', '
         remote_addr:
-          label: IP-Adresse
+          label: 'IP address'
           separator: ', '
         view_webform_submission:
-          label: Aktionen
-          text: Ansicht
+          label: Operations
+          text: view
         edit_webform_submission:
-          label: Aktionen
-          text: Bearbeiten
+          label: Operations
+          text: edit
       filters:
+        in_draft:
+          expose:
+            label: 'Ist Entwurf'
         sticky:
           expose:
-            label: 'am Anfang von Listen'
+            label: Sticky
         locked:
           expose:
-            label: Gesperrt
+            label: Locked
   embed_review:
+    display_title: 'Eingebettet: Überprüfung'
     display_options:
+      display_description: 'Webformular-Eingaben überprüfen'
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Entwurf
           separator: ', '
         sticky:
-          label: 'am Anfang von Listen'
+          label: Sticky
           separator: ', '
         locked:
-          label: Gesperrt
+          label: Locked
           separator: ', '
         created:
-          label: Erstellt
+          label: Created
           separator: ', '
         completed:
+          label: Abgeschlossen
           separator: ', '
         remote_addr:
-          label: IP-Adresse
+          label: 'IP address'
           separator: ', '
         view_webform_submission:
-          label: Aktionen
-          text: Ansicht
+          label: Operations
+          text: view
       filters:
+        in_draft:
+          expose:
+            label: 'Ist Entwurf'
         sticky:
           expose:
-            label: 'am Anfang von Listen'
+            label: Sticky
         locked:
           expose:
-            label: Gesperrt
+            label: Locked

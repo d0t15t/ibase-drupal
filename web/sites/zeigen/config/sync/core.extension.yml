@@ -17,6 +17,7 @@ module:
   cer: 0
   ckeditor5: 0
   conditional_fields: 0
+  config: 0
   contact: 0
   contextual: 0
   ctools: 0
@@ -27,8 +28,6 @@ module:
   dynamic_page_cache: 0
   editor: 0
   embed: 0
-  entity_browser: 0
-  entity_browser_entity_form: 0
   entity_embed: 0
   field: 0
   field_formatter_range: 0
@@ -56,6 +55,7 @@ module:
   locale: 0
   media: 0
   media_entity_download: 0
+  media_library: 0
   media_pdf_thumbnail: 0
   menu_link_content: 0
   menu_ui: 0
@@ -70,6 +70,7 @@ module:
   path: 0
   path_alias: 0
   permissions_filter: 0
+  phpass: 0
   price: 0
   rabbit_hole: 0
   redirect: 0
@@ -86,6 +87,7 @@ module:
   system: 0
   taxonomy: 0
   telephone: 0
+  telephone_validation: 0
   text: 0
   the_content: 0
   token: 0
@@ -95,19 +97,13 @@ module:
   views_ui: 0
   viewsreference: 0
   webform: 0
-  webform_attachment: 0
-  webform_iban_field: 0
-  webform_image_select: 0
-  webform_location_places: 0
-  webform_options_custom: 0
-  webform_options_limit: 0
-  webform_submission_export_import: 0
+  webform_node: 0
+  webform_schema: 0
   webform_submission_log: 0
   webform_templates: 0
   webform_ui: 0
   webp: 0
   yearonly: 0
-  zeigen_update: 0
   limited_field_widgets: 1
   pathauto: 1
   content_translation: 10

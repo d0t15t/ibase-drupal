@@ -8,11 +8,13 @@ dependencies:
     - filter.format.webform_default
     - media.type.document
     - media.type.image
+    - node.type.artist
+    - node.type.page
   module:
-    - entity_browser
     - file
     - file_entity
     - filter
+    - help
     - media
     - media_pdf_thumbnail
     - node
@@ -29,23 +31,29 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content'
+  - 'access content overview'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
-  - 'access media_documents entity browser pages'
-  - 'access media_images entity browser pages'
   - 'access shortcuts'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add pdf image entity entities'
+  - 'create artist content'
   - 'create document media'
   - 'create image media'
   - 'create media'
+  - 'create page content'
   - 'customize shortcut links'
   - 'delete media'
   - 'delete own document media'
+  - 'delete own files'
   - 'delete own image media'
+  - 'delete own page content'
+  - 'edit own artist content'
   - 'edit own document media'
   - 'edit own image media'
+  - 'edit own page content'
   - 'edit pdf image entity entities'
   - 'update media'
   - 'use text format basic'

@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
+    - field.field.node.project.field_artists
+    - field.field.node.project.field_event_project
+    - field.field.node.project.field_featured_image
     - field.field.node.project.field_images
     - image.style.large
     - node.type.project
@@ -23,6 +26,31 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_artists:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_event_project:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_images:
     type: media_thumbnail

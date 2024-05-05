@@ -28,6 +28,8 @@ display:
           separator: ', '
         image_file_uri:
           separator: ', '
+        image_format:
+          separator: ', '
         changed:
           label: 已更改
           separator: ', '

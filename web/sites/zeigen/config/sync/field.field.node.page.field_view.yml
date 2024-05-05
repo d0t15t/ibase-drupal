@@ -1,0 +1,30 @@
+uuid: 27ed21e7-6651-4bb4-bf61-50deb09a0a44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view
+    - node.type.page
+  module:
+    - viewsreference
+id: node.page.field_view
+field_name: field_view
+entity_type: node
+bundle: page
+label: View
+description: 'Select a drupal-view to display.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+  preselect_views:
+    artists: artists
+  enabled_settings: {  }
+field_type: viewsreference

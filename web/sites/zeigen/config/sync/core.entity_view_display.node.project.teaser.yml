@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
+    - field.field.node.project.field_artists
+    - field.field.node.project.field_event_project
+    - field.field.node.project.field_featured_image
     - field.field.node.project.field_images
     - node.type.project
   module:
@@ -29,5 +32,8 @@ content:
     weight: 100
     region: content
 hidden:
+  field_artists: true
+  field_event_project: true
+  field_featured_image: true
   field_images: true
   langcode: true

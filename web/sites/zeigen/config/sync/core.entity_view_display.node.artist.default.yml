@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.artist.field_address
     - field.field.node.artist.field_artist_artworks
     - field.field.node.artist.field_artworks
-    - field.field.node.artist.field_bank_information
     - field.field.node.artist.field_bibliography
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
@@ -18,7 +17,6 @@ dependencies:
     - field.field.node.artist.field_name_asian
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
-    - field.field.node.artist.field_ust_id_number
     - node.type.artist
   module:
     - metatag
@@ -76,12 +74,10 @@ hidden:
   body: true
   field_address: true
   field_artworks: true
-  field_bank_information: true
   field_e_mail: true
   field_instagam_handle: true
   field_name: true
   field_name_asian: true
   field_portrait: true
   field_telephone: true
-  field_ust_id_number: true
   langcode: true

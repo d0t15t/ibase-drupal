@@ -17,7 +17,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Standard
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
@@ -132,7 +132,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: Autor
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -163,8 +163,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: 'Nicht veröffentlicht'
-            format_custom_true: Veröffentlicht
+            format_custom_false: Unpublished
+            format_custom_true: Published
         changed:
           id: changed
           table: node_field_data
@@ -172,7 +172,7 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-          label: Aktualisiert
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -187,6 +187,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
         operations:
           id: operations
           table: node
@@ -195,7 +204,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Aktionen
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -242,20 +251,20 @@ display:
         options:
           items_per_page: 50
           tags:
-            next: 'Nächste Seite ›'
-            previous: '‹ Vorherige Seite'
-            first: '« Anfang'
-            last: 'Ende »'
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
       exposed_form:
         type: basic
         options:
           submit_button: Filter
           reset_button: true
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:
@@ -388,7 +397,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: Veröffentlichungsstatus
+            label: 'Published status'
             description: ''
             identifier: status
             optional: true
@@ -399,11 +408,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Veröffentlicht
+                title: Published
                 operator: '='
                 value: '1'
               2:
-                title: 'Nicht veröffentlicht'
+                title: Unpublished
                 operator: '='
                 value: '0'
         langcode:
@@ -422,7 +431,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Sprache
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op

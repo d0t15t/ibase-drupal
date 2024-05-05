@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_images
     - field.field.node.artist.body
     - field.field.node.artist.field_address
     - field.field.node.artist.field_artist_artworks
     - field.field.node.artist.field_artworks
-    - field.field.node.artist.field_bank_information
     - field.field.node.artist.field_bibliography
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
@@ -19,13 +17,12 @@ dependencies:
     - field.field.node.artist.field_name_asian
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
-    - field.field.node.artist.field_ust_id_number
     - node.type.artist
   module:
     - address
     - allowed_formats
-    - entity_browser
     - field_group
+    - media_library
     - metatag
     - name
     - path
@@ -88,27 +85,10 @@ third_party_settings:
     group_media:
       children:
         - field_portrait
-        - field_artworks
       label: Media
       region: content
       parent_name: group_tabs
       weight: 25
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_financial:
-      children:
-        - field_ust_id_number
-        - field_bank_information
-      label: Financial
-      region: content
-      parent_name: group_tabs
-      weight: 27
       format_type: tab
       format_settings:
         classes: ''
@@ -180,31 +160,6 @@ content:
     weight: 20
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_artworks:
-    type: entity_browser_entity_reference
-    weight: 1
-    region: content
-    settings:
-      entity_browser: content_artworks
-      field_widget_display: rendered_entity
-      field_widget_edit: false
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      field_widget_display_settings:
-        view_mode: entity_browser
-      selection_mode: selection_append
-    third_party_settings:
-      limited_field_widgets:
-        limit_values: '0'
-  field_bank_information:
-    type: string_textarea
-    weight: 20
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
     third_party_settings: {  }
   field_bibliography:
     type: text_textarea
@@ -287,6 +242,7 @@ content:
         family: description
         generational: description
         credentials: description
+      field_title_display: before
     third_party_settings: {  }
   field_name_asian:
     type: name_default
@@ -318,35 +274,20 @@ content:
         family: description
         generational: description
         credentials: description
+      field_title_display: before
     third_party_settings: {  }
   field_portrait:
-    type: entity_browser_entity_reference
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      entity_browser: media_images
-      field_widget_display: rendered_entity
-      field_widget_edit: false
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      field_widget_display_settings:
-        view_mode: entity_browser
-      selection_mode: selection_append
+      media_types: {  }
     third_party_settings: {  }
   field_telephone:
     type: telephone_default
     weight: 19
     region: content
     settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_ust_id_number:
-    type: string_textfield
-    weight: 19
-    region: content
-    settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
   langcode:
@@ -405,4 +346,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_artist_artworks: true
+  field_artworks: true
   title: true

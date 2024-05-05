@@ -1,0 +1,72 @@
+title: Mitarbeiter-Evaluation
+description: 'Vorlage zur Evaluation von Mitarbeitern als Webformular.'
+elements: |
+  evaluator_information:
+    '#title': 'Ihre Angaben'
+    '#type': webform_section
+    evaluator_first_name:
+      '#title': 'Vorname'
+      '#type': textfield
+      '#required': true
+    evaluator_last_name:
+      '#title': 'Nachname'
+      '#type': textfield
+      '#required': true
+    evaluator_job_title:
+      '#type': textfield
+      '#title': 'Stellenbezeichnung'
+      '#required': true
+    evaluator_relationship:
+      '#type': webform_select_other
+      '#title': 'Beziehung zum Mitarbeiter'
+      '#options':
+        Coworker: Kollege
+        Supervisor: Vorgesetzter
+      '#required': true
+  employee_information:
+    '#title': 'Angaben zum Mitarbeiter'
+    '#type': webform_section
+    employee_first_name:
+      '#title': 'Vorname'
+      '#type': textfield
+      '#required': true
+    employee_last_name:
+      '#title': 'Nachname'
+      '#type': textfield
+      '#required': true
+    employee_job_title:
+      '#type': textfield
+      '#title': 'Stellenbezeichnung'
+      '#required': true
+    employee_ratings:
+      '#type': webform_likert
+      '#title': 'Wie würden Sie den Mitarbeiter bewerten…'
+      '#questions':
+        attendance: Anwesenheit
+        attire: Kleidung
+        professionalism: Professionalität
+        work_area: 'Arbeitsbereich'
+        ability: 'Fähigkeit, die Funktion auszuführen'
+        work_with_others: 'Teamfähigkeit'
+        receive_feedback: 'Fähigkeit Feedback/Kritik anzunehmen'
+        adaptabily: 'Anpassungsfähigkeit'
+        learning: 'Lernbereitschaft'
+        participation: 'Teilnamebereitschaft'
+        work_ethic: 'Arbeitsethik'
+        quality: 'Arbeitsqualität'
+      '#answers': likert_quality
+      '#required': true
+    employee_qualities:
+      '#type': textarea
+      '#title': 'Was sind die wichigsten Qualitäten des Mitarbeiters?'
+      '#required': true
+    employee_improve:
+      '#type': textarea
+      '#title': 'In welcher Weise könnte sich der Mitarbeiter verbessern?'
+      '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Absende-Button(s)'
+    '#submit__label': Anwenden
+settings:
+  confirmation_message: 'Vielen Dank für Ihre Bewerbung.'

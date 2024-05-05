@@ -3,13 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_images
     - field.field.node.project.body
+    - field.field.node.project.field_artists
+    - field.field.node.project.field_event_project
+    - field.field.node.project.field_featured_image
     - field.field.node.project.field_images
     - node.type.project
   module:
-    - entity_browser
-    - limited_field_widgets
+    - media_library
     - path
     - text
 id: node.project.default
@@ -33,23 +34,33 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_images:
-    type: entity_browser_entity_reference
-    weight: 122
+  field_artists:
+    type: entity_reference_autocomplete
+    weight: 123
     region: content
     settings:
-      entity_browser: media_images
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: true
-      field_widget_display_settings:
-        view_mode: entity_browser
-      selection_mode: selection_append
-    third_party_settings:
-      limited_field_widgets:
-        limit_values: '0'
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_project:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_featured_image:
+    type: media_library_widget
+    weight: 124
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -112,4 +123,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_images: true

@@ -1,2 +1,19 @@
+title: 'Kontaktieren Sie uns'
+description: 'Einfache Kontaktformular-Vorlage als Webformular.'
+elements: "name:\r\n  '#title': 'Ihr Name'\r\n  '#type': textfield\r\n  '#required': true\r\nemail:\r\n  '#title': 'Ihre E-Mail'\r\n  '#type': email\r\n  '#required': true\r\nsubject:\r\n  '#title': Betreff\r\n  '#type': textfield\r\n  '#required': true\r\nmessage:\r\n  '#title': Nachricht\r\n  '#type': textarea\r\n  '#required': true\r\nactions:\r\n  '#type': webform_actions\r\n  '#title': 'Absende-Button(s)'\r\n  '#submit__label': 'Nachricht senden'\n"
 settings:
-  confirmation_message: 'Ihre Nachricht wurde gesendet.'
+  confirmation_message: 'Your message has been sent.'
+  confirmation_url: '&lt;front&gt;'
+handlers:
+  email_confirmation:
+    label: 'Bestätigung via E-Mail'
+    settings:
+      from_name: _default
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
