@@ -89,36 +89,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-          21297910-1276-401c-a865-2cff8dea162e:
-            uuid: 21297910-1276-401c-a865-2cff8dea162e
-            region: content
-            configuration:
-              id: 'inline_block:custom'
-              label: 'Project links'
-              label_display: '0'
-              provider: layout_builder
-              view_mode: full
-              context_mapping: {  }
-              block_revision_id: 8
-              block_serialized: null
-            weight: 3
-            additional:
-              component_attributes:
-                block_attributes:
-                  id: ''
-                  class: project-buttons
-                  style: ''
-                  data: ''
-                block_title_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
-                block_content_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
           564eccb7-c69a-49d0-9676-1d666376eaee:
             uuid: 564eccb7-c69a-49d0-9676-1d666376eaee
             region: content
@@ -135,7 +105,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 4
+            weight: 5
             additional:
               component_attributes:
                 block_attributes:
@@ -174,7 +144,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 5
+            weight: 6
             additional:
               component_attributes:
                 block_attributes:
@@ -213,26 +183,56 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 7
+            weight: 8
             additional: {  }
-          82741f54-c706-4c3f-b6e8-6d8d8afc8030:
-            uuid: 82741f54-c706-4c3f-b6e8-6d8d8afc8030
+          d2e1471e-390e-4a78-bb78-8471d209e48e:
+            uuid: d2e1471e-390e-4a78-bb78-8471d209e48e
             region: content
             configuration:
               id: 'inline_block:custom'
-              label: 'Programm headline'
+              label: 'Programm title'
               label_display: '0'
               provider: layout_builder
               view_mode: full
               context_mapping: {  }
-              block_revision_id: 9
+              block_revision_id: 10
               block_serialized: null
-            weight: 6
+            weight: 7
             additional:
               component_attributes:
                 block_attributes:
                   id: programm
                   class: project-programm--headline
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+          2a5a9312-4ec9-4051-b0ee-45013b40ec9e:
+            uuid: 2a5a9312-4ec9-4051-b0ee-45013b40ec9e
+            region: content
+            configuration:
+              id: 'inline_block:custom'
+              label: 'Project links'
+              label_display: '0'
+              provider: layout_builder
+              view_mode: full
+              context_mapping: {  }
+              block_revision_id: 11
+              block_serialized: null
+            weight: 4
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: project-buttons
                   style: ''
                   data: ''
                 block_title_attributes:
