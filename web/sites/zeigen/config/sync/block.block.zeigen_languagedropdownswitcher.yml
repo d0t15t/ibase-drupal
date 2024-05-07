@@ -1,6 +1,6 @@
 uuid: 7ec0a09b-e8c1-47dc-a085-1ca6d894879d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - lang_dropdown
@@ -8,8 +8,8 @@ dependencies:
     - zeigen
 id: zeigen_languagedropdownswitcher
 theme: zeigen
-region: header
-weight: 0
+region: primary_menu
+weight: -5
 provider: null
 plugin: 'language_dropdown_block:language_interface'
 settings:

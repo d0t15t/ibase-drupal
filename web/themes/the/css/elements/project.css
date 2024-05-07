@@ -1,3 +1,13 @@
+.btn,
+.node--type-project.node--view-mode-full .node__content .project-buttons ul li a,
+.node--type-project.node--view-mode-full .node__content .project-programm--headline {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: lowercase;
+  font-size: 1.5em;
+}
 @font-face {
   font-family: twentieth-century;
   src: url("../fonts/Tw-Cen-MT-W01-Light.woff2") format('woff2');
@@ -133,17 +143,49 @@
   max-width: 1090px;
   margin: 0 auto;
 }
-.no-list-style {
+.no-list-style,
+.node--type-project.node--view-mode-full .node__content .project-artists ul {
   list-style: none;
   margin: unset;
   padding: unset;
 }
 .basic-grid,
-.border-grid {
+.border-grid,
+.node--type-project.node--view-mode-full .node__content .project-artists ul {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
-.border-grid > * {
+.border-grid > *,
+.node--type-project.node--view-mode-full .node__content .project-artists ul > * {
   border: 1px solid #000;
+}
+.node--type-project.node--view-mode-full .node__content {
+  text-align: center;
+}
+.node--type-project.node--view-mode-full .node__content .field--name-field-headline {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.node--type-project.node--view-mode-full .node__content .field--name-field-subheadline {
+  padding-bottom: 10px;
+}
+.node--type-project.node--view-mode-full .node__content .project-buttons ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: unset;
+  padding: unset;
+  padding-bottom: 10px;
+}
+.node--type-project.node--view-mode-full .node__content .project-buttons ul li a {
+  width: 200px;
+  display: block;
+}
+.node--type-project.node--view-mode-full .node__content .project-artists {
+  padding: 30px 0;
+}
+.node--type-project.node--view-mode-full .node__content .project-programm--headline {
+  margin-bottom: 20px;
 }

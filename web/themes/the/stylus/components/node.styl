@@ -8,7 +8,7 @@ article.node--view-mode-full
 
   h1
     font-size 2em
-    line-height 1em
+    //line-height 1em
     padding-left 10px
 
     @media all and (min-width: 768px)
@@ -28,3 +28,22 @@ article.node--view-mode-full
   //  background-color pink
   //  .glide__arrows
   //    background red
+
+.layout .layout__region--content .block
+  .node--type-artist
+  .node--type-artist
+    &.node--view-mode-teaser
+      img
+        display flex
+
+.node--type-events
+.node--type-project
+  &.node--view-mode-teaser
+    *
+      text-align left
+    img
+      max-width 100%
+      height auto
+      width 100%
+    .block-field-blocknodeeventsfield-featured-image
+      padding 0

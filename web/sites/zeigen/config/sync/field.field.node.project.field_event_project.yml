@@ -10,7 +10,7 @@ id: node.project.field_event_project
 field_name: field_event_project
 entity_type: node
 bundle: project
-label: 'Event project'
+label: Events
 description: 'Reference projects and events.'
 required: false
 translatable: false

@@ -21,8 +21,14 @@ dependencies:
     - image.style.teaser
     - node.type.artist
   module:
+    - layout_builder
+    - layout_discovery
     - media
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 id: node.artist.teaser
 targetEntityType: node
 bundle: artist

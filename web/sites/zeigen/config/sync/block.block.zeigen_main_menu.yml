@@ -13,7 +13,7 @@ _core:
 id: zeigen_main_menu
 theme: zeigen
 region: primary_menu
-weight: -5
+weight: -6
 provider: null
 plugin: 'system_menu_block:main'
 settings:

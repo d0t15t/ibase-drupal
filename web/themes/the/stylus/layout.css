@@ -125,3 +125,25 @@
   max-width: 100%;
   height: auto;
 }
+#block-the-content .view-artists .view-content ul.cards {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.padded-content > * {
+  max-width: 1090px;
+  margin: 0 auto;
+}
+.no-list-style {
+  list-style: none;
+  margin: unset;
+  padding: unset;
+}
+.basic-grid,
+.border-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.border-grid > * {
+  border: 1px solid #000;
+}

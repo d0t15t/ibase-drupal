@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic
+    - filter.format.headline
     - filter.format.html
     - filter.format.webform_default
     - media.type.document
@@ -57,6 +58,7 @@ permissions:
   - 'edit pdf image entity entities'
   - 'update media'
   - 'use text format basic'
+  - 'use text format headline'
   - 'use text format html'
   - 'use text format webform_default'
   - 'view files'

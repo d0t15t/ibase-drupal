@@ -88,12 +88,34 @@
                 max-width 100%
                 height auto
 // Artists
-//#block-the-content
-//  .view-artists
-//    .view-content
-//      ul.cards
-//        padding 0 !important
-//        margin 0 !important
-//      //margin-bottom 20px
-//      //width 100%
-//
+#block-the-content
+  .view-artists
+    .view-content
+      ul.cards
+        padding 0 !important
+        margin 0 !important
+      //margin-bottom 20px
+      //width 100%
+
+
+// Projects
+.padded-content
+  > *
+    max-width 1090px
+    margin 0 auto
+
+.no-list-style
+  list-style none
+  margin unset
+  padding unset
+
+.basic-grid
+  display flex
+  gap 20px
+  flex-wrap wrap
+
+.border-grid
+  @extend .basic-grid
+
+  > *
+    border 1px solid black

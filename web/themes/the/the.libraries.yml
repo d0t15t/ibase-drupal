@@ -84,6 +84,13 @@ cards:
       css/elements/cards.css:
         weight: -9
 
+project:
+  version: VERSION
+  css:
+    component:
+      css/elements/project.css:
+        weight: -9
+
 split-page:
   version: VERSION
   css:

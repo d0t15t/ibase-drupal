@@ -1,0 +1,43 @@
+@import "components/button"
+@import "layout"
+
+.node--type-project
+  &.node--view-mode-full
+    .node__content
+      text-align center
+
+      .field--name-field-headline
+        text-align center
+        padding-bottom 10px
+
+      .field--name-field-subheadline
+        padding-bottom 10px
+
+      .project-buttons
+
+        ul
+          display flex
+          //justify-content space-between
+          //justify-content space-evenly
+          justify-content center
+          gap 20px
+          list-style none
+          margin unset
+          padding unset
+          padding-bottom 10px
+
+          li
+            a
+              @extend .btn
+              width 200px
+              display block
+
+      .project-artists
+        padding 30px 0
+        ul
+          @extend .border-grid
+          @extend .no-list-style
+
+      .project-programm--headline
+        @extend .btn
+        margin-bottom 20px

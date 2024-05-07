@@ -60,6 +60,12 @@
   box-sizing: border-box;
   line-height: 1.5em;
   font-size: 1em;
+  letter-spacing: 1px;
+}
+.layout-container h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.7em;
 }
 .layout-container h1,
 .layout-container h2,

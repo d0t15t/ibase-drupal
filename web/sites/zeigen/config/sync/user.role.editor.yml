@@ -1,9 +1,12 @@
 uuid: d4d4148f-1d4a-4039-8da1-2abf8421de48
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_builder_component_attributes
 id: editor
 label: Editor
 weight: 1
 is_admin: null
-permissions: {  }
+permissions:
+  - 'manage layout builder component attributes'

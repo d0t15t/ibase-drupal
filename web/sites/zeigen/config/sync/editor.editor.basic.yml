@@ -1,0 +1,30 @@
+uuid: b22b3ee3-cb41-49a3-8ce6-300a6dca1203
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic
+  module:
+    - ckeditor5
+format: basic
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - '|'
+      - underline
+      - code
+      - strikethrough
+      - link
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+image_upload: {  }
