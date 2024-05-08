@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.project.field_subheadline
     - image.style.large
     - node.type.project
+    - views.view.partners
   module:
     - field_formatter_range
     - layout_builder
@@ -20,6 +21,7 @@ dependencies:
     - media
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -28,11 +30,11 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: Main
+          label: 'Project default'
           context_mapping: {  }
         components:
-          087792ab-1b4f-4670-9478-ff9a3c9592c7:
-            uuid: 087792ab-1b4f-4670-9478-ff9a3c9592c7
+          b8dfa0cf-06a7-4291-a5ec-d74d4f795df0:
+            uuid: b8dfa0cf-06a7-4291-a5ec-d74d4f795df0
             region: content
             configuration:
               id: 'field_block:node:project:field_headline'
@@ -49,8 +51,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          82166d07-25d4-4097-83a7-7322267620ee:
-            uuid: 82166d07-25d4-4097-83a7-7322267620ee
+          2bb51d31-3f0a-472d-b8a2-44f46cc72ca4:
+            uuid: 2bb51d31-3f0a-472d-b8a2-44f46cc72ca4
             region: content
             configuration:
               id: 'field_block:node:project:field_subheadline'
@@ -67,8 +69,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          550e8154-6f18-4297-977d-3479668f9502:
-            uuid: 550e8154-6f18-4297-977d-3479668f9502
+          b331dfe0-af75-447b-96fc-6513cf8bd7ee:
+            uuid: b331dfe0-af75-447b-96fc-6513cf8bd7ee
             region: content
             configuration:
               id: 'field_block:node:project:field_featured_image'
@@ -89,8 +91,8 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
-          564eccb7-c69a-49d0-9676-1d666376eaee:
-            uuid: 564eccb7-c69a-49d0-9676-1d666376eaee
+          7eb1dff6-def3-4ee1-9215-ce7d94b4d0e0:
+            uuid: 7eb1dff6-def3-4ee1-9215-ce7d94b4d0e0
             region: content
             configuration:
               id: 'field_block:node:project:body'
@@ -105,7 +107,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 5
+            weight: 4
             additional:
               component_attributes:
                 block_attributes:
@@ -120,50 +122,11 @@ third_party_settings:
                   data: ''
                 block_content_attributes:
                   id: ''
-                  class: padded-content--inner
-                  style: ''
-                  data: ''
-          b845e535-373a-4b5e-8406-a0463e447497:
-            uuid: b845e535-373a-4b5e-8406-a0463e447497
-            region: content
-            configuration:
-              id: 'field_block:node:project:field_artists'
-              label: Artists
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_entity_view
-                label: visually_hidden
-                settings:
-                  view_mode: teaser
-                third_party_settings:
-                  field_formatter_range:
-                    order: 0
-                    limit: 0
-                    offset: 0
-            weight: 6
-            additional:
-              component_attributes:
-                block_attributes:
-                  id: artists
-                  class: project-artists
-                  style: ''
-                  data: ''
-                block_title_attributes:
-                  id: ''
                   class: ''
                   style: ''
                   data: ''
-                block_content_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
-          0193df4c-4254-44f6-b7cc-baf59f765f6a:
-            uuid: 0193df4c-4254-44f6-b7cc-baf59f765f6a
+          2d187131-120a-4fd8-8190-2e799acfa9c0:
+            uuid: 2d187131-120a-4fd8-8190-2e799acfa9c0
             region: content
             configuration:
               id: 'field_block:node:project:field_event_project'
@@ -185,17 +148,47 @@ third_party_settings:
                     offset: 0
             weight: 8
             additional: {  }
-          d2e1471e-390e-4a78-bb78-8471d209e48e:
-            uuid: d2e1471e-390e-4a78-bb78-8471d209e48e
+          b6387f2d-44d1-4861-9b8a-be3dabc4cd04:
+            uuid: b6387f2d-44d1-4861-9b8a-be3dabc4cd04
             region: content
             configuration:
               id: 'inline_block:custom'
-              label: 'Programm title'
+              label: 'Project links'
               label_display: '0'
               provider: layout_builder
               view_mode: full
               context_mapping: {  }
-              block_revision_id: 10
+              block_revision_id: 8
+              block_serialized: null
+            weight: 3
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: project-buttons
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+          c39a7f17-dfe8-4a4e-899e-602ceb5c9b5f:
+            uuid: c39a7f17-dfe8-4a4e-899e-602ceb5c9b5f
+            region: content
+            configuration:
+              id: 'inline_block:custom'
+              label: 'Event title'
+              label_display: '0'
+              provider: layout_builder
+              view_mode: full
+              context_mapping: {  }
+              block_revision_id: 9
               block_serialized: null
             weight: 7
             additional:
@@ -215,36 +208,19 @@ third_party_settings:
                   class: ''
                   style: ''
                   data: ''
-          2a5a9312-4ec9-4051-b0ee-45013b40ec9e:
-            uuid: 2a5a9312-4ec9-4051-b0ee-45013b40ec9e
+          b5cc8ecb-adcc-4868-9374-32c680ac3e66:
+            uuid: b5cc8ecb-adcc-4868-9374-32c680ac3e66
             region: content
             configuration:
-              id: 'inline_block:custom'
-              label: 'Project links'
+              id: 'views_block:partners-block_1'
+              label: ''
               label_display: '0'
-              provider: layout_builder
-              view_mode: full
+              provider: views
               context_mapping: {  }
-              block_revision_id: 11
-              block_serialized: null
-            weight: 4
-            additional:
-              component_attributes:
-                block_attributes:
-                  id: ''
-                  class: project-buttons
-                  style: ''
-                  data: ''
-                block_title_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
-                block_content_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
+              views_label: ''
+              items_per_page: none
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
 id: node.project.default
 targetEntityType: node

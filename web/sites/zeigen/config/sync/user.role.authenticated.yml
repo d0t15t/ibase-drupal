@@ -7,19 +7,14 @@ dependencies:
     - filter.format.headline
     - filter.format.html
     - filter.format.webform_default
-    - media.type.document
-    - media.type.image
-    - node.type.artist
-    - node.type.page
   module:
     - file
-    - file_entity
     - filter
     - help
     - media
+    - media_entity_download
     - media_pdf_thumbnail
-    - node
-    - shortcut
+    - search
     - system
     - taxonomy
     - toolbar
@@ -30,41 +25,17 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access administration pages'
   - 'access content'
-  - 'access content overview'
   - 'access files overview'
   - 'access help pages'
-  - 'access media overview'
-  - 'access shortcuts'
   - 'access taxonomy overview'
   - 'access toolbar'
-  - 'add pdf image entity entities'
-  - 'create artist content'
-  - 'create document media'
-  - 'create image media'
-  - 'create media'
-  - 'create page content'
-  - 'customize shortcut links'
-  - 'delete media'
-  - 'delete own document media'
   - 'delete own files'
-  - 'delete own image media'
-  - 'delete own page content'
-  - 'edit own artist content'
-  - 'edit own document media'
-  - 'edit own image media'
-  - 'edit own page content'
-  - 'edit pdf image entity entities'
-  - 'update media'
+  - 'download media'
+  - 'search content'
   - 'use text format basic'
   - 'use text format headline'
   - 'use text format html'
   - 'use text format webform_default'
-  - 'view files'
   - 'view media'
-  - 'view own unpublished content'
-  - 'view own unpublished media'
-  - 'view private pdf thumbnails'
   - 'view published pdf image entity entities'
-  - 'view unpublished pdf image entity entities'

@@ -24,9 +24,9 @@ third_party_settings:
       -
         layout_id: layout_twocol_section
         layout_settings:
-          label: Teaser
+          label: 'Project teaser'
           context_mapping: {  }
-          column_widths: 25-75
+          column_widths: 33-67
         components:
           f138fa8f-cc78-4963-ad0d-b8a2aaab5441:
             uuid: f138fa8f-cc78-4963-ad0d-b8a2aaab5441
@@ -50,6 +50,24 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          abbf281b-9e7b-4ca8-9a34-3ef465c4a3ce:
+            uuid: abbf281b-9e7b-4ca8-9a34-3ef465c4a3ce
+            region: second
+            configuration:
+              id: 'field_block:node:project:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
           872c863d-ed86-48d5-9cfa-dc9d0987237c:
             uuid: 872c863d-ed86-48d5-9cfa-dc9d0987237c
             region: second
@@ -68,24 +86,6 @@ third_party_settings:
                   link_to_entity: true
                 third_party_settings: {  }
             weight: 0
-            additional: {  }
-          abbf281b-9e7b-4ca8-9a34-3ef465c4a3ce:
-            uuid: abbf281b-9e7b-4ca8-9a34-3ef465c4a3ce
-            region: second
-            configuration:
-              id: 'field_block:node:project:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
             additional: {  }
         third_party_settings: {  }
 id: node.project.teaser

@@ -1,18 +1,17 @@
-uuid: 5b3b5e7e-04f6-4f7f-97a4-51fb61b52378
+uuid: c6b128e6-57e1-4140-938a-4c88498ca2cc
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.events
-    - system.menu.main
+    - node.type.partner
   module:
     - node
     - user
-id: events
-label: Events
+id: partners
+label: Partners
 module: views
-description: 'A list of events.'
+description: 'A list of all partners.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -23,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Events
+      title: Partners
       fields:
         title:
           id: title
@@ -73,23 +72,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: none
         options:
           offset: 0
-          items_per_page: 10
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
+          items_per_page: null
       exposed_form:
         type: basic
         options:
@@ -146,9 +132,13 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            events: events
+            partner: partner
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -170,31 +160,24 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
-    display_title: Page
-    display_plugin: page
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
     position: 1
     display_options:
-      enabled: false
-      display_extenders: {  }
-      path: events
-      menu:
-        type: normal
-        title: Events
-        weight: -46
-        menu_name: main
-        parent: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

@@ -6,20 +6,19 @@ dependencies:
     - field.field.media.document.field_media_file
     - media.type.document
   module:
-    - file_entity
+    - file
 id: media.document.default
 targetEntityType: media
 bundle: document
 mode: default
 content:
   field_media_file:
-    type: file_download_link
-    label: visually_hidden
+    type: file_default
+    label: above
     settings:
-      access_message: "You don't have access to download this file."
-      text: 'Download [file:name]'
+      use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   created: true

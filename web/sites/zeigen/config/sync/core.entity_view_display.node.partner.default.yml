@@ -1,0 +1,30 @@
+uuid: 04c66b4e-63e3-4fea-a1aa-929778147c40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partner.field_featured_image
+    - node.type.partner
+  module:
+    - user
+id: node.partner.default
+targetEntityType: node
+bundle: partner
+mode: default
+content:
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

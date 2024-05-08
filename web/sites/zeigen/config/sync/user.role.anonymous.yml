@@ -5,10 +5,11 @@ dependencies:
   config:
     - filter.format.webform_default
   module:
-    - file_entity
     - filter
     - media
+    - media_entity_download
     - media_pdf_thumbnail
+    - search
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -18,7 +19,8 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'download media'
+  - 'search content'
   - 'use text format webform_default'
-  - 'view files'
   - 'view media'
   - 'view published pdf image entity entities'
