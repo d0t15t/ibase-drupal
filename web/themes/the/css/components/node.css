@@ -119,3 +119,8 @@ article.node--view-mode-full h1 {
 .node--type-project.node--view-mode-teaser .block-field-blocknodeeventsfield-featured-image {
   padding: 0;
 }
+.node--type-events.node--view-mode-teaser+.node--view-mode-teaser,
+.node--type-project.node--view-mode-teaser+.node--view-mode-teaser {
+  margin-top: 20px;
+  border-top: 1px solid #aaa;
+}

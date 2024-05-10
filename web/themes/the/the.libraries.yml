@@ -7,9 +7,10 @@ base:
     - core/drupal
     - core/drupal.debounce
     - core/once
-    - the/cards
+#    - the/cards
     - the/split-page
     - the/slider
+    - the/events
   css:
     theme:
       css/global.css:
@@ -95,6 +96,12 @@ project:
   css:
     component:
       css/elements/project.css:
+        weight: -9
+events:
+  version: VERSION
+  css:
+    component:
+      css/elements/events.css:
         weight: -9
 
 split-page:

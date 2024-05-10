@@ -217,7 +217,7 @@ display:
           exposed: true
           expose:
             operator_id: field_date_value_op
-            label: Date
+            label: Filter
             description: ''
             use_operator: false
             operator: field_date_value_op
@@ -308,6 +308,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: the-events-list
       header: {  }
       footer: {  }
       display_extenders: {  }
