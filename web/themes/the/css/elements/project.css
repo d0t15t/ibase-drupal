@@ -144,20 +144,20 @@
   margin: 0 auto;
 }
 .no-list-style,
-.node--type-project.node--view-mode-full .node__content .project-artists ul {
+.basic-grid,
+.border-grid {
   list-style: none;
   margin: unset;
   padding: unset;
 }
 .basic-grid,
-.border-grid,
-.node--type-project.node--view-mode-full .node__content .project-artists ul {
+.border-grid {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
-.border-grid > *,
-.node--type-project.node--view-mode-full .node__content .project-artists ul > * {
+.border-grid > * {
   border: 1px solid #000;
 }
 .node--type-project.node--view-mode-full .node__content {
@@ -183,9 +183,12 @@
   width: 200px;
   display: block;
 }
-.node--type-project.node--view-mode-full .node__content .project-artists {
-  padding: 30px 0;
+.node--type-project.node--view-mode-full .node__content .project-partners {
+  margin: 0 auto;
 }
 .node--type-project.node--view-mode-full .node__content .project-programm--headline {
   margin-bottom: 20px;
+}
+ontent .project-artists {
+  padding: 30px 0;
 }

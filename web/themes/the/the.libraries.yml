@@ -83,6 +83,12 @@ cards:
     component:
       css/elements/cards.css:
         weight: -9
+form-filters:
+  version: VERSION
+  css:
+    component:
+      css/elements/filters.css:
+        weight: -9
 
 project:
   version: VERSION

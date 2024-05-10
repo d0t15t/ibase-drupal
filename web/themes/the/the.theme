@@ -54,3 +54,9 @@ function the_preprocess_field(&$vars) {
     $vars['attributes']['id'] = 'biography';
   }
 }
+
+function the_preprocess_form_element(&$vars) {
+  if (isset($vars["element"]["#type"]) && $vars["element"]["#type"] === 'select') {
+    $vars["description_display"] = 'invisible';
+  }
+}

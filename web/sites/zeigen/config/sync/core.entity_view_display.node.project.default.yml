@@ -220,7 +220,23 @@ third_party_settings:
               views_label: ''
               items_per_page: none
             weight: 5
-            additional: {  }
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: project-partners
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
         third_party_settings: {  }
 id: node.project.default
 targetEntityType: node

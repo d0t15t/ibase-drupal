@@ -1,0 +1,7 @@
+.the-form-filters #edit-date-wrapper--4 > .fieldset-wrapper {
+  display: flex;
+  align-items: center;
+}
+.the-form-filters #edit-date-wrapper--4 > .fieldset-wrapper .label::first-letter {
+  text-transform: uppercase;
+}

@@ -44,7 +44,7 @@ content:
     third_party_settings: {  }
   field_documents:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -54,21 +54,21 @@ content:
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 13
+    weight: 12
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_images:
     type: media_library_widget
-    weight: 15
+    weight: 14
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 14
+    weight: 13
     region: content
     settings:
       placeholder_url: ''

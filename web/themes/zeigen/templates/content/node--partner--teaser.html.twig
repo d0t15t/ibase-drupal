@@ -1,0 +1,25 @@
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+]
+%}
+{{ attach_library('the/node') }}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('node__content') }}>
+    <a href="{{ url }}">
+      {{ content|without('links') }}
+    </a>
+    {% if label %}
+      <h4{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h4>
+    {% endif %}
+    <span class="visually-hidden">{{ content.links }}</span>
+  </div>
+
+</article>

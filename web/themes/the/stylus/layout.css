@@ -133,7 +133,9 @@
   max-width: 1090px;
   margin: 0 auto;
 }
-.no-list-style {
+.no-list-style,
+.basic-grid,
+.border-grid {
   list-style: none;
   margin: unset;
   padding: unset;
@@ -143,6 +145,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .border-grid > * {
   border: 1px solid #000;
