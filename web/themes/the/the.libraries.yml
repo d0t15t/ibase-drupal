@@ -11,6 +11,7 @@ base:
     - the/split-page
     - the/slider
     - the/events
+    - the/footer
   css:
     theme:
       css/global.css:
@@ -72,6 +73,12 @@ base:
       css/components/ui-dialog.css:
         weight: -10
 #custom
+footer:
+  version: VERSION
+  css:
+    component:
+      css/elements/footer.css:
+        weight: -9
 bg-image:
   version: VERSION
   css:

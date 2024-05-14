@@ -56,10 +56,11 @@
   word-wrap: normal;
 }
 .layout-container {
-  max-width: 1280px;
-  width: 100%;
   display: inherit;
-  margin-bottom: 50px;
+}
+.layout-container > *:not(footer) {
+  max-width: 1100px;
+  width: 100%;
 }
 .layout-container .layout__region {
   overflow: hidden;
@@ -68,8 +69,8 @@
   padding: 0 10px;
 }
 @media all and (min-width: 992px) {
-  .layout-container {
-    margin: 30px auto 100px;
+  .layout-container > *:not(footer) {
+    margin: 0 auto;
   }
 }
 .layout .layout__region .block + .block {
