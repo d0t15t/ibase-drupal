@@ -1,5 +1,5 @@
 uuid: 313e9d6a-13e1-42ea-b0b2-58c9ac431165
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,9 +8,9 @@ dependencies:
 _core:
   default_config_hash: W88NYg31DbaVNQx1Uir_dwwXHVtF09QOq4VBGsH1Snk
 id: yes_no
-label: Yes/No
+label: Ja/Nein
 category: General
 likert: false
 options: |
-  Yes: Yes
-  No: No
+  Ja: Ja
+  Nein: Nein

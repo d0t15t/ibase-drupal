@@ -1,5 +1,5 @@
 uuid: 9ad11990-9806-4ea5-a5d6-364052ff98d6
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: zsfFP124dAM-sJkuEfnwaA7DN6o3-IsaXLgdNmObbYg
 id: country_names
-label: 'Country names'
-category: Geographic
+label: Ländernamen
+category: Geografisch
 likert: false
 options: ''

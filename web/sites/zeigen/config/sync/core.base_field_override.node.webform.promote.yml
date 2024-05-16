@@ -1,5 +1,5 @@
 uuid: 2eb5212a-128f-45cd-9cb3-d3b7168582a4
-langcode: en
+langcode: de
 status: true
 dependencies:
   config:
@@ -10,7 +10,7 @@ id: node.webform.promote
 field_name: promote
 entity_type: node
 bundle: webform
-label: 'Promoted to front page'
+label: 'Auf der Startseite anzeigen'
 description: ''
 required: false
 translatable: true
@@ -19,6 +19,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: An
+  off_label: Aus
 field_type: boolean

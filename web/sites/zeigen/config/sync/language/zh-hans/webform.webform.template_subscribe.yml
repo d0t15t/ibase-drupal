@@ -1,4 +1,0 @@
-title: 订阅
-handlers:
-  email_notification:
-    label: 邮件提醒

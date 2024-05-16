@@ -1,5 +1,5 @@
 uuid: 66758f44-f4cf-46ee-9dfa-e38c18ab10c9
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: zEZX8JSVqznnFtqFfpuC593h3t1JDAZhF0Q3pvA229o
 id: likert_ten_scale
-label: 'Likert: Ten Scale'
+label: 'Likert: Zehnerskala'
 category: Likert
 likert: true
 options: |

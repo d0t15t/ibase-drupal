@@ -1,5 +1,5 @@
 uuid: 5cac5b1f-2f0c-4742-8dfa-34f881eaeed3
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,11 +8,11 @@ dependencies:
 _core:
   default_config_hash: cjVDbAE5BlopGrY-tfxsxMoyEibwBBNgdQwDdxOSkow
 id: marital_status
-label: 'Marital status'
-category: Demographic
+label: Familienstand
+category: Demographisch
 likert: false
 options: |
   Single: Single
-  Married: Married
-  Divorced: Divorced
-  Widowed: Widowed
+  Verheiratet: verheiratet
+  geschieden: geschieden
+  verwitwet: verwitwet

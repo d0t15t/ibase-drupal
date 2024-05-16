@@ -1,5 +1,5 @@
 uuid: d607c032-d4a1-4dad-8869-b0153fa39f38
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,11 +8,7 @@ dependencies:
 _core:
   default_config_hash: mII4acOv33s-j8PINywrCag4OITbeJGxdPO373dnHHw
 id: education
-label: Education
-category: Demographic
+label: Bildung
+category: Demographisch
 likert: false
-options: |
-  High School: High School
-  Associate Degree: Associate Degree
-  Graduate or Professional Degree: Graduate or Professional Degree
-  Some College: Some College
+options: "High School: High School\r\nAssociate Degree: Associate Degree\r\nHochschulabschluss oder Berufsabschluss: Hochschulabschluss oder Berufsabschluss\r\nIrgendein College: Irgendein College\n"

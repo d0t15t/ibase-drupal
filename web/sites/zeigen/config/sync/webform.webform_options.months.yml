@@ -1,5 +1,5 @@
 uuid: 582f57b3-a99f-48b0-9bc3-d0fc24c2488b
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,19 +8,19 @@ dependencies:
 _core:
   default_config_hash: pZJnuQkh9afNML5IcMuKTUC__vmHMFn66Qr5IWtedZ4
 id: months
-label: Months
+label: Monate
 category: 'Date and time'
 likert: false
 options: |
-  January: January
-  February: February
-  March: March
+  Januar: Januar
+  Februar: Februar
+  März: März
   April: April
-  May: May
-  June: June
-  July: July
+  Mai: Mai
+  Juni: Juni
+  Juli: Juli
   August: August
   September: September
-  October: October
+  Oktober: Oktober
   November: November
-  December: December
+  Dezember: Dezember

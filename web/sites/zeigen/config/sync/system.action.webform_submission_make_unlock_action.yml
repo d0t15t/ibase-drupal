@@ -1,5 +1,5 @@
 uuid: df85b471-c1c1-414e-a975-2a806a9a529f
-langcode: en
+langcode: de
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: begZ0-RmTzO_zDAwEKA2lKvtGYw1vbFOzbQOJzUbZX0
 id: webform_submission_make_unlock_action
-label: 'Unlock submission'
+label: 'Eingabe freigeben'
 type: webform_submission
 plugin: webform_submission_make_unlock_action
 configuration: {  }

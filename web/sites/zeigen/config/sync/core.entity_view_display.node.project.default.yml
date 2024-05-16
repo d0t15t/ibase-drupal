@@ -125,29 +125,6 @@ third_party_settings:
                   class: ''
                   style: ''
                   data: ''
-          2d187131-120a-4fd8-8190-2e799acfa9c0:
-            uuid: 2d187131-120a-4fd8-8190-2e799acfa9c0
-            region: content
-            configuration:
-              id: 'field_block:node:project:field_event_project'
-              label: Events
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_entity_view
-                label: visually_hidden
-                settings:
-                  view_mode: teaser
-                third_party_settings:
-                  field_formatter_range:
-                    order: 0
-                    limit: 0
-                    offset: 0
-            weight: 8
-            additional: {  }
           b6387f2d-44d1-4861-9b8a-be3dabc4cd04:
             uuid: b6387f2d-44d1-4861-9b8a-be3dabc4cd04
             region: content
@@ -178,36 +155,6 @@ third_party_settings:
                   class: ''
                   style: ''
                   data: ''
-          c39a7f17-dfe8-4a4e-899e-602ceb5c9b5f:
-            uuid: c39a7f17-dfe8-4a4e-899e-602ceb5c9b5f
-            region: content
-            configuration:
-              id: 'inline_block:custom'
-              label: 'Event title'
-              label_display: '0'
-              provider: layout_builder
-              view_mode: full
-              context_mapping: {  }
-              block_revision_id: 9
-              block_serialized: null
-            weight: 7
-            additional:
-              component_attributes:
-                block_attributes:
-                  id: programm
-                  class: project-programm--headline
-                  style: ''
-                  data: ''
-                block_title_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
-                block_content_attributes:
-                  id: ''
-                  class: ''
-                  style: ''
-                  data: ''
           b5cc8ecb-adcc-4868-9374-32c680ac3e66:
             uuid: b5cc8ecb-adcc-4868-9374-32c680ac3e66
             region: content
@@ -219,7 +166,7 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 5
+            weight: 6
             additional:
               component_attributes:
                 block_attributes:

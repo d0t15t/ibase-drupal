@@ -9,7 +9,7 @@ _core:
 id: zeigen_page_title
 theme: zeigen
 region: header
-weight: -2
+weight: -4
 provider: null
 plugin: page_title_block
 settings:

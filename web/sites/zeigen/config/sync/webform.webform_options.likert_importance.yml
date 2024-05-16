@@ -1,5 +1,5 @@
 uuid: a73b906c-17e6-4b85-8c90-bd499fa635de
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,12 +8,7 @@ dependencies:
 _core:
   default_config_hash: Hbc8n5HtVZVs5fSBSpSbuY07CVvqkKP76csvRHN9pK8
 id: likert_importance
-label: 'Likert: Importance'
+label: 'Likert: Wichtigkeit'
 category: Likert
 likert: true
-options: |
-  1: Not at all Important
-  2: Somewhat Important
-  3: Neutral
-  4: Important
-  5: Very Important
+options: "1: Überhaupt nicht wichtig\r\n2: Etwas Wichtig\r\n3: Neutral\r\n4: Wichtig\r\n5: Sehr wichtig\n"

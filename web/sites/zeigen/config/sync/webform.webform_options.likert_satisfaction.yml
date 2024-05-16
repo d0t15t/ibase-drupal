@@ -1,5 +1,5 @@
 uuid: b8db0af1-cc4a-455e-a285-c2f2fe5a9ca2
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,12 +8,7 @@ dependencies:
 _core:
   default_config_hash: AKE2SNwCpl6Mu_cmbq9ZM2_cXxCikCVj1vcPE9oHWTs
 id: likert_satisfaction
-label: 'Likert: Satisfaction'
+label: 'Likert: Zufriedenheit'
 category: Likert
 likert: true
-options: |
-  1: Very Unsatisfied
-  2: Unsatisfied
-  3: Neutral
-  4: Satisfied
-  5: Very Satisfied
+options: "1: Sehr unzufrieden\r\n2: Unzufrieden\r\n3: Neutral\r\n4: Zufrieden\r\n5: Sehr zufrieden\n"

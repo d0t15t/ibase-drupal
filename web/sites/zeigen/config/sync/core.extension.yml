@@ -15,14 +15,17 @@ module:
   block: 0
   block_classes: 0
   block_content: 0
+  bootstrap_ce: 0
   breakpoint: 0
   cer: 0
   ckeditor5: 0
   conditional_fields: 0
   config: 0
+  config_translation: 0
   contact: 0
   contextual: 0
   ctools: 0
+  current_year: 0
   date_filter: 0
   datetime: 0
   datetime_range: 0
@@ -78,7 +81,6 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  permissions_filter: 0
   phpass: 0
   price: 0
   quicktabs: 0
@@ -91,6 +93,7 @@ module:
   rh_user: 0
   search: 0
   shortcut: 0
+  social_media_links: 0
   statistics: 0
   svg_image: 0
   syslog: 0

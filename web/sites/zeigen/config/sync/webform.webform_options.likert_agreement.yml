@@ -1,5 +1,5 @@
 uuid: ed2070d0-a510-44fd-80d1-936673045209
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,12 +8,7 @@ dependencies:
 _core:
   default_config_hash: nPp-CfMKrP0yDMtyO0wQRwawEqaJVAPzQapinXmDgyU
 id: likert_agreement
-label: 'Likert: Agreement'
+label: 'Likert: Vereinbarung'
 category: Likert
 likert: true
-options: |
-  1: Strongly Disagree
-  2: Disagree
-  3: Neutral
-  4: Agree
-  5: Strongly Agree
+options: "1: Stimme überhaupt nicht zu\r\n2: Stimme nicht zu\r\n3: Neutral\r\n4: Stimme zu\r\n5: Stimme stark zu\n"

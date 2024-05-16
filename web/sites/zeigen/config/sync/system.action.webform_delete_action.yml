@@ -1,5 +1,5 @@
 uuid: ece33f00-062e-4180-979e-adc3f9ca7d8a
-langcode: en
+langcode: de
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: e1bCTp0ryXZZtnS9nlVAbtoWz3-8fmbNlqKY3GHzbsM
 id: webform_delete_action
-label: 'Delete webform'
+label: 'Webformular löschen'
 type: webform
 plugin: webform_delete_action
 configuration: {  }

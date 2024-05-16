@@ -41,6 +41,9 @@ display:
         image_file_uri:
           label: 'Image file uri'
           separator: ', '
+        image_format:
+          label: 'Image format'
+          separator: ', '
         changed:
           label: Changed
           separator: ', '

@@ -9,7 +9,7 @@ _core:
 id: zeigen_primary_local_tasks
 theme: zeigen
 region: header
-weight: -5
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

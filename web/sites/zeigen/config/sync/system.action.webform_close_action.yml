@@ -1,5 +1,5 @@
 uuid: 12602f40-cc51-415a-8187-82243d401e38
-langcode: en
+langcode: de
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: Dl-1T9PDkraB7MyMUjTJAioPEx6UNvIB9gqmnB1CRkk
 id: webform_close_action
-label: 'Close webform'
+label: 'Webformular schließen'
 type: webform
 plugin: webform_close_action
 configuration: {  }

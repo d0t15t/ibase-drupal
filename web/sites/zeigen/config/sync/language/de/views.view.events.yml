@@ -1,0 +1,6 @@
+label: Veranstaltungen
+description: 'Eine Veranstaltungensliste.'
+display:
+  default:
+    display_options:
+      title: Veranstaltungen

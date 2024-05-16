@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies: {  }
 id: the_gallery_backup
-label: 'THE Gallery backup'
+label: 'Zeigen backup'
 config:
   namer:
-    filename: the_gallery_backup
+    filename: zeigen_backup
     timestamp: true
     timestamp_format: Y-m-d\TH-i-s
   compressor:

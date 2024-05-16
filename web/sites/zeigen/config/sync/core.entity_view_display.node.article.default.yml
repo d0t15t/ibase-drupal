@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_content
+    - field.field.node.article.field_documents
+    - field.field.node.article.field_featured_image
+    - field.field.node.article.field_images
     - node.type.article
   module:
     - text
@@ -28,6 +31,32 @@ content:
       link: true
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_documents:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_images:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

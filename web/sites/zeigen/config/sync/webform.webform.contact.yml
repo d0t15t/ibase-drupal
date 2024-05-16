@@ -1,5 +1,5 @@
 uuid: 459fe482-dd22-40d5-a5dd-1b478f955f95
-langcode: en
+langcode: de
 status: open
 dependencies:
   enforced:
@@ -15,49 +15,9 @@ template: false
 archive: false
 id: contact
 title: Contact
-description: 'Basic email contact webform.'
+description: 'Einfaches E-Mail-Kontaktformular.'
 categories: {  }
-elements: |-
-  name:
-    '#title': 'Your Name'
-    '#type': textfield
-    '#required': true
-    '#default_value': '[current-user:display-name]'
-  email:
-    '#title': 'Your Email'
-    '#type': email
-    '#required': true
-    '#default_value': '[current-user:mail]'
-  telephone:
-    '#type': tel
-    '#title': 'Your Telephone'
-    '#access_create_roles':
-      - anonymous
-    '#access_update_roles':
-      - anonymous
-    '#access_view_roles':
-      - anonymous
-    '#international': true
-    '#international_initial_country': DE
-    '#international_preferred_countries':
-      - CN
-      - DE
-      - US
-    '#telephone_validation_format': '0'
-  subject:
-    '#title': Subject
-    '#type': textfield
-    '#required': true
-    '#test': 'Testing contact webform from [site:name]'
-  message:
-    '#title': Message
-    '#type': textarea
-    '#required': true
-    '#test': 'Please ignore this email.'
-  actions:
-    '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': 'Send message'
+elements: "name:\r\n  '#title': 'Ihr Name'\r\n  '#type': textfield\r\n  '#required': true\r\n  '#default_value': '[current-user:display-name]'\r\nemail:\r\n  '#title': 'Ihre Email-Adresse'\r\n  '#type': email\r\n  '#required': true\r\n  '#default_value': '[current-user:mail]'\r\nsubject:\r\n  '#title': Betreff\r\n  '#type': textfield\r\n  '#required': true\r\n  '#test': 'Teste Kontakt-Webformular von [site:name]'\r\nmessage:\r\n  '#title': Nachricht\r\n  '#type': textarea\r\n  '#required': true\r\n  '#test': 'Bitte ignorieren Sie diese E-Mail.'\r\nactions:\r\n  '#type': webform_actions\r\n  '#title': Senden-Button\r\n  '#submit__label': 'E-Mail Senden'\n"
 css: ''
 javascript: ''
 settings:
@@ -163,7 +123,7 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url_message
-  confirmation_url: '<front>'
+  confirmation_url: '&lt;front&gt;'
   confirmation_title: ''
   confirmation_message: 'Your message has been sent.'
   confirmation_attributes: {  }
@@ -245,7 +205,7 @@ handlers:
   email_confirmation:
     id: email
     handler_id: email_confirmation
-    label: 'Email confirmation'
+    label: 'Bestätigung via E-Mail'
     notes: ''
     status: true
     conditions: {  }
@@ -282,7 +242,7 @@ handlers:
   email_notification:
     id: email
     handler_id: email_notification
-    label: 'Email notification'
+    label: E-Mail-Benachrichtigung
     notes: ''
     status: true
     conditions: {  }

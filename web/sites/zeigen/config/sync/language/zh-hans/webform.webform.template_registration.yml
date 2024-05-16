@@ -1,4 +1,0 @@
-title: 注册
-handlers:
-  email_notification:
-    label: 邮件提醒

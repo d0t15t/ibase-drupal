@@ -1,5 +1,5 @@
 uuid: c71415b0-8d8b-4b4f-8f58-a1a456bd71b2
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -8,12 +8,12 @@ dependencies:
 _core:
   default_config_hash: qBS2TmfAJB37Qn3TnrNM8x4AWimmDapcizzRllgo0fo
 id: likert_would_you
-label: 'Likert: Would You'
+label: 'Likert: Würden Sie'
 category: Likert
 likert: true
 options: |
-  1: Definitely Not
-  2: Probably Not
-  3: Not Sure
-  4: Probably
-  5: Definitely
+  1: Definitiv Nicht
+  2: Wahrscheinlich nicht
+  3: Nicht sicher
+  4: Wahrscheinlich
+  5: Definitiv

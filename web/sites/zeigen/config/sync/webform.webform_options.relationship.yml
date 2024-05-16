@@ -1,5 +1,5 @@
 uuid: 8b59c291-db96-433e-a3f9-e7e1bf92fc90
-langcode: en
+langcode: de
 status: true
 dependencies:
   enforced:
@@ -9,11 +9,11 @@ _core:
   default_config_hash: 4J2RPG4JmsD4Fm1NlIQY0JHkrJ08UUl0qTF0_EjUxvw
 id: relationship
 label: Relationship
-category: Demographic
+category: Demographisch
 likert: false
 options: |
-  Parent: Parent
-  'Significant Other': 'Significant Other'
-  Sibling: Sibling
-  Child: Child
-  Friend: Friend
+  Eltern: Eltern
+  Bezugsperson: 'Bezugsperson'
+  Geschwister: Geschwister
+  Kind: Kind
+  Freunde: Freunde
