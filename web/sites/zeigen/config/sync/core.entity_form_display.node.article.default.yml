@@ -11,8 +11,6 @@ dependencies:
     - node.type.article
   module:
     - field_group
-    - inline_entity_form
-    - limited_field_widgets
     - media_library
     - path
     - text
@@ -22,7 +20,6 @@ third_party_settings:
       children:
         - group_info
         - group_images
-        - group_documents
       label: Tabs
       region: content
       parent_name: ''
@@ -58,7 +55,6 @@ third_party_settings:
     group_images:
       children:
         - field_featured_image
-        - field_images
       label: Images
       region: content
       parent_name: group_tabs
@@ -72,12 +68,11 @@ third_party_settings:
         description: ''
         required_fields: true
     group_documents:
-      children:
-        - field_documents
+      children: {  }
       label: Documents
-      region: content
-      parent_name: group_tabs
-      weight: 18
+      region: hidden
+      parent_name: ''
+      weight: 8
       format_type: tab
       format_settings:
         classes: ''
@@ -117,31 +112,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_documents:
-    type: inline_entity_form_simple
-    weight: 10
-    region: content
-    settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: true
-      collapsed: true
-      revision: false
-    third_party_settings:
-      limited_field_widgets:
-        limit_values: '0'
   field_featured_image:
     type: media_library_widget
     weight: 7
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_images:
-    type: media_library_widget
-    weight: 8
     region: content
     settings:
       media_types: {  }
@@ -155,27 +128,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 9
+    weight: 1
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 2
     region: content
     settings:
       display_label: true
@@ -204,8 +177,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_documents: true
+  field_images: true
