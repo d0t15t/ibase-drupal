@@ -44,7 +44,6 @@ permissions:
   - 'access webform help'
   - 'access webform overview'
   - 'add pdf image entity entities'
-  - 'administer block content'
   - 'administer blocks'
   - 'create and edit custom blocks'
   - 'create article content'
