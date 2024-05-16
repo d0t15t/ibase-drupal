@@ -12,9 +12,14 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
+        "bower-asset/slick-carousel": "^1.8",
         "commerceguys/addressing": "^1.4",
         "composer/installers": "^2.2",
         "cweagans/composer-patches": "^1.7",
@@ -32,6 +37,7 @@
         "drupal/block_style_plugins": "^1.6",
         "drupal/block_styles": "^2.0",
         "drupal/bootstrap_barrio": "^5.5",
+        "drupal/bootstrap_ce": "^2.1",
         "drupal/build_hooks": "^3.3",
         "drupal/cer": "^5.0@beta",
         "drupal/change_author_action": "^1.0",
@@ -118,7 +124,8 @@
         "drupal/yaml_editor": "^1.2",
         "drupal/yearonly": "^9.1",
         "drush/drush": "^12.5",
-        "mglaman/composer-drupal-lenient": "^1.0"
+        "mglaman/composer-drupal-lenient": "^1.0",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -134,15 +141,20 @@
             "cweagans/composer-patches": true,
             "wikimedia/composer-merge-plugin": true,
             "php-http/discovery": true,
-            "mglaman/composer-drupal-lenient": true
+            "mglaman/composer-drupal-lenient": true,
+            "oomphinc/composer-installers-extender": true
         }
     },
     "extra": {
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
             },
-	    "file-mapping": {
+	      "file-mapping": {
               "[web-root]/robots.txt": false,
               "[web-root]/sites/development.services.yml": false
             }
@@ -152,7 +164,7 @@
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library", "type:bower-asset", "type:npm-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
