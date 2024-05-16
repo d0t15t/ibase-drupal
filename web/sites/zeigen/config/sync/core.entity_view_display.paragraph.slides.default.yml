@@ -1,0 +1,33 @@
+uuid: ab870d94-d401-4345-98f7-f2d133aa4287
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slides.field_slides
+    - paragraphs.paragraphs_type.slides
+  module:
+    - slick_paragraphs
+id: paragraph.slides.default
+targetEntityType: paragraph
+bundle: slides
+mode: default
+content:
+  field_slides:
+    type: slick_paragraphs_vanilla
+    label: hidden
+    settings:
+      optionset: default
+      view_mode: default
+      cache: 0
+      admin_uri: ''
+      use_lb: false
+      use_theme_field: false
+      skin: ''
+      overridables: {  }
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

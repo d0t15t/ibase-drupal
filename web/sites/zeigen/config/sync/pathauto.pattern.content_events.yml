@@ -5,17 +5,18 @@ dependencies:
   module:
     - node
 id: content_events
-label: 'Content events'
+label: 'Content events or News'
 type: 'canonical_entities:node'
 pattern: '[node:content-type]/[node:title]'
 selection_criteria:
-  f930973e-080b-4616-8ea0-7a1a2656f580:
+  d0883c83-dc0f-4b4e-9a58-1422889d96b9:
     id: 'entity_bundle:node'
     negate: false
-    uuid: f930973e-080b-4616-8ea0-7a1a2656f580
+    uuid: d0883c83-dc0f-4b4e-9a58-1422889d96b9
     context_mapping:
       node: node
     bundles:
+      article: article
       events: events
 selection_logic: and
 weight: -5

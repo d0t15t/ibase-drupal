@@ -8,12 +8,15 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_sliders
+    - field.field.node.page.field_slides
     - field.field.node.page.field_view
     - image.style.wide
     - node.type.page
   module:
+    - entity_reference_revisions
     - layout_builder
-    - layout_discovery
     - link
     - media
     - text
@@ -66,6 +69,33 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_sliders:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_slides:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_view:
     type: viewsreference_formatter

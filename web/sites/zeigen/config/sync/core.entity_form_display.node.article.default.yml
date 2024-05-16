@@ -20,6 +20,7 @@ third_party_settings:
       children:
         - group_info
         - group_images
+        - group_documents
       label: Tabs
       region: content
       parent_name: ''
@@ -68,11 +69,12 @@ third_party_settings:
         description: ''
         required_fields: true
     group_documents:
-      children: {  }
+      children:
+        - field_documents
       label: Documents
-      region: hidden
-      parent_name: ''
-      weight: 8
+      region: content
+      parent_name: group_tabs
+      weight: 18
       format_type: tab
       format_settings:
         classes: ''
@@ -111,6 +113,13 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_documents:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_featured_image:
     type: media_library_widget
@@ -182,5 +191,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_documents: true
   field_images: true

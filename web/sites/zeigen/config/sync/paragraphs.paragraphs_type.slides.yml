@@ -1,0 +1,10 @@
+uuid: 8e1e34fe-6bad-4396-abfc-533210fedd50
+langcode: de
+status: true
+dependencies: {  }
+id: slides
+label: Slider
+icon_uuid: null
+icon_default: null
+description: 'A set of slides.'
+behavior_plugins: {  }

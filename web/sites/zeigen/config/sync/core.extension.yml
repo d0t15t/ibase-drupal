@@ -12,10 +12,10 @@ module:
   auto_entitylabel: 0
   backup_migrate: 0
   better_exposed_filters: 0
+  blazy: 0
   block: 0
   block_classes: 0
   block_content: 0
-  bootstrap_ce: 0
   breakpoint: 0
   cer: 0
   ckeditor5: 0
@@ -35,6 +35,7 @@ module:
   editor: 0
   embed: 0
   entity_embed: 0
+  entity_reference_revisions: 0
   field: 0
   field_formatter_range: 0
   field_group: 0
@@ -92,6 +93,9 @@ module:
   rh_user: 0
   search: 0
   shortcut: 0
+  slick: 0
+  slick_paragraphs: 0
+  slick_ui: 0
   social_media_links: 0
   statistics: 0
   svg_image: 0
@@ -120,6 +124,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   claro: 0

@@ -9,6 +9,9 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_sliders
+    - field.field.node.page.field_slides
     - field.field.node.page.field_view
     - node.type.page
   module:
@@ -37,5 +40,8 @@ hidden:
   field_image: true
   field_images: true
   field_link: true
+  field_paragraphs: true
+  field_sliders: true
+  field_slides: true
   field_view: true
   langcode: true
