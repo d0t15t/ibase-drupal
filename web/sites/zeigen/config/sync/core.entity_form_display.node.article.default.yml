@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_content
+    - field.field.node.article.field_date
     - field.field.node.article.field_documents
     - field.field.node.article.field_featured_image
     - field.field.node.article.field_images
     - node.type.article
   module:
+    - datetime
     - field_group
     - media_library
     - path
@@ -36,9 +38,7 @@ third_party_settings:
       children:
         - title
         - langcode
-        - uid
-        - created
-        - translation
+        - field_date
         - body
         - field_content
       label: Info
@@ -90,7 +90,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 9
@@ -100,19 +100,25 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_content:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_documents:
     type: media_library_widget
@@ -150,7 +156,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -171,13 +177,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS

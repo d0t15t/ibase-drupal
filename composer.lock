@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f317401daa46ef522ff3adcd6def4a5c",
+    "content-hash": "768bb310d41cb35ff8d291d6c7e80658",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2575,62 +2575,6 @@
             "homepage": "https://www.drupal.org/project/bootstrap_barrio",
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_barrio"
-            }
-        },
-        {
-            "name": "drupal/bootstrap_ce",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/bootstrap_ce.git",
-                "reference": "2.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap_ce-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "dea2664a8ded010993bd484f3dc453264ee7eed0"
-            },
-            "require": {
-                "drupal/core": ">=8"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1643797922",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Rajeshreeputra Pravin Dhondiba Gaikwad",
-                    "homepage": "https://www.drupal.org/u/Rajeshreeputra",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Pixel Burger",
-                    "homepage": "https://www.drupal.org/u/pixel-burger",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Ganesh Suryawanshi",
-                    "homepage": "https://www.drupal.org/u/ganeshsurya11",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "This module allows you set a Bootstrap Carousel as a formatter of 'entity_references' field and 'image' fields.",
-            "homepage": "https://www.drupal.org/project/bootstrap_ce",
-            "support": {
-                "source": "https://git.drupalcode.org/project/bootstrap_ce",
-                "issues": "https://www.drupal.org/project/issues/bootstrap_ce"
             }
         },
         {
@@ -14330,5 +14274,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }

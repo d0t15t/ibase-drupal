@@ -17,6 +17,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
+    - layout_discovery
     - link
     - media
     - text
@@ -24,8 +25,81 @@ dependencies:
     - viewsreference
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Main page'
+          context_mapping: {  }
+        components:
+          db9c9957-28e3-426c-90f3-fcde26df7490:
+            uuid: db9c9957-28e3-426c-90f3-fcde26df7490
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_sliders'
+              label: Sliders
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 1
+                    offset: 0
+            weight: 0
+            additional: {  }
+          1b68d097-bf34-4ff3-9597-1347f3122b72:
+            uuid: 1b68d097-bf34-4ff3-9597-1347f3122b72
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          29b92261-984c-45e5-b962-b70cbed60d00:
+            uuid: 29b92261-984c-45e5-b962-b70cbed60d00
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_view'
+              label: View
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: viewsreference_formatter
+                label: hidden
+                settings:
+                  plugin_types:
+                    block: block
+                    default: '0'
+                    page: '0'
+                    feed: '0'
+                    embed: '0'
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
 bundle: page

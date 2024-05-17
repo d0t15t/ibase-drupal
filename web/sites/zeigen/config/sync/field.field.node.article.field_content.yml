@@ -12,7 +12,7 @@ id: node.article.field_content
 field_name: field_content
 entity_type: node
 bundle: article
-label: Content
+label: 'Content reference'
 description: 'Reference an artist, event, or project.'
 required: false
 translatable: false

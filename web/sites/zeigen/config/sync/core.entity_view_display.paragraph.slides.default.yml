@@ -26,19 +26,19 @@ content:
       image: field_media
       link: field_link
       overlay: ''
-      title: ''
+      title: title
       vanilla: false
       by_delta: -1
       layout: ''
       view_mode: preview
       cache: 0
-      admin_uri: '/en/admin/structure/paragraphs_type/slides/display?ajax_form=1&_wrapper_format=drupal_ajax'
+      admin_uri: '/admin/structure/paragraphs_type/slides/display?ajax_form=1&_wrapper_format=drupal_ajax'
       use_lb: false
       background: false
       box_caption: ''
       box_caption_custom: ''
       box_media_style: ''
-      loading: ''
+      loading: auto
       preload: false
       responsive_image_style: ''
       use_theme_field: false

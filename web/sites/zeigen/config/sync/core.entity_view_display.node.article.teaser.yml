@@ -6,28 +6,94 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_content
+    - field.field.node.article.field_date
     - field.field.node.article.field_documents
     - field.field.node.article.field_featured_image
     - field.field.node.article.field_images
     - image.style.large
     - node.type.article
   module:
+    - layout_builder
     - media
-    - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Events teaser large'
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          06a59f79-9f34-4bd8-a06e-cf22103f40c2:
+            uuid: 06a59f79-9f34-4bd8-a06e-cf22103f40c2
+            region: second
+            configuration:
+              id: 'field_block:node:article:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          c0c39335-98d5-438d-9504-75fbfcfd0b25:
+            uuid: c0c39335-98d5-438d-9504-75fbfcfd0b25
+            region: first
+            configuration:
+              id: 'field_block:node:article:field_featured_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: content
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          95c60245-b2c6-4f61-ae2a-e6562239d4e5:
+            uuid: 95c60245-b2c6-4f61-ae2a-e6562239d4e5
+            region: second
+            configuration:
+              id: 'field_block:node:article:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   field_featured_image:
     type: media_thumbnail
     label: visually_hidden
@@ -37,15 +103,17 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 102
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  body: true
   field_content: true
+  field_date: true
   field_documents: true
   field_images: true
   langcode: true

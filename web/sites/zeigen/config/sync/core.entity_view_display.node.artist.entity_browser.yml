@@ -1,6 +1,6 @@
 uuid: cbf513c5-9a5a-4bf2-9c59-015bf93179d9
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.entity_browser

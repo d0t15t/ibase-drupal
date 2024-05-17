@@ -14,7 +14,6 @@ dependencies:
     - node.type.webform
     - taxonomy.vocabulary.mediums
   module:
-    - block
     - block_content
     - content_translation
     - contextual
@@ -44,7 +43,6 @@ permissions:
   - 'access webform help'
   - 'access webform overview'
   - 'add pdf image entity entities'
-  - 'administer blocks'
   - 'create and edit custom blocks'
   - 'create article content'
   - 'create artist content'

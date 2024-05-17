@@ -184,6 +184,45 @@ third_party_settings:
                   class: ''
                   style: ''
                   data: ''
+          cef42b5a-598a-4e9e-9bb5-9ba6151477bc:
+            uuid: cef42b5a-598a-4e9e-9bb5-9ba6151477bc
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_artists'
+              label: Artists
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: teaser
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 7
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: 'project-artists project-partners'
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
         third_party_settings: {  }
 id: node.project.default
 targetEntityType: node

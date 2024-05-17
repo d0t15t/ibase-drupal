@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_content
+    - field.field.node.article.field_date
     - field.field.node.article.field_documents
     - field.field.node.article.field_featured_image
     - field.field.node.article.field_images
@@ -51,6 +52,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_date: true
   field_documents: true
   field_images: true
   langcode: true

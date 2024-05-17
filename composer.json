@@ -37,7 +37,6 @@
         "drupal/block_style_plugins": "^1.6",
         "drupal/block_styles": "^2.0",
         "drupal/bootstrap_barrio": "^5.5",
-        "drupal/bootstrap_ce": "^2.1",
         "drupal/build_hooks": "^3.3",
         "drupal/cer": "^5.0@beta",
         "drupal/change_author_action": "^1.0",
