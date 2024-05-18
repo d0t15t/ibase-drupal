@@ -3,9 +3,13 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_classes
     - social_media_links
   theme:
     - zeigen
+third_party_settings:
+  block_classes:
+    title_class: visually-hidden
 id: zeigen_socialmedialinks
 theme: zeigen
 region: footer
@@ -14,7 +18,7 @@ provider: null
 plugin: social_media_links_block
 settings:
   id: social_media_links_block
-  label: 'Follow us'
+  label: 'Social media links'
   label_display: visible
   provider: social_media_links
   platforms:

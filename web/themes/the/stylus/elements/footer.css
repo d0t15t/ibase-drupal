@@ -1,0 +1,16 @@
+footer {
+  margin-top: 50px;
+  background-color: #000;
+  color: #fff;
+}
+footer ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+footer #block-zeigen-zeigennewsletter .rmEmbed.rmLayout--horizontal.rmBase {
+  margin: 0 auto;
+  padding: 10px 0 50px;
+}

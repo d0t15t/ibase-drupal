@@ -40,7 +40,7 @@ third_party_settings:
                 type: media_thumbnail
                 label: visually_hidden
                 settings:
-                  image_link: ''
+                  image_link: content
                   image_style: large
                   image_loading:
                     attribute: lazy
@@ -80,7 +80,7 @@ third_party_settings:
                 type: string
                 label: visually_hidden
                 settings:
-                  link_to_entity: false
+                  link_to_entity: true
                 third_party_settings: {  }
             weight: 0
             additional: {  }
