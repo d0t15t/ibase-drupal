@@ -1,0 +1,18 @@
+uuid: f2c77839-ebe5-4893-bcb6-74d616f40fcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slider
+id: block_content.slider.changed
+field_name: changed
+entity_type: block_content
+bundle: slider
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

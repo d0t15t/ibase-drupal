@@ -13,7 +13,7 @@ third_party_settings:
 id: zeigen_socialmedialinks
 theme: zeigen
 region: footer
-weight: -6
+weight: -7
 provider: null
 plugin: social_media_links_block
 settings:

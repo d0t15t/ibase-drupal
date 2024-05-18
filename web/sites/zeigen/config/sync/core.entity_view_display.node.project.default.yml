@@ -209,7 +209,7 @@ third_party_settings:
             additional:
               component_attributes:
                 block_attributes:
-                  id: ''
+                  id: artists
                   class: 'project-artists project-partners'
                   style: ''
                   data: ''

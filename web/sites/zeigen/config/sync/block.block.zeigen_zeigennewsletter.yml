@@ -11,7 +11,7 @@ dependencies:
 id: zeigen_zeigennewsletter
 theme: zeigen
 region: footer
-weight: -7
+weight: -8
 provider: null
 plugin: 'block_content:66c7458e-28b1-4fe0-ad23-4d0c69f5100e'
 settings:

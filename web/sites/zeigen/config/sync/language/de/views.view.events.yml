@@ -4,3 +4,8 @@ display:
   default:
     display_options:
       title: Veranstaltungen
+  newest:
+    display_title: Aktuell
+    display_options:
+      display_description: 'Eine Veranstaltungsliste.'
+      use_more_text: 'Weitere Veranstaltungen'

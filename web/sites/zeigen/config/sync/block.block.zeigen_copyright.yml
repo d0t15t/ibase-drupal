@@ -1,0 +1,26 @@
+uuid: 11a592d0-d4cc-4d92-a50a-56668478892c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:custom:d41cdc99-f384-49dc-a8b7-393d18754a61'
+  module:
+    - block_classes
+    - block_content
+  theme:
+    - zeigen
+id: zeigen_copyright
+theme: zeigen
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:d41cdc99-f384-49dc-a8b7-393d18754a61'
+settings:
+  id: 'block_content:d41cdc99-f384-49dc-a8b7-393d18754a61'
+  label: Copyright
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

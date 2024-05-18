@@ -26,10 +26,10 @@ content:
       image: field_media
       link: field_link
       overlay: ''
-      title: title
+      title: field_link
       vanilla: false
       by_delta: -1
-      layout: ''
+      layout: stage-right
       view_mode: preview
       cache: 0
       admin_uri: '/admin/structure/paragraphs_type/slides/display?ajax_form=1&_wrapper_format=drupal_ajax'
@@ -57,7 +57,7 @@ content:
       svg_sanitize_remote: false
       svg_hide_caption: false
       svg_attributes: ''
-      skin: default
+      skin: classic
       overridables:
         arrows: '0'
         autoplay: '0'
