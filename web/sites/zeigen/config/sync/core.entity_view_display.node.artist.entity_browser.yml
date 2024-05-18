@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_external_artworks
     - field.field.node.artist.field_instagam_handle
     - field.field.node.artist.field_metatags
     - field.field.node.artist.field_name
@@ -46,6 +47,7 @@ hidden:
   field_biography: true
   field_cv: true
   field_e_mail: true
+  field_external_artworks: true
   field_instagam_handle: true
   field_metatags: true
   field_name: true

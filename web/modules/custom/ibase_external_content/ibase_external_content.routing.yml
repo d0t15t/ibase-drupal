@@ -1,0 +1,7 @@
+ibase_external_content.artworks_autocomplete:
+  path: '/ibase-external-content/artworks-autocomplete'
+  defaults:
+    _title: 'Artworks Autocomplete'
+    _controller: '\Drupal\ibase_external_content\Controller\ArtworksAutocompleteController::handleAutocomplete'
+  requirements:
+    _permission: 'access content'

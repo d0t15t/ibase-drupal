@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_external_artworks
     - field.field.node.artist.field_instagam_handle
     - field.field.node.artist.field_metatags
     - field.field.node.artist.field_name
@@ -57,6 +58,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_external_artworks:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_metatags:
     type: metatag_empty_formatter

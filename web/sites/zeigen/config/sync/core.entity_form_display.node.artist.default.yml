@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_external_artworks
     - field.field.node.artist.field_instagam_handle
     - field.field.node.artist.field_metatags
     - field.field.node.artist.field_name
@@ -33,10 +34,10 @@ third_party_settings:
     group_tabs:
       children:
         - group_information
+        - group_artworks
         - group_texts
         - group_media
         - group_contact
-        - group_financial
       label: Tabs
       region: content
       parent_name: ''
@@ -57,7 +58,7 @@ third_party_settings:
       label: Contact
       region: content
       parent_name: group_tabs
-      weight: 26
+      weight: 27
       format_type: tab
       format_settings:
         classes: ''
@@ -88,7 +89,7 @@ third_party_settings:
       label: Media
       region: content
       parent_name: group_tabs
-      weight: 25
+      weight: 26
       format_type: tab
       format_settings:
         classes: ''
@@ -106,7 +107,7 @@ third_party_settings:
       label: Texts
       region: content
       parent_name: group_tabs
-      weight: 24
+      weight: 25
       format_type: tab
       format_settings:
         classes: ''
@@ -131,6 +132,21 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: 0
+    group_artworks:
+      children:
+        - field_external_artworks
+      label: Artworks
+      region: content
+      parent_name: group_tabs
+      weight: 24
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: 'Reference external artworks.'
+        required_fields: true
 id: node.artist.default
 targetEntityType: node
 bundle: artist
@@ -195,6 +211,14 @@ content:
     settings:
       placeholder: ''
       size: 60
+    third_party_settings: {  }
+  field_external_artworks:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_instagam_handle:
     type: string_textfield

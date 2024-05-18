@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Ibase External Content module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function ibase_external_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['field_external_artworks']['widget'])) {
+//    $form['field_external_artworks']['#autocomplete_route_name'] = 'ibase_external_content.autocomplete.artworks';
+//    $form['field_external_artworks']['#autocomplete_route_name'] = 'ibase_external_content.autocomplete.artworks';
+//    $form['field_external_artworks']['#autocomplete_route_parameters'] = ['field_name' => 'name', 'count' => 5];
+
+    foreach ($form['field_external_artworks']['widget'] as $key => $value) {
+      if (is_numeric($key)) {
+        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
+//        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_parameters'] = [
+//          'uuid' => '1234343',
+//          'title' => 'bar',
+//          'artist' => 'foooo',
+//        ];
+      }
+    }
+
+    $t=1;
+  }
+
+}

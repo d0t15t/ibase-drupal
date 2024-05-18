@@ -13,6 +13,8 @@ $settings['file_private_path'] = "$app_root/$site_path/private";
 
 $settings['file_temp_path'] = "$app_root/$site_path/tmp";
 
+$settings['ibase_external_content_url'] = 'https://thegallery.art/jsonapi/node/artwork';
+
 if (getenv('IS_DDEV_PROJECT') == 'true') {
 
   $settings['container_yamls'][] = $app_root . '/sites/development.services.yml';

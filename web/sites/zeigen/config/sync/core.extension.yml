@@ -49,6 +49,7 @@ module:
   history: 0
   httpswww: 0
   iban_field: 0
+  ibase_external_content: 0
   ibase_forms: 0
   ibase_menu: 0
   ibase_responsive_lb: 0
