@@ -394,8 +394,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  main:
-    id: main
+  block_main:
+    id: block_main
     display_title: Main
     display_plugin: block
     position: 1
