@@ -1,6 +1,18 @@
 @require 'vars'
 @require 'components/image'
 
+.teaser-list.ul
+  margin-top 20px
+
+  li + li
+    border-top 1px solid $color_grey
+    margin-top 20px
+    padding-top 25px
+
+.the-content-list
+  ul @extend .teaser-list.ul
+
+
 article.node--view-mode-full
   .field__label
     color $color_grey
@@ -38,6 +50,7 @@ article.node--view-mode-full
 
 .node--type-events
 .node--type-project
+.node--type-news
   &.node--view-mode-teaser
     *
       text-align left
@@ -50,3 +63,5 @@ article.node--view-mode-full
     &+.node--view-mode-teaser
       margin-top 20px
       border-top 1px solid $color_grey
+
+

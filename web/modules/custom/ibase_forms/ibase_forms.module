@@ -18,6 +18,7 @@ function ibase_forms_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $fo
 function ibase_forms_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   switch ($form['#id']) {
     case 'views-exposed-form-events-block-main':
+    case 'views-exposed-form-news-block-main':
       if (isset($form['pid'])) {
         $form['#attributes']['class'][] = 'the-form-filters';
         $form['#attached']['library'][] = 'the/form-filters';

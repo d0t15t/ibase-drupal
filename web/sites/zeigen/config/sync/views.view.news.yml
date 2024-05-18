@@ -338,7 +338,7 @@ display:
             operator: field_content_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: cid
+            identifier: pid
             required: false
             remember: false
             multiple: false
@@ -381,6 +381,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: 'the-news-list the-content-list'
       header: {  }
       footer: {  }
       display_extenders: {  }

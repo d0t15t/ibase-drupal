@@ -1,10 +1,5 @@
 @import 'vars'
+@import 'components/node'
 
 .the-events-list
-  ul
-    margin-top 20px
-
-    li + li
-        border-top 1px solid $color_grey
-        margin-top 20px
-        padding-top 25px
+  ul @extend .teaser-list.ul

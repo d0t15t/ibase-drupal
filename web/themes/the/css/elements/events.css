@@ -55,11 +55,145 @@
   height: 1px;
   word-wrap: normal;
 }
-.the-events-list ul {
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Tw-Cen-MT-W01-Light.woff2") format('woff2');
+  font-style: light;
+  font-weight: 100;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold.woff2") format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: twentieth-century;
+  src: url("../fonts/Twentieth-Century-Bold-Italic.woff2") format('woff2');
+  font-style: italic;
+  font-weight: 700;
+}
+.base--pager-block {
+  border-bottom: 1px solid;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.base--pager-block ul,
+.base--pager-block p {
+  padding-bottom: 18px;
+}
+.base--pager-block ul + ul,
+.base--pager-block ul + p {
+  padding-top: 0;
+}
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+.field--type-image .field__item > a {
+  display: block;
+  line-height: 0;
+}
+.field--type-image .field__item picture,
+.field--type-image .field__item img {
+  display: block;
+}
+.full-image-display-wrapper,
+.node--type-artwork.node--view-mode-full .field--name-field-images {
+  max-width: 1100px;
+}
+.full-image-display-wrapper--inner,
+.node--type-artwork.node--view-mode-full .field--name-field-images > * {
+  display: flex;
+}
+.full-image-display-wrapper--inner > *,
+.node--type-artwork.node--view-mode-full .field--name-field-images > * > * {
+  margin: auto;
+}
+.field--name-field-image img {
+  object-fit: contain;
+  object-position: top center;
+  max-width: 100%;
+  height: auto;
+}
+.teaser-list.ul,
+.the-content-list,
+.the-events-list {
   margin-top: 20px;
 }
-.the-events-list ul li + li {
+.teaser-list.ul li + li,
+.the-content-list li + li,
+.the-events-list li + li {
   border-top: 1px solid #aaa;
   margin-top: 20px;
   padding-top: 25px;
+}
+article.node--view-mode-full .field__label {
+  color: #aaa;
+  font-weight: lighter;
+}
+article.node--view-mode-full h1 {
+  font-size: 2em;
+  padding-left: 10px;
+}
+@media all and (min-width: 768px) {
+  article.node--view-mode-full h1 {
+    padding-left: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  article.node--view-mode-full {
+    margin-top: 20px;
+  }
+  article.node--view-mode-full + h1 {
+    margin-bottom: 10px;
+  }
+}
+.layout .layout__region--content .block .node--type-artist.node--view-mode-teaser img {
+  display: flex;
+}
+.node--type-events.node--view-mode-teaser *,
+.node--type-project.node--view-mode-teaser *,
+.node--type-news.node--view-mode-teaser * {
+  text-align: left;
+}
+.node--type-events.node--view-mode-teaser img,
+.node--type-project.node--view-mode-teaser img,
+.node--type-news.node--view-mode-teaser img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+.node--type-events.node--view-mode-teaser .block-field-blocknodeeventsfield-featured-image,
+.node--type-project.node--view-mode-teaser .block-field-blocknodeeventsfield-featured-image,
+.node--type-news.node--view-mode-teaser .block-field-blocknodeeventsfield-featured-image {
+  padding: 0;
+}
+.node--type-events.node--view-mode-teaser+.node--view-mode-teaser,
+.node--type-project.node--view-mode-teaser+.node--view-mode-teaser,
+.node--type-news.node--view-mode-teaser+.node--view-mode-teaser {
+  margin-top: 20px;
+  border-top: 1px solid #aaa;
 }
