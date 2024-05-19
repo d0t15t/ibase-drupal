@@ -1,9 +1,11 @@
-@import "components/button"
+@require 'vars'
+@require 'mq'
+@require "components/button"
 
 .node--type-project
   &.node--view-mode-full
     .node__content
-      text-align center
+      text-align left
 
       .field--name-field-headline
         text-align center
@@ -11,6 +13,10 @@
 
       .field--name-field-subheadline
         padding-bottom 10px
+        text-align center
+
+      .field--name-body
+        margin 20px
 
       .project-buttons
 
@@ -43,3 +49,17 @@
       .project-programm--headline
         @extend .btn
         margin-bottom 20px
+
+@media $mq_up_lxl
+  .node--type-project.node--view-mode-full
+    .node__content
+      .field--name-body
+        width 70%
+        margin 0 auto
+        text-align left
+
+
+//.node--type-project.node--view-mode-full
+//  .field--name-body
+//    width 70%
+

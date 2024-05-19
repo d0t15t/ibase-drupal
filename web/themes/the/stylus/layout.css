@@ -57,6 +57,7 @@
 }
 .layout-container {
   display: inherit;
+  padding-top: 20px;
 }
 .layout-container > *:not(footer) {
   max-width: 1100px;

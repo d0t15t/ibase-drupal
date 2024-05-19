@@ -1,6 +1,7 @@
 form.the-form-filters .form--inline {
   display: flex;
   align-items: center;
+  padding-bottom: 20px;
 }
 form.the-form-filters .form--inline #edit-date-wrapper--4 > .fieldset-wrapper {
   display: flex;

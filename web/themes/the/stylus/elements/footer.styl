@@ -2,8 +2,9 @@
 
 footer
   margin-top 50px
-  background-color black
+  background-color $color_grey
   color white
+  padding 20px 20px 10px 20px
 
 
   .region-footer
@@ -22,3 +23,11 @@ footer
     .rmEmbed.rmLayout--horizontal.rmBase
       margin 0 auto
       padding 10px 0 50px
+
+    #rmOrganism .rmBase, #rmOrganism .rmSubscription
+      background-color $color_grey
+
+    #rmOrganism .rmLayout--horizontal.rmBase
+      max-width: unset;
+    #rmOrganism .rmLayout--horizontal.rmBase .rmBase__container
+      padding unset

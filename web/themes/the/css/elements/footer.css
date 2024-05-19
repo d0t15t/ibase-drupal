@@ -57,8 +57,9 @@
 }
 footer {
   margin-top: 50px;
-  background-color: #000;
+  background-color: #aaa;
   color: #fff;
+  padding: 20px 20px 10px 20px;
 }
 footer .region-footer {
   max-width: 1100px;
@@ -74,4 +75,14 @@ footer ul.menu {
 footer #block-zeigen-zeigennewsletter .rmEmbed.rmLayout--horizontal.rmBase {
   margin: 0 auto;
   padding: 10px 0 50px;
+}
+footer #block-zeigen-zeigennewsletter #rmOrganism .rmBase,
+footer #block-zeigen-zeigennewsletter #rmOrganism .rmSubscription {
+  background-color: #aaa;
+}
+footer #block-zeigen-zeigennewsletter #rmOrganism .rmLayout--horizontal.rmBase {
+  max-width: unset;
+}
+footer #block-zeigen-zeigennewsletter #rmOrganism .rmLayout--horizontal.rmBase .rmBase__container {
+  padding: unset;
 }

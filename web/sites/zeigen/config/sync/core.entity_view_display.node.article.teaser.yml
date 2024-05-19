@@ -40,10 +40,9 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: text_default
                 label: hidden
-                settings:
-                  trim_length: 600
+                settings: {  }
                 third_party_settings: {  }
             weight: 1
             additional: {  }
@@ -62,29 +61,10 @@ third_party_settings:
                 type: media_thumbnail
                 label: visually_hidden
                 settings:
-                  image_link: content
-                  image_style: large
+                  image_link: ''
+                  image_style: teaser
                   image_loading:
                     attribute: lazy
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          95c60245-b2c6-4f61-ae2a-e6562239d4e5:
-            uuid: 95c60245-b2c6-4f61-ae2a-e6562239d4e5
-            region: second
-            configuration:
-              id: 'field_block:node:article:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: true
                 third_party_settings: {  }
             weight: 0
             additional: {  }
