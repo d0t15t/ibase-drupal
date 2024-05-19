@@ -10,7 +10,6 @@ dependencies:
     - node.type.artist
     - node.type.events
     - node.type.page
-    - node.type.partner
     - node.type.project
     - node.type.webform
     - taxonomy.vocabulary.mediums
