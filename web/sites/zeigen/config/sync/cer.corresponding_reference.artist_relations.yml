@@ -1,0 +1,13 @@
+uuid: b1388b7b-9f2e-4fb1-a6fc-23a59d75a3be
+langcode: en
+status: true
+dependencies: {  }
+id: artist_relations
+label: 'Artist relations'
+enabled: true
+first_field: field_artists
+second_field: field_content
+add_direction: append
+bundles:
+  node:
+    - '*'

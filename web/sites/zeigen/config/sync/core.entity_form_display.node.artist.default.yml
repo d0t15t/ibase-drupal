@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.artist.field_artworks
     - field.field.node.artist.field_bibliography
     - field.field.node.artist.field_biography
+    - field.field.node.artist.field_content
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
     - field.field.node.artist.field_external_artworks
@@ -371,4 +372,5 @@ content:
 hidden:
   field_artist_artworks: true
   field_artworks: true
+  field_content: true
   title: true

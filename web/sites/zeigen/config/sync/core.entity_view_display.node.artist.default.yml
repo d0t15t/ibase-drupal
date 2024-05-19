@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.artist.field_artworks
     - field.field.node.artist.field_bibliography
     - field.field.node.artist.field_biography
+    - field.field.node.artist.field_content
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
     - field.field.node.artist.field_external_artworks
@@ -51,6 +52,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_content:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_cv:
     type: text_default

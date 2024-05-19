@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.artist.field_artworks
     - field.field.node.artist.field_bibliography
     - field.field.node.artist.field_biography
+    - field.field.node.artist.field_content
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
     - field.field.node.artist.field_external_artworks
@@ -19,7 +20,7 @@ dependencies:
     - field.field.node.artist.field_name_asian
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
-    - image.style.teaser
+    - image.style.portrait
     - node.type.artist
   module:
     - layout_builder
@@ -38,8 +39,8 @@ content:
     type: media_thumbnail
     label: hidden
     settings:
-      image_link: ''
-      image_style: teaser
+      image_link: content
+      image_style: portrait
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -57,6 +58,7 @@ hidden:
   field_artworks: true
   field_bibliography: true
   field_biography: true
+  field_content: true
   field_cv: true
   field_e_mail: true
   field_external_artworks: true
