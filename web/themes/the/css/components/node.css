@@ -91,6 +91,14 @@
   margin-top: 20px;
   padding-top: 25px;
 }
+.full-width-image {
+  padding: 0;
+  margin: 0;
+}
+.full-width-image img {
+  width: 100%;
+  height: auto;
+}
 article.node--view-mode-full .field__label {
   color: #aaa;
   font-weight: lighter;
