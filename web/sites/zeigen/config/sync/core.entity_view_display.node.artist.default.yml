@@ -21,10 +21,100 @@ dependencies:
     - field.field.node.artist.field_telephone
     - node.type.artist
   module:
+    - layout_builder
     - metatag
     - text
     - user
     - viewsreference
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Large screen'
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          4c31e444-7b2b-4753-834a-bf4e3783c5c5:
+            uuid: 4c31e444-7b2b-4753-834a-bf4e3783c5c5
+            region: first
+            configuration:
+              id: 'field_block:node:artist:field_portrait'
+              label: Portrait
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: portrait
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          d6568b46-9e70-4222-96ae-11b381225acc:
+            uuid: d6568b46-9e70-4222-96ae-11b381225acc
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_bibliography'
+              label: Bibliography
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          19ad1b28-e3b1-413c-ab87-40f241934ce7:
+            uuid: 19ad1b28-e3b1-413c-ab87-40f241934ce7
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_biography'
+              label: Biography
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          c2dcd5c2-f17a-4f0d-abde-2e8411f62ba6:
+            uuid: c2dcd5c2-f17a-4f0d-abde-2e8411f62ba6
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_cv'
+              label: CV
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 id: node.artist.default
 targetEntityType: node
 bundle: artist

@@ -168,6 +168,48 @@ third_party_settings:
               items_per_page: none
             weight: 6
             additional: {  }
+          34966772-f0f3-4646-ac68-e5f625d8a688:
+            uuid: 34966772-f0f3-4646-ac68-e5f625d8a688
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_images'
+              label: Images
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 7
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: 'partner-image full-width-image'
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
         third_party_settings: {  }
 id: node.project.default
 targetEntityType: node
