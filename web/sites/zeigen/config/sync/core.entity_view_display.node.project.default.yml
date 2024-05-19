@@ -167,7 +167,23 @@ third_party_settings:
               views_label: Artists
               items_per_page: none
             weight: 6
-            additional: {  }
+            additional:
+              component_attributes:
+                block_attributes:
+                  id: ''
+                  class: artists-list
+                  style: ''
+                  data: ''
+                block_title_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
+                block_content_attributes:
+                  id: ''
+                  class: ''
+                  style: ''
+                  data: ''
           34966772-f0f3-4646-ac68-e5f625d8a688:
             uuid: 34966772-f0f3-4646-ac68-e5f625d8a688
             region: content
