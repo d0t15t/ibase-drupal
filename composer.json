@@ -80,6 +80,7 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.24",
         "drupal/jsonapi_hypermedia": "^1.9",
+        "drupal/jsonapi_image_styles": "^3.0",
         "drupal/lang_dropdown": "^2.1",
         "drupal/layout_builder_component_attributes": "^2.1",
         "drupal/layout_builder_extra_templates": "^1.0@RC",
