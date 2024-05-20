@@ -1,7 +1,10 @@
 uuid: c675cf9d-30f7-4b48-ab74-157d6775a319
 langcode: de
-status: false
+status: true
 dependencies:
+  module:
+    - block_classes
+    - node
   theme:
     - zeigen
 _core:
@@ -17,4 +20,11 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      artist: artist

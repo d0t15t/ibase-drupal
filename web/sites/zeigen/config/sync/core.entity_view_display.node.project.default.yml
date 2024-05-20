@@ -170,7 +170,7 @@ third_party_settings:
             additional:
               component_attributes:
                 block_attributes:
-                  id: ''
+                  id: artists
                   class: artists-list
                   style: ''
                   data: ''

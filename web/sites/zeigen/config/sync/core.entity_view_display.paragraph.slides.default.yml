@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.slides.field_slides
     - image.style.slick_media
-    - image.style.wide
     - paragraphs.paragraphs_type.slides
   module:
     - field_formatter_range
@@ -26,11 +25,11 @@ content:
       image: field_media
       link: field_link
       overlay: ''
-      title: field_link
+      title: title
       vanilla: false
       by_delta: -1
-      layout: stage-right
-      view_mode: preview
+      layout: bottom
+      view_mode: default
       cache: 0
       admin_uri: '/admin/structure/paragraphs_type/slides/display?ajax_form=1&_wrapper_format=drupal_ajax'
       use_lb: false
@@ -38,26 +37,26 @@ content:
       box_caption: ''
       box_caption_custom: ''
       box_media_style: ''
-      loading: auto
+      loading: ''
       preload: false
       responsive_image_style: ''
       use_theme_field: false
       box_style: ''
-      image_style: wide
+      image_style: slick_media
       media_switch: link
       ratio: '16:9'
-      thumbnail_style: slick_media
+      thumbnail_style: ''
       grid: ''
       grid_medium: ''
       grid_small: ''
-      style: column
+      style: flexbox
       svg_inline: false
       svg_fill: false
       svg_sanitize: true
       svg_sanitize_remote: false
       svg_hide_caption: false
       svg_attributes: ''
-      skin: classic
+      skin: split
       overridables:
         arrows: '0'
         autoplay: '0'

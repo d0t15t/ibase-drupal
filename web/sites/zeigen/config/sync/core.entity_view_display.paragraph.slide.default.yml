@@ -8,12 +8,25 @@ dependencies:
     - image.style.wide
     - paragraphs.paragraphs_type.slide
   module:
+    - link
     - media
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide
 mode: default
 content:
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_media:
     type: media_thumbnail
     label: visually_hidden
@@ -25,5 +38,4 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  field_link: true
+hidden: {  }
