@@ -68,6 +68,7 @@ permissions:
   - 'edit any page content'
   - 'edit any workgroup content'
   - 'edit terms in mediums'
+  - 'rabbit hole administer node'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
