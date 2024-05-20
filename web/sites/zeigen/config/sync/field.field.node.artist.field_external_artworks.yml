@@ -9,10 +9,10 @@ id: node.artist.field_external_artworks
 field_name: field_external_artworks
 entity_type: node
 bundle: artist
-label: Artworks
+label: 'Artworks (remote)'
 description: 'Add references to external content URLs.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

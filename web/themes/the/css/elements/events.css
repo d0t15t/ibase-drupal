@@ -205,6 +205,14 @@ article.node--view-mode-full h1 {
   margin-top: 20px;
   border-top: 1px solid #aaa;
 }
+.node--type-artist.node--view-mode-full .block-field-blocknodeartistfield-artworks ul li {
+  max-width: 300px;
+}
+.node--type-artist.node--view-mode-full .block-field-blocknodeartistfield-artworks ul li img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
 .slick {
   padding-bottom: 20px;
 }

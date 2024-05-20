@@ -1,0 +1,18 @@
+uuid: f6b557c2-f620-4a97-9033-7d3e482d9cf8
+langcode: de
+status: true
+dependencies:
+  config:
+    - media.type.remote_image
+id: media.remote_image.changed
+field_name: changed
+entity_type: media
+bundle: remote_image
+label: Changed
+description: 'Der Zeitpunkt, zu dem der Medieneintrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

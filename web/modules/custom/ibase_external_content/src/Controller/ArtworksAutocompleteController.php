@@ -8,7 +8,6 @@ use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Site\Settings;
 use Psr\Http\Client\ClientInterface;
@@ -22,12 +21,12 @@ use Symfony\Component\HttpFoundation\Request;
 final class ArtworksAutocompleteController extends ControllerBase implements ContainerInjectionInterface {
 
   /**
-   * @var \Psr\Http\Client\ClientInterface
+   * @var ClientInterface
    */
   protected $httpClient;
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
@@ -64,7 +63,7 @@ final class ArtworksAutocompleteController extends ControllerBase implements Con
       return new JsonResponse($results);
     }
     $input = Xss::filter($input);
-    $url = $this->settings->get('ibase_external_content_url');
+    $url = $this->settings->get('ibase_external_content_autocomplete_url');
     $response = $this->httpClient->get($url . '?filter[title][operator]=CONTAINS&filter[title][value]=' . $input);
     $artworks = json_decode($response->getBody()->getContents(), TRUE);
     if (empty($artworks['data'])) {

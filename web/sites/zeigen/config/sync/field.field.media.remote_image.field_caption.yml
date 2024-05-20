@@ -1,0 +1,24 @@
+uuid: bef2a93b-81ef-4e26-a236-a3f7d9805804
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - filter.format.html
+    - media.type.remote_image
+  module:
+    - text
+id: media.remote_image.field_caption
+field_name: field_caption
+entity_type: media
+bundle: remote_image
+label: Caption
+description: 'Information about the image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - html
+field_type: text_long

@@ -1,0 +1,81 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\ibase_external_content\Plugin\Field\FieldFormatter;
+
+use \Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Site\Settings;
+use Drupal\media_remote\Plugin\Field\FieldFormatter\MediaRemoteFormatterBase;
+
+/**
+ * Plugin implementation of the 'Remote image formatter' formatter.
+ *
+ * @FieldFormatter(
+ *   id = "ibase_external_content_remote_image_formatter",
+ *   label = @Translation("Remote image formatter"),
+ *   field_types = {"string"},
+ * )
+ */
+class RemoteImageFormatter extends MediaRemoteFormatterBase implements ContainerFactoryPluginInterface {
+
+  protected $settings;
+
+  /**
+   * @param array $configuration
+   * @param string $plugin_id
+   * @param mixed $plugin_definition
+   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, Settings $settings) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->settings = $settings;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('settings')
+    );
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
+    $element = [];
+    foreach ($items as $delta => $item) {
+      $element[$delta] = [
+        '#markup' => $item->value,
+      ];
+    }
+    return $element;
+  }
+
+  public static function getUrlRegexPattern() {
+    return '/^https:\/\/thegallery\.art\/jsonapi\/node\/artwork\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/';
+  }
+
+  public static function getValidUrlExampleStrings(): array {
+    return [
+      'https://thegallery.art/jsonapi/node/artwork/015d76e7-a7c1-4402-95dd-1664855e696e?resourceVersion=id%3A62'
+    ];
+  }
+
+  public static function defaultSettings() {
+    return [
+        'width' => 960,
+        'height' => 600,
+      ] + parent::defaultSettings();
+  }
+
+}

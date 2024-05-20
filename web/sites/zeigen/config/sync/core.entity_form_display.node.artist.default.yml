@@ -136,6 +136,7 @@ third_party_settings:
     group_artworks:
       children:
         - field_external_artworks
+        - field_artworks
       label: Artworks
       region: content
       parent_name: group_tabs
@@ -177,6 +178,13 @@ content:
     weight: 20
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_artworks:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_bibliography:
     type: text_textarea
@@ -371,6 +379,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_artist_artworks: true
-  field_artworks: true
   field_content: true
   title: true

@@ -1,0 +1,22 @@
+uuid: f7e33c0d-d67d-476f-be33-8f163d78d59c
+langcode: de
+status: true
+dependencies:
+  config:
+    - media.type.remote_image
+id: media.remote_image.status
+field_name: status
+entity_type: media
+bundle: remote_image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean
