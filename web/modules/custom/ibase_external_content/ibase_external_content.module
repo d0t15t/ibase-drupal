@@ -14,7 +14,7 @@ function ibase_external_content_form_alter(&$form, \Drupal\Core\Form\FormStateIn
   if (isset($form['field_external_artworks']['widget'])) {
     foreach ($form['field_external_artworks']['widget'] as $key => $value) {
       if (is_numeric($key)) {
-        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
+//        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
       }
     }
   }

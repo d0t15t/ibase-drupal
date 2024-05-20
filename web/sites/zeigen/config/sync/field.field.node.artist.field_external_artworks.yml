@@ -10,7 +10,7 @@ field_name: field_external_artworks
 entity_type: node
 bundle: artist
 label: 'Artworks (remote)'
-description: 'Add references to external content URLs.'
+description: 'Add references to external content URLs. Example: <code>http://thegallery.art/node/123</code>.'
 required: false
 translatable: false
 default_value: {  }

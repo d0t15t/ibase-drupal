@@ -35,11 +35,28 @@ final class ExternalContentSync {
    * Syncs remote content.
    */
   public function syncFromRemote(EntityInterface $node): void {
-    $uuids = $node->get('field_external_artworks')->getValue();
+    $external_urls = $node->get('field_external_artworks')->getValue();
+    $uuids = array_map(function ($value) {
+      $arr = explode('/', $value['value']);
+      $nid = end($arr);
+      if (!is_numeric($nid)) {
+        return NULL;
+      }
+      try {
+        $url = $this->settings->get('ibase_external_content_autocomplete_url');
+        $response = $this->httpClient->request('GET', $url . '?filter[nid]=' . $nid);
+        $artworks = json_decode($response->getBody()->getContents(), TRUE);
+
+        return $artworks["data"][0]["id"];
+      } catch (\Exception $e) {
+        \Drupal::logger('ibase_external_content')->error($e->getMessage());
+        return NULL;
+      }
+    }, $external_urls);
     $media_ids = [];
     foreach ($uuids as $uuid) {
-      $existing_media = $this->entityTypeManager->getStorage('media')->loadByProperties(['field_remote_uuid' => $uuid['value']]);
-      $response = $this->httpClient->request('GET', $this->getUuidUrl('node/artwork', $uuid['value']));
+      $existing_media = $this->entityTypeManager->getStorage('media')->loadByProperties(['field_remote_uuid' => $uuid]);
+      $response = $this->httpClient->request('GET', $this->getUuidUrl('node/artwork', $uuid));
       $data = json_decode($response->getBody()->getContents(), TRUE);
       if ($data) {
         $remote_media = $this->createRemoteMedia($data, $existing_media);
@@ -51,7 +68,6 @@ final class ExternalContentSync {
   }
 
   private function createRemoteMedia($data, $existing_media): EntityInterface {
-    $title = $data["data"]["attributes"]["title"];
     $artwork_uuid = $data["data"]["id"];
     $image_uuid = $data["data"]["relationships"]["field_images"]["data"][0]["id"];
     $response = $this->httpClient->request('GET', $this->getUuidUrl('media/image', $image_uuid));
@@ -66,15 +82,15 @@ final class ExternalContentSync {
     $data = json_decode($response->getBody()->getContents(), TRUE);
 
     $alt = $data["data"]["meta"]["alt"];
-    $height = $data["data"]["meta"]["height"];
-    $width = $data["data"]["meta"]["width"];
+//    $height = $data["data"]["meta"]["height"];
+//    $width = $data["data"]["meta"]["width"];
 
     $file_url = $data["links"]["related"]["href"];
     $response = $this->httpClient->request('GET', $file_url);
     $data = json_decode($response->getBody()->getContents(), TRUE);
 
-    $uri = $data["data"]["attributes"]["uri"]["url"];
-    $url = $this->settings->get('ibase_external_content_url') . $uri;
+//    $uri = $data["data"]["attributes"]["uri"]["url"];
+//    $url = $this->settings->get('ibase_external_content_url') . $uri;
     $image_style_large_url = $data["data"]["attributes"]["image_style_uri"]["large"];
 
     if (sizeof($existing_media) > 0) {
@@ -87,12 +103,16 @@ final class ExternalContentSync {
       $media = $this->entityTypeManager->getStorage('media')->create([
         'bundle' => 'remote_image',
         'name' => $alt,
-        'field_media_media_remote' => $url,
+        'field_media_media_remote' => $image_style_large_url,
         'field_caption' => $alt,
         'field_remote_uuid' => $artwork_uuid,
       ]);
     }
-    $media->save();
+    try {
+      $media->save();
+    } catch (\Exception $e) {
+      \Drupal::logger('ibase_external_content')->error($e->getMessage());
+    }
     return $media;
   }
 

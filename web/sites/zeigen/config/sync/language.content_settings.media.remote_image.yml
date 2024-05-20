@@ -14,5 +14,5 @@ third_party_settings:
 id: media.remote_image
 target_entity_type_id: media
 target_bundle: remote_image
-default_langcode: site_default
+default_langcode: zxx
 language_alterable: false
