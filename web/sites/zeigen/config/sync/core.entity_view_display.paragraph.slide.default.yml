@@ -16,7 +16,7 @@ bundle: slide
 mode: default
 content:
   field_link:
-    type: link_separate
+    type: link
     label: hidden
     settings:
       trim_length: 80

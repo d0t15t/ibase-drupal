@@ -2,22 +2,8 @@
 @require 'components/image'
 @require 'mq'
 
-.glide--slider
-  overflow hidden
-
-  .glide__track
-    padding 0
-
-    .glide__slide
-      max-width 100%
-      width 100%
-
-      img
-        max-width 100%
-        object-fit: contain
-        object-position top center
-        max-height 500px
-
-        @media $mq_up_lxl
-          max-height 800px
-
+.path-frontpage
+  .slick
+    .slide__content
+      .slide__caption
+        @extend .visually-hidden
