@@ -58,7 +58,7 @@ third_party_settings:
                   image_loading:
                     attribute: lazy
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
           d6568b46-9e70-4222-96ae-11b381225acc:
             uuid: d6568b46-9e70-4222-96ae-11b381225acc
@@ -114,28 +114,28 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
-          789a99ee-590c-4c74-9def-57c125d69ee2:
-            uuid: 789a99ee-590c-4c74-9def-57c125d69ee2
-            region: second
+          1ce4c3f5-9e04-4656-95b0-78b2a24bae86:
+            uuid: 1ce4c3f5-9e04-4656-95b0-78b2a24bae86
+            region: first
             configuration:
-              id: 'field_block:node:artist:field_artworks'
-              label: Artworks
+              id: 'field_block:node:artist:field_content'
+              label: 'Content references'
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: entity_reference_entity_view
-                label: visually_hidden
+                type: entity_reference_label
+                label: hidden
                 settings:
-                  view_mode: teaser
+                  link: true
                 third_party_settings:
                   field_formatter_range:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 3
+            weight: 2
             additional: {  }
         third_party_settings: {  }
 id: node.artist.default

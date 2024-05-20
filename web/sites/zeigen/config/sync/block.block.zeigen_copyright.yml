@@ -5,7 +5,6 @@ dependencies:
   content:
     - 'block_content:custom:d41cdc99-f384-49dc-a8b7-393d18754a61'
   module:
-    - block_classes
     - block_content
   theme:
     - zeigen

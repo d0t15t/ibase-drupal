@@ -3,7 +3,6 @@ langcode: de
 status: true
 dependencies:
   module:
-    - block_classes
     - node
   theme:
     - zeigen
