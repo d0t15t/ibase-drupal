@@ -1,7 +1,7 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<ul{{ create_attribute().addClass('cards', 'artists') }}>
+<ul{{ create_attribute().addClass('cards', 'artists', 'border-grid') }}>
 {% for row in rows %}
   {%
     set row_classes = [
