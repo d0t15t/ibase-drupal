@@ -1,0 +1,4 @@
+services:
+  ibase_external_content.sync:
+    class: Drupal\ibase_external_content\ExternalContentSync
+    arguments: ['@entity_type.manager', '@http_client', '@settings']

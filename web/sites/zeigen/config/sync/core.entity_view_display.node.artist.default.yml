@@ -114,6 +114,29 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          789a99ee-590c-4c74-9def-57c125d69ee2:
+            uuid: 789a99ee-590c-4c74-9def-57c125d69ee2
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_artworks'
+              label: Artworks
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: visually_hidden
+                settings:
+                  view_mode: teaser
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.artist.default
 targetEntityType: node

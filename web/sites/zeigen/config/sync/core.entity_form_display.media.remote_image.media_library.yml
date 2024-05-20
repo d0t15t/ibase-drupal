@@ -1,0 +1,25 @@
+uuid: 194dbe7d-8469-4c38-a13d-2568c7f57794
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.remote_image.field_caption
+    - field.field.media.remote_image.field_media_media_remote
+    - field.field.media.remote_image.field_remote_uuid
+    - media.type.remote_image
+id: media.remote_image.media_library
+targetEntityType: media
+bundle: remote_image
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_caption: true
+  field_media_media_remote: true
+  field_remote_uuid: true
+  langcode: true
+  name: true
+  path: true
+  status: true
+  uid: true

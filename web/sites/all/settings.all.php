@@ -13,7 +13,11 @@ $settings['file_private_path'] = "$app_root/$site_path/private";
 
 $settings['file_temp_path'] = "$app_root/$site_path/tmp";
 
-$settings['ibase_external_content_url'] = 'https://thegallery.art/jsonapi/node/artwork';
+$settings['ibase_external_content_url'] = 'https://thegallery.art';
+
+$settings['ibase_external_content_url_json'] = 'https://thegallery.art/jsonapi';
+
+$settings['ibase_external_content_autocomplete_url'] = 'https://thegallery.art/jsonapi/node/artwork';
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
 

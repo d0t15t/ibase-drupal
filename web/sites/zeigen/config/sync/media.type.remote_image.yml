@@ -1,0 +1,16 @@
+uuid: 3aff2585-ba33-49ff-8007-088aeacbec1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_remote
+id: remote_image
+label: 'Remote image'
+description: 'An remotely hosted image.'
+source: media_remote
+queue_thumbnail_downloads: true
+new_revision: true
+source_configuration:
+  source_field: field_media_media_remote
+field_map:
+  name: name

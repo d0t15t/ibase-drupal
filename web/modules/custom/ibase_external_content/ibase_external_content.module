@@ -5,27 +5,42 @@
  * Primary module hooks for Ibase External Content module.
  */
 
+use Drupal\ibase_external_content\ExternalContentSync;
+
 /**
  * Implements hook_form_alter().
  */
 function ibase_external_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if (isset($form['field_external_artworks']['widget'])) {
-//    $form['field_external_artworks']['#autocomplete_route_name'] = 'ibase_external_content.autocomplete.artworks';
-//    $form['field_external_artworks']['#autocomplete_route_name'] = 'ibase_external_content.autocomplete.artworks';
-//    $form['field_external_artworks']['#autocomplete_route_parameters'] = ['field_name' => 'name', 'count' => 5];
-
     foreach ($form['field_external_artworks']['widget'] as $key => $value) {
       if (is_numeric($key)) {
         $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
-//        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_parameters'] = [
-//          'uuid' => '1234343',
-//          'title' => 'bar',
-//          'artist' => 'foooo',
-//        ];
       }
     }
-
-    $t=1;
   }
+}
 
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function ibase_external_content_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() === 'artist' && !$entity->get('field_external_artworks')->isEmpty()) {
+    /** @var ExternalContentSync $service */
+    $service = \Drupal::service('ibase_external_content.sync');
+    $service->syncFromRemote($entity);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ibase_external_content_theme($existing, $type, $theme, $path) {
+  return [
+    'ibase_external_content_remote_image_formatter' => [
+      'variables' => [
+        'url' => NULL,
+        'caption' => NULL,
+      ],
+    ],
+  ];
 }

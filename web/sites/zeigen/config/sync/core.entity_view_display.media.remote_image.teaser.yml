@@ -1,0 +1,38 @@
+uuid: d314eed9-3fdc-4b99-8c72-10e3101258a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.teaser
+    - field.field.media.remote_image.field_caption
+    - field.field.media.remote_image.field_media_media_remote
+    - field.field.media.remote_image.field_remote_uuid
+    - media.type.remote_image
+  module:
+    - ibase_external_content
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.remote_image.teaser
+targetEntityType: media
+bundle: remote_image
+mode: teaser
+content:
+  field_media_media_remote:
+    type: ibase_external_content_remote_image_formatter
+    label: visually_hidden
+    settings:
+      formatter_class: Drupal\ibase_external_content\Plugin\Field\FieldFormatter\RemoteImageFormatter
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_caption: true
+  field_remote_uuid: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
