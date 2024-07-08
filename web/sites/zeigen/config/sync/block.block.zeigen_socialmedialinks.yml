@@ -79,8 +79,8 @@ settings:
       description: 'Follow us on Facebook'
       weight: '3'
     vimeo:
-      value: ''
-      description: ''
+      value: user215537438
+      description: 'Find us on Vimeo'
       weight: '4'
     amazon:
       value: ''
@@ -115,8 +115,8 @@ settings:
       description: ''
       weight: '12'
     youtube:
-      value: ''
-      description: ''
+      value: '@ZEIGENeV'
+      description: 'Find us on YouTube'
       weight: '13'
     github:
       value: ''

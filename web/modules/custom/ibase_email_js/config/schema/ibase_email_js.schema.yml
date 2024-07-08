@@ -1,0 +1,7 @@
+block.settings.ibase_email_js_contact_form:
+  type: block_settings
+  label: 'Contact Form block'
+  mapping:
+    example:
+      type: string
+      label: Example

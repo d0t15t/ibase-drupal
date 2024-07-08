@@ -137,6 +137,22 @@ third_party_settings:
                     offset: 0
             weight: 2
             additional: {  }
+          6b0e2a5a-da34-4898-aaff-3144c8c1b03a:
+            uuid: 6b0e2a5a-da34-4898-aaff-3144c8c1b03a
+            region: first
+            configuration:
+              id: 'field_block:node:artist:field_artworks'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.artist.default
 targetEntityType: node
@@ -152,6 +168,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_artworks:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: first
   field_bibliography:
     type: text_default
     label: above
@@ -204,7 +228,6 @@ content:
 hidden:
   body: true
   field_address: true
-  field_artworks: true
   field_e_mail: true
   field_instagam_handle: true
   field_name: true

@@ -1,0 +1,8 @@
+email_js_contact_form:
+  version: 1.x
+  js:
+    js/email-js-contact-form.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+

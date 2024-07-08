@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_featured_image
     - field.field.node.project.field_headline
     - field.field.node.project.field_images
+    - field.field.node.project.field_metatags
     - field.field.node.project.field_subheadline
     - image.style.large
     - node.type.project
@@ -19,6 +20,7 @@ dependencies:
     - layout_builder
     - layout_discovery
     - media
+    - metatag
     - text
     - user
     - views
@@ -226,6 +228,21 @@ third_party_settings:
                   class: ''
                   style: ''
                   data: ''
+          bdb15c34-4319-4f4b-b283-4053b5cb6af4:
+            uuid: bdb15c34-4319-4f4b-b283-4053b5cb6af4
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_metatags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.project.default
 targetEntityType: node
@@ -285,6 +302,13 @@ content:
         limit: 0
         offset: 0
     weight: 102
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_subheadline:
     type: text_default

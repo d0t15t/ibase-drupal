@@ -1,0 +1,22 @@
+_core:
+  default_config_hash: DRASTVse97MXPJLT34XuT6bo5tIaTgJwV26URI9188g
+gmail_on: true
+gmail_username: ''
+gmail_password: ''
+gmail_from: mr@dyss.net
+gmail_fromname: mr@dyss.net
+gmail_allowhtml: 0
+gmail_test_address: mr@dyss.net
+gmail_reroute_address: ''
+prev_mail_system: php_mail
+gmail_keepalive: false
+langcode: de
+gmail_client_secret: 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
+gmail_client_id: 919533820889-e6kl5m2po67c5i3hvl1bkh3p8ci1j9r8.apps.googleusercontent.com
+gmail_redirect_uri_host: 'https://zeigen.online/gmail-api/callback'
+access_token: ya29.a0AXooCgs68AePa66TxJU3MwWfRWcDrjPn6U1w3-RGqkv6LoJr-FFOZMcKWp8k4--Z7gf8s2CzSCOjc9z-NWj4N3coTN9puoS-XxDzxl0QZUSdpKBaBDMMYE8C5R4ns2-rmZhPRVd7GJRufKoK3VW93DdrpmdbZ8IFPmUzaCgYKAXMSARESFQHGX2MiiaXukyURTXO-7uKyxeGvQw0171
+expires_in: 3599
+refresh_token: 1//09duWaONOfbgtCgYIARAAGAkSNwF-L9IrpnkKF_WSjNZQO4Op5V1d14GWB-qoS3YZullqB_PLCO79WYrRP7rTWpn6xUs3KTX3_QA
+scope: 'https://www.googleapis.com/auth/gmail.send'
+token_type: Bearer
+created: 1720030867

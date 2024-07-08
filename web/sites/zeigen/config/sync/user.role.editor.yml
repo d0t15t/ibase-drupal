@@ -11,7 +11,6 @@ dependencies:
     - node.type.events
     - node.type.page
     - node.type.project
-    - node.type.webform
     - taxonomy.vocabulary.mediums
   module:
     - block_content
@@ -35,6 +34,7 @@ weight: 1
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access any webform configuration'
   - 'access block library'
   - 'access content overview'
   - 'access contextual links'
@@ -42,6 +42,7 @@ permissions:
   - 'access shortcuts'
   - 'access webform help'
   - 'access webform overview'
+  - 'access webform submission user'
   - 'add pdf image entity entities'
   - 'administer nodes'
   - 'bypass node access'
@@ -57,15 +58,12 @@ permissions:
   - 'create project content'
   - 'create terms in mediums'
   - 'create url aliases'
-  - 'create webform content'
   - 'customize shortcut links'
   - 'delete any article content'
   - 'delete any artist content'
   - 'delete any events content'
   - 'delete any page content'
-  - 'delete any partner content'
   - 'delete any project content'
-  - 'delete any webform content'
   - 'delete content translations'
   - 'delete media'
   - 'delete own article content'
@@ -74,9 +72,7 @@ permissions:
   - 'delete own events content'
   - 'delete own image media'
   - 'delete own page content'
-  - 'delete own partner content'
   - 'delete own project content'
-  - 'delete own webform content'
   - 'delete terms in mediums'
   - 'edit any article content'
   - 'edit any artist content'
@@ -84,18 +80,14 @@ permissions:
   - 'edit any events content'
   - 'edit any image media'
   - 'edit any page content'
-  - 'edit any partner content'
   - 'edit any project content'
-  - 'edit any webform content'
   - 'edit own article content'
   - 'edit own artist content'
   - 'edit own document media'
   - 'edit own events content'
   - 'edit own image media'
   - 'edit own page content'
-  - 'edit own partner content'
   - 'edit own project content'
-  - 'edit own webform content'
   - 'edit pdf image entity entities'
   - 'edit terms in mediums'
   - 'manage layout builder component attributes'
@@ -106,13 +98,12 @@ permissions:
   - 'translate editable entities'
   - 'translate events node'
   - 'translate page node'
-  - 'translate partner node'
-  - 'translate webform node'
   - 'update any media'
   - 'update content translations'
   - 'update media'
   - 'use advanced search'
   - 'use text format unfiltered'
+  - 'view any webform submission'
   - 'view article revisions'
   - 'view artist revisions'
   - 'view events revisions'
@@ -123,4 +114,3 @@ permissions:
   - 'view published pdf image entity entities'
   - 'view the administration theme'
   - 'view unpublished pdf image entity entities'
-  - 'view webform revisions'

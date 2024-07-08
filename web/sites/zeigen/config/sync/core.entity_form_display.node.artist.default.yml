@@ -180,11 +180,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_artworks:
-    type: media_library_widget
-    weight: 4
+    type: entity_reference_autocomplete
+    weight: 33
     region: content
     settings:
-      media_types: {  }
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_bibliography:
     type: text_textarea

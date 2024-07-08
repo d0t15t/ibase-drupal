@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_featured_image
     - field.field.node.project.field_headline
     - field.field.node.project.field_images
+    - field.field.node.project.field_metatags
     - field.field.node.project.field_subheadline
     - node.type.project
   module:
@@ -113,5 +114,6 @@ hidden:
   field_featured_image: true
   field_headline: true
   field_images: true
+  field_metatags: true
   field_subheadline: true
   langcode: true

@@ -87,7 +87,7 @@ display:
           entity_type: redirect
           entity_field: redirect_source
           plugin_id: field
-          label: From
+          label: Von
           exclude: false
           alter:
             alter_text: false
@@ -291,7 +291,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_source__path_op
-            label: From
+            label: Von
             description: ''
             use_operator: false
             operator: redirect_source__path_op
@@ -333,7 +333,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_redirect__uri_op
-            label: To
+            label: Bis
             description: ''
             use_operator: false
             operator: redirect_redirect__uri_op

@@ -7,5 +7,8 @@ _core:
 id: front
 label: 'Front page'
 tags:
+  abstract: 'ZEIGEN e.V. ist eine gemeinnützige Organisation, die sich der Förderung interkultureller Zusammenarbeit und künstlerischer Projekte verschrieben hat. Seit 2023 setzen wir uns für den Austausch und die Zusammenarbeit zwischen Künstler*innen aus verschiedenen Ländern ein und organisieren Veranstaltungen, Ausstellungen und Workshops, um die Vielfalt der Kunst und Kultur zu feiern.'
   canonical_url: '[site:url]'
+  description: '[site:description]'
   shortlink: '[site:url]'
+  title: '[site:name]'

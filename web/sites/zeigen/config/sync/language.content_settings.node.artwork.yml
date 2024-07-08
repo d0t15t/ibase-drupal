@@ -1,0 +1,18 @@
+uuid: a79382b6-e2e1-4368-8638-5e368fbd4ed1
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.artwork
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: node.artwork
+target_entity_type_id: node
+target_bundle: artwork
+default_langcode: site_default
+language_alterable: true

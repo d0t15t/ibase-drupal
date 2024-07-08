@@ -31,7 +31,6 @@ dependencies:
     - path
     - telephone
     - text
-    - viewsreference
 third_party_settings:
   field_group:
     group_tabs:
@@ -182,16 +181,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_artist_artworks:
-    type: viewsreference_autocomplete
-    weight: 11
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_artworks:
     type: entity_browser_entity_reference
     weight: 1
@@ -298,6 +287,7 @@ content:
         family: description
         generational: description
         credentials: description
+      field_title_display: before
     third_party_settings: {  }
   field_name_asian:
     type: name_default
@@ -329,6 +319,7 @@ content:
         family: description
         generational: description
         credentials: description
+      field_title_display: before
     third_party_settings: {  }
   field_portrait:
     type: entity_browser_entity_reference
@@ -415,4 +406,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_artist_artworks: true
   title: true

@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic
     - filter.format.headline
     - filter.format.html
-    - filter.format.webform_default
   module:
     - file
     - filter
@@ -36,6 +35,5 @@ permissions:
   - 'use text format basic'
   - 'use text format headline'
   - 'use text format html'
-  - 'use text format webform_default'
   - 'view media'
   - 'view published pdf image entity entities'

@@ -9,12 +9,14 @@ dependencies:
     - field.field.node.project.field_featured_image
     - field.field.node.project.field_headline
     - field.field.node.project.field_images
+    - field.field.node.project.field_metatags
     - field.field.node.project.field_subheadline
     - node.type.project
   module:
     - allowed_formats
     - field_group
     - media_library
+    - metatag
     - path
     - text
 third_party_settings:
@@ -169,6 +171,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 10
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_subheadline:
     type: text_textarea

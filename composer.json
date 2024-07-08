@@ -75,6 +75,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/gin_login": "^2.0",
         "drupal/gin_toolbar": "^1.0@RC",
+        "drupal/gmail": "^1.0",
         "drupal/httpswww": "^2.1",
         "drupal/iban_field": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
@@ -85,6 +86,7 @@
         "drupal/layout_builder_component_attributes": "^2.1",
         "drupal/layout_builder_extra_templates": "^1.0@RC",
         "drupal/layout_builder_styles": "^2.0",
+        "drupal/lb_plus": "^2.1",
         "drupal/limited_field_widgets": "^2.1@beta",
         "drupal/media_download": "^1.2",
         "drupal/media_entity_download": "^2.2",
@@ -125,6 +127,7 @@
         "drupal/yaml_editor": "^1.2",
         "drupal/yearonly": "^9.1",
         "drush/drush": "^12.5",
+        "google/apiclient": "^2.12.1",
         "mglaman/composer-drupal-lenient": "^1.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },

@@ -1,11 +1,11 @@
-uuid: 8f6ccaf5-9eb8-4f5d-9d8a-eb85d3554a51
-langcode: en
+uuid: 27cb27d7-f849-44e1-8752-999315dda362
+langcode: de
 status: true
 dependencies:
   config:
     - field.storage.node.field_artworks
-    - media.type.remote_image
     - node.type.artist
+    - node.type.artwork
 id: node.artist.field_artworks
 field_name: field_artworks
 entity_type: node
@@ -17,10 +17,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      remote_image: remote_image
+      artwork: artwork
     sort:
       field: _none
       direction: ASC

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_sliders
     - field.field.node.page.field_slides
@@ -21,6 +22,7 @@ dependencies:
     - layout_discovery
     - link
     - media
+    - metatag
     - text
     - user
     - viewsreference
@@ -100,6 +102,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+          45202a12-6011-4943-9646-873a2bb5205f:
+            uuid: 45202a12-6011-4943-9646-873a2bb5205f
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_metatags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.page.default
 targetEntityType: node
@@ -144,6 +161,13 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view

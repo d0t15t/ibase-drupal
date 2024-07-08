@@ -2,10 +2,7 @@ uuid: 91ec2524-2ce6-414e-875e-aab9c904c8fe
 langcode: de
 status: true
 dependencies:
-  config:
-    - filter.format.webform_default
   module:
-    - filter
     - media
     - media_entity_download
     - media_pdf_thumbnail
@@ -21,6 +18,5 @@ permissions:
   - 'access content'
   - 'download media'
   - 'search content'
-  - 'use text format webform_default'
   - 'view media'
   - 'view published pdf image entity entities'
