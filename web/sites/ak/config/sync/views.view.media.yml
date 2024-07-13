@@ -1,17 +1,17 @@
-uuid: 4e1e260f-3f6e-46ef-a850-3d9582d3f1d1
-langcode: de
+uuid: 5edf235e-c40e-4656-8792-260671686f62
+langcode: en
 status: true
 dependencies:
   config:
     - image.style.thumbnail
   module:
+    - image
     - media
-    - svg_image
     - user
 _core:
-  default_config_hash: diywn6VdMoQOlDA-xslKdKrDko3SsTKfaK3WBG45UAg
+  default_config_hash: 27loqXfECE8tWznkMVYi7qOU8oCYFgn5MEysgZQQOV8
 id: media
-label: Medien
+label: Media
 module: views
 description: 'Find and manage media.'
 tag: ''
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Medien
+      title: Media
       fields:
         media_bulk_form:
           id: media_bulk_form
@@ -76,7 +76,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Aktion
+          action_title: Action
           include_exclude: exclude
           selected_actions: {  }
         thumbnail__target_id:
@@ -204,7 +204,7 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: field
-          label: Typ
+          label: Type
           exclude: false
           alter:
             alter_text: false
@@ -448,6 +448,15 @@ display:
             date_format: short
             custom_date_format: ''
             timezone: ''
+            tooltip:
+              date_format: long
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -467,7 +476,7 @@ display:
           admin_label: ''
           entity_type: media
           plugin_id: entity_operations
-          label: Aktionen
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -523,10 +532,10 @@ display:
             last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Alle -'
+            items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -535,11 +544,11 @@ display:
         options:
           submit_button: Filter
           reset_button: false
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:
@@ -636,7 +645,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Typ
+            label: Type
             description: ''
             use_operator: false
             operator: bundle_op
@@ -766,7 +775,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Sprache
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
@@ -867,17 +876,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -892,7 +891,7 @@ display:
       tags: {  }
   media_page_list:
     id: media_page_list
-    display_title: Medien
+    display_title: Media
     display_plugin: page
     position: 1
     display_options:
@@ -901,7 +900,7 @@ display:
       path: admin/content/media
       menu:
         type: tab
-        title: Medien
+        title: Media
         description: ''
         weight: 0
         expanded: false

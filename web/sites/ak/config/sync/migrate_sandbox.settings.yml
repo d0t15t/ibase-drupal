@@ -1,6 +1,5 @@
 _core:
   default_config_hash: RWcu_eynQEz3Syry3O4W6kSNtlQmLduZpSTUm1cN4GQ
-langcode: de
 id: migrate_sandbox
 label: 'Sandbox Migration'
 sources:

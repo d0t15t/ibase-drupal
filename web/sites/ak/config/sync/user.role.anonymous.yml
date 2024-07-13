@@ -1,16 +1,16 @@
-uuid: 9101a781-b7b2-4d80-ae4e-c45b72de1dbb
-langcode: de
+uuid: e926a37d-2716-410c-a6a1-736820653c53
+langcode: en
 status: true
 dependencies:
   module:
-    - contact
+    - media
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'anonymous user'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'access site-wide contact form'
+  - 'view media'

@@ -1,5 +1,5 @@
-uuid: ec303f2c-511c-4f18-8d9c-b03cbac8372f
-langcode: de
+uuid: c723ba68-ec8e-450b-9f9a-965bc4f8f3eb
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: suDsVMgawXoQt4rfmdfpr05EVX3z3KyfDDTYgeSM898
 id: who_s_online
-label: 'Who''s online block'
+label: "Who's online block"
 module: user
 description: 'Shows the user names of the most recently active users, and the total number of active users.'
 tag: default
@@ -20,7 +20,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Who''s online'
+      title: "Who's online"
       fields:
         name:
           id: name
@@ -66,11 +66,11 @@ display:
         options:
           submit_button: Apply
           reset_button: false
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:
@@ -210,13 +210,13 @@ display:
       tags: {  }
   who_s_online_block:
     id: who_s_online_block
-    display_title: 'Who''s online'
+    display_title: "Who's online"
     display_plugin: block
     position: 1
     display_options:
       display_description: 'A list of users that are currently logged in.'
       display_extenders: {  }
-      block_description: 'Who''s online'
+      block_description: "Who's online"
     cache_metadata:
       max-age: -1
       contexts:

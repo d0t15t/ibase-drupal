@@ -4,8 +4,12 @@ namespace Drupal\ibase_external_content\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\media_remote\Plugin\Field\FieldFormatter\MediaRemoteFormatterBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\views\Plugin\views\field\Boolean;
 use \Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Site\Settings;
 
@@ -21,33 +25,35 @@ use Drupal\Core\Site\Settings;
  * )
  */
 class RemoteImageFormatter extends MediaRemoteFormatterBase {
-//class RemoteImageFormatter extends MediaRemoteFormatterBase implements ContainerFactoryPluginInterface {
 
-//  protected $settings;
-//
-//  /**
-//   * @param array $configuration
-//   * @param string $plugin_id
-//   * @param mixed $plugin_definition
-//   * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
-//   */
-//  public function __construct(array $configuration, $plugin_id, $plugin_definition, Settings $settings) {
-//    parent::__construct($configuration, $plugin_id, $plugin_definition);
-//
-//    $this->settings = $settings;
-//  }
-//
-//  /**
-//   * {@inheritdoc}
-//   */
-//  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-//    return new static(
-//      $configuration,
-//      $plugin_id,
-//      $plugin_definition,
-//      $container->get('settings')
-//    );
-//  }
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings(): array {
+    $setting = ['active_entity_link' => FALSE];
+    return $setting + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state): array {
+    $elements['active_entity_link'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Link to entity'),
+      '#default_value' => $this->getSetting('active_entity_link'),
+    ];
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary(): array {
+    return [
+      $this->t('Link to entity: @active_entity_link', ['@active_entity_link' => $this->getSetting('active_entity_link')]),
+    ];
+  }
 
   /**
    * {@inheritdoc}
@@ -62,23 +68,26 @@ class RemoteImageFormatter extends MediaRemoteFormatterBase {
     ];
   }
 
-
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
     $elements = [];
     foreach ($items as $delta => $item) {
       /** @var FieldItemInterface $item */
       if ($item->isEmpty()) {
         continue;
       }
+      $media = $item->getEntity();
+      $t=1;
       $elements[$delta] = [
         '#theme' => 'ibase_external_content_remote_image_formatter',
-        '#url' => $item->value,
+        '#remote_image_url' => $item->value,
+        '#link_url' => $media->toUrl()->toString(['absolute' => TRUE]),
+        '#remote_image_alt' => $media->get('field_caption')->getString(),
+        '#active_entity_link' => (bool) $this->getSetting('active_entity_link'),
       ];
     }
-//    $caption = $item->properties["value"]->parent->parent->parent->entity->values["field_caption"]
     return $elements;
   }
 

@@ -1,5 +1,5 @@
-uuid: c76d8422-abbf-4bd8-a033-58d1570fe74e
-langcode: de
+uuid: 1e5f0705-4ca8-4dee-8a4d-6f375d59de80
+langcode: en
 status: true
 dependencies:
   module:
@@ -133,11 +133,11 @@ display:
         options:
           submit_button: Apply
           reset_button: false
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       access:
         type: perm
         options:

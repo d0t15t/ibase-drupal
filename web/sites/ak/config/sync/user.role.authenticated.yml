@@ -1,31 +1,16 @@
-uuid: 2aa3c143-558e-4615-b966-4f6cb153e46c
-langcode: de
+uuid: 891abb32-aeeb-462d-87b6-ee069877d57e
+langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.filtered_html
-    - filter.format.full_html
   module:
-    - contact
-    - filter
-    - search
+    - media
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
-label: 'authenticated user'
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
   - 'access content'
-  - 'access overlay'
-  - 'access site-wide contact form'
-  - 'customize shortcut links'
-  - 'delete terms in 1'
-  - 'edit terms in 1'
-  - 'search content'
-  - 'use text format filtered_html'
-  - 'use text format full_html'
-  - 'view any unpublished article content'
-  - 'view any unpublished page content'
-  - 'view the administration theme'
+  - 'view media'

@@ -1,2 +1,12 @@
-<img src="{{ url }}" alt="ZEIGEN EV"/>
-{#<div>{{ caption }}</div>#}
+{% set image %}
+  <img src="{{ remote_image_url }}" alt="{{ remote_image_alt }}" title="{{ remote_image_alt }}" />
+{% endset %}
+{{ link(
+  image,
+  link_url,
+  {
+    "class": [
+    "remote-image-formatter",
+  ],
+  }
+) }}

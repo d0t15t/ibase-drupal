@@ -89,14 +89,15 @@ final class ExternalContentSync {
     $response = $this->httpClient->request('GET', $file_url);
     $data = json_decode($response->getBody()->getContents(), TRUE);
 
-//    $uri = $data["data"]["attributes"]["uri"]["url"];
-//    $url = $this->settings->get('ibase_external_content_url') . $uri;
     $image_style_large_url = $data["data"]["attributes"]["image_style_uri"]["large"];
+    $image_style_wide_url = $data["data"]["attributes"]["image_style_uri"]["wide"];
 
     if (sizeof($existing_media) > 0) {
       $media = reset($existing_media);
-      $media->set('field_media_media_remote', $image_style_large_url);
+      $media->set('field_media_media_remote', $image_style_wide_url);
+      $media->set('field_remote_media_thumbnail_url', $image_style_large_url);
       $media->set('field_caption', $alt);
+      $media->set('field_remote_uuid', $artwork_uuid);
       $media->save();
       return $media;
     } else {
@@ -104,6 +105,7 @@ final class ExternalContentSync {
         'bundle' => 'remote_image',
         'name' => $alt,
         'field_media_media_remote' => $image_style_large_url,
+        'field_remote_media_thumbnail_url' => $image_style_large_url,
         'field_caption' => $alt,
         'field_remote_uuid' => $artwork_uuid,
       ]);

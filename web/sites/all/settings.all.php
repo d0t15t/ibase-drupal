@@ -51,3 +51,13 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
   ];
 
 }
+$databases['ak7']['default'] = array(
+  'database' => 'ak7',
+  'username' => 'root',
+  'password' => 'root',
+  'prefix' => '',
+  'host' => 'db',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
