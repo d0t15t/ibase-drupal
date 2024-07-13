@@ -108,6 +108,7 @@
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.9",
         "drupal/remote_stream_wrapper": "^2.0",
+        "drupal/responsive_favicons": "^2.0",
         "drupal/responsive_layout_builder": "^2.1",
         "drupal/responsive_menus": "^2.0@beta",
         "drupal/shield": "^1.7",
