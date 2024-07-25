@@ -1,4 +1,4 @@
 services:
   ibase_external_content.sync:
-    class: Drupal\ibase_external_content\ExternalContentSync
+    class: Drupal\ibase_external_content\RemoteApiClient
     arguments: ['@entity_type.manager', '@http_client', '@settings']

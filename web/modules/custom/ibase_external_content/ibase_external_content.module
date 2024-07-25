@@ -5,31 +5,7 @@
  * Primary module hooks for Ibase External Content module.
  */
 
-use Drupal\ibase_external_content\ExternalContentSync;
-
-/**
- * Implements hook_form_alter().
- */
-function ibase_external_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if (isset($form['field_external_artworks']['widget'])) {
-    foreach ($form['field_external_artworks']['widget'] as $key => $value) {
-      if (is_numeric($key)) {
-//        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_ENTITY_TYPE_presave().
- */
-function ibase_external_content_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
-  if ($entity->bundle() === 'artist' && !$entity->get('field_external_artworks')->isEmpty()) {
-    /** @var ExternalContentSync $service */
-    $service = \Drupal::service('ibase_external_content.sync');
-    $service->syncFromRemote($entity);
-  }
-}
+use Drupal\ibase_external_content\RemoteApiClient;
 
 /**
  * Implements hook_theme().
@@ -44,4 +20,81 @@ function ibase_external_content_theme($existing, $type, $theme, $path) {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ibase_external_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['field_external_artworks']['widget'])) {
+    $form['field_external_artworks_sync'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Sync External Artworks'),
+      '#description' => t('If checked, sync external artworks and delete current ones.'),
+    ];
+
+    $form['field_external_artworks']['#states'] = [
+      'visible' => [
+        ':input[name="field_external_artworks_sync"]' => ['checked' => TRUE],
+      ],
+    ];
+
+    foreach ($form['field_external_artworks']['widget'] as $key => $value) {
+      if (is_numeric($key)) {
+        $form['field_external_artworks']['widget'][$key]['value']['#autocomplete_route_name'] = 'ibase_external_content.artworks_autocomplete';
+        $form['field_external_artworks']['widget'][$key]['#element_validate'][] = '_ibase_external_content_validate_external_artworks';
+        if($remote_uuid = $form["field_external_artworks"]["widget"][$key]["value"]["#default_value"]) {
+          $form['field_external_artworks']['widget'][$key]['value']['#description'] = \Drupal::service('ibase_external_content.sync')->getRemoteArtworkDetails($remote_uuid);
+        }
+
+      }
+    }
+  }
+  if ($form_id === 'node_artist_edit_form' || $form_id === 'node_artist_form') {
+    $form["actions"]["submit"]["#submit"][] = '_ibase_external_content_artwork_form_submit_handler';
+  }
+}
+
+function ibase_external_content_entity_extra_field_info() {
+  $extra = [];
+  $extra['node']['artist']['form']['field_external_artworks_sync'] = [
+    'label' => t('Sync external artworks'),
+    'description' => t('Delete any currently referenced artworks and create new ones from the remote source.'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  return $extra;
+}
+
+function  _ibase_external_content_validate_external_artworks($element, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $values = $form_state->getValue($element['#parents']);
+  if (empty($values['value'])) return;
+  if (!Drupal::service('ibase_external_content.sync')->validateUuid($values['value'])) {
+    foreach ($values as $value) {
+      $form_state->setError($element, t('Not a valid title/value.'));
+    }
+  }
+}
+
+#add a submit handler
+function _ibase_external_content_artwork_form_submit_handler(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $entity = $form_state->getFormObject()->getEntity();
+  if (
+    $entity->bundle() === 'artist'
+    && $entity->hasField('field_external_artworks')
+    && !$entity->get('field_external_artworks')->isEmpty()
+    && $entity->hasField('field_artworks')
+    && $entity->get('field_artworks')->isEmpty()
+  ) {
+    /** @var RemoteApiClient $service */
+    $service = \Drupal::service('ibase_external_content.sync');
+    try {
+      $service->syncFromRemote($entity);
+    } catch (\Exception $e) {
+      \Drupal::logger('ibase_external_content')->error($e->getMessage());
+      \Drupal::messenger()->addError($e->getMessage());
+    }
+  }
 }

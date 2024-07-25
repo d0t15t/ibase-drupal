@@ -135,6 +135,7 @@ third_party_settings:
         weight: 0
     group_artworks:
       children:
+        - field_external_artworks_sync
         - field_external_artworks
         - field_artworks
       label: Artworks
@@ -181,7 +182,7 @@ content:
     third_party_settings: {  }
   field_artworks:
     type: entity_reference_autocomplete
-    weight: 33
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -226,11 +227,16 @@ content:
     third_party_settings: {  }
   field_external_artworks:
     type: string_textfield
-    weight: 3
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_external_artworks_sync:
+    weight: 0
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_instagam_handle:
     type: string_textfield

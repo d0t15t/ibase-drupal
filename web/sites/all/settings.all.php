@@ -17,7 +17,7 @@ $settings['ibase_external_content_url'] = 'https://thegallery.art';
 
 $settings['ibase_external_content_url_json'] = 'https://thegallery.art/jsonapi';
 
-$settings['ibase_external_content_autocomplete_url'] = 'https://thegallery.art/jsonapi/node/artwork';
+$settings['ibase_external_content_api_endpoint'] = 'https://thegallery.art/jsonapi/node/artwork';
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
 

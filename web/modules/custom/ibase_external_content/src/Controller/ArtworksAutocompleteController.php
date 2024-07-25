@@ -63,9 +63,11 @@ final class ArtworksAutocompleteController extends ControllerBase implements Con
       return new JsonResponse($results);
     }
     $input = Xss::filter($input);
-    $url = $this->settings->get('ibase_external_content_autocomplete_url');
-    $response = $this->httpClient->get($url . '?filter[title][operator]=CONTAINS&filter[title][value]=' . $input);
-    $artworks = json_decode($response->getBody()->getContents(), TRUE);
+    $url = \Drupal\Core\Site\Settings::get('ibase_external_content_api_endpoint');
+    $url = $url . '?filter[title][operator]=CONTAINS&filter[title][value]=' . $input;
+    $response = $this->httpClient->get($url);
+    $body = $response->getBody()->getContents();
+    $artworks = json_decode($body, TRUE);
     if (empty($artworks['data'])) {
       return new JsonResponse([]);
     }
@@ -73,11 +75,15 @@ final class ArtworksAutocompleteController extends ControllerBase implements Con
       $artists = [];
       foreach ($artwork["relationships"]["field_artists"]['data'] as $artist) {
         $url = 'https://thegallery.art/jsonapi/node/artist/' . $artist['id'];
-        $response = $this->httpClient->get($url);
-        $artist = json_decode($response->getBody()->getContents(), TRUE);
-        $artists[] = $artist['data']['attributes']['title'];
+        try {
+          $response = $this->httpClient->get($url);
+          $artist = json_decode($response->getBody()->getContents(), TRUE);
+          $artists[] = $artist['data']['attributes']['title'];
+        } catch (\Exception $exception) {
+          \Drupal::logger('ibase_external_content')->error($exception->getMessage());
+        }
       }
-      $label = new FormattableMarkup('@label / @author', ['@label' => $artwork['attributes']['title'], '@author' => implode(',', $artists)]);
+      $label = new FormattableMarkup('@label, @year / @author', ['@label' => $artwork['attributes']['title'], '@year' => $artwork['attributes']['field_year'], '@author' => implode(',', $artists)]);
       $results[] = [
         'value' => $artwork['id'],
         'label' => $label
