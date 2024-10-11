@@ -1,8 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
-langcode: de
 module:
-  action: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_search: 0
@@ -10,8 +8,10 @@ module:
   allowed_formats: 0
   antibot: 0
   auto_entitylabel: 0
+  automated_cron: 0
   backup_migrate: 0
   better_exposed_filters: 0
+  big_pipe: 0
   blazy: 0
   block: 0
   block_classes: 0
@@ -23,7 +23,6 @@ module:
   config: 0
   config_ignore: 0
   config_translation: 0
-  contact: 0
   contextual: 0
   ctools: 0
   current_year: 0
@@ -69,6 +68,7 @@ module:
   language: 0
   layout_builder: 0
   layout_builder_component_attributes: 0
+  layout_builder_expose_all_field_blocks: 0
   layout_discovery: 0
   lb_plus: 0
   link: 0
@@ -92,7 +92,6 @@ module:
   path_alias: 0
   phpass: 0
   price: 0
-  quicktabs: 0
   rabbit_hole: 0
   redirect: 0
   responsive_favicons: 0
@@ -107,7 +106,6 @@ module:
   slick_paragraphs: 0
   slick_ui: 0
   social_media_links: 0
-  statistics: 0
   svg_image: 0
   syslog: 0
   system: 0

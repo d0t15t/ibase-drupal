@@ -16,7 +16,7 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -187,7 +187,7 @@ display:
       display_description: 'A list of new users'
       display_extenders: {  }
       block_description: "Who's new"
-      block_category: User
+      block_category: Benutzer
     cache_metadata:
       max-age: -1
       contexts:

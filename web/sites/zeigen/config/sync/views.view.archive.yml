@@ -10,25 +10,26 @@ dependencies:
 _core:
   default_config_hash: ko9GznzNBXHkuz09OCaBQ1YOSJYYjTY0TBpNV3WKnog
 id: archive
-label: Archive
+label: Archiv
 module: node
-description: 'All content, by month.'
+description: 'Gesamter Inhalt, nach Monaten'
 tag: default
 base_table: node_field_data
 base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
-      title: 'Monthly archive'
+      title: 'Monatliches Archiv'
       fields: {  }
       pager:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: 0
           id: 0
@@ -227,7 +228,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Seite
     display_plugin: page
     position: 2
     display_options:

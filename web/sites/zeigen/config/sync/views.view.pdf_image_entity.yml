@@ -17,7 +17,7 @@ base_field: id
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -991,12 +991,13 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Nächste Seite ›'
+            previous: '‹ Vorherige Seite'
             first: '« First'
             last: 'Last »'
           expose:
@@ -1425,7 +1426,7 @@ display:
       tags: {  }
   list:
     id: list
-    display_title: Page
+    display_title: Seite
     display_plugin: page
     position: 1
     display_options:

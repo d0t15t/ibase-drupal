@@ -1,6 +1,5 @@
 _core:
   default_config_hash: 2uz6MfuXV-HlmjkCRcNPcVlcaM-SJ33ocQY6p_V3AAU
-langcode: de
 admin_css: true
 nojs:
   lazy: '0'

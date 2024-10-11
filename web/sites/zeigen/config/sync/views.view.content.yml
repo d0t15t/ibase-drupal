@@ -8,20 +8,20 @@ dependencies:
 _core:
   default_config_hash: vBKWYGGDoAX-tFd1JErB8tZLSxx3lJ0foouVsgpcbB4
 id: content
-label: Content
+label: Inhalt
 module: node
-description: 'Find and manage content.'
+description: 'Inhalte finden und verwalten.'
 tag: default
 base_table: node_field_data
 base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
-      title: Content
+      title: Inhalt
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -43,22 +43,67 @@ display:
           id: title
           table: node_field_data
           field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: Titel
           exclude: false
           alter:
             alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 70
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
           element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
+          click_sort_column: value
           type: string
           settings:
             link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         type:
           id: type
           table: node_field_data
@@ -69,7 +114,7 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-          label: 'Content type'
+          label: Inhaltstyp
           exclude: false
           alter:
             alter_text: false
@@ -249,10 +294,11 @@ display:
       pager:
         type: full
         options:
+          pagination_heading_level: h4
           items_per_page: 50
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Nächste Seite ›'
+            previous: '‹ Vorherige Seite'
             first: '« First'
             last: 'Last »'
       exposed_form:
@@ -278,7 +324,7 @@ display:
           field: area_text_custom
           plugin_id: text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Kein Inhalt verfügbar.'
       sorts: {  }
       arguments: {  }
       filters:
@@ -298,7 +344,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Titel
             description: ''
             use_operator: false
             operator: title_op
@@ -340,7 +386,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Content type'
+            label: Inhaltstyp
             description: ''
             use_operator: false
             operator: type_op
@@ -397,7 +443,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: Veröffentlichungsstatus
             description: ''
             identifier: status
             optional: true
@@ -594,7 +640,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Seite
     display_plugin: page
     position: 1
     display_options:
@@ -602,15 +648,15 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Content
+        title: Inhalt
         description: ''
         weight: -10
         menu_name: admin
         context: ''
       tab_options:
         type: normal
-        title: Content
-        description: 'Find and manage content'
+        title: Inhalt
+        description: 'Inhalte finden und verwalten'
         weight: -10
         menu_name: admin
     cache_metadata:

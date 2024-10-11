@@ -11,8 +11,8 @@ third_party_settings:
     parent: 'main:views_view:views.artists.page_1'
 name: Artist
 type: artist
-description: ''
-help: ''
+description: null
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

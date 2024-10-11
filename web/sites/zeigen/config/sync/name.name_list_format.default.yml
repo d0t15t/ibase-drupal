@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: l88j1Jr2GTTbUXjOcRSlKx-LLsg0GsoG3ezYY8Ie4cs
 id: default
-label: Default
+label: Standard
 locked: true
 delimiter: ', '
 and: text

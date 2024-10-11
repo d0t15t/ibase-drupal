@@ -33,8 +33,8 @@ third_party_settings:
         layout_id: layout_twocol_section
         layout_settings:
           label: Main
-          context_mapping: {  }
           column_widths: 33-67
+          context_mapping: {  }
         components:
           4fa2c73f-5986-4271-b059-dc6e00e63bc0:
             uuid: 4fa2c73f-5986-4271-b059-dc6e00e63bc0
@@ -126,6 +126,25 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          d0441255-e91d-431e-9a10-1b816dc5a446:
+            uuid: d0441255-e91d-431e-9a10-1b816dc5a446
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:exhibition:field_dates'
+              formatter:
+                type: daterange_default
+                label: visually_hidden
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                  separator: '-'
+                  from_to: both
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
 id: node.exhibition.frontpage
 targetEntityType: node
@@ -171,6 +190,7 @@ content:
       timezone_override: ''
       format_type: medium
       separator: '-'
+      from_to: both
     third_party_settings: {  }
     weight: 103
     region: content

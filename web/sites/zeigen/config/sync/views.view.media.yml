@@ -20,7 +20,7 @@ base_field: mid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -157,7 +157,7 @@ display:
           entity_type: media
           entity_field: media
           plugin_id: field
-          label: 'Media name'
+          label: Medienname
           exclude: false
           alter:
             alter_text: false
@@ -204,7 +204,7 @@ display:
           entity_type: media
           entity_field: bundle
           plugin_id: field
-          label: Type
+          label: Typ
           exclude: false
           alter:
             alter_text: false
@@ -588,12 +588,13 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: 'Nächste Seite ›'
+            previous: '‹ Vorherige Seite'
             first: '« First'
             last: 'Last »'
           expose:
@@ -669,7 +670,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: 'Media name'
+            label: Medienname
             description: ''
             use_operator: false
             operator: name_op
@@ -711,7 +712,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Type
+            label: Typ
             description: ''
             use_operator: false
             operator: bundle_op
@@ -754,7 +755,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'True'
+            label: Wahr
             description: null
             use_operator: false
             operator: status_op
@@ -768,7 +769,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: Veröffentlichungsstatus
             description: ''
             identifier: status
             optional: true

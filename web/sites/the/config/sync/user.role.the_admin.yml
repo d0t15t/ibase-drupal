@@ -23,12 +23,11 @@ dependencies:
     - path
     - rabbit_hole
     - redirect
-    - statistics
     - system
     - taxonomy
 id: the_admin
 label: 'THE Admin'
-weight: 3
+weight: -6
 is_admin: null
 permissions:
   - 'access artist_content entity browser pages'
@@ -87,4 +86,3 @@ permissions:
   - 'update any media'
   - 'update content translations'
   - 'view files'
-  - 'view post access counter'

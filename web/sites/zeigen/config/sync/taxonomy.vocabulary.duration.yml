@@ -6,3 +6,4 @@ name: Duration
 vid: duration
 description: 'length/duration of time-based artwork, like video, performance, etc.'
 weight: 0
+new_revision: false

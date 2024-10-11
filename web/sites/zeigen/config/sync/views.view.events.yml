@@ -11,9 +11,9 @@ dependencies:
     - node
     - user
 id: events
-label: Events
+label: Veranstaltungen
 module: views
-description: 'A list of events.'
+description: 'Eine Veranstaltungensliste.'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -77,6 +77,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 10
           total_pages: null
           id: 0
@@ -94,13 +95,13 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Apply
+          submit_button: Submit
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sortieren nach'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Aufwärts
+          sort_desc_label: Abwärts
           text_input_required: 'Select any filter and click on Apply to see results'
           text_input_required_format: html
           bef:
@@ -119,12 +120,14 @@ display:
                 plugin_id: default
                 advanced:
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: false
               field_event_project_target_id:
                 plugin_id: default
                 advanced:
                   placeholder_text: ''
                   collapsible: false
+                  collapsible_disable_automatic_open: false
                   is_secondary: true
       access:
         type: perm
@@ -145,7 +148,7 @@ display:
           plugin_id: datetime
           order: ASC
           expose:
-            label: Date
+            label: Datum
             field_identifier: date
           exposed: false
           granularity: day
@@ -379,7 +382,7 @@ display:
       tags: {  }
   block_newest:
     id: block_newest
-    display_title: Newest
+    display_title: Neuste
     display_plugin: block
     position: 2
     display_options:
@@ -462,7 +465,7 @@ display:
         use_more_text: false
         filters: false
         filter_groups: false
-      display_description: 'List of the newest items.'
+      display_description: 'Liste von den aktuellsten Einträge.'
       use_more: true
       use_more_always: true
       use_more_text: 'More events'

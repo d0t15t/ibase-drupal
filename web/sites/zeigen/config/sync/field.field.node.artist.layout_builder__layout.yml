@@ -1,0 +1,21 @@
+uuid: b4786e6f-d1b2-4465-9b3d-991adb08c329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.artist
+  module:
+    - layout_builder
+id: node.artist.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: artist
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

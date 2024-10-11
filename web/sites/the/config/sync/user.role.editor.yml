@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.unfiltered
     - media.type.document
     - media.type.image
     - node.type.artist
@@ -15,18 +16,18 @@ dependencies:
     - content_translation
     - file
     - file_entity
+    - filter
     - layout_builder
     - media
     - node
     - path
     - rabbit_hole
     - redirect
-    - statistics
     - system
     - taxonomy
 id: editor
 label: Editor
-weight: 2
+weight: -8
 is_admin: null
 permissions:
   - 'access site in maintenance mode'
@@ -56,6 +57,6 @@ permissions:
   - 'translate document media'
   - 'translate image media'
   - 'translate mediums taxonomy_term'
+  - 'use text format unfiltered'
   - 'view files'
-  - 'view post access counter'
   - 'view the administration theme'

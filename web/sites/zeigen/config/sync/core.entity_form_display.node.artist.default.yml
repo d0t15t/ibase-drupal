@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.artist.field_name_asian
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
+    - field.field.node.artist.layout_builder__layout
     - node.type.artist
   module:
     - address
@@ -389,4 +390,5 @@ content:
 hidden:
   field_artist_artworks: true
   field_content: true
+  layout_builder__layout: true
   title: true

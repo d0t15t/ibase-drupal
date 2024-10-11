@@ -10,16 +10,16 @@ dependencies:
 _core:
   default_config_hash: sz_FoMz5aClG4jFy4UDlkenXQtgTUXohEDjWVBuHaro
 id: glossary
-label: Glossary
+label: Glossar
 module: node
-description: 'All content, by letter.'
+description: 'Gesamter Inhalt, alphabetisch'
 tag: default
 base_table: node_field_data
 base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -34,7 +34,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: Titel
           exclude: false
           alter:
             alter_text: false
@@ -137,7 +137,7 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-          label: 'Last update'
+          label: 'Letzte Aktualisierung'
           exclude: false
           alter:
             alter_text: false
@@ -196,6 +196,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 36
           total_pages: 0
           id: 0
@@ -386,7 +387,7 @@ display:
       tags: {  }
   attachment_1:
     id: attachment_1
-    display_title: Attachment
+    display_title: Anhang
     display_plugin: attachment
     position: 2
     display_options:
@@ -453,7 +454,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Seite
     display_plugin: page
     position: 1
     display_options:
@@ -464,7 +465,7 @@ display:
       path: glossary
       menu:
         type: normal
-        title: Glossary
+        title: Glossar
         weight: 0
         menu_name: main
         parent: ''

@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.artist.field_name_asian
     - field.field.node.artist.field_portrait
     - field.field.node.artist.field_telephone
+    - field.field.node.artist.layout_builder__layout
     - image.style.thumbnail
     - node.type.artist
   module:
@@ -56,4 +57,5 @@ hidden:
   field_name_asian: true
   field_telephone: true
   langcode: true
+  layout_builder__layout: true
   links: true

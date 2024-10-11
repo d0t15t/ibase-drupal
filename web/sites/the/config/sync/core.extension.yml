@@ -1,8 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
-langcode: de
 module:
-  action: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_search: 0
@@ -44,6 +42,7 @@ module:
   file: 0
   file_delete: 0
   file_entity: 0
+  file_management: 0
   filter: 0
   gin_login: 0
   gin_toolbar: 0
@@ -64,6 +63,7 @@ module:
   lang_dropdown: 0
   language: 0
   layout_builder: 0
+  layout_builder_expose_all_field_blocks: 0
   layout_builder_extra_templates: 0
   layout_builder_styles: 0
   layout_discovery: 0
@@ -88,6 +88,7 @@ module:
   price: 0
   rabbit_hole: 0
   redirect: 0
+  responsive_favicons: 0
   rh_media: 0
   rh_node: 0
   rh_taxonomy: 0
@@ -95,7 +96,6 @@ module:
   search: 0
   serialization: 0
   shortcut: 0
-  statistics: 0
   styles_api: 0
   svg_image: 0
   syslog: 0

@@ -17,7 +17,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -155,7 +155,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Kein Inhalt verfügbar.'
           tokenize: false
       sorts:
         changed:

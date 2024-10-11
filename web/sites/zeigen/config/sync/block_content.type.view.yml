@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: view
 label: View
-revision: 0
+revision: false
 description: ''

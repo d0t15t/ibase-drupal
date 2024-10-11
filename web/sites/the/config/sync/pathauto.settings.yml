@@ -1,6 +1,5 @@
 _core:
   default_config_hash: SwvLp8snyPEExF41CaJJYdPUVomofLqtXvwciHc4cPg
-langcode: de
 enabled_entity_types: {  }
 punctuation:
   double_quotes: 0

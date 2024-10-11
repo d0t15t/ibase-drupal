@@ -1,0 +1,24 @@
+uuid: b46ffcb7-a18e-44d1-893c-2945b1247652
+langcode: de
+status: false
+dependencies:
+  enforced:
+    module:
+      - slick
+_core:
+  default_config_hash: jHmfPBU2oNraKWjKwqYODaPOKQQM2sczj5TlDlN8Om8
+id: full_width
+name: full_width
+weight: -10
+label: Standard
+group: ''
+skin: fullwidth
+breakpoints: 0
+optimized: true
+options:
+  options__active_tab: edit-options-responsives
+  settings:
+    prevArrow: Vorherige
+    nextArrow: Weiter
+    lazyLoad: ondemand
+    slidesToShow: 1

@@ -1,6 +1,5 @@
 _core:
   default_config_hash: Vqa_MG9wWtE-7yutPKlYBLfKyqjGOZQBRyEJxC3bmuk
-langcode: de
 component_required_marker: '*'
 sep1: ' '
 sep2: ', '

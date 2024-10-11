@@ -9,8 +9,12 @@ dependencies:
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_links
     - field.field.node.artwork.field_uuid
+    - field.field.node.artwork.layout_builder__layout
+    - image.style.teaser
     - node.type.artwork
   module:
+    - field_formatter_range
+    - media
     - text
     - user
 id: node.artwork.teaser
@@ -23,16 +27,27 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+  field_images:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: teaser
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 0
     region: content
 hidden:
   field_artists: true
-  field_images: true
   field_links: true
   field_uuid: true
   langcode: true
+  layout_builder__layout: true
+  links: true

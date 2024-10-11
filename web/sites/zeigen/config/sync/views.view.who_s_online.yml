@@ -16,7 +16,7 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -142,7 +142,7 @@ display:
           exposed: false
           expose:
             operator_id: access_op
-            label: 'Last access'
+            label: 'Letzter Zugriff'
             description: 'A user is considered online for this long after they have last viewed a page.'
             use_operator: false
             operator: access_op

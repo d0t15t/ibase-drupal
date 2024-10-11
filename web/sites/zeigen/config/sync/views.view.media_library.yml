@@ -25,7 +25,7 @@ base_field: mid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Standard
     display_plugin: default
     position: 0
     display_options:
@@ -136,15 +136,18 @@ display:
           hide_alter_empty: true
           view_mode: media_library
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 24
           total_pages: null
           id: 0
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -153,6 +156,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -478,6 +482,7 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -487,7 +492,7 @@ display:
       tags: {  }
   page:
     id: page
-    display_title: Page
+    display_title: Seite
     display_plugin: page
     position: 1
     display_options:
@@ -769,7 +774,10 @@ display:
           view_mode: media_library
       defaults:
         fields: false
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: admin/content/media-grid
     cache_metadata:
       max-age: 0

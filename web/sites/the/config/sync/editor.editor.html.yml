@@ -44,4 +44,5 @@ settings:
         - '<img src alt data-entity-type data-entity-uuid>'
     media_media:
       allow_view_mode_override: false
-image_upload: {  }
+image_upload:
+  status: false
