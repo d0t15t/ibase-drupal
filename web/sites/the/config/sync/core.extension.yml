@@ -8,6 +8,7 @@ module:
   allowed_formats: 0
   antibot: 0
   auto_entitylabel: 0
+  automated_cron: 0
   backup_migrate: 0
   block: 0
   block_content: 0
@@ -129,6 +130,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  linked_field: 100
   minimal: 1000
 theme:
   claro: 0

@@ -89,6 +89,7 @@
         "drupal/layout_builder_styles": "^2.0",
         "drupal/lb_plus": "^2.1",
         "drupal/limited_field_widgets": "^2.1@beta",
+        "drupal/linked_field": "^1.5",
         "drupal/media_download": "^1.2",
         "drupal/media_entity_download": "^2.2",
         "drupal/media_pdf_thumbnail": "^6.0",
