@@ -1,6 +1,6 @@
 uuid: 27f7aaa3-fcde-423e-afa5-577ec3790360
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -8,7 +8,7 @@ dependencies:
     - the
 id: the_breadcrumbs_2
 theme: the
-region: highlighted
+region: header
 weight: -5
 provider: null
 plugin: system_breadcrumb_block
