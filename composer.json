@@ -86,7 +86,7 @@
         "drupal/lang_dropdown": "^2.1",
         "drupal/layout_builder_component_attributes": "^2.1",
         "drupal/layout_builder_extra_templates": "^1.0@RC",
-        "drupal/layout_builder_styles": "^2.0",
+        "drupal/layout_builder_styles": "^2.1",
         "drupal/lb_plus": "^2.1",
         "drupal/limited_field_widgets": "^2.1@beta",
         "drupal/linked_field": "^1.5",
@@ -221,7 +221,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2024-03-10/2671162-143.patch"
+                "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2024-09-09/2671162-151.patch"
             },
             "drupal/cer": {
                 "Update existing references on save: https://www.drupal.org/project/cer/issues/3240535": "https://www.drupal.org/files/issues/2021-10-03/cer-ignore-original-entity-in-differences-calculation-2846318-14-reroll.patch"
@@ -231,6 +231,9 @@
             },
             "drupal/dimension": {
                "Support units in theme function": "patches/dimensions-add-unit.patch"
+            },
+            "drupal/linked_field": {
+                "Illegal offset type in isset or empty at ContentEntityBase.php - https://www.drupal.org/project/linked_field/issues/3480280#comment-15811952": "https://www.drupal.org/files/issues/2024-10-12/3480280-1.patch"
             }
         },
         "merge-plugin": {
