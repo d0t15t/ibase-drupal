@@ -9,8 +9,9 @@
  * Implements hook_page_attachments_alter().
  */
 function ibase_responsive_lb_page_attachments_alter(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('ibase_responsive_lb');
-  if (!empty($breakpoints)) {
+  if (!$is_admin && !empty($breakpoints)) {
     $media_queries = array_map(fn($b) => $b->getMediaQuery(), $breakpoints);
     $attachments['#attached']['drupalSettings']['responsive']['breakpoints'] = $media_queries;
     $attachments['#attached']['library'][] = 'ibase_responsive_lb/global';
