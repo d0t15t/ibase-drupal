@@ -15,9 +15,7 @@
       {{ content|without('links') }}
     </a>
     {% if label %}
-      <h4{{ title_attributes }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h4>
     {% endif %}
     <span class="visually-hidden">{{ content.links }}</span>
   </div>

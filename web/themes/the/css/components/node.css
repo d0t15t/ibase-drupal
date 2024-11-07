@@ -157,6 +157,12 @@ article.node--view-mode-full h1 {
   height: auto;
   width: 100%;
 }
+.node--type-artist.node--view-mode-teaser img {
+  display: block;
+}
+.node--type-artist.node--view-mode-teaser h3 {
+  text-align: center;
+}
 .slick {
   padding-bottom: 20px;
 }
