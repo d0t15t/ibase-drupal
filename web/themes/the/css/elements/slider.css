@@ -66,7 +66,7 @@
 }
 .full-image-display-wrapper,
 .node--type-artwork.node--view-mode-full .field--name-field-images {
-  max-width: 1100px;
+  max-width: 1200px;
 }
 .full-image-display-wrapper--inner,
 .node--type-artwork.node--view-mode-full .field--name-field-images > * {
@@ -81,4 +81,8 @@
   object-position: top center;
   max-width: 100%;
   height: auto;
+}
+.glide__slides li img {
+  height: auto;
+  width: 100%;
 }
