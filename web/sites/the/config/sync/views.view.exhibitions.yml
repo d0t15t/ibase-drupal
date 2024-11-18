@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.exhibition_teaser
+    - core.entity_view_mode.node.teaser
     - node.type.exhibition
     - system.menu.main
   module:
@@ -143,7 +143,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: exhibition_teaser
+          view_mode: teaser
       query:
         type: views_query
         options:
