@@ -130,18 +130,18 @@ third_party_settings:
             uuid: 7f704e86-e2c7-43ac-8781-b50247a39c3d
             region: content
             configuration:
+              id: 'field_block:node:exhibition:field_dates'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:exhibition:field_dates'
               formatter:
                 type: daterange_default
                 label: visually_hidden
                 settings:
                   timezone_override: ''
                   format_type: medium
-                  separator: '-'
                   from_to: both
+                  separator: '-'
                 third_party_settings: {  }
             weight: 13
             additional: {  }
@@ -150,8 +150,8 @@ third_party_settings:
         layout_id: layout_twocol_section
         layout_settings:
           label: 'Large screen'
-          column_widths: 33-67
           context_mapping: {  }
+          column_widths: 33-67
         components:
           b92c2aea-7b6e-4086-b9c4-661121fae628:
             uuid: b92c2aea-7b6e-4086-b9c4-661121fae628
@@ -315,8 +315,8 @@ content:
     settings:
       timezone_override: ''
       format_type: medium
-      separator: '-'
       from_to: both
+      separator: '-'
     third_party_settings: {  }
     weight: 103
     region: content
