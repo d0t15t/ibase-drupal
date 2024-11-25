@@ -143,6 +143,74 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          2e837cca-f93f-4463-be69-04e63ba6d5d2:
+            uuid: 2e837cca-f93f-4463-be69-04e63ba6d5d2
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_images'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: teaser
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 1
+                    offset: 0
+            weight: 0
+            additional: {  }
+          54afc01a-b6d6-4cad-b548-97aee91b9f8c:
+            uuid: 54afc01a-b6d6-4cad-b548-97aee91b9f8c
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:field_dates'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: daterange_default
+                label: visually_hidden
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                  from_to: both
+                  separator: '-'
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          075c307e-7b91-490f-99b0-6f9eaf84fb3d:
+            uuid: 075c307e-7b91-490f-99b0-6f9eaf84fb3d
+            region: content
+            configuration:
+              id: 'field_block:node:exhibition:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          9d4e9835-d510-4cab-b0ff-759fc57efa77:
+            uuid: 9d4e9835-d510-4cab-b0ff-759fc57efa77
+            region: content
+            configuration:
+              id: 'extra_field_block:node:exhibition:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
 id: node.exhibition.exhibition_teaser
 targetEntityType: node
