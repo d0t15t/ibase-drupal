@@ -17,16 +17,133 @@ dependencies:
     - image.style.teaser
     - node.type.exhibition
   module:
-    - datetime
     - datetime_range
+    - field_formatter_range
     - layout_builder
     - media
     - text
     - user
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 33-67
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          011a0a98-20d3-4a99-a86c-4e735ca3f7fd:
+            uuid: 011a0a98-20d3-4a99-a86c-4e735ca3f7fd
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: medium_teaser
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          d52531ca-6ccc-4c81-85ad-3d54da1ae573:
+            uuid: d52531ca-6ccc-4c81-85ad-3d54da1ae573
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_dates'
+              label: Dates
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: daterange_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: default_date_format
+                  from_to: both
+                  separator: '-'
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          be04c242-5e8f-4187-b202-55fb3a41d3d1:
+            uuid: be04c242-5e8f-4187-b202-55fb3a41d3d1
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+        third_party_settings: {  }
 id: node.exhibition.exhibition_teaser
 targetEntityType: node
 bundle: exhibition
@@ -40,23 +157,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_artists:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_dates:
     type: daterange_default
     label: visually_hidden
@@ -66,9 +166,9 @@ content:
       from_to: both
       separator: '-'
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
-  field_image:
+  field_images:
     type: media_thumbnail
     label: hidden
     settings:
@@ -76,19 +176,25 @@ content:
       image_style: teaser
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 1
+        offset: 0
     weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
+  field_artists: true
   field_artworks: true
+  field_date: true
   field_duration: true
   field_duration_text: true
-  field_images: true
+  field_image: true
   field_properties: true
   langcode: true
   layout_builder__layout: true

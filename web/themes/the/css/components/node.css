@@ -166,3 +166,19 @@ article.node--view-mode-full h1 {
 .slick {
   padding-bottom: 20px;
 }
+ul.exhibitions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.exhibitions li + li {
+  border-top: 1px solid #808080;
+  padding-top: 30px;
+}
+ul.exhibitions .node--view-mode-exhibition-teaser {
+  padding-bottom: 20px;
+}
+ul.exhibitions .node--view-mode-exhibition-teaser h3 {
+  font-size: 1.2em;
+  padding-bottom: 7px;
+}
