@@ -1,0 +1,8 @@
+{% extends "block.html.twig" %}
+{% block content %}
+<div class="ak-b5subtheme__logo d-flex">
+  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo__link d-block">
+    <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" />
+  </a>
+</div>
+{% endblock %}

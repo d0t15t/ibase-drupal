@@ -1,0 +1,36 @@
+:root {
+  --height: 44px;
+}
+
+footer.ak-b5subtheme__footer {
+  height: var(--height);
+  padding: 0;
+  margin-bottom: 1em;
+  .container {
+    .region {
+      vertical-align: middle;
+    }
+    .region-footer-left {
+      #block-ak-b5subtheme-akfooterinfo {
+        line-height: var(--height);
+        font-style: italic;
+      }
+    }
+    .region-footer-right {
+      flex: 1;
+      > #block-ak-b5subtheme-logo {
+        .ak-b5subtheme__logo {
+          justify-content: right;
+          a.site-logo__link {
+            width: 30px;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
