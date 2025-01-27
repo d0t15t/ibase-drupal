@@ -1,0 +1,54 @@
+uuid: c5518113-1a27-4164-a2fd-d904c50a4763
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate
+    - block
+    - filter
+    - image
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+    - views_ui
+id: administrator
+label: administrator
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access backup files'
+  - 'access content'
+  - 'access content overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer actions'
+  - 'administer backup and migrate'
+  - 'administer blocks'
+  - 'administer content types'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create url aliases'
+  - 'perform backup'
+  - 'restore from backup'
+  - 'select account cancellation method'
+  - 'view own unpublished content'
+  - 'view the administration theme'

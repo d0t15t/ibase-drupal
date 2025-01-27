@@ -1,0 +1,16 @@
+{{ attach_library('ak_b5subtheme/exhibition-years') }}
+
+<h3 class="visually-hidden">{{ title }}</h3>
+{% if current %}
+  <h4 class="visually-hidden">current: {{ current }}</h4>
+{% endif %}
+<ul class="exhibition-years">
+  {% for item in years %}
+    <li class="year list-group-item">
+      {% if current == item.title %}{{ current }}{% else %}
+        <a href="{{ path('view.exhibitions_archive.page', {'y': item.title}) }}">{{ item.title }}</a>
+      {% endif %}
+    </li>
+{#    {% if not loop.last %} | {% endif %}#}
+  {% endfor %}
+</ul>

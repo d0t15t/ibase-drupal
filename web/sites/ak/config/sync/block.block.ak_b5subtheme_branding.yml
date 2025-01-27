@@ -1,0 +1,25 @@
+uuid: 5382cc16-f7eb-46fe-a8c6-6ecc0343ba63
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+_core:
+  default_config_hash: bKMcp16xEdnmUOoqjxoH_3Z7vnsoNVcrrW2r9H410q8
+id: ak_b5subtheme_branding
+theme: ak_b5subtheme
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

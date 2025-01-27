@@ -1,0 +1,6 @@
+services:
+  ak_migrate.commands:
+    class: \Drupal\ak_migrate\Drush\Commands\AkMigrateCommands
+    arguments: ['@ak_migrate.import_articles_to_exhibitions']
+    tags:
+      - { name: drush.command }

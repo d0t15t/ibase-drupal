@@ -1,0 +1,25 @@
+uuid: 67d170c6-9d5f-45e7-8031-0ea011e8e0b6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c29054fe-3f0c-4d79-ae6b-4df7776ff52b'
+  module:
+    - block_content
+  theme:
+    - ak_b5subtheme
+id: ak_b5subtheme_ak_info
+theme: ak_b5subtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:c29054fe-3f0c-4d79-ae6b-4df7776ff52b'
+settings:
+  id: 'block_content:c29054fe-3f0c-4d79-ae6b-4df7776ff52b'
+  label: 'general information'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 567c2f63-57df-4faf-b6fa-d972928f6af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upcoming
+    - node.type.exhibition
+id: node.exhibition.field_upcoming
+field_name: field_upcoming
+entity_type: node
+bundle: exhibition
+label: Upcoming
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

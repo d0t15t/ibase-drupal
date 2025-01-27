@@ -27,8 +27,6 @@
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^3.0",
         "drupal/antibot": "^2.0",
-        "drupal/auto_entitylabel": "^3.0",
-        "drupal/autotitle": "^1.2",
         "drupal/backup_migrate": "^5.0",
         "drupal/batch_resize_image": "^2.0",
         "drupal/better_exposed_filters": "^6.0",
@@ -36,7 +34,7 @@
         "drupal/block_classes": "^1.0",
         "drupal/block_style_plugins": "^1.6",
         "drupal/block_styles": "^2.0",
-        "drupal/bootstrap_barrio": "^5.5",
+        "drupal/bootstrap5": "^4.0",
         "drupal/build_hooks": "^3.3",
         "drupal/cer": "^5.0@beta",
         "drupal/change_author_action": "^1.0",
@@ -48,9 +46,9 @@
         "drupal/config_ignore": "^3.2",
         "drupal/config_split": "^2.0@RC",
         "drupal/config_split_ignore": "^1.9",
-        "drupal/core-composer-scaffold": "^10.3",
-        "drupal/core-project-message": "^10.3",
-        "drupal/core-recommended": "^10.3",
+        "drupal/core-composer-scaffold": "^10.4",
+        "drupal/core-project-message": "^10.4",
+        "drupal/core-recommended": "^10.4",
         "drupal/current_year": "^1.0",
         "drupal/custom_field": "^3.0@RC",
         "drupal/date_filter": "^1.0",
@@ -77,6 +75,7 @@
         "drupal/gin_login": "^2.0",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/gmail": "^1.0",
+        "drupal/heading": "^1.7",
         "drupal/httpswww": "^2.1",
         "drupal/iban_field": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
@@ -84,7 +83,7 @@
         "drupal/jsonapi_hypermedia": "^1.9",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/lang_dropdown": "^2.1",
-        "drupal/layout_builder_component_attributes": "^2.1",
+        "drupal/layout_builder_component_attributes": "^2.2",
         "drupal/layout_builder_extra_templates": "^1.0@RC",
         "drupal/layout_builder_styles": "^2.1",
         "drupal/lb_plus": "^2.1",
@@ -124,7 +123,8 @@
         "drupal/swiper_formatter": "^1.0",
         "drupal/taxonomy_menu_ui": "^3.0",
         "drupal/telephone_validation": "^2.4",
-        "drupal/views_bulk_operations": "^4.2",
+        "drupal/views_bulk_operations": "4.3.x-dev@dev",
+        "drupal/views_year_filter": "^2.1",
         "drupal/viewsreference": "^2.0@beta",
         "drupal/webform": "^6.2",
         "drupal/webform_iban_field": "^2.0",
@@ -234,6 +234,9 @@
             },
             "drupal/linked_field": {
                 "Illegal offset type in isset or empty at ContentEntityBase.php - https://www.drupal.org/project/linked_field/issues/3480280#comment-15811952": "https://www.drupal.org/files/issues/2024-10-12/3480280-1.patch"
+            },
+            "drupal/views_bulk_operations": {
+                "TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in array_filter() - https://www.drupal.org/project/views_bulk_operations/issues/3420263": "https://www.drupal.org/files/issues/2024-10-09/3420263.patch"
             }
         },
         "merge-plugin": {

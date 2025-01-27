@@ -1,42 +1,94 @@
 _core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+  default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  address: 0
   admin_toolbar: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
+  ak_migrate: 0
+  ak_theme: 0
+  backup_migrate: 0
+  better_exposed_filters: 0
   block: 0
+  block_content: 0
   breakpoint: 0
+  ckeditor5: 0
+  contextual: 0
+  current_year: 0
+  date_filter: 0
+  datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   field: 0
+  field_formatter_range: 0
+  field_group: 0
+  field_ui: 0
   file: 0
+  file_delete: 0
+  file_entity: 0
+  file_management: 0
   filter: 0
-  gin_toolbar: 0
+  heading: 0
+  ibt_entity_label_override: 0
   image: 0
+  jquery_ui: 0
+  layout_builder: 0
+  layout_builder_component_attributes: 0
+  layout_discovery: 0
+  link: 0
   media: 0
+  media_entity_download: 0
   media_library: 0
+  menu_link_content: 0
+  menu_ui: 0
+  metatag: 0
   migrate: 0
+  migrate_devel: 0
   migrate_drupal: 0
   migrate_drupal_ui: 0
   migrate_plus: 0
-  migrate_sandbox: 0
   migrate_tools: 0
   migrate_upgrade: 0
   mysql: 0
+  name: 0
+  navigation: 0
   node: 0
+  options: 0
   page_cache: 0
+  path: 0
   path_alias: 0
   phpass: 0
+  rabbit_hole: 0
+  rh_file: 0
+  rh_node: 0
+  rh_taxonomy: 0
+  rh_user: 0
+  shortcut: 0
+  syslog: 0
   system: 0
+  taxonomy: 0
+  taxonomy_menu_ui: 0
+  telephone: 0
   text: 0
+  token: 0
   toolbar: 0
   update: 0
   user: 0
+  views_bulk_operations: 0
+  views_ui: 0
+  views_year_filter: 0
+  webp: 0
+  pathauto: 1
   views: 10
+  linked_field: 100
   minimal: 1000
 theme:
-  stark: 0
   claro: 0
   gin: 0
+  stable9: 0
+  bootstrap5: 0
+  ak_b5subtheme: 0
 profile: minimal

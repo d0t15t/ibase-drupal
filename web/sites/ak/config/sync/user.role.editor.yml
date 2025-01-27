@@ -1,0 +1,14 @@
+uuid: a8903593-150f-4d21-86e8-c8d9e96bebe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+  module:
+    - filter
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'use text format filtered_html'

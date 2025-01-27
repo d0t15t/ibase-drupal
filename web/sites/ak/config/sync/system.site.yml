@@ -1,14 +1,15 @@
 _core:
-  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
-uuid: 145f54f1-3492-4c66-bc1d-293879ab870b
+uuid: d4227824-30c0-484f-b9d7-e057a9bc3815
 name: 'Atelierhof Kreuzberg'
-mail: ak@dyss.net
+mail: mr@dyss.net
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node/277
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
+mail_notification: null

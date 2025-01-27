@@ -1,0 +1,5 @@
+name: 'AK Migrate'
+type: module
+description: 'Custom migrate mdule for Atelierhof Kreuzberg'
+package: Custom
+core_version_requirement: ^10 || ^11

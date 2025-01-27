@@ -1,0 +1,8 @@
+# Schema for the configuration files of the IBT Entity Label Override module.
+ibt_entity_label_override.settings:
+  type: config_object
+  label: 'IBT Entity Label Override settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

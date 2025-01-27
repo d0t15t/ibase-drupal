@@ -1,0 +1,26 @@
+uuid: 433782f5-8956-4bb2-8ce9-a7b69c575fec
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+_core:
+  default_config_hash: QRmcx5e0OSIg52PTbM5fqshogQRb93jPzZRd2NrypUc
+id: ak_b5subtheme_breadcrumbs
+theme: ak_b5subtheme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

@@ -1,0 +1,6 @@
+ibt_entity_label_override.settings:
+  title: Entity Label Overrides
+  description: Administer the entity label overrides.
+  parent: system.admin_config_system
+  route_name: ibt_entity_label_override.settings
+  weight: 10

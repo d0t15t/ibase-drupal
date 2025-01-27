@@ -1,7 +1,0 @@
-name: AK Migration
-type: module
-description: Migrate Atelierhof-Kreuzberg.com from Drupal 7 to Drupal 9.
-package: Custom
-core_version_requirement: ^9 || ^10
-dependencies:
-  - drupal:migrate
