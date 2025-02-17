@@ -1,6 +1,0 @@
-ibase_gatsby_deploy.settings_form:
-  title: 'IBASE gatsby deploy'
-  description: 'Configure IBASE gatsby deploy.'
-  parent: system.admin_config_system
-  route_name: ibase_gatsby_deploy.settings_form
-  weight: 10

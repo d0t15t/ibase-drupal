@@ -1,7 +1,0 @@
-services:
-  logger.channel.goldies_shopify:
-    parent: logger.channel_base
-    arguments: ['goldies_shopify']
-  goldies_shopify.utility:
-    class: Drupal\goldies_shopify\Service\GoldiesShopifyService
-    arguments: ['@entity_type.manager']

@@ -1,7 +1,0 @@
-ibase_gatsby_deploy.settings_form:
-  path: '/admin/config/system/gatsby-deploy'
-  defaults:
-    _title: 'IBASE gatsby deploy settings'
-    _form: 'Drupal\ibase_gatsby_deploy\Form\GatsbyDeploySettingsForm'
-  requirements:
-    _permission: 'Administer ibase_gatsby_deploy settings'

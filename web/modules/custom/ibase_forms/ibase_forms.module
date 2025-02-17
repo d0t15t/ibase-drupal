@@ -35,6 +35,3 @@ function ibase_forms_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\For
   }
 }
 
-
-// Change footer - grey and smaller - more organized.
-// Avenir

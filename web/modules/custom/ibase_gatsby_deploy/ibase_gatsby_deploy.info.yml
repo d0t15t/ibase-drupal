@@ -1,5 +1,0 @@
-name: IBASE gatsby deploy
-type: module
-description: Deploy Gatsby frontends from Drupal
-package: Custom
-core_version_requirement: ^9 || ^10

@@ -8,7 +8,7 @@
   {% for item in years %}
     <li class="year list-group-item">
       {% if current == item.title %}{{ current }}{% else %}
-        <a href="{{ path('view.exhibitions_archive.page', {'y': item.title}) }}">{{ item.title }}</a>
+        <a href="/?y={{ item.title }}">{{ item.title }}</a>
       {% endif %}
     </li>
 {#    {% if not loop.last %} | {% endif %}#}

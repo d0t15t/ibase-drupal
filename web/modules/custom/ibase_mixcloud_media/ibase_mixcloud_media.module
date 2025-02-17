@@ -37,3 +37,23 @@ use Drupal\media_library\Form\OEmbedForm;
 //    $data['thumbnail_uri'] = $data['image'];
 //  }
 //}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ibase_mixcloud_media_preprocess_field(&$vars) {
+  if ($vars['field_name'] === 'field_embed_code' && isset($vars['element']['#items'][0])) {
+    $field_item_value = $vars['element']['#items'][0]->getValue();
+    $vars['media_embed_code'] = [
+      '#type' => 'markup',
+      '#markup' => \Drupal\Core\Render\Markup::create($field_item_value['value'] ?? ''),
+    ];
+  }
+}
+
+/**
+ * Implements hook_oembed_resource_url_alter().
+ */
+function ibase_mixcloud_media_oembed_resource_url_alter(array &$parsed_url, \Drupal\media\OEmbed\Provider $provider) {
+  $t=1;
+}

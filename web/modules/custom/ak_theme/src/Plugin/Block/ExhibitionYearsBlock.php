@@ -85,13 +85,14 @@ class ExhibitionYearsBlock extends BlockBase implements ContainerFactoryPluginIn
             GROUP BY EXTRACT(year FROM dates.field_dates_value)
             ORDER BY year DESC;";
     $results = array_values($this->database->query($sql)->fetchAllKeyed(1));
-    $view_url_path = Url::fromRoute('view.exhibitions_archive.page')->toString();
+//    $cur_node = \Drupal::routeMatch()->getParameter('node');
+//    $view_url_path = Url::fromRoute('view.exhibitions_archive.page')->toString();
     $current_year = \Drupal::request()->get('y');
     return [
       '#theme' => 'exhibition_years',
       '#years' => array_map(fn($y) => [
         'title' => trim($y),
-        'uri' => sprintf('%s?year=%s', $view_url_path, $y),
+        'uri' => sprintf('/?year=%s', $y),
         'current' => $y === $current_year,
       ], $results),
       '#title' => t('Filter exhibitions by year'),

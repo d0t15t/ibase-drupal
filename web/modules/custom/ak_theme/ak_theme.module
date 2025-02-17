@@ -35,7 +35,7 @@ function ak_theme_preprocess_block(&$vars) {
   if (isset($vars['plugin_id']) && $vars['plugin_id'] === 'block_content:4b60f217-8746-4af7-a68c-ffcd1c41e75e') {
     $raw = strip_tags($vars["content"]["body"][0]["#text"]);
     $year = date('Y');
-    $vars["content"]["body"][0]["#text"] = "$raw$year";
+    $vars["content"]["body"][0]["#text"] = "<small>$raw$year</small>";
   }
 
 }
