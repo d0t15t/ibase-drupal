@@ -38,7 +38,13 @@ set footer_classes = ' ' ~
   {% endif %}
 
 </header>
-
+{% if page.breadcrumb %}
+  <div class="container">
+    <div class="row g-0">
+      {{ page.breadcrumb }}
+    </div>
+  </div>
+{% endif %}
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
@@ -56,9 +62,6 @@ set footer_classes = ' ' ~
 
 
   <div class="{{ b5_top_container }}">
-    {% if page.breadcrumb %}
-      {{ page.breadcrumb }}
-    {% endif %}
     <div class="row g-0">
       {% if page.sidebar_first %}
         <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
@@ -79,9 +82,11 @@ set footer_classes = ' ' ~
 </main>
 {#{% if page.footer %}#}
 <footer role="contentinfo" class="mt-auto {{ footer_classes }} ak-b5subtheme__footer">
-  <div class="{{ b5_top_container }} d-flex">
-    {{ page.footer }}
-  </div>
+{#  {% if page.footer %}#}
+{#    <div class="{{ b5_top_container }} d-flex">#}
+{#      {{ page.footer }}#}
+{#    </div>#}
+{#  {% endif %}#}
   <div class="{{ b5_top_container }} d-flex">
     {{ page.footer_left }} {{ page.footer_center }} {{ page.footer_right }}
   </div>

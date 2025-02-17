@@ -5,6 +5,9 @@ global-styling:
     component:
       css/components/footer.css:
         weight: -10
+  js:
+    js/akb5.js: {}
+
 exhibition-years:
   css:
     component:

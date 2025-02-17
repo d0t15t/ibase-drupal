@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "569935bdd3ea1bd27588c5a925751f70",
+    "content-hash": "f7232bc57df7ee49ab422e64abba8c49",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2434,60 +2434,6 @@
             }
         },
         {
-            "name": "drupal/build_hooks",
-            "version": "3.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/build_hooks.git",
-                "reference": "3.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/build_hooks-3.3.3.zip",
-                "reference": "3.3.3",
-                "shasum": "b3921b5dc77f46d982f9e75d1c74b4ec655bede4"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/dynamic_entity_reference": "~1.0|~2.0|~3.0|~4.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.3.3",
-                    "datestamp": "1694057961",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/678770",
-                    "email": "larowlan@395439.no-reply.drupal.org"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                },
-                {
-                    "name": "vermario",
-                    "homepage": "https://www.drupal.org/user/121062"
-                }
-            ],
-            "description": "Triggers a build hook on service providers when content is updated",
-            "homepage": "https://www.drupal.org/project/build_hooks",
-            "support": {
-                "source": "https://git.drupalcode.org/project/build_hooks"
-            }
-        },
-        {
             "name": "drupal/cer",
             "version": "5.0.0-beta3",
             "source": {
@@ -2872,6 +2818,70 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/classy",
                 "issues": "https://drupal.org/project/issues/classy"
+            }
+        },
+        {
+            "name": "drupal/color_field",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/color_field.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/color_field-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "fd2f75db74063f817d81a537221fa1c8398e4d8f"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/core-recommended": "^9 || ^10",
+                "drupal/feeds": "^3.0@beta",
+                "drupal/token": "~1.3"
+            },
+            "suggest": {
+                "bower-asset/jquery-simple-color": "^v1.2.2: Provides JavaScript library necessary for the Color Grid widget",
+                "bower-asset/spectrum": "^1.8: Provides JavaScript library necessary for Spectrum widget."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1717506868",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "targoo",
+                    "homepage": "https://www.drupal.org/user/431910",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Nick Wilde",
+                    "homepage": "https://www.drupal.org/user/nickwilde",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "targoo",
+                    "homepage": "https://www.drupal.org/user/431910"
+                }
+            ],
+            "description": "Provides a color field type to store the color value and opacity",
+            "homepage": "https://www.drupal.org/project/color_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/color_field",
+                "issues": "https://www.drupal.org/project/issues/color_field?version=8.x"
             }
         },
         {
@@ -3702,65 +3712,6 @@
             }
         },
         {
-            "name": "drupal/custom_field",
-            "version": "3.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/custom_field.git",
-                "reference": "3.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/custom_field-3.0.3.zip",
-                "reference": "3.0.3",
-                "shasum": "3aaa9ea960d99c673cf96ba4c2d8f9d7b3dc9520"
-            },
-            "require": {
-                "drupal/core": "^10.2 || ^11.0"
-            },
-            "require-dev": {
-                "drupal/feeds": "3.x-dev",
-                "drupal/graphql_compose": "^2.2",
-                "drupal/linkit": "^6.1 || ^7.x-dev",
-                "drupal/paragraphs": "^1.18",
-                "drupal/search_api": "^1.35"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.0.3",
-                    "datestamp": "1735532521",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "apmsooner",
-                    "homepage": "https://www.drupal.org/user/593202"
-                },
-                {
-                    "name": "luke.leber",
-                    "homepage": "https://www.drupal.org/user/3509746"
-                }
-            ],
-            "description": "Create simple, but flexible, multivalue fields without the hassle of entity references.",
-            "homepage": "https://www.drupal.org/project/custom_field",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/custom_field",
-                "issues": "https://www.drupal.org/project/issues/custom_field"
-            }
-        },
-        {
             "name": "drupal/date_filter",
             "version": "1.0.2",
             "source": {
@@ -3803,83 +3754,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/date_filter",
                 "issues": "https://drupal.org/project/issues/date_filter"
-            }
-        },
-        {
-            "name": "drupal/default_content",
-            "version": "2.0.0-alpha3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/default_content.git",
-                "reference": "2.0.0-alpha3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/default_content-2.0.0-alpha3.zip",
-                "reference": "2.0.0-alpha3",
-                "shasum": "fdd90c70bd91896835f6ba5ec42c260c1a144a2b"
-            },
-            "require": {
-                "drupal/core": "^9.1 || ^10 || ^11"
-            },
-            "require-dev": {
-                "drupal/hal": "^1 || ^2",
-                "drupal/paragraphs": "^1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-alpha3",
-                    "datestamp": "1724492420",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9 || ^10 || ^11 || ^12"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "andypost",
-                    "homepage": "https://www.drupal.org/user/118908"
-                },
-                {
-                    "name": "benjy",
-                    "homepage": "https://www.drupal.org/user/1852732"
-                },
-                {
-                    "name": "berdir",
-                    "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "dawehner",
-                    "homepage": "https://www.drupal.org/user/99340"
-                },
-                {
-                    "name": "jibran",
-                    "homepage": "https://www.drupal.org/user/1198144"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                },
-                {
-                    "name": "sam152",
-                    "homepage": "https://www.drupal.org/user/1485048"
-                }
-            ],
-            "description": "Imports default content when a module is enabled",
-            "homepage": "https://www.drupal.org/project/default_content",
-            "support": {
-                "source": "https://git.drupalcode.org/project/default_content"
             }
         },
         {
@@ -4058,69 +3932,6 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/draggableviews",
                 "issues": "https://www.drupal.org/project/issues/draggableviews"
-            }
-        },
-        {
-            "name": "drupal/dynamic_entity_reference",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/dynamic_entity_reference.git",
-                "reference": "3.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-3.2.0.zip",
-                "reference": "3.2.0",
-                "shasum": "a265f7f0723fb085bd729e7624d644475900cf94"
-            },
-            "require": {
-                "drupal/core": "^10 || ^11",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "drupal/diff": "*",
-                "mglaman/phpstan-drupal": "^1.1",
-                "phpstan/phpstan": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.2.0",
-                    "datestamp": "1706486865",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Lee Rowlands",
-                    "homepage": "https://www.drupal.org/u/larowlan",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Jibran Ijaz",
-                    "homepage": "https://www.drupal.org/u/jibran",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                }
-            ],
-            "description": "Provides a field that allows an entity-reference field to reference more than one entity type.",
-            "homepage": "http://drupal.org/project/dynamic_entity_reference",
-            "support": {
-                "source": "http://cgit.drupalcode.org/dynamic_entity_reference",
-                "issues": "http://drupal.org/project/dynamic_entity_reference",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
@@ -5190,79 +5001,6 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/file_management",
                 "issues": "https://www.drupal.org/project/issues/file_management"
-            }
-        },
-        {
-            "name": "drupal/gatsby",
-            "version": "2.0.0-rc6",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/gatsby.git",
-                "reference": "2.0.0-rc6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gatsby-2.0.0-rc6.zip",
-                "reference": "2.0.0-rc6",
-                "shasum": "f528f2371c18fe3669dbb795c1369c94c2bad938"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10",
-                "drupal/jsonapi_extras": "^3"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-rc6",
-                    "datestamp": "1683654347",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "apmsooner",
-                    "homepage": "https://www.drupal.org/user/593202"
-                },
-                {
-                    "name": "codekarate",
-                    "homepage": "https://www.drupal.org/user/506260"
-                },
-                {
-                    "name": "drupalninja99",
-                    "homepage": "https://www.drupal.org/user/42248"
-                },
-                {
-                    "name": "kathmbeck",
-                    "homepage": "https://www.drupal.org/user/3739889"
-                },
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                },
-                {
-                    "name": "mrjmd",
-                    "homepage": "https://www.drupal.org/user/1800446"
-                },
-                {
-                    "name": "shrop",
-                    "homepage": "https://www.drupal.org/user/14767"
-                }
-            ],
-            "description": "Enables Live Preview for Gatsby",
-            "homepage": "https://www.drupal.org/project/gatsby",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/gatsby",
-                "issues": "https://www.drupal.org/project/issues/gatsby"
             }
         },
         {
@@ -7364,67 +7102,6 @@
             }
         },
         {
-            "name": "drupal/modules_weight",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/modules_weight.git",
-                "reference": "3.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/modules_weight-3.0.1.zip",
-                "reference": "3.0.1",
-                "shasum": "9986169506c2a78714634e678a404c86ee786068"
-            },
-            "require": {
-                "drupal/core": "^9.0|| ^10.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.0.1",
-                    "datestamp": "1709671544",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Cid Almaguer (adriancid)",
-                    "homepage": "https://www.drupal.org/u/adriancid",
-                    "email": "adriancid@gmail.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Ma'moun Othman (artofeclipse)",
-                    "homepage": "https://www.drupal.org/u/artofeclipse",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "josebc",
-                    "homepage": "https://www.drupal.org/user/1376836"
-                }
-            ],
-            "description": "Allows to change the modules execution order.",
-            "homepage": "https://www.drupal.org/project/modules_weight",
-            "keywords": [
-                "Drupal",
-                "Modules",
-                "Order"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/modules_weight",
-                "issues": "https://www.drupal.org/project/issues/modules_weight"
-            }
-        },
-        {
             "name": "drupal/name",
             "version": "1.0.0",
             "source": {
@@ -7495,57 +7172,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/name",
                 "issues": "https://www.drupal.org/project/issues/name"
-            }
-        },
-        {
-            "name": "drupal/oembed_providers",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/oembed_providers.git",
-                "reference": "2.2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/oembed_providers-2.2.1.zip",
-                "reference": "2.2.1",
-                "shasum": "b98ffb8bb1b16756bcb7a7ea207dee3e5d414759"
-            },
-            "require": {
-                "drupal/core": "^10|^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.2.1",
-                    "datestamp": "1729877996",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Burge",
-                    "homepage": "https://www.drupal.org/u/chris-burge",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Allows site builders and developers to manage oEmbed providers.",
-            "homepage": "https://drupal.org/project/oembed_providers",
-            "keywords": [
-                "Drupal",
-                "Media",
-                "oEmbed"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/oembed_providers",
-                "issues": "https://www.drupal.org/project/issues/oembed_providers"
             }
         },
         {
@@ -15522,11 +15148,8 @@
         "drupal/cer": 10,
         "drupal/conditional_fields": 15,
         "drupal/config_split": 5,
-        "drupal/custom_field": 5,
-        "drupal/default_content": 15,
         "drupal/entity_pager": 15,
         "drupal/file_entity": 5,
-        "drupal/gatsby": 5,
         "drupal/gin": 5,
         "drupal/gin_toolbar": 5,
         "drupal/inline_entity_form": 5,

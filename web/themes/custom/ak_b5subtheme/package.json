@@ -6,7 +6,7 @@
     "watch:sass": "sass --watch scss/style.scss css/style.css && sass --watch scss/ck5style.scss css/ck5style.css",
     "build:js": "cross-env BABEL_ENV=legacy node ./bin/babel/babel-es6-build.js",
     "lint:js": "eslint --no-eslintrc -c=./.eslintrc.json js/**.es6.js",
-    "livereload": "livereload"
+    "livereload": "livereload ./css -d"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+ul.inline li {
+  padding: 0;
+}
+
+.container .region {
+  padding: 0;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -7151,7 +7159,7 @@ textarea.form-control-lg {
   align-self: stretch;
 }
 
-.visually-hidden, .path-frontpage #block-ak-b5subtheme-page-title,
+.visually-hidden, .page-node-type-exhibition .block-page-title-block, .path-frontpage #block-ak-b5subtheme-page-title,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   width: 1px !important;
   height: 1px !important;
@@ -7162,7 +7170,7 @@ textarea.form-control-lg {
   white-space: nowrap !important;
   border: 0 !important;
 }
-.visually-hidden:not(caption), .path-frontpage #block-ak-b5subtheme-page-title:not(caption),
+.visually-hidden:not(caption), .page-node-type-exhibition .block-page-title-block:not(caption), .path-frontpage #block-ak-b5subtheme-page-title:not(caption),
 .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption) {
   position: absolute !important;
 }
@@ -12808,6 +12816,11 @@ code {
   overflow-y: auto;
 }
 
+a, a:link, a:visited, a:active, a:hover {
+  color: unset;
+  text-decoration: unset;
+}
+
 @media screen and (min-width: 992px) {
   #block-ak-b5subtheme-main-navigation {
     position: absolute !important;
@@ -12834,11 +12847,191 @@ code {
     border: 0 !important;
   }
 }
-.navbar-brand .site-title {
-  display: block;
-  width: 50%;
-  font-size: 3em;
+@media screen and (min-width: 992px) {
+  #block-ak-b5subtheme-mainmenu-sidebar {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  main .container .row .order-1 {
+    width: 67%;
+  }
+  main .container .row .order-2 {
+    width: calc(275px + 1rem);
+  }
+}
+header nav.navbar {
+  padding: 0;
+}
+header nav.navbar .region-nav-branding {
+  width: 275px;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid;
+  transition: margin 50ms;
+}
+header nav.navbar .region-nav-branding .navbar-brand .site-title {
+  font-size: 2.2em;
   line-height: 100%;
+  margin-top: 1rem;
+}
+header nav.menu--main {
+  padding-top: 0.3rem;
+}
+header nav.menu--main a, header nav.menu--main a:link, header nav.menu--main a:visited {
+  text-decoration: none;
+}
+header nav.menu--main a:hover {
+  color: blue;
+}
+header nav.menu--main ul.navbar-nav {
+  flex-direction: row;
+  border-bottom: 2px solid;
+  padding-bottom: 0.5rem;
+}
+.block-system-breadcrumb-block > nav {
+  padding-top: 0.8rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  font-size: small;
+}
+
+.region-sidebar-first {
+  margin-top: 1rem;
+  border-top: 2px solid;
+}
+.region-sidebar-first .block-block-content {
+  padding-top: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .region-sidebar-first {
+    margin-top: 0;
+    border-top: 0;
+  }
+  .region-sidebar-first .block-block-content {
+    padding-top: 0;
+  }
+}
+.region-sidebar-first nav.menu--main ul li + li {
+  margin-top: 0.5rem;
+}
+.region-sidebar-first nav.menu--main ul li:last-child {
+  margin-bottom: 0.5rem;
+}
+.region-sidebar-first nav.menu--main ul li a {
+  padding: 0;
+  text-decoration: none;
+}
+.region-sidebar-first nav.menu--main ul li a:hover {
+  text-decoration: underline;
+}
+
+footer.ak-b5subtheme__footer .container {
+  margin-top: 1rem;
+}
+footer.ak-b5subtheme__footer .container .region {
+  padding-bottom: 0.5em;
+}
+footer.ak-b5subtheme__footer .container .region p {
+  line-height: 1;
+  padding: 0;
+}
+
+ul.ak--list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.ak--list > li + li {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid;
+}
+
+.node--type-exhibition.node--view-mode-teaser .field--name-field-media-image img {
+  width: 100%;
+  height: auto;
+}
+.node--type-exhibition.node--view-mode-teaser .field--name-field-title h4, .node--type-exhibition.node--view-mode-teaser .field--name-field-title .h4 {
+  margin: 1rem 0;
+}
+@media screen and (min-width: 40em) {
+  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second {
+    padding-left: 1rem;
+  }
+  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title h4, .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title .h4 {
+    margin-top: 0;
+  }
+}
+.node--type-exhibition.node--view-mode-full .field--name-field-title {
+  padding-top: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+  .path-frontpage .block-views-blockexhibitions-current-block-default {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+.path-frontpage .block-views-blockexhibitions-current-block-default + .block-views-blockexhibitions-current-block-upcoming {
+  margin: 1.5em auto;
+  padding: 1em 0 1.5rem;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+@media screen and (min-width: 992px) {
+  .path-frontpage .block-views-blockexhibitions-current-block-default + .block-views-blockexhibitions-current-block-upcoming {
+    border-bottom: none;
+  }
+}
+.path-frontpage .block-views-blockexhibitions-current-block-default h2, .path-frontpage .block-views-blockexhibitions-current-block-default .h2,
+.path-frontpage .block-views-blockexhibitions-current-block-upcoming h2,
+.path-frontpage .block-views-blockexhibitions-current-block-upcoming .h2 {
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: medium;
+}
+
+#block-ak-b5subtheme-ak-info * {
+  font-size: small;
+}
+
+#block-ak-b5subtheme-akfooterinfo * {
+  font-size: small;
+}
+
+.block-system-breadcrumb-block nav ol {
+  padding: 0;
+  margin: 0;
+}
+.block-system-breadcrumb-block nav ol li {
+  color: #a6a99d;
+}
+.block-system-breadcrumb-block nav ol li * {
+  color: #a6a99d;
+}
+.block-system-breadcrumb-block nav ol li a, .block-system-breadcrumb-block nav ol li a:link, .block-system-breadcrumb-block nav ol li a:visited {
+  text-decoration: none;
+}
+.block-system-breadcrumb-block nav ol li a:hover {
+  text-decoration: underline;
+}
+
+a, a:link, a:visited {
+  color: #081223;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+header *, main *, footer * {
+  color: #081223;
+}
+header h1 a, header .h1 a, header h1 a:link, header h1 a:visited, header h2 a, header .h2 a, header h2 a:link, header h2 a:visited, header h3 a, header .h3 a, header h3 a:link, header h3 a:visited, header h4 a, header .h4 a, header h4 a:link, header h4 a:visited, header h5 a, header .h5 a, header h5 a:link, header h5 a:visited, header h6 a, header .h6 a, header .form-wrapper.accordion .accordion-item h2 a, .form-wrapper.accordion .accordion-item header h2 a, header .form-wrapper.accordion .accordion-item .h2 a, .form-wrapper.accordion .accordion-item header .h2 a, header h6 a:link, header h6 a:visited, main h1 a, main .h1 a, main h1 a:link, main h1 a:visited, main h2 a, main .h2 a, main h2 a:link, main h2 a:visited, main h3 a, main .h3 a, main h3 a:link, main h3 a:visited, main h4 a, main .h4 a, main h4 a:link, main h4 a:visited, main h5 a, main .h5 a, main h5 a:link, main h5 a:visited, main h6 a, main .h6 a, main .form-wrapper.accordion .accordion-item h2 a, .form-wrapper.accordion .accordion-item main h2 a, main .form-wrapper.accordion .accordion-item .h2 a, .form-wrapper.accordion .accordion-item main .h2 a, main h6 a:link, main h6 a:visited, footer h1 a, footer .h1 a, footer h1 a:link, footer h1 a:visited, footer h2 a, footer .h2 a, footer h2 a:link, footer h2 a:visited, footer h3 a, footer .h3 a, footer h3 a:link, footer h3 a:visited, footer h4 a, footer .h4 a, footer h4 a:link, footer h4 a:visited, footer h5 a, footer .h5 a, footer h5 a:link, footer h5 a:visited, footer h6 a, footer .h6 a, footer .form-wrapper.accordion .accordion-item h2 a, .form-wrapper.accordion .accordion-item footer h2 a, footer .form-wrapper.accordion .accordion-item .h2 a, .form-wrapper.accordion .accordion-item footer .h2 a, footer h6 a:link, footer h6 a:visited {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
