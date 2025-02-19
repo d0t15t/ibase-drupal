@@ -12,39 +12,41 @@ set footer_classes = ' ' ~
   (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
   (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' ')
 %}
+<div class="header-wrapper container">
+  <header role="banner">
+    {{ page.header }}
 
-<header role="banner">
-  {{ page.header }}
+    {% if page.nav_branding or page.nav_main or page.nav_additional %}
+    <nav class="{{ nav_classes }}">
+      <div class="{{ b5_top_container }} d-flex">
+        {{ page.nav_branding }}
 
-  {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="{{ b5_top_container }} d-flex">
-      {{ page.nav_branding }}
+        {% if page.nav_main or page.nav_additional %}
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      {% if page.nav_main or page.nav_additional %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+            {{ page.nav_main }}
+            {{ page.nav_additional }}
+          </div>
+        {% endif %}
+      </div>
+    </nav>
+    {% endif %}
 
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-          {{ page.nav_main }}
-          {{ page.nav_additional }}
-        </div>
-      {% endif %}
+  </header>
+  {% if page.breadcrumb %}
+    <div class="container breadcrumb__container">
+      <div class="row g-0">
+        {{ page.breadcrumb }}
+      </div>
     </div>
-  </nav>
   {% endif %}
+</div>
 
-</header>
-{% if page.breadcrumb %}
-  <div class="container">
-    <div class="row g-0">
-      {{ page.breadcrumb }}
-    </div>
-  </div>
-{% endif %}
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 

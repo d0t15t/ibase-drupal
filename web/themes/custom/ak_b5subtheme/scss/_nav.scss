@@ -1,3 +1,23 @@
+.header-wrapper {
+  header .container  {
+    padding: 0;
+  }
+
+  .breadcrumb__container {
+    padding: 0;
+  }
+
+  main {
+    .container {
+      .row {
+        .order-1 {
+          padding-top: calc($spacer * 1);
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 992px) {
   #block-ak-b5subtheme-main-navigation {
     //@extend .visually-hidden; <- doesn't work across mqs
@@ -10,6 +30,21 @@
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+  }
+
+  .header-wrapper {
+    display: flex;
+  }
+
+  .breadcrumb__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: calc($spacer * 1);
+
+    .block-system-breadcrumb-block > nav {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -35,10 +70,19 @@
 
 @media screen and (min-width: 992px) {
   main .container .row .order-1 {
-    width: 67%;
+    width: calc(100% - $ak_nav_w - $spacer);
+
+    .region-content {
+      margin-top: calc($spacer * 1);
+    }
   }
+
   main .container .row .order-2 {
     width: calc($ak_nav_w + $spacer);
+
+    .region-sidebar-first {
+      margin-top: calc($spacer * 1);
+    }
   }
 }
 
@@ -71,7 +115,7 @@ header {
 
   nav.menu--main {
     //border-bottom: 1px solid;
-    padding-top: calc($spacer * 0.3);
+    //padding-top: calc($spacer * 0.3);
     //margin-bottom: 1rem;
     //margin-bottom: calc($spacer * 0.7);
 
@@ -146,6 +190,10 @@ header {
           text-decoration: none;
 
           &:hover {
+            text-decoration: underline;
+          }
+
+          &.is-active {
             text-decoration: underline;
           }
         }

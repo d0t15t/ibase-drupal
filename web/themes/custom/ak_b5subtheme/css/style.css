@@ -12821,6 +12821,16 @@ a, a:link, a:visited, a:active, a:hover {
   text-decoration: unset;
 }
 
+.header-wrapper header .container {
+  padding: 0;
+}
+.header-wrapper .breadcrumb__container {
+  padding: 0;
+}
+.header-wrapper main .container .row .order-1 {
+  padding-top: 1rem;
+}
+
 @media screen and (min-width: 992px) {
   #block-ak-b5subtheme-main-navigation {
     position: absolute !important;
@@ -12832,6 +12842,18 @@ a, a:link, a:visited, a:active, a:hover {
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+  }
+  .header-wrapper {
+    display: flex;
+  }
+  .breadcrumb__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 1rem;
+  }
+  .breadcrumb__container .block-system-breadcrumb-block > nav {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 992px) {
@@ -12854,10 +12876,16 @@ a, a:link, a:visited, a:active, a:hover {
 }
 @media screen and (min-width: 992px) {
   main .container .row .order-1 {
-    width: 67%;
+    width: calc(100% - 275px - 1rem);
+  }
+  main .container .row .order-1 .region-content {
+    margin-top: 1rem;
   }
   main .container .row .order-2 {
     width: calc(275px + 1rem);
+  }
+  main .container .row .order-2 .region-sidebar-first {
+    margin-top: 1rem;
   }
 }
 header nav.navbar {
@@ -12873,9 +12901,6 @@ header nav.navbar .region-nav-branding .navbar-brand .site-title {
   font-size: 2.2em;
   line-height: 100%;
   margin-top: 1rem;
-}
-header nav.menu--main {
-  padding-top: 0.3rem;
 }
 header nav.menu--main a, header nav.menu--main a:link, header nav.menu--main a:visited {
   text-decoration: none;
@@ -12925,6 +12950,9 @@ header nav.menu--main ul.navbar-nav {
 .region-sidebar-first nav.menu--main ul li a:hover {
   text-decoration: underline;
 }
+.region-sidebar-first nav.menu--main ul li a.is-active {
+  text-decoration: underline;
+}
 
 footer.ak-b5subtheme__footer .container {
   margin-top: 1rem;
@@ -12952,20 +12980,47 @@ ul.ak--list > li + li {
   width: 100%;
   height: auto;
 }
-.node--type-exhibition.node--view-mode-teaser .field--name-field-title h4, .node--type-exhibition.node--view-mode-teaser .field--name-field-title .h4 {
-  margin: 1rem 0;
-}
-@media screen and (min-width: 40em) {
-  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second {
-    padding-left: 1rem;
-  }
-  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title h4, .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title .h4 {
-    margin-top: 0;
-  }
+.node--type-exhibition.node--view-mode-teaser .field--name-field-title > * {
+  margin-top: 1rem;
 }
 .node--type-exhibition.node--view-mode-full .field--name-field-title {
   padding-top: 0.5rem;
 }
+@media screen and (min-width: 40em) {
+  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second, .node--type-exhibition.node--view-mode-full .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second {
+    padding-left: 1rem;
+  }
+  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title, .node--type-exhibition.node--view-mode-full .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title {
+    padding-top: 0;
+  }
+  .node--type-exhibition.node--view-mode-teaser .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title > *, .node--type-exhibition.node--view-mode-full .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second .field--name-field-title > * {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+.exhibition-years {
+  padding: 1rem 0;
+  margin: 0 0 1rem;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+}
+.exhibition-years ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.exhibition-years ul li {
+  margin: 0 auto;
+  text-align: center;
+  width: 37px;
+}
+.exhibition-years ul li a, .exhibition-years ul li a:link, .exhibition-years ul li a:visited, .exhibition-years ul li a:active {
+  text-decoration: none;
+}
+.exhibition-years .year-group {
+  display: flex;
+}
+
 @media screen and (min-width: 992px) {
   .path-frontpage .block-views-blockexhibitions-current-block-default {
     border-top: 0;
@@ -12987,7 +13042,7 @@ ul.ak--list > li + li {
 .path-frontpage .block-views-blockexhibitions-current-block-default h2, .path-frontpage .block-views-blockexhibitions-current-block-default .h2,
 .path-frontpage .block-views-blockexhibitions-current-block-upcoming h2,
 .path-frontpage .block-views-blockexhibitions-current-block-upcoming .h2 {
-  font-style: italic;
+  color: #a6a99d;
   margin-bottom: 1rem;
   font-size: medium;
 }

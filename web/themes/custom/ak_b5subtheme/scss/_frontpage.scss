@@ -2,7 +2,7 @@
   .block-views-blockexhibitions-current-block-default {
     //border-top: 1px solid;
     //margin: 0.5em auto;
-    //padding-top: 1em;
+    //padding-top: calc($spacer * 1);
 
     @media screen and (min-width: 992px) {
       border-top: 0;
@@ -24,8 +24,8 @@
   .block-views-blockexhibitions-current-block-default,
   .block-views-blockexhibitions-current-block-upcoming {
     h2 {
-      //color: lightslategrey;
-      font-style: italic;
+      color: $ak_color__2;
+      //font-style: italic;
       margin-bottom: 1rem;
       font-size: medium;
     }
