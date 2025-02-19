@@ -1,0 +1,23 @@
+uuid: fc40f54d-6497-4f32-943d-d7e9de823c49
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+id: ak_b5subtheme_logo
+theme: ak_b5subtheme
+region: footer_right
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'AK Logo'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

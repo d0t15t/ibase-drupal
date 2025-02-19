@@ -1,0 +1,20 @@
+uuid: 3e8b2a10-d1ac-4d9b-b82d-9f3d69229cd2
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+id: zen_system_powered_by
+theme: zen
+region: ''
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  label_display: '0'
+  provider: system
+visibility: {  }

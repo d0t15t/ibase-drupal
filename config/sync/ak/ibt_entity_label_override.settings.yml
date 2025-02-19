@@ -1,0 +1,6 @@
+entity-label-overrides:
+  node:
+    article: ''
+    exhibition: field_title
+    page: field_title
+    panel: ''
