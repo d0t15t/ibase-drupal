@@ -1,0 +1,21 @@
+uuid: 1cdaea5d-0e5d-45ff-ad76-3500f23a4a86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.article
+  module:
+    - datetime_range
+id: node.article.field_dates
+field_name: field_dates
+entity_type: node
+bundle: article
+label: Dates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

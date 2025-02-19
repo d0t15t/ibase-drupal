@@ -1,0 +1,7 @@
+ibt_entity_label_override.settings:
+  path: '/admin/config/system/entity-label-override'
+  defaults:
+    _title: 'IBT entity-label-override settings'
+    _form: 'Drupal\ibt_entity_label_override\Form\EntityLabelOverrideForm'
+  requirements:
+    _permission: 'administer site configuration'

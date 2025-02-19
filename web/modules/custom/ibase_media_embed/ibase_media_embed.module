@@ -12,7 +12,7 @@ use Drupal\media_library\Form\OEmbedForm;
 function ibase_media_embed_media_source_info_alter(array &$sources) {
   $sources['oembed'] = [
     'id' => 'oembed',
-    'label' => new TranslatableMarkup('Embed'),
+    'label' => new TranslatableMarkup('Embed Code'),
     'description' => new TranslatableMarkup('Remote embed code or OEmbed.'),
     'allowed_field_types' => ['string'],
     'default_thumbnail_filename' => 'no-thumbnail.png',

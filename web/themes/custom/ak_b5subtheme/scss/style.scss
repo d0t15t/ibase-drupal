@@ -1,0 +1,40 @@
+// Sub theme styling.
+@import 'variables_drupal';
+
+// Bootstrap overridden variables.
+// @see https://getbootstrap.com/docs/5.2/customize/sass/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap5/scss/style';
+
+a, a:link, a:visited, a:active, a:hover {
+  color: unset;
+  text-decoration: unset;
+}
+
+@import "nav";
+@import "exhibition";
+@import "page";
+@import "frontpage";
+
+a, a:link, a:visited {
+  color: $ak_color__1;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: $ak_color__accent;
+  text-decoration: none;
+}
+
+header, main, footer {
+  * {
+    color: $ak_color__1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    a, a:link, a:visited {
+      text-decoration: none;
+    }
+  }
+}

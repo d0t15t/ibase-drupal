@@ -1,0 +1,18 @@
+uuid: 691b37b1-eeec-4e4d-97fd-85e04959a0bf
+langcode: en
+status: false
+dependencies:
+  theme:
+    - ''
+id: seven_search_form
+theme: ''
+region: ''
+weight: -10
+provider: null
+plugin: search_form_block
+settings:
+  id: broken
+  label: ''
+  label_display: '0'
+  provider: core
+visibility: {  }

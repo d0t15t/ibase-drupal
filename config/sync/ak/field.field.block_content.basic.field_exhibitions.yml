@@ -1,0 +1,29 @@
+uuid: dcef5f45-ad53-4a5a-bc9e-cef4d7a0e983
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.block_content.field_exhibitions
+    - node.type.exhibition
+id: block_content.basic.field_exhibitions
+field_name: field_exhibitions
+entity_type: block_content
+bundle: basic
+label: Exhibitions
+description: 'Tag your chosen exhibitions.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      exhibition: exhibition
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

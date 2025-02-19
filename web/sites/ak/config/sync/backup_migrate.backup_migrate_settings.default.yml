@@ -1,0 +1,47 @@
+uuid: f8af473d-08e6-4e6f-ad15-b7c317c36d84
+langcode: en
+status: true
+dependencies: {  }
+id: default
+label: Default
+config:
+  namer:
+    filename: ak--prod-
+    timestamp: true
+    timestamp_format: Y-m-d\TH-i-s
+  compressor:
+    compression: gzip
+  utils:
+    site_offline: false
+  metadata:
+    description: ''
+  db_exclude:
+    exclude_tables: {  }
+    nodata_tables:
+      cache_bootstrap: cache_bootstrap
+      cache_config: cache_config
+      cache_container: cache_container
+      cache_data: cache_data
+      cache_default: cache_default
+      cache_discovery: cache_discovery
+      cache_discovery_migration: cache_discovery_migration
+      cache_entity: cache_entity
+      cache_menu: cache_menu
+      sessions: sessions
+      watchdog: watchdog
+  private_files_exclude:
+    exclude_filepaths:
+      - backup_migrate
+  public_files_exclude:
+    exclude_filepaths:
+      - js
+      - css
+      - php
+      - styles
+      - 'config_*'
+      - .htaccess
+  notify:
+    notify_success_enable: 0
+    notify_success_email: admin@example.com
+    notify_failure_enable: 0
+    notify_failure_email: admin@example.com

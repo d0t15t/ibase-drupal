@@ -9,6 +9,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\UrlGeneratorInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Utility\LinkGeneratorInterface;
+use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -85,13 +86,18 @@ class ExhibitionYearsBlock extends BlockBase implements ContainerFactoryPluginIn
             GROUP BY EXTRACT(year FROM dates.field_dates_value)
             ORDER BY year DESC;";
     $results = array_values($this->database->query($sql)->fetchAllKeyed(1));
-    $view_url_path = Url::fromRoute('view.exhibitions.archive')->toString();
-    $current_year = $this->getCurrentYearFromPath($this->currentPath->getPath());
+    /** @var Node $cur_node */
+    $cur_node = \Drupal::routeMatch()->getParameter('node');
+    $url = $cur_node->toUrl();
+
+
+//    $view_url_path = Url::fromRoute('view.exhibitions_archive.page')->toString();
+    $current_year = \Drupal::request()->get('y');
     return [
       '#theme' => 'exhibition_years',
       '#years' => array_map(fn($y) => [
-        'title' => $y,
-        'uri' => sprintf('%s/%s', $view_url_path, $y),
+        'title' => trim($y),
+        'uri' => $url->setOption('query', ['y' => $y])->toString(),
         'current' => $y === $current_year,
       ], $results),
       '#title' => t('Filter exhibitions by year'),
@@ -99,8 +105,8 @@ class ExhibitionYearsBlock extends BlockBase implements ContainerFactoryPluginIn
     ];
   }
 
-  private function getCurrentYearFromPath(string $path): ?string {
-    $arr = array_reverse(explode('/', $path));
+  private function getCurrentYearFromQuery(string $path): ?string {
+    $keys = \Drupal::request()->get('keys');
     if (!isset($arr[0]) || !isset($arr[1])) return NULL;
     return is_numeric($arr[0]) && $arr[1] === 'archive'
       ? $arr[0] : NULL;

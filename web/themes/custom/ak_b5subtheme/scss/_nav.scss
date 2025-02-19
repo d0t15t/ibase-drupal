@@ -1,0 +1,222 @@
+.header-wrapper {
+  header .container  {
+    padding: 0;
+  }
+
+  .breadcrumb__container {
+    padding: 0;
+  }
+
+  main {
+    .container {
+      .row {
+        .order-1 {
+          padding-top: calc($spacer * 1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #block-ak-b5subtheme-main-navigation {
+    //@extend .visually-hidden; <- doesn't work across mqs
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .header-wrapper {
+    display: flex;
+  }
+
+  .breadcrumb__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: calc($spacer * 1);
+
+    .block-system-breadcrumb-block > nav {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #block-ak-b5subtheme-mainmenu-sidebar {
+    //@extend .visually-hidden; <- doesn't work across mqs
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  #block-ak-b5subtheme-mainmenu-sidebar {
+    margin-bottom: $spacer;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main .container .row .order-1 {
+    width: calc(100% - $ak_nav_w - $spacer);
+
+    .region-content {
+      margin-top: calc($spacer * 1.3);
+    }
+  }
+
+  main .container .row .order-2 {
+    width: calc($ak_nav_w + $spacer);
+
+    .region-sidebar-first {
+      margin-top: calc($spacer * 1);
+    }
+  }
+}
+
+.path-frontpage #block-ak-b5subtheme-page-title {
+  @extend .visually-hidden;
+}
+
+header {
+  nav.navbar {
+    padding: 0;
+
+    .region-nav-branding {
+      width: $ak_nav_w;
+      padding-bottom: calc($spacer * 1);
+      border-bottom: 2px solid;
+      //margin-bottom: calc($spacer * 1);
+      transition: margin 50ms;
+      //@media screen and (min-width: 992px) {
+      //  width: 25%;
+      //}
+
+      .navbar-brand .site-title {
+        font-size: 2.2em;
+        line-height: 100%;
+        margin-top: calc($spacer * 1);
+
+      }
+    }
+  }
+
+  nav.menu--main {
+    //border-bottom: 1px solid;
+    //padding-top: calc($spacer * 0.3);
+    //margin-bottom: 1rem;
+    //margin-bottom: calc($spacer * 0.7);
+
+    a, a:link, a:visited {
+      text-decoration: none;
+    }
+    a:hover {
+      color: $ak_color__accent;
+      //text-decoration: underline;
+    }
+
+    ul.navbar-nav {
+      flex-direction: row;
+      border-bottom: 2px solid;
+      padding-bottom: calc($spacer * 0.5);
+
+      > * {
+        //width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body.navbar-expanded {
+    header {
+      .region-nav-branding {
+        //margin-bottom: 0
+      }
+    }
+  }
+}
+
+.block-system-breadcrumb-block {
+  > nav {
+    padding-top: calc($spacer * 0.8);
+    border-bottom: 2px solid;
+    padding-bottom: calc($spacer * 0.9);
+    margin-bottom: calc($spacer * 1);
+    font-size: small;
+  }
+}
+
+.region-sidebar-first {
+  margin-top: calc($spacer * 1);
+  border-top: 2px solid;
+
+  .block-block-content {
+    padding-top: calc($spacer * 2);
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-top: 0;
+    border-top: 0;
+    .block-block-content {
+      padding-top: 0;
+    }
+  }
+
+  nav.menu--main {
+    ul {
+      li + li {
+        margin-top: calc($spacer / 2);
+      }
+      li:last-child {
+        margin-bottom: calc($spacer / 2);
+
+      }
+      li {
+        a {
+          padding: 0;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.is-active {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer.ak-b5subtheme__footer {
+  .container {
+    padding-bottom: 0.5em;
+    margin-top: $spacer;
+    //padding-right: calc(var(--bs-gutter-x));
+    //padding-left: calc(var(--bs-gutter-x));
+
+    .region {
+
+
+      p {
+        line-height: 1;
+        padding: 0;
+      }
+
+    }
+  }
+}

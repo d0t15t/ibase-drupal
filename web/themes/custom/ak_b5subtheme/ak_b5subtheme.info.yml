@@ -1,0 +1,27 @@
+name: 'AK B5 subtheme'
+type: theme
+description: 'AK B5 subtheme based on Bootstrap 5 theme.'
+core_version_requirement: '^10.1 || ^11.0'
+'base theme': bootstrap5
+libraries:
+  - ak_b5subtheme/global-styling
+  - ak_b5subtheme/footer
+ckeditor_stylesheets:
+  - css/style.css
+ckeditor5-stylesheets:
+  - css/ck5style.css
+regions:
+  header: Header
+  nav_branding: 'Navigation branding region'
+  nav_main: 'Main navigation region'
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  footer_left: Footer left
+  footer_center: Footer center
+  footer_right: Footer right
+libraries-override:
+  bootstrap5/global-styling: false

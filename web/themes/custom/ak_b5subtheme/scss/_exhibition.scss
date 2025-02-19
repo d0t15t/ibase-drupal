@@ -1,0 +1,114 @@
+.page-node-type-exhibition .block-page-title-block {
+  @extend .visually-hidden;
+}
+
+
+.block-views-blockexhibitions-archive-block-1 {
+  margin-top: calc($spacer * 1.3);
+}
+
+ul.ak--list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li + li {
+    margin-top: calc($spacer * 1.4);
+    padding-top: calc($spacer * 1.3);
+    border-top: 1px solid;
+  }
+}
+
+.node--type-exhibition {
+  &.node--view-mode-teaser {
+    .field--name-field-media-image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .field--name-field-title {
+      > * {
+        margin-top: $spacer;
+      }
+    }
+
+    //@media screen and (min-width: 40em) {
+    //  .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second {
+    //    padding-left: calc($spacer / 1);
+    //
+    //    .field--name-field-title {
+    //      h4 {
+    //        margin-top: 0;
+    //      }
+    //    }
+    //  }
+    //}
+  }
+
+  &.node--view-mode-full {
+    .field--name-field-title {
+      padding-top: calc($spacer / 2);
+    }
+
+    @media screen and (min-width: 768px) {
+
+    }
+  }
+
+}
+@media screen and (min-width: 40em) {
+  .node--type-exhibition.node--view-mode-teaser, .node--type-exhibition.node--view-mode-full {
+    .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second {
+      padding-left: calc($spacer / 1);
+
+      .field--name-field-title {
+        padding-top: 0;
+        > * {
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.exhibition-years {
+  padding: calc($spacer * 1) 0;
+  margin:0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 auto;
+      text-align: center;
+      width: 37px;
+
+      &.current {
+        color: $ak_color__accent;
+      }
+
+      a, a:link, a:visited, a:active {
+        text-decoration: none;
+      }
+
+
+      & + li {
+        //padding-left: calc($spacer * 1);
+
+        &::before {
+          //content: '|';
+          //margin-right: 5px;
+        }
+      }
+    }
+  }
+  .year-group {
+    display: flex;
+  }
+}

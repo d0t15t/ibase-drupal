@@ -1,0 +1,21 @@
+{{ attach_library('ak_b5subtheme/exhibition-years') }}
+
+{% set batched_items = years|batch((years|length / 3)|round(0, 'ceil')) %}
+
+<h3 class="visually-hidden">{{ title }}</h3>
+{% if current %}
+  <h4 class="visually-hidden">current: {{ current }}</h4>
+{% endif %}
+<div class="exhibition-years">
+  {% for row in batched_items %}
+    <ul class="year-group">
+      {% for item in row %}
+        <li class="year{% if current == item.title %} current{% endif %}">
+          {% if current == item.title %}{{ current }}{% else %}
+            <a href="{{ item.uri }}">{{ item.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>

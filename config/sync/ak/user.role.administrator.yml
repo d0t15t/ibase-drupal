@@ -1,0 +1,39 @@
+uuid: c5518113-1a27-4164-a2fd-d904c50a4763
+langcode: en
+status: true
+dependencies:
+  module:
+    - backup_migrate
+    - block
+    - filter
+    - image
+    - node
+    - system
+    - toolbar
+    - views_ui
+id: administrator
+label: administrator
+weight: 3
+is_admin: null
+permissions:
+  - 'access backup files'
+  - 'access content'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer backup and migrate'
+  - 'administer blocks'
+  - 'administer content types'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer nodes'
+  - 'administer permissions'
+  - 'administer users'
+  - 'administer views'
+  - 'cancel account'
+  - 'change own username'
+  - 'perform backup'
+  - 'restore from backup'
+  - 'select account cancellation method'
+  - 'view own unpublished content'
+  - 'view the administration theme'

@@ -1,0 +1,22 @@
+uuid: 7ba865ac-91fa-4369-aeba-ee414fd321cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+_core:
+  default_config_hash: O8gV8AJDHnW0U2aFLn0XHR-rinkcR6aRfKS_WVz_F1s
+id: ak_b5subtheme_content
+theme: ak_b5subtheme
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,5 +1,0 @@
-services:
-  goldies_shopify.commands:
-    class: \Drupal\goldies_shopify\Commands\GoldiesShopifyCommands
-    tags:
-      - { name: drush.command }

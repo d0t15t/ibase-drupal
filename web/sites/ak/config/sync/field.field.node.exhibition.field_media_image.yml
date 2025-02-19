@@ -1,0 +1,29 @@
+uuid: 93d71628-fe7b-45a9-a591-117ab1f7a291
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_image
+    - media.type.image
+    - node.type.exhibition
+id: node.exhibition.field_media_image
+field_name: field_media_image
+entity_type: node
+bundle: exhibition
+label: 'Main image'
+description: 'Add a title image for this exhibition.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

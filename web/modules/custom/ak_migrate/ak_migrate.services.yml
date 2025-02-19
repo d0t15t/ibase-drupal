@@ -1,0 +1,9 @@
+services:
+
+  logger.channel.ak_migrate:
+    parent: logger.channel_base
+    arguments: [ 'ak_migrate' ]
+
+  ak_migrate.import_articles_to_exhibitions:
+    class: Drupal\ak_migrate\Service\ImportArticlesToExhibitions
+    arguments: ['@logger.channel.ak_migrate', '@entity_type.manager']

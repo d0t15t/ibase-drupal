@@ -1,0 +1,25 @@
+uuid: 393947b0-094c-4a2c-9375-e47460996b98
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4b60f217-8746-4af7-a68c-ffcd1c41e75e'
+  module:
+    - block_content
+  theme:
+    - ak_b5subtheme
+id: ak_b5subtheme_akfooterinfo
+theme: ak_b5subtheme
+region: footer_left
+weight: -7
+provider: null
+plugin: 'block_content:4b60f217-8746-4af7-a68c-ffcd1c41e75e'
+settings:
+  id: 'block_content:4b60f217-8746-4af7-a68c-ffcd1c41e75e'
+  label: 'AK Footer info'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

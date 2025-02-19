@@ -1,0 +1,8 @@
+uuid: 60282452-3756-414b-a4e2-cab2ce5b7c97
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar
+label: Sidebar
+description: 'Links in the sidebar.'
+locked: false

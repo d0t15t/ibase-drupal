@@ -1,0 +1,20 @@
+uuid: f427cd6a-3b93-4158-b066-7bf5995b7ef4
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - zen
+id: zen_user_login
+theme: zen
+region: ''
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  label_display: '0'
+  provider: user
+visibility: {  }

@@ -1,0 +1,14 @@
+uuid: e9b7715d-c025-4af0-a0db-6a8757ae992b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.exhibition
+id: node_type_exhibition
+entity_type_id: node_type
+entity_id: exhibition
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

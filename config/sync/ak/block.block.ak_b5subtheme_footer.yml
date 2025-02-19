@@ -1,0 +1,27 @@
+uuid: d2208764-1e5a-42aa-834f-67c775b4d280
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+_core:
+  default_config_hash: Qdlfg3ITI0cNxwxRkdqILz9zikuqJyW75fT9k6IZILc
+id: ak_b5subtheme_footer
+theme: ak_b5subtheme
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

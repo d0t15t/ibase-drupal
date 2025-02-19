@@ -1,0 +1,25 @@
+uuid: de625fbd-9631-4353-b277-a4b3cf25c5e2
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.sidebar
+  module:
+    - system
+  theme:
+    - ak_b5subtheme
+id: ak_b5subtheme_sidebar
+theme: ak_b5subtheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:sidebar'
+settings:
+  id: 'system_menu_block:sidebar'
+  label: Sidebar
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

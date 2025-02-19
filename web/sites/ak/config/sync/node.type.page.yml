@@ -1,0 +1,19 @@
+uuid: 08358fc5-cee7-4957-8b20-66e65108164b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - sidebar
+    parent: 'main:'
+name: Page
+type: page
+description: "Use <em>basic pages</em> for your static content, such as an 'About us' page."
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,22 @@
+uuid: 8b8df89f-0f2f-4556-bb58-cc5585138c79
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_label_pattern
+label: 'Content label pattern'
+type: 'canonical_entities:node'
+pattern: 'archive/[node:title]'
+selection_criteria:
+  197ddd9c-7d94-481e-b488-4b34c89daa35:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 197ddd9c-7d94-481e-b488-4b34c89daa35
+    context_mapping:
+      node: node
+    bundles:
+      exhibition: exhibition
+selection_logic: and
+weight: -5
+relationships: {  }

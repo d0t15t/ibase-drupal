@@ -1,0 +1,34 @@
+uuid: a8903593-150f-4d21-86e8-c8d9e96bebe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - media.type.image
+    - node.type.exhibition
+    - node.type.page
+  module:
+    - contextual
+    - filter
+    - media
+    - node
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'create exhibition content'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'delete media'
+  - 'delete own image media'
+  - 'edit any exhibition content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'update any media'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view own unpublished content'

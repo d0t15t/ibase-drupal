@@ -1,0 +1,17 @@
+uuid: 64f652fc-5c7f-452a-a45a-9b1cfe20f2cc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rDR2BOewa2UFH9yG4tVvrGxEVv8U7LQo-RLkJhFpERs
+name: large
+label: large
+effects:
+  79585056-515f-404e-9502-1d659e4e5aa7:
+    uuid: 79585056-515f-404e-9502-1d659e4e5aa7
+    id: image_scale
+    weight: 0
+    data:
+      width: 900
+      height: 700
+      upscale: false

@@ -1,0 +1,19 @@
+uuid: 4bacdf34-ed22-43f0-a883-e50009250e38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.exhibition
+id: node.exhibition.field_title
+field_name: field_title
+entity_type: node
+bundle: exhibition
+label: Title
+description: 'Set the title.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

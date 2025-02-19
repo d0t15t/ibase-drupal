@@ -1,0 +1,17 @@
+uuid: b30aee55-e271-4ba9-9344-7b34b981c56e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Exhibition
+type: exhibition
+description: 'Add information about an exhibition including text, dates, artists, and images.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false
