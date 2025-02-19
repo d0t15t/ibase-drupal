@@ -1,19 +1,21 @@
 :root {
-  --height: 44px;
+  --height: 35px;
 }
 
 footer.ak-b5subtheme__footer {
-  height: var(--height);
   padding: 0;
-  margin-bottom: 1em;
   .container {
     .region {
       vertical-align: middle;
     }
     .region-footer-left {
       #block-ak-b5subtheme-akfooterinfo {
-        line-height: var(--height);
         font-style: italic;
+        height: var(--height);
+        p {
+          line-height: var(--height);
+          margin: 0;
+        }
       }
     }
     .region-footer-right {
@@ -22,15 +24,20 @@ footer.ak-b5subtheme__footer {
         .ak-b5subtheme__logo {
           justify-content: right;
           a.site-logo__link {
-            width: 30px;
 
             img {
-              width: 100%;
-              height: auto;
+              height: var(--height);
+              width: auto;
+              /*height: auto;*/
             }
           }
+
         }
       }
+      
+    }
+    @media screen and (min-width: 640px) {
+      /*background: red;*/
     }
   }
 }

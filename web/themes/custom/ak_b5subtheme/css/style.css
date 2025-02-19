@@ -7,6 +7,10 @@ ul.inline li {
   padding: 0;
 }
 
+body h6, .form-wrapper.accordion .accordion-item body h2, .form-wrapper.accordion .accordion-item body .h2, body .form-wrapper.accordion .accordion-item h2, body .form-wrapper.accordion .accordion-item .h2, body .h6, body h5, body .h5, body h4, body .h4, body h3, body .h3, body h2, body .h2, body h1, body .h1 {
+  margin-bottom: 0;
+}
+
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -12879,7 +12883,7 @@ a, a:link, a:visited, a:active, a:hover {
     width: calc(100% - 275px - 1rem);
   }
   main .container .row .order-1 .region-content {
-    margin-top: 1rem;
+    margin-top: 1.3rem;
   }
   main .container .row .order-2 {
     width: calc(275px + 1rem);
@@ -12955,14 +12959,16 @@ header nav.menu--main ul.navbar-nav {
 }
 
 footer.ak-b5subtheme__footer .container {
-  margin-top: 1rem;
-}
-footer.ak-b5subtheme__footer .container .region {
   padding-bottom: 0.5em;
+  margin-top: 1rem;
 }
 footer.ak-b5subtheme__footer .container .region p {
   line-height: 1;
   padding: 0;
+}
+
+.block-views-blockexhibitions-archive-block-1 {
+  margin-top: 1.3rem;
 }
 
 ul.ak--list {
@@ -12971,8 +12977,8 @@ ul.ak--list {
   list-style: none;
 }
 ul.ak--list > li + li {
-  margin-top: 1em;
-  padding-top: 1em;
+  margin-top: 1.4rem;
+  padding-top: 1.3rem;
   border-top: 1px solid;
 }
 
@@ -13000,7 +13006,7 @@ ul.ak--list > li + li {
 }
 .exhibition-years {
   padding: 1rem 0;
-  margin: 0 0 1rem;
+  margin: 0;
   border-top: 2px solid;
   border-bottom: 2px solid;
 }
@@ -13013,6 +13019,9 @@ ul.ak--list > li + li {
   margin: 0 auto;
   text-align: center;
   width: 37px;
+}
+.exhibition-years ul li.current {
+  color: blue;
 }
 .exhibition-years ul li a, .exhibition-years ul li a:link, .exhibition-years ul li a:visited, .exhibition-years ul li a:active {
   text-decoration: none;

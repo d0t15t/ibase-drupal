@@ -10,3 +10,9 @@ ul.inline li {
 .container .region {
   padding: 0;
 }
+
+body {
+  h6, .form-wrapper.accordion .accordion-item h2, .form-wrapper.accordion .accordion-item .h2, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    margin-bottom: 0
+  }
+}

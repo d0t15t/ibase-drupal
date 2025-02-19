@@ -10,9 +10,9 @@
   {% for row in batched_items %}
     <ul class="year-group">
       {% for item in row %}
-        <li class="year">
+        <li class="year{% if current == item.title %} current{% endif %}">
           {% if current == item.title %}{{ current }}{% else %}
-            <a href="/?y={{ item.title }}">{{ item.title }}</a>
+            <a href="{{ item.uri }}">{{ item.title }}</a>
           {% endif %}
         </li>
       {% endfor %}
