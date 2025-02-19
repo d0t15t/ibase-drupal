@@ -6,18 +6,19 @@
  * @var string $site_path
  */
 
-// come up with a convinceing hash_salt value
-$settings['hash_salt'] = 'sh3';
+$site_name = explode('/', $site_path)[1] ?? 'default';
 
-$settings['file_private_path'] = "$app_root/$site_path/private";
+$settings['hash_salt'] = $site_name;
 
-$settings['file_temp_path'] = "$app_root/$site_path/tmp";
+$settings['file_private_path'] = "../private/$site_name";
 
-$settings['ibase_external_content_url'] = 'https://thegallery.art';
+$settings['file_temp_path'] = "../tmp/$site_name";
 
-$settings['ibase_external_content_url_json'] = 'https://thegallery.art/jsonapi';
-
-$settings['ibase_external_content_api_endpoint'] = 'https://thegallery.art/jsonapi/node/artwork';
+//$settings['ibase_external_content_url'] = 'https://thegallery.art';
+//
+//$settings['ibase_external_content_url_json'] = 'https://thegallery.art/jsonapi';
+//
+//$settings['ibase_external_content_api_endpoint'] = 'https://thegallery.art/jsonapi/node/artwork';
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
 
@@ -51,13 +52,3 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
   ];
 
 }
-$databases['ak7']['default'] = array(
-  'database' => 'ak7',
-  'username' => 'root',
-  'password' => 'root',
-  'prefix' => '',
-  'host' => 'db',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
