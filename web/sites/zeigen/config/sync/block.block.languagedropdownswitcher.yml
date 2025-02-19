@@ -8,7 +8,7 @@ dependencies:
     - the
 id: languagedropdownswitcher
 theme: the
-region: highlighted
+region: header
 weight: 0
 provider: null
 plugin: 'language_dropdown_block:language_interface'
