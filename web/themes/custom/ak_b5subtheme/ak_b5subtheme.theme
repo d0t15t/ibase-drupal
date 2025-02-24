@@ -40,7 +40,7 @@ function ak_b5subtheme_preprocess_breadcrumb(&$vars) {
 
   /** @var Node $cur_node */
   $cur_node = \Drupal::routeMatch()->getParameter('node');
-  if ($cur_node->id() == 768) {
+  if ($cur_node && $cur_node->id() == 768) {
     $cur_year = \Drupal::request()->query->get('y');
     if ($cur_year) {
       $vars["breadcrumb"][]['text'] = $cur_year;
