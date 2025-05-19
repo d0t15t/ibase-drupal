@@ -1,8 +1,0 @@
-uuid: 6c3247fe-7cde-499d-aed3-36413dedd0ae
-langcode: en
-status: true
-dependencies: {  }
-id: default_date_format
-label: 'Default date format'
-locked: false
-pattern: 'M. d, Y'

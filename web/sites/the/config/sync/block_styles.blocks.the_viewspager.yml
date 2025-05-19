@@ -1,8 +1,0 @@
-uuid: c8dd305c-4428-485f-ad6e-87d917f917ec
-langcode: en
-status: true
-dependencies: {  }
-id: the_viewspager
-theme: block__clean
-text: ''
-classes: ''
