@@ -1,0 +1,24 @@
+uuid: 45775fcc-b61c-41ce-896f-c9b1fb5498ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_info
+    - filter.format.html
+    - node.type.artwork
+  module:
+    - text
+id: node.artwork.field_info
+field_name: field_info
+entity_type: node
+bundle: artwork
+label: 'Additional information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - html
+field_type: text_long

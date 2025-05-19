@@ -1,0 +1,13 @@
+uuid: 8b7d5d50-e500-4636-9f65-639dfaa9680a
+langcode: de
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: TBnl4vapW7sy5bRi7TcF-ueJnvz7aZNLif95ifvhfTQ
+id: webform_submission_delete_action
+label: 'Webformular-Eingabe löschen'
+type: webform_submission
+plugin: webform_submission_delete_action
+configuration: {  }

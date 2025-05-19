@@ -1,0 +1,116 @@
+uuid: d4d4148f-1d4a-4039-8da1-2abf8421de48
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.unfiltered
+    - media.type.document
+    - media.type.image
+    - node.type.article
+    - node.type.artist
+    - node.type.events
+    - node.type.page
+    - node.type.project
+    - taxonomy.vocabulary.mediums
+  module:
+    - block_content
+    - content_translation
+    - contextual
+    - filter
+    - layout_builder
+    - layout_builder_component_attributes
+    - media
+    - media_pdf_thumbnail
+    - node
+    - path
+    - search
+    - shortcut
+    - system
+    - taxonomy
+    - webform
+id: editor
+label: Editor
+weight: 1
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access any webform configuration'
+  - 'access block library'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access media overview'
+  - 'access shortcuts'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'add pdf image entity entities'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'create and edit custom blocks'
+  - 'create article content'
+  - 'create artist content'
+  - 'create content translations'
+  - 'create document media'
+  - 'create events content'
+  - 'create image media'
+  - 'create media'
+  - 'create page content'
+  - 'create project content'
+  - 'create terms in mediums'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any article content'
+  - 'delete any artist content'
+  - 'delete any events content'
+  - 'delete any page content'
+  - 'delete any project content'
+  - 'delete content translations'
+  - 'delete media'
+  - 'delete own article content'
+  - 'delete own artist content'
+  - 'delete own document media'
+  - 'delete own events content'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own project content'
+  - 'delete terms in mediums'
+  - 'edit any article content'
+  - 'edit any artist content'
+  - 'edit any document media'
+  - 'edit any events content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any project content'
+  - 'edit own article content'
+  - 'edit own artist content'
+  - 'edit own document media'
+  - 'edit own events content'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own project content'
+  - 'edit pdf image entity entities'
+  - 'edit terms in mediums'
+  - 'manage layout builder component attributes'
+  - 'switch shortcut sets'
+  - 'translate any entity'
+  - 'translate article node'
+  - 'translate artist node'
+  - 'translate editable entities'
+  - 'translate events node'
+  - 'translate page node'
+  - 'update any media'
+  - 'update content translations'
+  - 'update media'
+  - 'use advanced search'
+  - 'use text format unfiltered'
+  - 'view any webform submission'
+  - 'view article revisions'
+  - 'view artist revisions'
+  - 'view events revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view private pdf thumbnails'
+  - 'view published pdf image entity entities'
+  - 'view the administration theme'
+  - 'view unpublished pdf image entity entities'

@@ -1,0 +1,11 @@
+uuid: 3d47ade1-3f53-4f95-924a-93e6e56964f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.entity_browser_artist_artworks
+label: 'Entity Browser - Artist artworks'
+description: ''
+targetEntityType: node
+cache: true

@@ -1,0 +1,13 @@
+uuid: 5abc8426-a03f-4152-8e64-d0c9ea4efdf0
+langcode: de
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform_image_select
+_core:
+  default_config_hash: fxTwfuzcXHy13ns1ZV5g5sSFuwYIH9WwGqb96JpqNvk
+id: kittens
+label: 'Niedliche Kätzchen'
+category: Tiere
+images: "kaetzchen_1:\r\n  text: 'Niedliches Kätzchen 1'\r\n  src: 'http://placekitten.com/220/200'\r\nkaetzchen_2:\r\n  text: 'Niedliches Kätzchen 2'\r\n  src: 'http://placekitten.com/180/200'\r\nkaetzchen_3:\r\n  text: 'Niedliches Kätzchen 3'\r\n  src: 'http://placekitten.com/130/200'\r\nkaetzchen_4:\r\n  text: 'Niedliches Kätzchen 4'\r\n  src: 'http://placekitten.com/270/200'\n"

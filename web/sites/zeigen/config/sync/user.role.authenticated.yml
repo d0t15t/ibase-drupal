@@ -1,0 +1,39 @@
+uuid: ba6c120c-60a9-45b4-8ad4-929201752636
+langcode: de
+status: true
+dependencies:
+  config:
+    - filter.format.basic
+    - filter.format.headline
+    - filter.format.html
+  module:
+    - file
+    - filter
+    - help
+    - media
+    - media_entity_download
+    - media_pdf_thumbnail
+    - search
+    - system
+    - taxonomy
+    - toolbar
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'delete own files'
+  - 'download media'
+  - 'search content'
+  - 'use text format basic'
+  - 'use text format headline'
+  - 'use text format html'
+  - 'view media'
+  - 'view published pdf image entity entities'

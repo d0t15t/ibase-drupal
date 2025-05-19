@@ -1,0 +1,9 @@
+status: 1
+pattern: '[node:field_name:given] [node:field_name:family] [node:field_name_asian:family] [node:field_name_asian:given]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.artist

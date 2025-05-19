@@ -1,0 +1,14 @@
+uuid: 32724a7b-9f14-41bc-84e7-2cf878e6a55d
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: media_type_image
+entity_type_id: media_type
+entity_id: image
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

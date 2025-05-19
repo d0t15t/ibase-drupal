@@ -1,0 +1,40 @@
+uuid: 3acda7b0-454d-4ff4-ae35-93f2462c8eb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.view
+    - field.field.block_content.view.field_view
+  module:
+    - viewsreference
+id: block_content.view.default
+targetEntityType: block_content
+bundle: view
+mode: default
+content:
+  field_view:
+    type: viewsreference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

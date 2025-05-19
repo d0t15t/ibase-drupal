@@ -1,0 +1,12 @@
+uuid: 0caedf0c-7b87-49c8-91c6-4fd6ea5f3b56
+langcode: de
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  description: "ZEIGEN e.V. ist eine gemeinnützige Organisation, die sich der Förderung interkultureller Zusammenarbeit und künstlerischer Projekte verschrieben hat. Seit 2023 setzen wir uns für den Austausch und die Zusammenarbeit zwischen Künstler*innen aus verschiedenen Ländern ein und organisieren Veranstaltungen, Ausstellungen und Workshops, um die Vielfalt der Kunst und Kultur zu feiern.\r\n\r\n"
+  title: '[current-page:title] | [site:name]'

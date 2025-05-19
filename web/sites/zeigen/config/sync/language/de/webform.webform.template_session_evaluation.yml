@@ -1,0 +1,41 @@
+title: 'Evaluation einer Veranstaltung'
+description: 'Vorlage für die Bewertung einer Veranstaltung als Webformular.'
+elements: |
+  overall:
+    '#type': radios
+    '#title': 'Wie war die Veranstaltung insgesamt?'
+    '#options_display': side_by_side
+    '#options': likert_quality
+    '#required': true
+  speaker:
+    '#type': webform_likert
+    '#title': 'Bewerten Sie bitte die Referenten…'
+    '#questions':
+      mastery: 'Beherrschung des Themas'
+      presentation: 'Präsentationsfähigkeiten'
+      quality: 'Qualität der Slides und visuellen Hilfen'
+    '#answers': likert_quality
+    '#na_answer': true
+    '#required': true
+  learn:
+    '#type': radios
+    '#title': 'Haben Sie in dieser Veranstaltung etwas gelernt, das Sie im realen Leben nutzen können?'
+    '#options_display': side_by_side
+    '#options':
+      'Yes': 'Ja'
+      'No': 'Nein'
+      N/A: 'keine Angabe'
+    '#required': true
+  comments:
+    '#type': textarea
+    '#title': Kommentare
+    '#description': 'Was hat Ihnen am besten gefallen? Was würden Sie ändern? Ihr Rat für den Referenten, um die Veranstaltung besser zu machen?'
+settings:
+  confirmation_message: 'Vielen Dank für Ihr Feedback.'
+handlers:
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:first_name] [webform_submission:values:last_name]'
+      subject: _default
+      body: _default

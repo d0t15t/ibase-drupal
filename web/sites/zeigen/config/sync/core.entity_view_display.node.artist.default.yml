@@ -1,0 +1,248 @@
+uuid: ed374963-3572-4a61-9755-5709f4390a06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.artist.body
+    - field.field.node.artist.field_address
+    - field.field.node.artist.field_artist_artworks
+    - field.field.node.artist.field_artworks
+    - field.field.node.artist.field_bibliography
+    - field.field.node.artist.field_biography
+    - field.field.node.artist.field_content
+    - field.field.node.artist.field_cv
+    - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_external_artworks
+    - field.field.node.artist.field_instagam_handle
+    - field.field.node.artist.field_metatags
+    - field.field.node.artist.field_name
+    - field.field.node.artist.field_name_asian
+    - field.field.node.artist.field_portrait
+    - field.field.node.artist.field_telephone
+    - field.field.node.artist.layout_builder__layout
+    - node.type.artist
+  module:
+    - layout_builder
+    - metatag
+    - text
+    - user
+    - viewsreference
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Large screen'
+          context_mapping: {  }
+          column_widths: 33-67
+        components:
+          4c31e444-7b2b-4753-834a-bf4e3783c5c5:
+            uuid: 4c31e444-7b2b-4753-834a-bf4e3783c5c5
+            region: first
+            configuration:
+              id: 'field_block:node:artist:field_portrait'
+              label: Portrait
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: portrait
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          19ad1b28-e3b1-413c-ab87-40f241934ce7:
+            uuid: 19ad1b28-e3b1-413c-ab87-40f241934ce7
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_biography'
+              label: Biography
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          c2dcd5c2-f17a-4f0d-abde-2e8411f62ba6:
+            uuid: c2dcd5c2-f17a-4f0d-abde-2e8411f62ba6
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_cv'
+              label: CV
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          1ce4c3f5-9e04-4656-95b0-78b2a24bae86:
+            uuid: 1ce4c3f5-9e04-4656-95b0-78b2a24bae86
+            region: first
+            configuration:
+              id: 'field_block:node:artist:field_content'
+              label: 'Content references'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 2
+            additional: {  }
+          d6568b46-9e70-4222-96ae-11b381225acc:
+            uuid: d6568b46-9e70-4222-96ae-11b381225acc
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_bibliography'
+              label: Bibliography
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          4f0de264-ca22-4eb7-b3d1-4c726b0e79dc:
+            uuid: 4f0de264-ca22-4eb7-b3d1-4c726b0e79dc
+            region: second
+            configuration:
+              id: 'field_block:node:artist:field_artworks'
+              label: Artworks
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: visually_hidden
+                settings:
+                  view_mode: teaser
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+            weight: 1
+            additional: {  }
+        third_party_settings:
+          lb_plus:
+            uuid: e03ac7c5-76ce-48a3-a20c-d818c69b8f50
+id: node.artist.default
+targetEntityType: node
+bundle: artist
+mode: default
+content:
+  field_artist_artworks:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_artworks:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: first
+  field_bibliography:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_biography:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cv:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_external_artworks:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  body: true
+  field_address: true
+  field_e_mail: true
+  field_instagam_handle: true
+  field_name: true
+  field_name_asian: true
+  field_portrait: true
+  field_telephone: true
+  langcode: true
+  layout_builder__layout: true

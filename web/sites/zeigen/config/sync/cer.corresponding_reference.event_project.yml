@@ -1,0 +1,14 @@
+uuid: 16ba474f-283d-4123-81fb-9197a5501837
+langcode: en
+status: true
+dependencies: {  }
+id: event_project
+label: 'Event project'
+enabled: true
+first_field: field_event_project
+second_field: field_event_project
+add_direction: append
+bundles:
+  node:
+    - events
+    - project

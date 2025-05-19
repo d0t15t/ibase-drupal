@@ -1,0 +1,25 @@
+uuid: 6d9afa14-35b6-45a1-8fea-f080406dd81c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.artist
+  module:
+    - address
+id: node.artist.field_address
+field_name: field_address
+entity_type: node
+bundle: artist
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides: {  }
+  fields: {  }
+field_type: address

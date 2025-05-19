@@ -1,0 +1,24 @@
+uuid: c27faef0-569a-4d39-8b00-f0bf638be513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owner
+    - filter.format.html
+    - node.type.artwork
+  module:
+    - text
+id: node.artwork.field_owner
+field_name: field_owner
+entity_type: node
+bundle: artwork
+label: Owner
+description: 'Sold to/collection'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - html
+field_type: text_long

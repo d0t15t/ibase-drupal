@@ -1,0 +1,31 @@
+uuid: 73cff074-ea29-4dda-81c9-7e213e9ca5c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic
+  module:
+    - ckeditor5
+format: basic
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - '|'
+      - underline
+      - code
+      - strikethrough
+      - link
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+image_upload:
+  status: false

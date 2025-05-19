@@ -1,0 +1,53 @@
+uuid: afb0fb4e-00cb-4174-a7cc-bfd48c6eaca1
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artwork.body
+    - field.field.node.artwork.field_artists
+    - field.field.node.artwork.field_images
+    - field.field.node.artwork.field_links
+    - field.field.node.artwork.field_uuid
+    - field.field.node.artwork.layout_builder__layout
+    - image.style.teaser
+    - node.type.artwork
+  module:
+    - field_formatter_range
+    - media
+    - text
+    - user
+id: node.artwork.teaser
+targetEntityType: node
+bundle: artwork
+mode: teaser
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_images:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: teaser
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 0
+    region: content
+hidden:
+  field_artists: true
+  field_links: true
+  field_uuid: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

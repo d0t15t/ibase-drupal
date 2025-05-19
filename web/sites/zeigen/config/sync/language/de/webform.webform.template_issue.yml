@@ -1,0 +1,111 @@
+title: Ausgabe
+description: 'Vorlage für einen neuen Problembericht innerhalb eines Ticketsystems als Webformular.'
+elements: |
+  meta_data_details:
+    '#title': 'Meta-Daten zum Problem'
+    '#type': details
+    '#open': true
+    meta_data_01:
+      '#type': webform_flexbox
+      title:
+        '#type': textfield
+        '#title': Titel
+        '#required': true
+      project:
+        '#type': select
+        '#title': Projekt
+        '#required': true
+        '#options':
+          'Project I': 'Projekt I'
+          'Project II': 'Projekt II'
+          'Project III': 'Projekt III'
+    meta_data_02:
+      '#type': webform_flexbox
+      category:
+        '#type': select
+        '#title': Kategorie
+        '#required': true
+        '#options':
+          'Bug report': 'Bug-Report'
+          Task: Task
+          'Feature request': 'Feature-Anfrage'
+          'Support request': 'Support-Anfrage'
+          Plan: Plan
+      priority:
+        '#type': select
+        '#title': Priorität
+        '#required': true
+        '#options':
+          4: Kritisch
+          3: Wichtig
+          2: Normal
+          1: 'Weniger wichtig'
+      status:
+        '#type': webform_select_other
+        '#title': Status
+        '#required': true
+        '#options':
+          Active: Aktiv
+          'Needs work': 'Maßnahmen erforderlich'
+          'Needs review': 'Prüfung erforderlich'
+          'Reviewed & tested by the community': 'Durch die Community geprüft und getestet'
+          'Patch (to be ported)': 'Patch (zu portieren)'
+          Fixed: Behoben
+          Postponed: Zurückgestellt
+          'Postponed (maintainer needs more info)': 'Zurückgestellt (Betreuer braucht mehr Info)'
+          'Closed (duplicate)': 'Geschlossen (Duplikat)'
+          'Closed (won''t fix)': 'Geschlossen (wird nicht behoben)'
+          'Closed (works as designed)': 'Geschlossen (funktioniert wie vorgesehen)'
+          'Closed (cannot reproduce)': 'Geschlossen (nicht reproduzierbar)'
+          'Closed (outdated)': 'Geschlossen (veraltet)'
+      version:
+        '#type': webform_autocomplete
+        '#title': Version
+        '#required': true
+        '#autocomplete_existing': true
+      component:
+        '#type': webform_select_other
+        '#title': Komponente
+        '#required': true
+        '#options':
+          Code: Code
+          Documentation: Dokumentation
+          Miscellaneous: Verschiedenes
+          'User interface': 'Benutzerschnittstelle'
+      assigned:
+        '#type': entity_autocomplete
+        '#title': Zugewiesen
+        '#target_type': user
+        '#selection_handler': 'default:user'
+        '#selection_settings':
+          include_anonymous: false
+    meta_data_03:
+      '#type': webform_flexbox
+      tags:
+        '#type': entity_autocomplete
+        '#title': 'Problem-Tags'
+        '#description': 'Tags <strong>NICHT</strong> für hinzuzufügen zufälliger Schlüsselwörter oder Duplizieren anderer Felder verwenden.  Begriffe mit Kommata trennen, nicht mit Leerzeichen.'
+        '#tags': true
+        '#target_type': taxonomy_term
+        '#selection_handler': 'default:taxonomy_term'
+        '#selection_settings':
+          target_bundles:
+            tags: tags
+          auto_create: 1
+          auto_create_bundle: tags
+  summary_and_relationshsips_details:
+    '#title': 'Problemzusammenfassung'
+    '#type': details
+    '#open': true
+    summary:
+      '#type': text_format
+      '#title': Zusammenfassung
+      '#description': 'Eine Problemzusammenfassung ist eine kurze Übersicht zu einem ausführlichem Problembericht. Problemzusammenfassungen müssen erstellt werden, wenn das Problem mehr als nur einige Kommentare hat bzw. ein durchschnittlicher Entwickler das Thema nicht in wenigen Minuten erfassen kann. Diese Zusammenfassungen sind für Core-Entwickler, Überprüfer von Patches und Benutzer, die große Mengen an Problemen und Informationen rasch überfliegen müssen, wichtige Informationsquellen.'
+  files_details:
+    '#title': Dateien
+    '#type': details
+    '#open': true
+    files:
+      '#type': managed_file
+      '#title': Dateien
+      '#multiple': true

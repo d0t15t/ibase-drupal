@@ -1,0 +1,26 @@
+uuid: 13b33b9f-81f9-40d4-9164-da4a37147ddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offset_cost
+    - node.type.artwork
+  module:
+    - price
+id: node.artwork.field_offset_cost
+field_name: field_offset_cost
+entity_type: node
+bundle: artwork
+label: 'Offset Cost'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    CNY: 0
+    EUR: 0
+    USD: 0
+  allow_negative: 0
+field_type: price_price

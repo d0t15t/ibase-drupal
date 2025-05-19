@@ -1,0 +1,14 @@
+uuid: 0fedb3bb-12b9-4d84-aebe-0aecb4cd901a
+langcode: de
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: 8MCmsz_csdJkVItxI8g_s4zp2PM285YqCy_gWTzOLPw
+id: employment_status
+label: Arbeitsverhältnis
+category: Demographisch
+likert: false
+options: "Vollzeit: Vollzeit\r\nTeilzeit: Teilzeit\r\nMilitär: Militär\r\nArbeitslos: Arbeitslos\r\n'Im Ruhestand': 'Im Ruhestand'\n"

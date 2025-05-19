@@ -1,0 +1,32 @@
+label: Veranstaltungen
+description: 'Eine Veranstaltungensliste.'
+display:
+  default:
+    display_options:
+      title: Veranstaltungen
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufwärts
+          sort_desc_label: Abwärts
+          bef:
+            general:
+              secondary_label: Optionen
+      sorts:
+        field_date_value:
+          expose:
+            label: Datum
+      filters:
+        field_event_project_target_id:
+          expose:
+            label: Projekt
+            description: 'Nach Projekt filtern'
+        field_date_value:
+          expose:
+            label: Datum
+  block_newest:
+    display_title: Neuste
+    display_options:
+      display_description: 'Liste von den aktuellsten Einträge.'

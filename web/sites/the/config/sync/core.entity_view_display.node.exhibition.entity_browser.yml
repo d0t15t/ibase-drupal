@@ -1,0 +1,127 @@
+uuid: e8ad020c-6f3a-480a-a06d-0abea5dc6a03
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.entity_browser
+    - field.field.node.exhibition.body
+    - field.field.node.exhibition.field_artists
+    - field.field.node.exhibition.field_artworks
+    - field.field.node.exhibition.field_date
+    - field.field.node.exhibition.field_dates
+    - field.field.node.exhibition.field_duration
+    - field.field.node.exhibition.field_duration_text
+    - field.field.node.exhibition.field_image
+    - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_properties
+    - image.style.large
+    - node.type.exhibition
+  module:
+    - datetime
+    - datetime_range
+    - layout_builder
+    - media
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.exhibition.entity_browser
+targetEntityType: node
+bundle: exhibition
+mode: entity_browser
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_artists:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_artworks:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_dates:
+    type: daterange_default
+    label: visually_hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+      from_to: both
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_duration:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_duration_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_images:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_properties:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

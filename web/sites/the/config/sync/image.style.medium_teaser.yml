@@ -1,0 +1,15 @@
+uuid: 4d93ebd4-4142-49b2-b278-6a98aa666ec8
+langcode: en
+status: true
+dependencies: {  }
+name: medium_teaser
+label: 'Medium teaser'
+effects:
+  719b4dcd-a40c-4a66-9854-985e012492bd:
+    uuid: 719b4dcd-a40c-4a66-9854-985e012492bd
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: true

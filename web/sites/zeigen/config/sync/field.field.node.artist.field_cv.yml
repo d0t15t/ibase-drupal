@@ -1,0 +1,24 @@
+uuid: 0f528e28-6d92-4fcc-bdee-b1f1b831cca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cv
+    - filter.format.html
+    - node.type.artist
+  module:
+    - text
+id: node.artist.field_cv
+field_name: field_cv
+entity_type: node
+bundle: artist
+label: CV
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - html
+field_type: text_long

@@ -1,0 +1,20 @@
+label: Ausstellungen
+description: 'Ein Übersicht von den Ausstellungen.'
+display:
+  default:
+    display_options:
+      title: Ausstellungen
+      pager:
+        options:
+          tags:
+            next: 'Nächste ›'
+            previous: '‹ Vorherige'
+            first: '« Erste'
+            last: 'Letzte »'
+          expose:
+            items_per_page_label: 'Einträge pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+      exposed_form:
+        options:
+          submit_button: Absenden
+          exposed_sorts_label: Sortieren

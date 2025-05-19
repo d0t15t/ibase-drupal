@@ -1,0 +1,21 @@
+uuid: bac097f1-be0b-476f-ba2d-73c0e012e860
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_external_artworks
+field_name: field_external_artworks
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

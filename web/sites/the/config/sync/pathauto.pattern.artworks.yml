@@ -1,0 +1,22 @@
+uuid: 5a029ef6-2498-487a-90bb-85292d6dd8a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: artworks
+label: Artworks
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:field_artists]/[node:title]'
+selection_criteria:
+  3308dc58-63e3-4ce0-999c-f1a256404ca7:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3308dc58-63e3-4ce0-999c-f1a256404ca7
+    context_mapping:
+      node: node
+    bundles:
+      artwork: artwork
+selection_logic: and
+weight: -5
+relationships: {  }

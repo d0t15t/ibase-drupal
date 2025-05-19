@@ -1,0 +1,13 @@
+uuid: c7832d2f-7225-4da6-993a-d2e3d45fcaaf
+langcode: de
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: mPWBT52fKHyINRl9S3cCWFxY3rKbwkIRxaK6sIA26oo
+id: webform_submission_make_sticky_action
+label: 'Formularübermittlung kennzeichnen/markieren'
+type: webform_submission
+plugin: webform_submission_make_sticky_action
+configuration: {  }

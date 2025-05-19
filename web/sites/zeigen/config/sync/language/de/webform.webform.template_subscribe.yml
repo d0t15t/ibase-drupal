@@ -1,0 +1,28 @@
+title: Abonnieren
+description: 'Vorlage zum Abonnieren eines Newsletters als Webformular.'
+elements: |
+  first_name:
+    '#title': 'Vorname'
+    '#type': textfield
+    '#required': true
+  last_name:
+    '#title': 'Nachname'
+    '#type': textfield
+    '#required': true
+  email:
+    '#title': E-Mail
+    '#type': email
+    '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Absende-Button(s)'
+    '#submit__label': Abonnieren
+settings:
+  confirmation_message: 'Vielen Dank fürs Abonnieren.'
+handlers:
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:first_name] [webform_submission:values:last_name]'
+      subject: _default
+      body: _default

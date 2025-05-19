@@ -1,0 +1,25 @@
+uuid: 4e95e738-2873-4bed-828e-de88239f346c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:markup:66c7458e-28b1-4fe0-ad23-4d0c69f5100e'
+  module:
+    - block_content
+  theme:
+    - zeigen
+id: zeigen_zeigennewsletter
+theme: zeigen
+region: footer
+weight: -8
+provider: null
+plugin: 'block_content:66c7458e-28b1-4fe0-ad23-4d0c69f5100e'
+settings:
+  id: 'block_content:66c7458e-28b1-4fe0-ad23-4d0c69f5100e'
+  label: 'Zeigen Newsletter'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

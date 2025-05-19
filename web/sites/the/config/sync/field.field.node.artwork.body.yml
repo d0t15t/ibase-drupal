@@ -1,0 +1,26 @@
+uuid: d41cd806-ff16-412b-82c1-2c823690fbeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.html
+    - node.type.artwork
+  module:
+    - text
+id: node.artwork.body
+field_name: body
+entity_type: node
+bundle: artwork
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - html
+field_type: text_with_summary

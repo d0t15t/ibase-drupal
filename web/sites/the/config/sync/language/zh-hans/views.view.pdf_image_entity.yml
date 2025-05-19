@@ -1,0 +1,61 @@
+display:
+  default:
+    display_title: 默认
+    display_options:
+      fields:
+        id:
+          label: ID
+          separator: ', '
+        referenced_entity_type:
+          separator: ', '
+        referenced_entity_bundle:
+          separator: ', '
+        referenced_entity_id:
+          separator: ', '
+        referenced_entity_revision_id:
+          separator: ', '
+        referenced_entity_lang:
+          separator: ', '
+        referenced_entity_field:
+          separator: ', '
+        pdf_file_id:
+          separator: ', '
+        pdf_file_uri:
+          separator: ', '
+        pdf_file_page:
+          separator: ', '
+        image_file_id:
+          separator: ', '
+        image_file_uri:
+          separator: ', '
+        image_format:
+          separator: ', '
+        changed:
+          label: 已更改
+          separator: ', '
+        operations_1:
+          label: 操作链接
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+            previous: '‹ 上一个'
+            first: '« 首页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      filters:
+        changed_2:
+          expose:
+            label: 已更改
+  list:
+    display_title: 页面

@@ -1,0 +1,11 @@
+uuid: 7cb515b6-8da7-47a3-8129-9736c312f746
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.image_feature
+label: 'Image feature'
+description: ''
+targetEntityType: node
+cache: true

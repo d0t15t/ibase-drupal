@@ -1,0 +1,45 @@
+uuid: 2f50a0a9-56ef-4dd9-85f2-f0198a5255ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dimensions
+    - node.type.artwork
+  module:
+    - dimension
+id: node.artwork.field_dimensions
+field_name: field_dimensions
+entity_type: node
+bundle: artwork
+label: Dimensions
+description: 'The dimensional measures of an artwork.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  length:
+    factor: '1'
+    min: ''
+    max: ''
+    prefix: ''
+    suffix: ''
+  width:
+    factor: '1'
+    min: ''
+    max: ''
+    prefix: ''
+    suffix: ''
+  height:
+    factor: '1'
+    min: ''
+    max: ''
+    prefix: ''
+    suffix: ''
+  value:
+    factor: 1
+    min: ''
+    max: ''
+    prefix: ''
+    suffix: ''
+field_type: volume_field_type

@@ -1,0 +1,49 @@
+title: Registrierung
+description: 'Registrierungs-Vorlage als Webformular.'
+elements: |
+  personal_information:
+    '#title': 'Ihre persönlichen Angaben'
+    '#type': webform_section
+    first_name:
+      '#title': 'Vorname'
+      '#type': textfield
+      '#required': true
+    last_name:
+      '#title': 'Nachname'
+      '#type': textfield
+      '#required': true
+  contact_information:
+    '#title': 'Ihre Kontaktinformationen'
+    '#type': webform_section
+    contact:
+      '#type': webform_contact
+      '#title': Kontakt
+      '#title_display': invisible
+      '#name__access': false
+      '#company__access': false
+  mailinglist:
+    '#title': 'Mailingliste'
+    '#type': webform_section
+    subscribe:
+      '#title': 'Bitte tragen Sie mich in Ihre Maillingliste ein.'
+      '#type': checkbox
+  additional_information:
+    '#title': 'Zusätzliche Angaben'
+    '#type': webform_section
+    '#open': true
+    notes:
+      '#title': Kommentare
+      '#type': textarea
+  actions:
+    '#type': webform_actions
+    '#title': 'Absende-Button(s)'
+    '#submit__label': Anmelden
+settings:
+  confirmation_message: 'Vielen Dank, dass Sie sich angemeldet haben.'
+handlers:
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:first_name] [webform_submission:values:last_name]'
+      subject: _default
+      body: _default

@@ -1,0 +1,88 @@
+uuid: 86b102be-a72f-49d6-8eaa-47ad93392901
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - node.type.artist
+    - node.type.artwork
+    - node.type.exhibition
+    - node.type.page
+    - node.type.workgroup
+    - taxonomy.vocabulary.mediums
+  module:
+    - content_translation
+    - entity_browser
+    - file
+    - file_entity
+    - language
+    - locale
+    - media
+    - node
+    - path
+    - rabbit_hole
+    - redirect
+    - system
+    - taxonomy
+id: the_admin
+label: 'THE Admin'
+weight: -6
+is_admin: null
+permissions:
+  - 'access artist_content entity browser pages'
+  - 'access content_artworks entity browser pages'
+  - 'access media overview'
+  - 'access media_documents entity browser pages'
+  - 'access media_images entity browser pages'
+  - 'access site in maintenance mode'
+  - 'administer content translation'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'bypass node access'
+  - 'change own username'
+  - 'create content translations'
+  - 'create terms in mediums'
+  - 'delete any artist content'
+  - 'delete any artwork content'
+  - 'delete any document media'
+  - 'delete any exhibition content'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any page content'
+  - 'delete any workgroup content'
+  - 'delete content translations'
+  - 'delete own files'
+  - 'delete terms in mediums'
+  - 'edit any artist content'
+  - 'edit any artwork content'
+  - 'edit any document media'
+  - 'edit any exhibition content'
+  - 'edit any image media'
+  - 'edit any page content'
+  - 'edit any workgroup content'
+  - 'edit terms in mediums'
+  - 'rabbit hole administer node'
+  - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
+  - 'rabbit hole bypass taxonomy_term'
+  - 'rabbit hole bypass user'
+  - 'translate any entity'
+  - 'translate artist node'
+  - 'translate artwork node'
+  - 'translate document media'
+  - 'translate editable entities'
+  - 'translate exhibition node'
+  - 'translate image media'
+  - 'translate interface'
+  - 'translate mediums taxonomy_term'
+  - 'translate page node'
+  - 'translate workgroup node'
+  - 'update any media'
+  - 'update content translations'
+  - 'view files'

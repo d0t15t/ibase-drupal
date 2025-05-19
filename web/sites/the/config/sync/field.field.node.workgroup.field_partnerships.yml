@@ -1,0 +1,26 @@
+uuid: b210526f-fb17-421b-8c6a-a38e4450d92a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partnerships
+    - filter.format.html
+    - filter.format.plain_text
+    - node.type.workgroup
+  module:
+    - text
+id: node.workgroup.field_partnerships
+field_name: field_partnerships
+entity_type: node
+bundle: workgroup
+label: Partnerships
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - html
+    - plain_text
+field_type: text_long

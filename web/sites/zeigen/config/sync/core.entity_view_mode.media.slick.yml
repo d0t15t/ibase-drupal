@@ -1,0 +1,16 @@
+uuid: cd28d139-2784-484c-8419-a176c07f5052
+langcode: de
+status: true
+dependencies:
+  module:
+    - media
+  enforced:
+    module:
+      - slick
+_core:
+  default_config_hash: RL7TDfa_Yx84vUNQlHVRJw-7YNeB3ZB0xhSd7RU9qYY
+id: media.slick
+label: Slick-Karusell
+description: ''
+targetEntityType: media
+cache: true

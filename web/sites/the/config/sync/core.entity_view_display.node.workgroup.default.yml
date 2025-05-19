@@ -1,0 +1,62 @@
+uuid: e03e1941-bf29-45e5-8937-7391ea3f7abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.workgroup.body
+    - field.field.node.workgroup.field_artworks
+    - field.field.node.workgroup.field_history
+    - field.field.node.workgroup.field_info
+    - field.field.node.workgroup.field_partnerships
+    - node.type.workgroup
+  module:
+    - text
+    - user
+id: node.workgroup.default
+targetEntityType: node
+bundle: workgroup
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_artworks:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_history:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_info:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_partnerships:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

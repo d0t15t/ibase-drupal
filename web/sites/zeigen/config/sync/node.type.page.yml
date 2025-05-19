@@ -1,0 +1,19 @@
+uuid: db746428-d73f-4976-96d6-a29089c58b02
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: Page
+type: page
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

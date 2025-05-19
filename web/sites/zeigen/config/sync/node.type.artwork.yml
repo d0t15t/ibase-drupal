@@ -1,0 +1,17 @@
+uuid: 0976f12b-58cb-48fa-bf1d-a1c034ac5664
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Artwork
+type: artwork
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

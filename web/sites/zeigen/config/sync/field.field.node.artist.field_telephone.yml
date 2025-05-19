@@ -1,0 +1,21 @@
+uuid: 29fe88ca-3751-4353-a08f-d97ddff32828
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telephone
+    - node.type.artist
+  module:
+    - telephone
+id: node.artist.field_telephone
+field_name: field_telephone
+entity_type: node
+bundle: artist
+label: Telephone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,13 @@
+title: 'Einen Arzttermin anfragen'
+description: 'Eine Vorlage für eine Terminanfrage bei einem Arzt als Webformular.'
+settings:
+  confirmation_title: Danke
+  confirmation_message: 'Ihre Anforderung ist gesendet worden. Ein medizinischer Mitarbeiter wird sie innerhalb von XX Stunden zurückrufen, um einen Termin zu vereinbaren.'
+  confirmation_url: '&lt;front&gt;'
+handlers:
+  email_notification:
+    label: E-Mail-Benachrichtigung
+    settings:
+      from_name: '[webform_submission:values:name:raw]'
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

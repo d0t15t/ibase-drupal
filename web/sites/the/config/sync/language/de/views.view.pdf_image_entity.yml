@@ -1,0 +1,61 @@
+display:
+  default:
+    display_title: Default
+    display_options:
+      fields:
+        id:
+          label: ID
+          separator: ', '
+        referenced_entity_type:
+          separator: ', '
+        referenced_entity_bundle:
+          separator: ', '
+        referenced_entity_id:
+          separator: ', '
+        referenced_entity_revision_id:
+          separator: ', '
+        referenced_entity_lang:
+          separator: ', '
+        referenced_entity_field:
+          separator: ', '
+        pdf_file_id:
+          separator: ', '
+        pdf_file_uri:
+          separator: ', '
+        pdf_file_page:
+          separator: ', '
+        image_file_id:
+          separator: ', '
+        image_file_uri:
+          separator: ', '
+        image_format:
+          separator: ', '
+        changed:
+          label: Changed
+          separator: ', '
+        operations_1:
+          label: 'Operations links'
+      pager:
+        options:
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        changed_2:
+          expose:
+            label: Changed
+  list:
+    display_title: Page

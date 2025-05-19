@@ -1,0 +1,42 @@
+uuid: b1161170-b074-4c59-9376-562a11d10d7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_media
+  module:
+    - entity_browser_entity_form
+    - views
+name: media_documents
+label: 'Document Media'
+display: modal
+display_configuration:
+  width: '1500'
+  height: '1500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  7f7ec05f-e1e8-4c1f-9e4a-3ce2c1bb845e:
+    id: view
+    uuid: 7f7ec05f-e1e8-4c1f-9e4a-3ce2c1bb845e
+    label: 'Select documents from library'
+    weight: 1
+    settings:
+      submit_text: 'Select document'
+      auto_select: false
+      view: entity_browser_media
+      view_display: documents
+  67ce53cc-1ad8-42d2-98e9-219a4ab6abe2:
+    id: entity_form
+    uuid: 67ce53cc-1ad8-42d2-98e9-219a4ab6abe2
+    label: 'Add new document'
+    weight: 2
+    settings:
+      submit_text: 'Save document'
+      entity_type: media
+      bundle: document
+      form_mode: default

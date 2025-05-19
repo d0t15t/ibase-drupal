@@ -1,0 +1,29 @@
+uuid: a607f474-84db-40be-92e9-bb8aff2664f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portrait
+    - media.type.image
+    - node.type.artist
+id: node.artist.field_portrait
+field_name: field_portrait
+entity_type: node
+bundle: artist
+label: Portrait
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

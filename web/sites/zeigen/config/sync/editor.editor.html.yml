@@ -1,0 +1,55 @@
+uuid: e7895b2a-f44f-486c-971a-85cd4421bec1
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.html
+  module:
+    - ckeditor5
+format: html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - style
+      - bold
+      - italic
+      - '|'
+      - underline
+      - code
+      - strikethrough
+      - subscript
+      - superscript
+      - link
+      - bulletedList
+      - numberedList
+      - horizontalLine
+      - blockQuote
+      - sourceEditing
+      - document
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<img src alt data-entity-type data-entity-uuid>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Application link'
+          element: '<a class="appy-link">'
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: false

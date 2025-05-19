@@ -1,0 +1,23 @@
+uuid: d231eaba-a7c7-4b7a-9863-de1d405d115e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.markup
+    - field.field.block_content.markup.field_markup
+  module:
+    - text
+id: block_content.markup.default
+targetEntityType: block_content
+bundle: markup
+mode: default
+content:
+  field_markup:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

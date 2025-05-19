@@ -1,0 +1,14 @@
+uuid: 27d69fe0-d094-49dd-bc30-9e6d699a845a
+langcode: de
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: cR3A6XXinVGC9g5vLS-vVvTC2ppZXRNXLPWA8xBUMew
+id: province_codes
+label: 'Abkürzungen der Provinzen'
+category: Geografisch
+likert: false
+options: "AB: Alberta\r\nBC: 'British Columbia'\r\nMB: Manitoba\r\nNB: 'New Brunswick'\r\nNL: 'Newfoundland and Labrador'\r\nNS: 'Nova Scotia'\r\nNT: 'Northwest Territories'\r\nNU: Nunavut\r\n'ON': Ontario\r\nPE: 'Prince Edward Island'\r\nQC: Quebec\r\nSK: Saskatchewan\r\nYT: Yukon\n"

@@ -1,0 +1,11 @@
+uuid: c5fc4eb7-8a03-49b7-be9b-2d1b7b4194be
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_private
+label: 'Sidebar private'
+description: ''
+targetEntityType: node
+cache: true
