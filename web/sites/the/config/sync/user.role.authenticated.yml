@@ -3,6 +3,10 @@ langcode: de
 status: true
 dependencies:
   config:
+    - entity_browser.browser.artist_content
+    - entity_browser.browser.content_artworks
+    - entity_browser.browser.media_documents
+    - entity_browser.browser.media_images
     - filter.format.basic
     - filter.format.html
     - filter.format.webform_default
@@ -20,7 +24,6 @@ dependencies:
     - filter
     - help
     - media
-    - media_pdf_thumbnail
     - node
     - shortcut
     - system
@@ -46,7 +49,6 @@ permissions:
   - 'access shortcuts'
   - 'access taxonomy overview'
   - 'access toolbar'
-  - 'add pdf image entity entities'
   - 'create artist content'
   - 'create artwork content'
   - 'create document media'
@@ -71,7 +73,6 @@ permissions:
   - 'edit own image media'
   - 'edit own page content'
   - 'edit own workgroup content'
-  - 'edit pdf image entity entities'
   - 'update media'
   - 'use text format basic'
   - 'use text format html'
@@ -80,6 +81,3 @@ permissions:
   - 'view media'
   - 'view own unpublished content'
   - 'view own unpublished media'
-  - 'view private pdf thumbnails'
-  - 'view published pdf image entity entities'
-  - 'view unpublished pdf image entity entities'
