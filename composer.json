@@ -27,6 +27,7 @@
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^3.0",
         "drupal/antibot": "^2.0",
+        "drupal/auto_entitylabel": "^3.4",
         "drupal/backup_migrate": "^5.0",
         "drupal/batch_resize_image": "^2.0",
         "drupal/better_exposed_filters": "^6.0",
@@ -46,10 +47,11 @@
         "drupal/config_ignore": "^3.2",
         "drupal/config_split": "^2.0@RC",
         "drupal/config_split_ignore": "^1.9",
-        "drupal/core-composer-scaffold": "^10.4",
-        "drupal/core-project-message": "^10.4",
-        "drupal/core-recommended": "^10.4",
+        "drupal/core-composer-scaffold": "^10.4.7",
+        "drupal/core-project-message": "^10.4.7",
+        "drupal/core-recommended": "^10.4.7",
         "drupal/current_year": "^1.0",
+        "drupal/custom_field": "^3.1",
         "drupal/date_filter": "^1.0",
         "drupal/devel": "^5.0",
         "drupal/dimension": "^2.0",
@@ -120,6 +122,7 @@
         "drupal/swiper_formatter": "^1.0",
         "drupal/taxonomy_menu_ui": "^3.0",
         "drupal/telephone_validation": "^2.4",
+        "drupal/twig_tweak": "^3.4",
         "drupal/views_bulk_operations": "4.3.x-dev@dev",
         "drupal/views_year_filter": "^2.1",
         "drupal/viewsreference": "^2.0@beta",
@@ -220,9 +223,6 @@
             "drupal/core": {
                 "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2024-09-09/2671162-151.patch"
             },
-            "drupal/cer": {
-                "Update existing references on save: https://www.drupal.org/project/cer/issues/3240535": "https://www.drupal.org/files/issues/2021-10-03/cer-ignore-original-entity-in-differences-calculation-2846318-14-reroll.patch"
-            },
             "drupal/price": {
                "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
             },
@@ -231,9 +231,6 @@
             },
             "drupal/linked_field": {
                 "Illegal offset type in isset or empty at ContentEntityBase.php - https://www.drupal.org/project/linked_field/issues/3480280#comment-15811952": "https://www.drupal.org/files/issues/2024-10-12/3480280-1.patch"
-            },
-            "drupal/views_bulk_operations": {
-                "TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in array_filter() - https://www.drupal.org/project/views_bulk_operations/issues/3420263": "https://www.drupal.org/files/issues/2024-10-09/3420263.patch"
             }
         },
         "merge-plugin": {
