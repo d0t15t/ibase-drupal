@@ -5,7 +5,6 @@ dependencies:
   module:
     - media
     - media_entity_download
-    - media_pdf_thumbnail
     - search
     - system
 _core:
@@ -19,4 +18,3 @@ permissions:
   - 'download media'
   - 'search content'
   - 'view media'
-  - 'view published pdf image entity entities'

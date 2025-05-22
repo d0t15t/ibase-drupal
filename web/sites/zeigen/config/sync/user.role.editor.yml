@@ -20,7 +20,6 @@ dependencies:
     - layout_builder
     - layout_builder_component_attributes
     - media
-    - media_pdf_thumbnail
     - node
     - path
     - search
@@ -43,7 +42,6 @@ permissions:
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission user'
-  - 'add pdf image entity entities'
   - 'administer nodes'
   - 'bypass node access'
   - 'create and edit custom blocks'
@@ -88,7 +86,6 @@ permissions:
   - 'edit own image media'
   - 'edit own page content'
   - 'edit own project content'
-  - 'edit pdf image entity entities'
   - 'edit terms in mediums'
   - 'manage layout builder component attributes'
   - 'switch shortcut sets'
@@ -110,7 +107,4 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
-  - 'view private pdf thumbnails'
-  - 'view published pdf image entity entities'
   - 'view the administration theme'
-  - 'view unpublished pdf image entity entities'

@@ -12,7 +12,6 @@ dependencies:
     - help
     - media
     - media_entity_download
-    - media_pdf_thumbnail
     - search
     - system
     - taxonomy
@@ -36,4 +35,3 @@ permissions:
   - 'use text format headline'
   - 'use text format html'
   - 'view media'
-  - 'view published pdf image entity entities'
