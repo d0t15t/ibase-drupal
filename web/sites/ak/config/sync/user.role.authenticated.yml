@@ -1,0 +1,23 @@
+uuid: 1a8485ca-440c-421f-94cb-93d547eee098
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+    - system
+    - toolbar
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'change own username'
+  - 'view media'
+  - 'view the administration theme'

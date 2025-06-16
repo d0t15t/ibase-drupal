@@ -130,41 +130,6 @@ third_party_settings:
                     token: ''
             weight: 1
             additional: {  }
-          b9a1196b-04fb-420d-bea3-76cd9d617192:
-            uuid: b9a1196b-04fb-420d-bea3-76cd9d617192
-            region: second
-            configuration:
-              id: 'field_block:node:exhibition:field_dates'
-              label: Dates
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: daterange_custom
-                label: inline
-                settings:
-                  timezone_override: ''
-                  date_format: 'j. M Y'
-                  from_to: both
-                  separator: '-'
-                third_party_settings:
-                  linked_field:
-                    linked: 0
-                    type: field
-                    destination:
-                      field: ''
-                      custom: ''
-                    advanced:
-                      title: ''
-                      target: ''
-                      class: ''
-                      rel: ''
-                      text: ''
-                    token: ''
-            weight: 2
-            additional: {  }
           f2371d18-87d9-4e92-b1bd-65a2230d0b44:
             uuid: f2371d18-87d9-4e92-b1bd-65a2230d0b44
             region: second
@@ -239,6 +204,41 @@ third_party_settings:
                       text: ''
                     token: ''
             weight: 4
+            additional: {  }
+          ac8fa7dc-7438-483b-ac3b-597514bd04cd:
+            uuid: ac8fa7dc-7438-483b-ac3b-597514bd04cd
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_dates'
+              label: Dates
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: daterange_default
+                label: above
+                settings:
+                  timezone_override: ''
+                  format_type: short
+                  from_to: both
+                  separator: '-'
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 5
             additional: {  }
         third_party_settings: {  }
 id: node.exhibition.default

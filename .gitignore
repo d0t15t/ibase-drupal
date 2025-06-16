@@ -45,3 +45,5 @@ web/.ht.router.php
 .gitattributes
 
 web/sites/default.settings.php
+
+tmp

@@ -7,12 +7,12 @@ dependencies:
 id: content_label_pattern
 label: 'Content label pattern'
 type: 'canonical_entities:node'
-pattern: '[node:content-type]s/[node:title]'
+pattern: 'archive/[node:title]'
 selection_criteria:
-  560c9006-291b-41f0-a261-bb6090d76044:
+  197ddd9c-7d94-481e-b488-4b34c89daa35:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 560c9006-291b-41f0-a261-bb6090d76044
+    uuid: 197ddd9c-7d94-481e-b488-4b34c89daa35
     context_mapping:
       node: node
     bundles:
