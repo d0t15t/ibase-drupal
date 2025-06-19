@@ -174,7 +174,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 1
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: slider
@@ -267,7 +267,44 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 2
+            weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          fb5ad52c-a77e-4f24-9bcc-9917715decec:
+            uuid: fb5ad52c-a77e-4f24-9bcc-9917715decec
+            region: second
+            configuration:
+              id: 'field_block:node:exhibition:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
             additional:
               layout_builder_styles_style:
                 slider: 0
