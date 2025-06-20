@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_headline
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
@@ -40,32 +41,8 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          24627314-9513-43f4-99c9-03db0bec1734:
-            uuid: 24627314-9513-43f4-99c9-03db0bec1734
-            region: content
-            configuration:
-              id: 'field_block:node:page:field_image'
-              label: 'Featured Image'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: media_thumbnail
-                label: visually_hidden
-                settings:
-                  image_link: ''
-                  image_style: wide
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
             weight: 4
-            additional:
-              layout_builder_styles_style:
-                slider: 0
+            additional: {  }
           30242251-c0a2-412c-9dbc-977e2c8bd91c:
             uuid: 30242251-c0a2-412c-9dbc-977e2c8bd91c
             region: content
@@ -87,7 +64,81 @@ third_party_settings:
                   rel: '0'
                   target: '0'
                 third_party_settings: {  }
+            weight: 5
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          24627314-9513-43f4-99c9-03db0bec1734:
+            uuid: 24627314-9513-43f4-99c9-03db0bec1734
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: large
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 1
+                  linked_field:
+                    linked: 1
+                    type: field
+                    destination:
+                      field: field_link
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
             weight: 3
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          a4f4091c-2668-4c95-ad29-dbf50a2a07af:
+            uuid: a4f4091c-2668-4c95-ad29-dbf50a2a07af
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_headline'
+              label: Headline
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 1
+                    type: field
+                    destination:
+                      field: field_link
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -115,6 +166,47 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          dfff655d-2ae6-484d-8e69-8c0aa93b0c9d:
+            uuid: dfff655d-2ae6-484d-8e69-8c0aa93b0c9d
+            region: second
+            configuration:
+              id: 'field_block:node:page:field_image'
+              label: 'Featured Image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: visually_hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  field_formatter_range:
+                    order: 0
+                    limit: 1
+                    offset: 0
+                  linked_field:
+                    linked: 1
+                    type: field
+                    destination:
+                      field: field_link
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
             weight: 0
             additional:
               layout_builder_styles_style:
@@ -144,26 +236,35 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-          dfff655d-2ae6-484d-8e69-8c0aa93b0c9d:
-            uuid: dfff655d-2ae6-484d-8e69-8c0aa93b0c9d
-            region: second
+          028191af-0354-4c4b-a7fb-3918eefc2a73:
+            uuid: 028191af-0354-4c4b-a7fb-3918eefc2a73
+            region: first
             configuration:
-              id: 'field_block:node:page:field_image'
-              label: 'Featured Image'
+              id: 'field_block:node:page:field_headline'
+              label: Headline
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: media_thumbnail
+                type: text_default
                 label: visually_hidden
-                settings:
-                  image_link: ''
-                  image_style: wide
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
+                settings: {  }
+                third_party_settings:
+                  linked_field:
+                    linked: 1
+                    type: field
+                    destination:
+                      field: field_link
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
             weight: 0
             additional:
               layout_builder_styles_style:
@@ -180,6 +281,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_headline:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_image:
     type: media_thumbnail

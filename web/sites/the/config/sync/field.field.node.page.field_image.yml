@@ -11,9 +11,9 @@ field_name: field_image
 entity_type: node
 bundle: page
 label: 'Featured Image'
-description: ''
+description: 'Add a second featured image to be used as mobile-featured.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,19 +1,19 @@
-uuid: 4bc2dec8-3b45-42b9-bb9f-2dcd7e36bb90
+uuid: f984ef0d-bd67-435e-8ac0-01f6736ef262
 langcode: en
 status: true
 dependencies:
   module:
-    - media
     - node
-id: node.field_image
-field_name: field_image
+    - text
+id: node.field_headline
+field_name: field_headline
 entity_type: node
-type: entity_reference
+type: text
 settings:
-  target_type: media
-module: core
+  max_length: 255
+module: text
 locked: false
-cardinality: 2
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
