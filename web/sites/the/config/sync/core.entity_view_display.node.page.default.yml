@@ -211,31 +211,6 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
-          e9ebae66-f070-432b-8d50-12e35de1946d:
-            uuid: e9ebae66-f070-432b-8d50-12e35de1946d
-            region: first
-            configuration:
-              id: 'field_block:node:page:field_link'
-              label: Link
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: link
-                label: visually_hidden
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: '0'
-                  target: '0'
-                third_party_settings: {  }
-            weight: 1
-            additional:
-              layout_builder_styles_style:
-                slider: 0
           028191af-0354-4c4b-a7fb-3918eefc2a73:
             uuid: 028191af-0354-4c4b-a7fb-3918eefc2a73
             region: first
@@ -266,6 +241,31 @@ third_party_settings:
                       text: ''
                     token: ''
             weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          e9ebae66-f070-432b-8d50-12e35de1946d:
+            uuid: e9ebae66-f070-432b-8d50-12e35de1946d
+            region: first
+            configuration:
+              id: 'field_block:node:page:field_link'
+              label: Link
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: visually_hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 3
             additional:
               layout_builder_styles_style:
                 slider: 0
