@@ -43,7 +43,7 @@ third_party_settings:
       label: Tabs
       region: content
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tabs
       format_settings:
         classes: ''
@@ -141,7 +141,7 @@ third_party_settings:
       label: Language
       region: content
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -171,7 +171,7 @@ content:
         hide_guidelines: '1'
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -251,7 +251,7 @@ content:
     third_party_settings: {  }
   field_metatags:
     type: metatag_firehose
-    weight: 10
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -272,6 +272,7 @@ content:
         credentials: Credentials
       widget_layout: stacked
       show_component_required_marker: false
+      flag_required_input: false
       credentials_inline: false
       size:
         title: 6
@@ -304,6 +305,7 @@ content:
         credentials: Credentials
       widget_layout: stacked
       show_component_required_marker: false
+      flag_required_input: false
       credentials_inline: false
       size:
         title: 6
@@ -360,39 +362,47 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 9
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
     type: boolean_checkbox
     weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -401,10 +411,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_artist_artworks: true
-  title: true

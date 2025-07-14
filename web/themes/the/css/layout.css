@@ -57,7 +57,12 @@
 }
 .layout-container {
   display: inherit;
-  padding-top: 20px;
+  padding-top: 5px;
+}
+@media (min-width) {
+  .layout-container {
+    padding-top: 20px;
+  }
 }
 .layout-container > *:not(footer) {
   max-width: 1200px;
@@ -126,10 +131,6 @@
 .node--type-artwork.node--view-mode-full .node__content .layout__region .block-field-blocknodeartworkfield-images .field--name-field-images img {
   max-width: 100%;
   height: auto;
-}
-#block-the-content .view-artists .view-content ul.cards {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 .padded-content > * {
   max-width: 1090px;

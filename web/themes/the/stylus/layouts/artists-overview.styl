@@ -1,0 +1,37 @@
+@require 'mq'
+.view-artists {
+  .view-content {
+    ul.artists {
+      gap: 10px;
+      padding: 5px;
+
+      > li {
+        width: calc(50% - 5px);
+
+        .node--type-artist.node--view-mode-teaser {
+          .image-style-teaser {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+      }
+
+      @media (min-width 768px) {
+        gap: 21px;
+        padding: 5px 21px 21px 21px;
+
+        > li {
+          width: calc(33% - 14px);
+
+          .node--type-artist.node--view-mode-teaser {
+            &:hover {
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

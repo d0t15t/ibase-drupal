@@ -55,28 +55,27 @@
   height: 1px;
   word-wrap: normal;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0 0 10px;
+.view-artists .view-content ul.artists {
+  gap: 10px;
+  padding: 5px;
 }
-header .region-header #site-logo {
-  width: 200px;
-  max-width: 200px;
+.view-artists .view-content ul.artists > li {
+  width: calc(50% - 5px);
 }
-@media all and (min-width: 768px) {
-  header {
-    padding: 0 20px;
+.view-artists .view-content ul.artists > li .node--type-artist.node--view-mode-teaser .image-style-teaser {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .view-artists .view-content ul.artists {
+    gap: 21px;
+    padding: 5px 21px 21px 21px;
   }
-  header #site-logo {
-    padding: 0;
-    margin: 0;
+  .view-artists .view-content ul.artists > li {
+    width: calc(33% - 14px);
   }
-  .layout-container .breadcrumb[role="navigation"] {
-    padding: 0;
-  }
-  .region-primary-menu .navigation {
-    margin: auto;
-    padding-right: 10px;
+  .view-artists .view-content ul.artists > li .node--type-artist.node--view-mode-teaser:hover {
+    background-color: #000;
+    color: #fff;
   }
 }

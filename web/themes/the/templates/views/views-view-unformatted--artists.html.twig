@@ -1,6 +1,9 @@
+{{ attach_library('the/artists_overview') }}
+
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
+
 <ul{{ create_attribute().addClass('cards', 'artists', 'border-grid') }}>
 {% for row in rows %}
   {%

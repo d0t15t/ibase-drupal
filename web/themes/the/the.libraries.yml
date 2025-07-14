@@ -206,3 +206,9 @@ layout:
     component:
       css/layout.css: {}
       css/components/overview.css: {}
+
+artists_overview:
+  version: VERSION
+  css:
+    theme:
+      css/layouts/artists-overview.css: {}
