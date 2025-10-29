@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_gallery_artist
     - field.field.node.artist.field_instagam_handle
     - field.field.node.artist.field_metatags
     - field.field.node.artist.field_name
@@ -57,7 +58,7 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -96,6 +97,43 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          05396a16-0d32-4ef2-9abf-892b30fea22b:
+            uuid: 05396a16-0d32-4ef2-9abf-892b30fea22b
+            region: content
+            configuration:
+              id: 'field_block:node:artist:field_portrait'
+              label: Portrait
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 0
+            additional:
+              layout_builder_styles_style:
+                slider: 0
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -104,27 +142,6 @@ third_party_settings:
           context_mapping: {  }
           column_widths: 33-67
         components:
-          0c8ea07b-f87b-42d8-bea2-1ddfbb6d77c1:
-            uuid: 0c8ea07b-f87b-42d8-bea2-1ddfbb6d77c1
-            region: first
-            configuration:
-              id: 'field_block:node:artist:title'
-              label: Title
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: visually_hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 1
-            additional:
-              layout_builder_styles_style:
-                slider: 0
           a7723c02-0dcf-4676-803a-ec2c41bd7571:
             uuid: a7723c02-0dcf-4676-803a-ec2c41bd7571
             region: second
@@ -162,7 +179,7 @@ third_party_settings:
                 settings:
                   trim_length: 300
                 third_party_settings: {  }
-            weight: 2
+            weight: 4
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -179,6 +196,64 @@ third_party_settings:
               views_label: ''
               items_per_page: none
             weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          bec1a586-7e0b-4735-91ce-1c9d991e9774:
+            uuid: bec1a586-7e0b-4735-91ce-1c9d991e9774
+            region: first
+            configuration:
+              id: 'field_block:node:artist:field_portrait'
+              label: Portrait
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: media_thumbnail
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: field
+                    destination:
+                      field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          0c8ea07b-f87b-42d8-bea2-1ddfbb6d77c1:
+            uuid: 0c8ea07b-f87b-42d8-bea2-1ddfbb6d77c1
+            region: first
+            configuration:
+              id: 'field_block:node:artist:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: visually_hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -217,6 +292,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_gallery_artist:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_links:
     type: link

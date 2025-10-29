@@ -1,0 +1,15 @@
+uuid: 86cfa462-dc9c-42ff-acc1-79777bca5273
+langcode: en
+status: true
+dependencies: {  }
+name: large_430w
+label: 'Large 430w'
+effects:
+  9cb568fc-18b5-417b-baea-f16eefa9d273:
+    uuid: 9cb568fc-18b5-417b-baea-f16eefa9d273
+    id: image_scale
+    weight: 1
+    data:
+      width: 430
+      height: null
+      upscale: false

@@ -1,5 +1,5 @@
 uuid: f0dda136-c5f4-4b19-a390-30fb5a3c12e0
-langcode: en
+langcode: de
 status: true
 dependencies:
   config:
@@ -14,8 +14,8 @@ id: file.image.field_image_title_text
 field_name: field_image_title_text
 entity_type: file
 bundle: image
-label: 'Title Text'
-description: 'Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.'
+label: Titeltext
+description: 'Der Titeltext wird im Tooltip verwendet, wenn ein Benutzer mit der Maus über das Bild fährt. Das Hinzufügen von Titeltext erleichtert das Verständnis des Kontextes eines Bildes und verbessert die Benutzerfreundlichkeit.'
 required: false
 translatable: false
 default_value: {  }

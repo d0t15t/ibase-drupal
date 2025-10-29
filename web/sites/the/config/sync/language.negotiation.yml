@@ -6,7 +6,7 @@ url:
   source: path_prefix
   prefixes:
     en: en
-    de: ''
+    de: de
     zh-hans: zh-hans
   domains:
     en: ''

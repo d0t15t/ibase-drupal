@@ -1,6 +1,6 @@
 _core:
   default_config_hash: i76EDs9aAKdrR4nZfe_woXsD0yihn4avDej8uClXES8
-langcode: en
+langcode: de
 applies_admin_routes: true
 include_invalid_paths: false
 excluded_paths: ''
@@ -8,7 +8,7 @@ replaced_titles: ''
 custom_paths: ''
 include_home_segment: true
 alternative_title_field: field_breadcrumb_title
-home_segment_title: Home
+home_segment_title: Startseite
 home_segment_keep: false
 include_title_segment: true
 title_from_page_when_available: true
@@ -25,14 +25,14 @@ use_site_title: false
 add_structured_data_json_ld: false
 capitalizator_mode: ucwords
 capitalizator_ignored_words:
-  - of
-  - and
-  - or
+  - von
+  - und
+  - oder
   - de
   - del
   - 'y'
   - o
-  - a
+  - ein
 capitalizator_forced_words: {  }
 capitalizator_forced_words_case_sensitivity: true
 capitalizator_forced_words_first_letter: false

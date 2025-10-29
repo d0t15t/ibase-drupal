@@ -1,5 +1,5 @@
 uuid: 1e5688e2-d2e7-4e22-a3d5-91312590210e
-langcode: en
+langcode: de
 status: false
 dependencies:
   module:
@@ -150,7 +150,7 @@ display:
           link_prev: '< prev'
           display_all: true
           link_all_url: '<front>'
-          link_all_text: Home
+          link_all_text: Startseite
           display_count: true
           show_disabled_links: true
           circular_paging: false

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.artist.field_biography
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_e_mail
+    - field.field.node.artist.field_gallery_artist
     - field.field.node.artist.field_instagam_handle
     - field.field.node.artist.field_metatags
     - field.field.node.artist.field_name
@@ -241,6 +242,13 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
+  field_gallery_artist:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_instagam_handle:
     type: string_textfield
     weight: 21
@@ -259,7 +267,7 @@ content:
     third_party_settings: {  }
   field_name:
     type: name_default
-    weight: 1
+    weight: 34
     region: content
     settings:
       override_field_settings: false
@@ -292,7 +300,7 @@ content:
     third_party_settings: {  }
   field_name_asian:
     type: name_default
-    weight: 2
+    weight: 35
     region: content
     settings:
       override_field_settings: false

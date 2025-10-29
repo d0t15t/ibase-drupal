@@ -1,0 +1,21 @@
+uuid: b1d7ad3a-7ebd-496a-9d5c-c725455e90b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_artist
+    - node.type.artist
+id: node.artist.field_gallery_artist
+field_name: field_gallery_artist
+entity_type: node
+bundle: artist
+label: 'Gallery artist'
+description: "Indicates whether the artist is 'of' the gallery."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
