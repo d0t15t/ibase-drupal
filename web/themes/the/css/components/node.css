@@ -149,6 +149,9 @@ article.node--view-mode-full h1 {
 .node--type-artist.node--view-mode-full {
   margin-bottom: 150px;
 }
+.node--type-artist.node--view-mode-full .block-field-blocknodeartistfield-portrait img {
+  border: 1px solid #000;
+}
 .node--type-artist.node--view-mode-full .block-field-blocknodeartistfield-artworks ul li {
   max-width: 300px;
 }
