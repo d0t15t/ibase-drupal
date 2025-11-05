@@ -102,6 +102,7 @@
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
         "drupal/permissions_filter": "^1.6",
+        "drupal/physical": "^1.5",
         "drupal/price": "3.0.x-dev@dev",
         "drupal/pub_options": "^2.0",
         "drupal/quick_node_clone": "*",

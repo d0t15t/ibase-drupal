@@ -41,8 +41,8 @@ function _the_content_artist_form_submit_handler(&$form, FormStateInterface $for
       return trim(array_reduce($field_values, fn($c, $e) => "$c $e"));
     }, $name_fields);
     $node_title = trim(array_reduce($name_fields_values, fn($c, $f) => "$c $f"));
-    $node->setTitle($node_title);
-    $node->save();
+//    $node->setTitle($node_title);
+//    $node->save();
   } catch (\Exception $e) {
     \Drupal::logger('the_content')->error('An error occurred: @message', ['@message' => $e->getMessage()]);
   }
