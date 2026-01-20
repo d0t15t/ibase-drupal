@@ -377,8 +377,8 @@ display:
       menu:
         type: normal
         title: Artists
-        description: ''
-        weight: -50
+        description: null
+        weight: 0
         enabled: true
         expanded: false
         menu_name: main

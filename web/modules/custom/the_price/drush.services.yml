@@ -1,0 +1,6 @@
+services:
+  the_price.commands:
+    class: Drupal\the_price\Commands\ThePriceCommands
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: drush.command }

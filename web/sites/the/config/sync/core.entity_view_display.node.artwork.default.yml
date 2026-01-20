@@ -22,6 +22,9 @@ dependencies:
     - field.field.node.artwork.field_medium
     - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
+    - field.field.node.artwork.field_price_insurance_value
+    - field.field.node.artwork.field_price_offset_cost
+    - field.field.node.artwork.field_price_sale
     - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
@@ -29,6 +32,7 @@ dependencies:
     - image.style.wide
     - node.type.artwork
   module:
+    - entity_reference_revisions
     - field_formatter_range
     - layout_builder
     - layout_discovery
@@ -167,6 +171,57 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          ec65d77d-3856-4fd2-8e79-75aa5e7ee63c:
+            uuid: ec65d77d-3856-4fd2-8e79-75aa5e7ee63c
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_price_sale'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          1c134559-ceff-4193-bd03-d2c914b3af6e:
+            uuid: 1c134559-ceff-4193-bd03-d2c914b3af6e
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_price_offset_cost'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+          eeaeee03-7360-4a70-a350-c4a3c0e20ebb:
+            uuid: eeaeee03-7360-4a70-a350-c4a3c0e20ebb
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_price_insurance_value'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -360,6 +415,33 @@ content:
       currency_display: symbol
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_price_insurance_value:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_price_offset_cost:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_price_sale:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_sale_price:
     type: price_price_default

@@ -1,0 +1,10 @@
+name: THE Price migration
+type: module
+description: One-off migration of legacy price fields to Price paragraphs.
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - node
+  - paragraphs
+  - entity_reference_revisions
+  - price

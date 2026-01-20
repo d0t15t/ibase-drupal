@@ -54,10 +54,29 @@ function the_content_preprocess_field(&$vars) {
   $entity = $vars["element"]["#object"];
 
   if ($field_name === 'field_dimensions') {
-    // Hide empty length values.
-    if (isset($vars["items"][0]["content"]["#length"]) && $vars["items"][0]["content"]["#length"] === '0.00') {
-      $vars["items"][0]["content"]["#length"] = NULL;
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    foreach ($vars["items"] as &$item) {
+      $components = ['height', 'width', 'length'];
+      foreach ($components as $component) {
+        if (isset($item["content"]["#$component"])) {
+          $value = $item["content"]["#$component"];
+          // If the value is a round number (example: 18.00) then only display 18
+          if (is_numeric($value) && (float) $value == (int) $value) {
+            $item["content"]["#$component"] = (string) (int) $value;
+          }
+          elseif (is_numeric($value) && $langcode === 'de') {
+            // German uses comma as decimal point.
+            $item["content"]["#$component"] = str_replace('.', ',', (string) $value);
+          }
+
+          // Hide empty length values.
+          if ($component === 'length' && $item["content"]["#$component"] === '0') {
+            $item["content"]["#$component"] = NULL;
+          }
+        }
+      }
     }
+
     // Show dimensions unit from parent.
     if (isset($vars["element"]["#object"])) {
       $parent = $vars["element"]["#object"];

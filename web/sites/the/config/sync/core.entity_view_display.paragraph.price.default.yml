@@ -1,0 +1,34 @@
+uuid: 87220d28-5775-49b6-a573-c7d928320fe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.price.field_currency
+    - field.field.paragraph.price.field_price
+    - paragraphs.paragraphs_type.price
+  module:
+    - options
+id: paragraph.price.default
+targetEntityType: paragraph
+bundle: price
+mode: default
+content:
+  field_currency:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

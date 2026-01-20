@@ -1,0 +1,23 @@
+uuid: 48022567-860e-44fe-8333-ac3b7372938c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_currency
+    - paragraphs.paragraphs_type.price
+  module:
+    - options
+id: paragraph.price.field_currency
+field_name: field_currency
+entity_type: paragraph
+bundle: price
+label: Currency
+description: 'Select a currency.'
+required: true
+translatable: false
+default_value:
+  -
+    value: eur
+default_value_callback: ''
+settings: {  }
+field_type: list_string

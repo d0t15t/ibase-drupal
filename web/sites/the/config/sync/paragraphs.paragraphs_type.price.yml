@@ -1,0 +1,10 @@
+uuid: fb28ddaf-83c3-4615-bf6a-2b24df070af1
+langcode: en
+status: true
+dependencies: {  }
+id: price
+label: Price
+icon_uuid: null
+icon_default: null
+description: 'Enter a price and currency.'
+behavior_plugins: {  }

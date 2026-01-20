@@ -1,0 +1,31 @@
+uuid: 17b301ba-92d5-41e3-833d-0b6b6eabe3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_offset_cost
+    - node.type.artwork
+    - paragraphs.paragraphs_type.price
+  module:
+    - entity_reference_revisions
+id: node.artwork.field_price_offset_cost
+field_name: field_price_offset_cost
+entity_type: node
+bundle: artwork
+label: 'Offset (cost)'
+description: 'Enter the offset cost'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      price: price
+    negate: 0
+    target_bundles_drag_drop:
+      price:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions
