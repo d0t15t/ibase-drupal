@@ -18,15 +18,12 @@ dependencies:
     - field.field.node.artwork.field_history
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_info
-    - field.field.node.artwork.field_insurance_value
     - field.field.node.artwork.field_location
     - field.field.node.artwork.field_medium
-    - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
     - field.field.node.artwork.field_price_insurance_value
     - field.field.node.artwork.field_price_offset_cost
     - field.field.node.artwork.field_price_sale
-    - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
@@ -39,7 +36,6 @@ dependencies:
     - field_group
     - paragraphs
     - path
-    - price
     - text
     - yearonly
 third_party_settings:
@@ -125,12 +121,9 @@ third_party_settings:
     group_financial:
       children:
         - field_owner
-        - field_insurance_value
-        - field_price_insurance_value
-        - field_offset_cost
-        - field_price_offset_cost
-        - field_sale_price
         - field_price_sale
+        - field_price_insurance_value
+        - field_price_offset_cost
       label: Financial
       region: content
       parent_name: group_tabs
@@ -374,12 +367,6 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-  field_insurance_value:
-    type: price_price_default
-    weight: 26
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_location:
     type: text_textarea
     weight: 12
@@ -400,12 +387,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_offset_cost:
-    type: price_price_default
-    weight: 28
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_owner:
     type: text_textarea
@@ -438,7 +419,7 @@ content:
     third_party_settings: {  }
   field_price_offset_cost:
     type: paragraphs
-    weight: 29
+    weight: 28
     region: content
     settings:
       title: Paragraph
@@ -456,7 +437,7 @@ content:
     third_party_settings: {  }
   field_price_sale:
     type: paragraphs
-    weight: 31
+    weight: 26
     region: content
     settings:
       title: Paragraph
@@ -471,12 +452,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_sale_price:
-    type: price_price_default
-    weight: 30
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_version:
     type: entity_browser_entity_reference

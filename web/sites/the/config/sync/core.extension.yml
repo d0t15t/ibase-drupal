@@ -105,6 +105,7 @@ module:
   text: 0
   the_content: 0
   the_pager: 0
+  the_price: 0
   the_update: 0
   token: 0
   toolbar: 0

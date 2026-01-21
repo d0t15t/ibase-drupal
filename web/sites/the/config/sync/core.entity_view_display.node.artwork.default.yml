@@ -17,15 +17,12 @@ dependencies:
     - field.field.node.artwork.field_history
     - field.field.node.artwork.field_images
     - field.field.node.artwork.field_info
-    - field.field.node.artwork.field_insurance_value
     - field.field.node.artwork.field_location
     - field.field.node.artwork.field_medium
-    - field.field.node.artwork.field_offset_cost
     - field.field.node.artwork.field_owner
     - field.field.node.artwork.field_price_insurance_value
     - field.field.node.artwork.field_price_offset_cost
     - field.field.node.artwork.field_price_sale
-    - field.field.node.artwork.field_sale_price
     - field.field.node.artwork.field_version
     - field.field.node.artwork.field_workgroups
     - field.field.node.artwork.field_year
@@ -38,7 +35,6 @@ dependencies:
     - layout_discovery
     - media
     - options
-    - price
     - user
 third_party_settings:
   layout_builder:
@@ -398,24 +394,6 @@ content:
         offset: 0
     weight: 0
     region: content
-  field_insurance_value:
-    type: price_price_default
-    label: above
-    settings:
-      strip_trailing_zeroes: false
-      currency_display: symbol
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_offset_cost:
-    type: price_price_default
-    label: above
-    settings:
-      strip_trailing_zeroes: false
-      currency_display: symbol
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_price_insurance_value:
     type: entity_reference_revisions_entity_view
     label: above
@@ -442,15 +420,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_sale_price:
-    type: price_price_default
-    label: above
-    settings:
-      strip_trailing_zeroes: false
-      currency_display: symbol
-    third_party_settings: {  }
-    weight: 3
     region: content
 hidden:
   body: true
