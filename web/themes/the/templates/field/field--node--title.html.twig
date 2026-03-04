@@ -36,9 +36,9 @@
     'field--label-' ~ label_display,
   ]
 %}
-<h3{{ attributes.addClass(classes) }}>
+<span{{ attributes.addClass(classes) }}>
   {%- for item in items -%}
     {{ item.content }}
   {%- endfor -%}
-</h3>
+</span>
 {% endif %}

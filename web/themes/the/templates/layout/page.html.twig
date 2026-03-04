@@ -45,6 +45,11 @@
 <div class="layout-container">
 
   <header role="banner">
+    {% if is_front %}
+      <h1 class="visually-hidden">{{ 'THE Gallery — Contemporary Art in the Itz Valley'|t }}</h1>
+    {% elseif node %}
+      <h1 class="visually-hidden">{{ node.label }}</h1>
+    {% endif %}
     {{ page.header }}
     {{ page.primary_menu }}
   </header>

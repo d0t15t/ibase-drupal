@@ -8,5 +8,22 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
-  description: 'THE gallery is an institution in the rural Bamberg region. Two and a half hours by train from Berlin is a water mill in the Itz valley, which today generates green electricity for about 100 households. Thomas Eller, the owner of the mill, has been a curator and communicator. Most recently, he lived in Beijing for six years, where he founded the Gallery Weekend Beijing, which brought an international art audience to Beijing with great success. He then spent three years as the founding director of the China Arts & Sciences project in Jingdezhen, Jiangxi Province. '
+  description: 'THE Gallery is a contemporary art space in a historic water mill in the Itz valley, Bamberg region. Exhibitions, artists, and cultural events two and a half hours from Berlin.'
+  image_src: 'https://thegallery.art/sites/the/files/THE-gallery.png'
+  og_country_name: Germany
+  og_description: '[current-page:metatag:description]'
+  og_image: 'https://thegallery.art/sites/the/files/THE-gallery.png'
+  og_image_alt: 'Logo of THE-Gallery featuring large bold “THE” and smaller lowercase “gallery” in black text on a white background.'
+  og_image_secure_url: 'https://thegallery.art/sites/the/files/styles/wide/public/2025-11/%E9%A3%8E%E5%A2%A8%2017%20-%20landscape%2017.jpg'
+  og_image_type: image/png
+  og_locality: Mürsbach
+  og_phone_number: '+49 160 556 2 556'
+  og_postal_code: '96179'
+  og_site_name: 'THE Gallery'
+  og_street_address: 'Mühlstraße 8'
+  og_title: '[current-page:title] | [site:name]'
+  og_type: website
+  og_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
+  twitter_cards_description: '[current-page:metatag:description]'
+  twitter_cards_title: '[current-page:title] | [site:name]'
