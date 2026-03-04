@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dc05f46fae9913295b616e2601b1ae7",
+    "content-hash": "5feb935e3a11bfeea16440cfef5ef74b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -227,29 +227,29 @@
         },
         {
             "name": "commerceguys/intl",
-            "version": "v1.1.2",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/intl.git",
-                "reference": "f6200ca01f8c095f2a2602782b353770f738db87"
+                "reference": "2cf8f74987095aedff45249ce6fc7b0427beefee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/intl/zipball/f6200ca01f8c095f2a2602782b353770f738db87",
-                "reference": "f6200ca01f8c095f2a2602782b353770f738db87",
+                "url": "https://api.github.com/repos/commerceguys/intl/zipball/2cf8f74987095aedff45249ce6fc7b0427beefee",
+                "reference": "2cf8f74987095aedff45249ce6fc7b0427beefee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.3"
+                "php": ">=8.0"
             },
             "require-dev": {
                 "mikey179/vfsstream": "1.*",
-                "phpunit/phpunit": "^9.5"
+                "phpunit/phpunit": "^10"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -272,9 +272,9 @@
             "description": "Internationalization library powered by CLDR data.",
             "support": {
                 "issues": "https://github.com/commerceguys/intl/issues",
-                "source": "https://github.com/commerceguys/intl/tree/v1.1.2"
+                "source": "https://github.com/commerceguys/intl/tree/v2.0.7"
             },
-            "time": "2023-02-20T09:57:58+00:00"
+            "time": "2025-04-11T08:13:51+00:00"
         },
         {
             "name": "composer/installers",
@@ -7176,20 +7176,20 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/paragraphs.git",
-                "reference": "8.x-1.19"
+                "reference": "8.x-1.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.19.zip",
-                "reference": "8.x-1.19",
-                "shasum": "831a81a11eac419e8410db45efef5b283c4d117c"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "68051cc8c025aa3f62fd44a219d158361928a4ad"
             },
             "require": {
-                "drupal/core": "^10.2 || ^11",
+                "drupal/core": "^10.3 || ^11",
                 "drupal/entity_reference_revisions": "~1.3"
             },
             "require-dev": {
@@ -7211,8 +7211,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.19",
-                    "datestamp": "1740907076",
+                    "version": "8.x-1.20",
+                    "datestamp": "1767269542",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7372,52 +7372,6 @@
             "homepage": "https://www.drupal.org/project/permissions_filter",
             "support": {
                 "source": "https://git.drupalcode.org/project/permissions_filter"
-            }
-        },
-        {
-            "name": "drupal/price",
-            "version": "dev-3.0.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/price.git",
-                "reference": "7d52666fa0d5d029a89bfc3fca1e1b236d0ce610"
-            },
-            "require": {
-                "commerceguys/intl": "^1.0.0",
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-3.0.x": "3.0.x-dev"
-                },
-                "drupal": {
-                    "version": "3.0.x-dev",
-                    "datestamp": "1634497497",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "alphawebgroup",
-                    "homepage": "https://www.drupal.org/user/330008"
-                },
-                {
-                    "name": "evgen",
-                    "homepage": "https://www.drupal.org/user/1866892"
-                }
-            ],
-            "description": "Defines the Price field with different modifications and the Currency entity.",
-            "homepage": "http://drupal.org/project/price",
-            "support": {
-                "source": "https://git.drupalcode.org/project/price"
             }
         },
         {
@@ -15202,7 +15156,6 @@
         "drupal/layout_builder_extra_templates": 5,
         "drupal/limited_field_widgets": 10,
         "drupal/name": 5,
-        "drupal/price": 20,
         "drupal/quicktabs": 15,
         "drupal/rabbit_hole": 10,
         "drupal/responsive_menus": 10,
@@ -15212,7 +15165,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
 }
