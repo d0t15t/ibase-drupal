@@ -53,6 +53,7 @@ module:
   httpswww: 0
   iban_field: 0
   ibase_block_styles: 0
+  ibase_email_js: 0
   ibase_menu: 0
   ibase_responsive_lb: 0
   image: 0
@@ -77,6 +78,8 @@ module:
   menu_ui: 0
   metatag: 0
   metatag_hreflang: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   metatag_views: 0
   mysql: 0
   name: 0
@@ -96,6 +99,7 @@ module:
   search: 0
   serialization: 0
   shortcut: 0
+  simple_sitemap: 0
   styles_api: 0
   svg_image: 0
   syslog: 0

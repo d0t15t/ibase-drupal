@@ -50,8 +50,14 @@ function the_preprocess_field(&$vars) {
   }
 
   // Provide functionality for the 'field_biography' Read More functions.
+  // Use drupal_static() to ensure the ID is only set once per page render,
+  // preventing duplicate id="biography" when the field appears multiple times.
   if ($vars['field_name'] === 'field_biography' && $vars['element']['#formatter'] !== 'text_trimmed') {
-    $vars['attributes']['id'] = 'biography';
+    $used = &drupal_static('the_biography_id_used', FALSE);
+    if (!$used) {
+      $vars['attributes']['id'] = 'biography';
+      $used = TRUE;
+    }
   }
 }
 
@@ -72,4 +78,17 @@ function the_preprocess_menu__main__the(&$variables) {
   $uri = Drupal::request()->getRequestUri();
   $str = ltrim($uri, '/');
   $variables['disable_lang_switch'] = in_array($str, $paths);
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * Remove the Generator meta tag for security/SEO hygiene.
+ */
+function the_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $tag) {
+    if (isset($tag[1]) && $tag[1] === 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
 }
