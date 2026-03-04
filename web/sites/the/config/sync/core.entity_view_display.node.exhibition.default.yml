@@ -199,7 +199,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 1
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -219,7 +219,7 @@ third_party_settings:
                 label: visually_hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 2
+            weight: 3
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -239,7 +239,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -296,6 +296,43 @@ third_party_settings:
                     type: field
                     destination:
                       field: ''
+                      custom: ''
+                    advanced:
+                      title: ''
+                      target: ''
+                      class: ''
+                      rel: ''
+                      text: ''
+                    token: ''
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          dd71b6d2-f84a-4b8b-8611-ce26c6b8f867:
+            uuid: dd71b6d2-f84a-4b8b-8611-ce26c6b8f867
+            region: first
+            configuration:
+              id: 'field_block:node:exhibition:title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: heading_text
+                label: hidden
+                settings:
+                  size: h2
+                third_party_settings:
+                  linked_field:
+                    linked: 0
+                    type: custom
+                    destination:
+                      field:
+                        field: ''
+                        custom:
+                          custom: ''
                       custom: ''
                     advanced:
                       title: ''
