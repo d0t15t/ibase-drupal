@@ -151,6 +151,20 @@ display:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
+        default_langcode:
+          id: default_langcode
+          table: node_field_data
+          field: default_langcode
+          entity_type: node
+          entity_field: default_langcode
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
         type:
           id: type
           table: node_field_data
@@ -232,6 +246,7 @@ display:
             format: html
           tokenize: false
       footer: {  }
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -256,6 +271,20 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        default_langcode:
+          id: default_langcode
+          table: node_field_data
+          field: default_langcode
+          entity_type: node
+          entity_field: default_langcode
+          plugin_id: boolean
+          operator: '='
           value: '1'
           group: 1
           expose:
@@ -336,6 +365,7 @@ display:
             value: '<h4>Exhibited Artists</h4>'
             format: html
           tokenize: false
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -369,6 +399,7 @@ display:
           empty: false
           view_to_insert: 'artists:exhibited_artists'
           inherit_arguments: false
+      rendering_language: '***LANGUAGE_language_interface***'
       display_extenders:
         metatag_display_extender:
           metatags: {  }
