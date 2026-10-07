@@ -74,6 +74,10 @@
   width: 100%;
   height: auto;
 }
+.view-artists .view-content ul.artists > li .node--type-artist.node--view-mode-teaser a[rel="bookmark"] {
+  display: block;
+  padding: 4px 8px 5px;
+}
 @media (min-width: 768px) {
   .view-artists .view-content ul.artists {
     gap: 21px;

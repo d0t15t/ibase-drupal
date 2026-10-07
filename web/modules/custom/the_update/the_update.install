@@ -26,3 +26,112 @@ function the_update_update_10001(&$sandbox) {
     $artwork->save();
   }
 }
+
+/**
+ * Create missing translations for all translatable content in all languages.
+ */
+function the_update_update_10002(&$sandbox) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $translation_manager = \Drupal::service('content_translation.manager');
+  $bundle_info = \Drupal::service('entity_type.bundle.info');
+  $langcodes = array_keys(\Drupal::languageManager()->getLanguages());
+  $pathauto_generator = \Drupal::service('pathauto.generator');
+
+  // Re-saving entities must not regenerate the existing aliases of their
+  // source translations, so tell pathauto to leave existing aliases alone for
+  // the duration of this update (in-memory override, nothing is saved).
+  $GLOBALS['config']['pathauto.settings']['update_action'] = \Drupal\pathauto\PathautoGeneratorInterface::UPDATE_ACTION_NO_NEW;
+  \Drupal::configFactory()->reset('pathauto.settings');
+
+  if (!isset($sandbox['items'])) {
+    $sandbox['items'] = [];
+    foreach (array_keys($translation_manager->getSupportedEntityTypes()) as $entity_type_id) {
+      $definition = $entity_type_manager->getDefinition($entity_type_id);
+      $bundle_key = $definition->getKey('bundle');
+      foreach (array_keys($bundle_info->getBundleInfo($entity_type_id)) as $bundle) {
+        if (!$translation_manager->isEnabled($entity_type_id, $bundle)) {
+          continue;
+        }
+        $query = $entity_type_manager->getStorage($entity_type_id)->getQuery()->accessCheck(FALSE);
+        if ($bundle_key) {
+          $query->condition($bundle_key, $bundle);
+        }
+        foreach ($query->execute() as $id) {
+          $sandbox['items'][] = [$entity_type_id, $id];
+        }
+      }
+    }
+    $sandbox['total'] = count($sandbox['items']);
+    $sandbox['created'] = 0;
+  }
+
+  // Fields that must not be copied from the source translation.
+  $skip = [
+    'path',
+    'default_langcode',
+    'content_translation_source',
+    'content_translation_outdated',
+    'revision_translation_affected',
+    'revision_default',
+  ];
+
+  foreach (array_splice($sandbox['items'], 0, 25) as [$entity_type_id, $id]) {
+    $storage = $entity_type_manager->getStorage($entity_type_id);
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    $entity = $storage->load($id);
+    if (!$entity) {
+      continue;
+    }
+    $source = $entity->getUntranslated();
+    // Language-neutral content (und, zxx) cannot be translated.
+    if ($source->language()->isLocked()) {
+      continue;
+    }
+    $definition = $entity->getEntityType();
+    $skip_keys = array_filter([
+      $definition->getKey('id'),
+      $definition->getKey('uuid'),
+      $definition->getKey('revision'),
+      $definition->getKey('langcode'),
+    ]);
+    $missing = array_diff($langcodes, array_keys($entity->getTranslationLanguages()));
+    if (!$missing) {
+      continue;
+    }
+
+    foreach ($missing as $langcode) {
+      $values = [];
+      foreach ($source->getTranslatableFields(FALSE) as $field_name => $field) {
+        if (!in_array($field_name, $skip, TRUE) && !in_array($field_name, $skip_keys, TRUE)) {
+          $values[$field_name] = $field->getValue();
+        }
+      }
+      $translation = $entity->addTranslation($langcode, $values);
+      $translation_manager->getTranslationMetadata($translation)
+        ->setSource($source->language()->getId())
+        ->setOutdated(FALSE);
+      $sandbox['created']++;
+    }
+
+    if ($entity instanceof \Drupal\Core\Entity\RevisionLogInterface) {
+      $entity->setNewRevision(TRUE);
+      $entity->setRevisionLogMessage('Created missing translations: ' . implode(', ', $missing));
+    }
+    $entity->save();
+
+    // Pathauto only aliases the translation that was saved, so generate the
+    // aliases for the new translations explicitly.
+    foreach ($missing as $langcode) {
+      $pathauto_generator->updateEntityAlias($entity->getTranslation($langcode), 'insert');
+    }
+  }
+
+  unset($GLOBALS['config']['pathauto.settings']['update_action']);
+  \Drupal::configFactory()->reset('pathauto.settings');
+
+  $sandbox['#finished'] = $sandbox['total'] ? 1 - count($sandbox['items']) / $sandbox['total'] : 1;
+
+  if ($sandbox['#finished'] >= 1) {
+    return t('Created @count missing translations.', ['@count' => $sandbox['created']]);
+  }
+}

@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      title: Künstler
+      header:
+        area:
+          content:
+            value: '<h4>Galeriekünstler</h4>'
+            format: html
+  exhibited_artists:
+    display_title: 'Ausgestellte Künstler'
+    display_options:
+      title: 'Ausgestellte Künstler'
+      header:
+        area:
+          content:
+            value: '<h4>Ausgestellte Künstler</h4>'
+            format: html
+  page_1:
+    display_options:
+      menu:
+        title: Künstler

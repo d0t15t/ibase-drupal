@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      title: 艺术家
+      header:
+        area:
+          content:
+            value: '<h4>画廊艺术家</h4>'
+            format: html
+  exhibited_artists:
+    display_title: 参展艺术家
+    display_options:
+      title: 参展艺术家
+      header:
+        area:
+          content:
+            value: '<h4>参展艺术家</h4>'
+            format: html
+  page_1:
+    display_options:
+      menu:
+        title: 艺术家
