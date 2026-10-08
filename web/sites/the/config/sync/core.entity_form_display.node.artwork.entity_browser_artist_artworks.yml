@@ -33,6 +33,7 @@ dependencies:
     - entity_browser
     - field_group
     - limited_field_widgets
+    - yearonly
 third_party_settings:
   field_group:
     group_tabs:
@@ -183,6 +184,31 @@ content:
     third_party_settings:
       limited_field_widgets:
         limit_values: '0'
+  field_medium:
+    type: entity_reference_autocomplete
+    weight: -1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_year:
+    type: yearonly_default
+    weight: -2
+    region: content
+    settings:
+      sort_order: asc
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   body: true
   created: true
@@ -199,20 +225,18 @@ hidden:
   field_history: true
   field_info: true
   field_location: true
-  field_medium: true
   field_owner: true
   field_price_insurance_value: true
   field_price_offset_cost: true
   field_price_sale: true
   field_version: true
   field_workgroups: true
-  field_year: true
   langcode: true
   path: true
   promote: true
+  simple_sitemap: true
   status: true
   sticky: true
-  title: true
   translation: true
   uid: true
   url_redirects: true
