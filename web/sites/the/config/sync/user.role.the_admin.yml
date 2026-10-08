@@ -31,6 +31,7 @@ weight: -6
 is_admin: null
 permissions:
   - 'access artist_content entity browser pages'
+  - 'access content_artist_artworks entity browser pages'
   - 'access content_artworks entity browser pages'
   - 'access media overview'
   - 'access media_documents entity browser pages'

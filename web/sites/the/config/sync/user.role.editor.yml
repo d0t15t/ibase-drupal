@@ -30,6 +30,7 @@ label: Editor
 weight: -8
 is_admin: null
 permissions:
+  - 'access content_artist_artworks entity browser pages'
   - 'access site in maintenance mode'
   - 'administer menu'
   - 'administer redirect settings'
