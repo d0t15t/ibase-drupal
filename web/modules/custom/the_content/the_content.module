@@ -1,6 +1,30 @@
 <?php
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_entity_field_access().
+ *
+ * Artwork prices are internal: only users who can edit artworks may see them.
+ */
+function the_content_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, ?FieldItemListInterface $items = NULL) {
+  $private_fields = [
+    'field_price_sale',
+    'field_price_insurance_value',
+    'field_price_offset_cost',
+  ];
+  if ($operation === 'view'
+    && $field_definition->getTargetEntityTypeId() === 'node'
+    && in_array($field_definition->getName(), $private_fields, TRUE)) {
+    return AccessResult::forbiddenIf(!$account->hasPermission('edit any artwork content'))
+      ->cachePerPermissions();
+  }
+  return AccessResult::neutral();
+}
 
 function the_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'node_artist_edit_form' || $form_id == 'node_artist_form') {

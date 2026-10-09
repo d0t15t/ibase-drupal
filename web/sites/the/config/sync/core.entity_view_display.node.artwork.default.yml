@@ -64,7 +64,7 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -89,7 +89,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 2
+            weight: 0
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -163,7 +163,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 6
+            weight: 5
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -182,7 +182,7 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            weight: 7
+            weight: 6
             additional: {  }
           1c134559-ceff-4193-bd03-d2c914b3af6e:
             uuid: 1c134559-ceff-4193-bd03-d2c914b3af6e
@@ -199,7 +199,7 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            weight: 8
+            weight: 7
             additional: {  }
           eeaeee03-7360-4a70-a350-c4a3c0e20ebb:
             uuid: eeaeee03-7360-4a70-a350-c4a3c0e20ebb
@@ -216,8 +216,28 @@ third_party_settings:
                   view_mode: default
                   link: ''
                 third_party_settings: {  }
-            weight: 9
+            weight: 8
             additional: {  }
+          059859cf-ae76-45fe-8971-2f379731016f:
+            uuid: 059859cf-ae76-45fe-8971-2f379731016f
+            region: content
+            configuration:
+              id: 'field_block:node:artwork:field_year'
+              label: Year
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: yearonly_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional:
+              layout_builder_styles_style:
+                slider: 0
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -275,7 +295,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 1
+            weight: 0
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -300,7 +320,7 @@ third_party_settings:
                     order: 0
                     limit: 0
                     offset: 0
-            weight: 2
+            weight: 3
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -321,7 +341,7 @@ third_party_settings:
                 settings:
                   link_to_entity: 0
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional:
               layout_builder_styles_style:
                 slider: 0
@@ -362,7 +382,27 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
+            additional:
+              layout_builder_styles_style:
+                slider: 0
+          52034a4e-2cb4-4ca5-92c7-2fa767b3fcaf:
+            uuid: 52034a4e-2cb4-4ca5-92c7-2fa767b3fcaf
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_year'
+              label: Year
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: yearonly_default
+                label: visually_hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
             additional:
               layout_builder_styles_style:
                 slider: 0

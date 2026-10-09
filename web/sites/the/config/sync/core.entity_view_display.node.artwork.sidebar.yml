@@ -56,7 +56,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_dimensions_variable:
     type: boolean
@@ -66,7 +66,7 @@ content:
       format_custom_false: ''
       format_custom_true: 'Dimensions variable'
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_duration:
     type: string
@@ -74,7 +74,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_edition:
     type: string
@@ -101,7 +101,7 @@ content:
         order: 0
         limit: 0
         offset: 0
-    weight: 1
+    weight: 2
     region: content
   field_version:
     type: entity_reference_label
@@ -116,7 +116,7 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
 hidden:
   body: true
