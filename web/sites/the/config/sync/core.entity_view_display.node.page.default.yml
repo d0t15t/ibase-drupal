@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_image
     - field.field.node.page.field_images
     - field.field.node.page.field_link
+    - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
     - image.style.wide
     - node.type.page
@@ -16,6 +17,7 @@ dependencies:
     - layout_discovery
     - link
     - media
+    - metatag
     - text
     - user
 third_party_settings:
@@ -142,6 +144,21 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          a5da0e44-da8d-412c-ab0b-78170513c9f7:
+            uuid: a5da0e44-da8d-412c-ab0b-78170513c9f7
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_metatags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_twocol_section
@@ -311,6 +328,13 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }
