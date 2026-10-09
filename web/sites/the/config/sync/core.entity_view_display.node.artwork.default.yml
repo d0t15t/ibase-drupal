@@ -406,6 +406,57 @@ third_party_settings:
             additional:
               layout_builder_styles_style:
                 slider: 0
+          f902c156-3b32-4a65-82eb-3ff2e21141a5:
+            uuid: f902c156-3b32-4a65-82eb-3ff2e21141a5
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_price_sale'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          32c9c29a-2dc5-464e-8f01-713064255f20:
+            uuid: 32c9c29a-2dc5-464e-8f01-713064255f20
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_price_offset_cost'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          d15c4669-abc1-4675-b765-681ba194aca3:
+            uuid: d15c4669-abc1-4675-b765-681ba194aca3
+            region: first
+            configuration:
+              id: 'field_block:node:artwork:field_price_insurance_value'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
         third_party_settings: {  }
 id: node.artwork.default
 targetEntityType: node
