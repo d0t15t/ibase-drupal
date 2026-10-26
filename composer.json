@@ -20,17 +20,16 @@
     ],
     "require": {
         "bower-asset/slick-carousel": "^1.8",
-        "commerceguys/addressing": "^1.4",
+        "commerceguys/addressing": "^2.1.1",
         "commerceguys/intl": "^2.0",
         "composer/installers": "^2.2",
         "cweagans/composer-patches": "^1.7",
-        "drupal/address": "^1.12",
+        "drupal/address": "^2.0.4",
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^3.0",
         "drupal/antibot": "^2.0",
         "drupal/auto_entitylabel": "^3.4",
         "drupal/backup_migrate": "^5.0",
-        "drupal/batch_resize_image": "^2.0",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/blazy": "^3.0",
         "drupal/block_classes": "^1.0",
@@ -39,18 +38,16 @@
         "drupal/bootstrap5": "^4.0",
         "drupal/cer": "^5.0@beta",
         "drupal/change_author_action": "^1.0",
-        "drupal/cheeseburger_menu": "^4.4",
         "drupal/chosen": "^3.0",
-        "drupal/classy": "^1.0",
+        "drupal/classy": "^2.0.3",
         "drupal/color_field": "^3.0",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/config_filter": "^2.6",
         "drupal/config_ignore": "^3.2",
         "drupal/config_split": "^2.0@RC",
-        "drupal/config_split_ignore": "^1.9",
-        "drupal/core-composer-scaffold": "^10.4.7",
-        "drupal/core-project-message": "^10.4.7",
-        "drupal/core-recommended": "^10.4.7",
+        "drupal/core-composer-scaffold": "~11.3.20",
+        "drupal/core-project-message": "~11.3.20",
+        "drupal/core-recommended": "~11.3.20",
         "drupal/current_year": "^1.0",
         "drupal/date_filter": "^1.0",
         "drupal/devel": "^5.4",
@@ -62,24 +59,24 @@
         "drupal/entity_embed": "^1.3",
         "drupal/entity_pager": "^2.0@alpha",
         "drupal/environment_indicator_ribbon": "^1.0",
-        "drupal/field_config_cardinality": "^3.0",
+        "drupal/field_config_cardinality": "^4.0.5",
         "drupal/field_formatter_class": "^1.6",
         "drupal/field_formatter_range": "^1.4",
         "drupal/field_group": "^3.4",
-        "drupal/file_delete": "^2.0",
+        "drupal/file_delete": "^3.0.3",
         "drupal/file_entity": "^2.0@RC",
         "drupal/file_management": "^2.1",
         "drupal/geofield": "^1.38",
-        "drupal/gin": "^3.0@RC",
+        "drupal/gin": "^5.0.16",
         "drupal/gin_login": "^2.0",
-        "drupal/gin_toolbar": "^1.0@RC",
+        "drupal/gin_toolbar": "^3.0",
         "drupal/gmail": "^1.0",
         "drupal/heading": "^2.0",
         "drupal/hide_revision_field": "^2.5",
         "drupal/httpswww": "^2.1",
         "drupal/iban_field": "^2.0",
-        "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/jsonapi_extras": "^3.24",
+        "drupal/inline_entity_form": "^3.0",
+        "drupal/jsonapi_extras": "^3.28",
         "drupal/jsonapi_hypermedia": "^1.9",
         "drupal/jsonapi_image_styles": "^3.0",
         "drupal/lang_dropdown": "^2.1",
@@ -94,7 +91,7 @@
         "drupal/media_pdf_thumbnail": "^6.0",
         "drupal/media_remote": "^1.8",
         "drupal/metatag": "^2.0",
-        "drupal/migrate_devel": "^2.3",
+        "drupal/migrate_devel": "^3.1",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_sandbox": "^1.1",
         "drupal/migrate_tools": "^6.1",
@@ -102,25 +99,23 @@
         "drupal/name": "^1.0@RC",
         "drupal/paragraphs": "^1.20",
         "drupal/pathauto": "^1.12",
-        "drupal/permissions_filter": "^1.6",
-        "drupal/pub_options": "^2.0",
+        "drupal/pub_options": "^3.0",
         "drupal/quick_node_clone": "*",
-        "drupal/quicktabs": "^3.0@alpha",
+        "drupal/quicktabs": "^4.3.1",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.9",
         "drupal/remote_stream_wrapper": "^2.0",
-        "drupal/responsive_favicons": "^2.0",
+        "drupal/responsive_favicons": "^3.0.1",
         "drupal/responsive_layout_builder": "^2.1",
-        "drupal/responsive_menus": "^2.0@beta",
         "drupal/shield": "^1.7",
         "drupal/simple_sitemap": "^4.2",
         "drupal/slick": "^3.0",
         "drupal/slick_paragraphs": "^3.0",
         "drupal/social_media_links": "^2.9",
         "drupal/stable": "^2.0",
-        "drupal/stage_file_proxy": "^2.1",
+        "drupal/stage_file_proxy": "^3.1.6",
         "drupal/svg_image": "^3.0",
-        "drupal/swiper_formatter": "^1.0",
+        "drupal/swiper_formatter": "^2.1.2",
         "drupal/taxonomy_menu_ui": "^3.0",
         "drupal/telephone_validation": "^2.4",
         "drupal/twig_tweak": "^3.4",
@@ -128,7 +123,7 @@
         "drupal/views_bulk_operations": "4.3.x-dev@dev",
         "drupal/views_year_filter": "^2.1",
         "drupal/viewsreference": "^2.0@beta",
-        "drupal/webform": "^6.2",
+        "drupal/webform": "^6.3.1",
         "drupal/webform_iban_field": "^2.0",
         "drupal/webp": "^1.0@RC",
         "drupal/yaml_editor": "^1.2",
@@ -165,9 +160,9 @@
             "locations": {
                 "web-root": "web/"
             },
-	      "file-mapping": {
-              "[web-root]/robots.txt": false,
-              "[web-root]/sites/development.services.yml": false
+            "file-mapping": {
+                "[web-root]/robots.txt": false,
+                "[web-root]/sites/development.services.yml": false
             }
         },
         "installer-paths": {
@@ -175,7 +170,9 @@
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library", "type:bower-asset", "type:npm-asset"
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -223,23 +220,29 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "https://www.drupal.org/files/issues/2024-09-09/2671162-151.patch"
+                "Also use text editor (CKEditor) for \"summary\" of a text field: https://www.drupal.org/project/drupal/issues/2671162": "patches/ckeditor-summary-drupal11.patch"
             },
             "drupal/price": {
-               "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
+                "Drupal 10 compatibility fixes https://www.drupal.org/project/price/issues/3413966": "https://www.drupal.org/files/issues/2024-01-11/drupal-10-compatibility-3413966-1.patch"
             },
             "drupal/dimension": {
-               "Support units in theme function": "patches/dimensions-add-unit.patch"
+                "Support units in theme function": "patches/dimensions-add-unit.patch"
             },
             "drupal/linked_field": {
-                "Illegal offset type in isset or empty at ContentEntityBase.php - https://www.drupal.org/project/linked_field/issues/3480280#comment-15811952": "https://www.drupal.org/files/issues/2024-10-12/3480280-1.patch"
+                "Illegal offset type in isset or empty at ContentEntityBase.php - https://www.drupal.org/project/linked_field/issues/3480280#comment-15811952": "patches/linked-field-array-destination.patch"
+            },
+            "drupal/file_management": {
+                "Drupal 11 and PHP 8.4+ compatibility: https://www.drupal.org/project/file_management/issues/3430563": "patches/file-management-drupal11.patch"
             }
         },
-        "merge-plugin": {
-          
-        },
+        "merge-plugin": {},
         "drupal-lenient": {
-            "allowed-list": ["drupal/addressing", "drupal/price"]
-        }
+            "allowed-list": [
+                "drupal/addressing",
+                "drupal/price",
+                "drupal/file_management"
+            ]
+        },
+        "composer-exit-on-patch-failure": true
     }
 }
