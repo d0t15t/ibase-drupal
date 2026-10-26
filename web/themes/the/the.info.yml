@@ -19,7 +19,7 @@ libraries-extend:
     - the/file
   core/drupal.progress:
     - the/progress
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 regions:
   header: 'Header'
   primary_menu: 'Primary menu'
