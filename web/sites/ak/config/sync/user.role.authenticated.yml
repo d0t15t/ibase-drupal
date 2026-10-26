@@ -19,5 +19,6 @@ permissions:
   - 'access toolbar'
   - 'administer nodes'
   - 'change own username'
+  - 'rebuild node access permissions'
   - 'view media'
   - 'view the administration theme'

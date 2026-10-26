@@ -88,6 +88,7 @@ permissions:
   - 'edit own project content'
   - 'edit terms in mediums'
   - 'manage layout builder component attributes'
+  - 'rebuild node access permissions'
   - 'switch shortcut sets'
   - 'translate any entity'
   - 'translate article node'

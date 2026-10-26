@@ -8,6 +8,8 @@ id: daily_schedule
 label: 'Täglicher Zeitplan'
 enabled: true
 keep: 99
+encrypt: false
+encrypt_password: ''
 period: 86400
 cron: null
 source_id: default_db

@@ -25,7 +25,7 @@ base_field: mid
 display:
   default:
     id: default
-    display_title: Standard
+    display_title: Default
     display_plugin: default
     position: 0
     display_options:
@@ -310,8 +310,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -352,8 +350,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -437,8 +433,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -492,7 +486,7 @@ display:
       tags: {  }
   page:
     id: page
-    display_title: Seite
+    display_title: Page
     display_plugin: page
     position: 1
     display_options:
@@ -1012,8 +1006,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1302,8 +1294,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1365,6 +1355,7 @@ display:
         options:
           row_class: 'media-library-item media-library-item--table js-media-library-item js-click-to-select'
           default_row_class: true
+          class: ''
       row:
         type: fields
       defaults:

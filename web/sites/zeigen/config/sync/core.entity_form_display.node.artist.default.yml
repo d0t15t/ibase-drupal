@@ -179,7 +179,8 @@ content:
     type: address_default
     weight: 20
     region: content
-    settings: {  }
+    settings:
+      wrapper_type: details
     third_party_settings: {  }
   field_artworks:
     type: entity_reference_autocomplete

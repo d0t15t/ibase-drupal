@@ -3,6 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.artist_content
+    - entity_browser.browser.content_artist_artworks
+    - entity_browser.browser.content_artworks
+    - entity_browser.browser.media_documents
+    - entity_browser.browser.media_images
     - media.type.document
     - media.type.image
     - node.type.artist
@@ -15,6 +20,7 @@ dependencies:
     - content_translation
     - entity_browser
     - file
+    - file_delete
     - file_entity
     - language
     - locale
@@ -58,6 +64,8 @@ permissions:
   - 'delete any page content'
   - 'delete any workgroup content'
   - 'delete content translations'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'delete terms in mediums'
   - 'edit any artist content'
@@ -68,11 +76,9 @@ permissions:
   - 'edit any page content'
   - 'edit any workgroup content'
   - 'edit terms in mediums'
-  - 'rabbit hole administer node'
   - 'rabbit hole bypass media'
-  - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
-  - 'rabbit hole bypass user'
+  - 'rebuild node access permissions'
   - 'translate any entity'
   - 'translate artist node'
   - 'translate artwork node'

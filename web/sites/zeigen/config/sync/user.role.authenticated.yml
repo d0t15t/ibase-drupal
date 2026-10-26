@@ -6,8 +6,10 @@ dependencies:
     - filter.format.basic
     - filter.format.headline
     - filter.format.html
+    - filter.format.webform_default
   module:
     - file
+    - file_delete
     - filter
     - help
     - media
@@ -28,10 +30,13 @@ permissions:
   - 'access help pages'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'download media'
   - 'search content'
   - 'use text format basic'
   - 'use text format headline'
   - 'use text format html'
+  - 'use text format webform_default'
   - 'view media'

@@ -168,6 +168,7 @@ display:
               responsive: ''
           default: created
           empty_table: true
+          class: ''
       row:
         type: fields
       fields:
@@ -788,8 +789,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -826,8 +825,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -864,8 +861,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -901,8 +896,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1327,6 +1320,7 @@ display:
               responsive: ''
           default: entity_label
           empty_table: true
+          class: ''
       row:
         type: fields
         options: {  }

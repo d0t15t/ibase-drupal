@@ -180,7 +180,8 @@ content:
     type: address_default
     weight: 20
     region: content
-    settings: {  }
+    settings:
+      wrapper_type: details
     third_party_settings: {  }
   field_artworks:
     type: entity_browser_entity_reference
@@ -381,6 +382,11 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   status:
     type: boolean_checkbox
     weight: 10

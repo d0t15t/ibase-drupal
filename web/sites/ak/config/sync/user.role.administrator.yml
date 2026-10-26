@@ -33,6 +33,7 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'perform backup'
+  - 'rebuild node access permissions'
   - 'restore from backup'
   - 'select account cancellation method'
   - 'view own unpublished content'

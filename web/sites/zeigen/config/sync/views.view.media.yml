@@ -11,9 +11,9 @@ dependencies:
 _core:
   default_config_hash: mF_CA96Q4unIl78LRoLKR5YPUDGdxn0wbSqyUbvrQjc
 id: media
-label: Media
+label: Medien
 module: views
-description: 'Find and manage media.'
+description: 'Medien finden und verwalten.'
 tag: ''
 base_table: media_field_data
 base_field: mid
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Media
+      title: Medien
       fields:
         media_bulk_form:
           id: media_bulk_form
@@ -76,7 +76,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Aktion
           include_exclude: exclude
           selected_actions: {  }
         thumbnail__target_id:
@@ -89,7 +89,7 @@ display:
           entity_type: media
           entity_field: thumbnail
           plugin_id: field
-          label: Thumbnail
+          label: Miniaturbild
           exclude: false
           alter:
             alter_text: false
@@ -269,7 +269,7 @@ display:
           entity_type: media
           entity_field: uid
           plugin_id: field
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -379,8 +379,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Unpublished
-            format_custom_true: Published
+            format_custom_false: 'Nicht veröffentlicht'
+            format_custom_true: Veröffentlicht
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -401,7 +401,7 @@ display:
           entity_type: media
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Aktualisiert
           exclude: false
           alter:
             alter_text: false
@@ -542,7 +542,7 @@ display:
           admin_label: ''
           entity_type: media
           plugin_id: entity_operations
-          label: Operations
+          label: Aktionen
           exclude: false
           alter:
             alter_text: false
@@ -595,27 +595,27 @@ display:
           tags:
             next: 'Nächste Seite ›'
             previous: '‹ Vorherige Seite'
-            first: '« First'
-            last: 'Last »'
+            first: '« Anfang'
+            last: 'Ende »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Elemente pro Seite'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Versatz
           quantity: 9
       exposed_form:
         type: basic
         options:
           submit_button: Filter
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
       access:
         type: perm
         options:
@@ -633,7 +633,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No media available.'
+          content: 'Keine Medien verfügbar.'
           tokenize: false
       sorts:
         created:
@@ -682,8 +682,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -724,8 +722,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -780,11 +776,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Veröffentlicht
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: 'Nicht veröffentlicht'
                 operator: '='
                 value: '0'
         status_extra:
@@ -842,7 +838,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Sprache
             description: ''
             use_operator: false
             operator: langcode_op
@@ -854,8 +850,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -932,6 +926,7 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:
@@ -958,7 +953,7 @@ display:
       tags: {  }
   media_page_list:
     id: media_page_list
-    display_title: Media
+    display_title: Medien
     display_plugin: page
     position: 1
     display_options:
@@ -967,7 +962,7 @@ display:
       path: admin/content/media
       menu:
         type: tab
-        title: Media
+        title: Medien
         description: ''
         weight: 0
         expanded: false

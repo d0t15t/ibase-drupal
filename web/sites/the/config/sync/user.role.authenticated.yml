@@ -20,6 +20,7 @@ dependencies:
   module:
     - entity_browser
     - file
+    - file_delete
     - file_entity
     - filter
     - help
@@ -58,6 +59,8 @@ permissions:
   - 'create page content'
   - 'create workgroup content'
   - 'customize shortcut links'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete media'
   - 'delete own artwork content'
   - 'delete own document media'

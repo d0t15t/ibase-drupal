@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.content_artist_artworks
     - filter.format.unfiltered
     - media.type.document
     - media.type.image
@@ -14,7 +15,9 @@ dependencies:
     - taxonomy.vocabulary.mediums
   module:
     - content_translation
+    - entity_browser
     - file
+    - file_delete
     - file_entity
     - filter
     - layout_builder
@@ -40,6 +43,8 @@ permissions:
   - 'change own username'
   - 'create and edit custom blocks'
   - 'create terms in mediums'
+  - 'delete files immediately'
+  - 'delete files override usage'
   - 'delete own files'
   - 'delete terms in mediums'
   - 'edit any artist content'
@@ -50,11 +55,8 @@ permissions:
   - 'edit any page content'
   - 'edit any workgroup content'
   - 'edit terms in mediums'
-  - 'rabbit hole administer node'
   - 'rabbit hole bypass media'
-  - 'rabbit hole bypass node'
   - 'rabbit hole bypass taxonomy_term'
-  - 'rabbit hole bypass user'
   - 'translate document media'
   - 'translate image media'
   - 'translate mediums taxonomy_term'

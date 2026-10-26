@@ -6,6 +6,6 @@ dependencies:
     - node
 id: node.entity_browser_artist_artworks
 label: 'Entity Browser - Artist artworks'
-description: ''
+description: null
 targetEntityType: node
 cache: true

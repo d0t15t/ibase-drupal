@@ -1,0 +1,22 @@
+uuid: d78fae65-6152-454f-b4f9-5021fe7470fa
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.artwork
+id: node.artwork.promote
+field_name: promote
+entity_type: node
+bundle: artwork
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean
