@@ -1,0 +1,241 @@
+diff --git a/composer.json b/composer.json
+index 8bdf722..a401d63 100644
+--- a/composer.json
++++ b/composer.json
+@@ -17,6 +17,6 @@
+     "source": "https://cgit.drupalcode.org/file_management"
+   },
+   "require": {
+-    "drupal/core": "^9.4 || ^10"
++    "drupal/core": "^10 || ^11"
+   }
+ }
+diff --git a/file_management.info.yml b/file_management.info.yml
+index ebdaab0..c34cd42 100644
+--- a/file_management.info.yml
++++ b/file_management.info.yml
+@@ -1,5 +1,5 @@
+ name: File Management
+-core_version_requirement: ^9.4 || ^10
++core_version_requirement: ^10 || ^11
+ description: Allows you to manage files.
+ package: Media
+ type: module
+\ No newline at end of file
+diff --git a/modules/file_management_view/config/install/views.view.file_management.yml b/modules/file_management_view/config/install/views.view.file_management.yml
+index 6807ab1..ebb878c 100644
+--- a/modules/file_management_view/config/install/views.view.file_management.yml
++++ b/modules/file_management_view/config/install/views.view.file_management.yml
+@@ -1074,7 +1074,6 @@ display:
+           default_argument_type: fixed
+           default_argument_options:
+             argument: ''
+-          default_argument_skip_url: false
+           summary_options:
+             base_path: ''
+             count: true
+diff --git a/modules/file_management_view/file_management_view.info.yml b/modules/file_management_view/file_management_view.info.yml
+index 7de25b8..cff54cb 100644
+--- a/modules/file_management_view/file_management_view.info.yml
++++ b/modules/file_management_view/file_management_view.info.yml
+@@ -1,5 +1,5 @@
+ name: File Management View
+-core_version_requirement: ^9.4 || ^10
++core_version_requirement:  ^10 || ^11
+ description: Adds a custom view with file management actions that replaces the existing files overview.
+ package: Media
+ type: module
+diff --git a/src/Controller/FileManagementController.php b/src/Controller/FileManagementController.php
+index 5c84006..9239000 100644
+--- a/src/Controller/FileManagementController.php
++++ b/src/Controller/FileManagementController.php
+@@ -19,7 +19,7 @@ class FileManagementController extends ControllerBase {
+    * @return array
+    *   The file edit form.
+    */
+-  public function viewFilePage(FileInterface $file = NULL) {
++  public function viewFilePage(?FileInterface $file = NULL) {
+     if (empty($file)) {
+       // drupal_set_message
+       // return to previous page or file overview page (use route)
+@@ -44,7 +44,7 @@ class FileManagementController extends ControllerBase {
+    * @return string
+    *   The page title.
+    */
+-  public function viewFilePageTitle(FileInterface $file = NULL) {
++  public function viewFilePageTitle(?FileInterface $file = NULL) {
+     if (empty($file)) {
+       return $this->t('View file');
+     }
+@@ -61,7 +61,7 @@ class FileManagementController extends ControllerBase {
+    * @return array
+    *   The file edit form.
+    */
+-  public function addFilePage(FileInterface $file = NULL) {
++  public function addFilePage(?FileInterface $file = NULL) {
+     $build = [
+       'form' => \Drupal::formBuilder()->getForm('Drupal\file_management\Form\FileManagementEditFileForm', $file),
+     ];
+@@ -78,7 +78,7 @@ class FileManagementController extends ControllerBase {
+    * @return array
+    *   The file edit form.
+    */
+-  public function deleteFilePage(FileInterface $file = NULL) {
++  public function deleteFilePage(?FileInterface $file = NULL) {
+     $build = [
+       'form' => $this->formBuilder()->getForm('Drupal\file_management\Form\FileManagementDeleteFileConfirmForm', $file),
+     ];
+@@ -95,7 +95,7 @@ class FileManagementController extends ControllerBase {
+    * @return string
+    *   The page title.
+    */
+-  public function addFilePageTitle(FileInterface $file = NULL) {
++  public function addFilePageTitle(?FileInterface $file = NULL) {
+     if (empty($file)) {
+       return $this->t('Edit file');
+     }
+@@ -112,7 +112,7 @@ class FileManagementController extends ControllerBase {
+    * @return string
+    *   The page title.
+    */
+-  public function deleteFilePageTitle(FileInterface $file = NULL) {
++  public function deleteFilePageTitle(?FileInterface $file = NULL) {
+     if (empty($file)) {
+       return $this->t('Delete file');
+     }
+diff --git a/src/FileManagement.php b/src/FileManagement.php
+index 7ed8843..b7549ff 100644
+--- a/src/FileManagement.php
++++ b/src/FileManagement.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\file_management;
+ 
+ use Drupal\Core\Link;
++use Drupal\Core\StringTranslation\ByteSizeMarkup;
+ use Drupal\Core\Url;
+ use Drupal\file\FileInterface;
+ use Drupal\field\Entity\FieldConfig;
+@@ -25,8 +26,8 @@ class FileManagement implements FileManagementInterface {
+     // Build a link to the file.
+     $link = Link::fromTextAndUrl(
+       $file->getFilename(),
+-      //Url::fromUri(file_create_url($file->getFileUri()))
+-	  Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri()))
++      Url::fromUri(\Drupal::service('file_url_generator')
++        ->generateAbsoluteString($file->getFileUri()))
+     )->toRenderable();
+     $link = \Drupal::service('renderer')->render($link);
+ 
+@@ -75,7 +76,7 @@ class FileManagement implements FileManagementInterface {
+     $file_information[] = [
+       '#type' => 'item',
+       '#title' => t('File size'),
+-      '#markup' => format_size($file->getSize()),
++      '#markup' => ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId()),
+     ];
+ 
+     $file_information[] = [
+@@ -113,7 +114,7 @@ class FileManagement implements FileManagementInterface {
+    *   Whether the file is an image or not.
+    */
+   public static function isImage(FileInterface $file) {
+-    if (empty(file_validate_is_image($file))) {
++    if (\Drupal::service('file.validator')->validate($file, ['FileIsImage' => []])->count() === 0) {
+       return TRUE;
+     }
+ 
+@@ -173,7 +174,9 @@ class FileManagement implements FileManagementInterface {
+     foreach ($file_usages as $module => $file_usage) {
+       foreach ($file_usage as $entity_type => $entity_ids) {
+         foreach ($entity_ids as $entity_id => $usage_count) {
+-          $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($entity_id);
++          $entity = \Drupal::entityTypeManager()
++            ->getStorage($entity_type)
++            ->load($entity_id);
+ 
+           if (!empty($entity)) {
+             foreach ($file_references as $field_name => $file_reference) {
+diff --git a/src/Form/FileManagementEditFileForm.php b/src/Form/FileManagementEditFileForm.php
+index 535fc70..dc34e8b 100644
+--- a/src/Form/FileManagementEditFileForm.php
++++ b/src/Form/FileManagementEditFileForm.php
+@@ -1,13 +1,14 @@
+ <?php
+ 
+ namespace Drupal\file_management\Form;
+-use Drupal\file_management\FileManagement;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\File\FileExists;
++use Drupal\Core\File\FileSystemInterface;
+ use Drupal\Core\Form\FormBase;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\file\FileInterface;
++use Drupal\file_management\FileManagement;
+ use Drupal\image\Entity\ImageStyle;
+-use Drupal\Core\File\FileSystemInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -63,7 +64,7 @@ class FileManagementEditFileForm extends FormBase {
+   /**
+    * {@inheritdoc}
+    */
+-  function buildForm(array $form, FormStateInterface $form_state, FileInterface $file = NULL) {
++  function buildForm(array $form, FormStateInterface $form_state, ?FileInterface $file = NULL) {
+     if (empty($file)) {
+       // drupal_set_message
+       // return to previous page or file overview page (use route)
+@@ -196,7 +197,7 @@ class FileManagementEditFileForm extends FormBase {
+     // Check if we have to replace the file.
+     // TODO: set file_validate_extensions correctly
+     // TODO: Also check the return value of file_save_upload()[0] (could be FALSE)
+-    $new_file = file_save_upload('new_file', ['file_validate_extensions' => []]);
++    $new_file = file_save_upload('new_file', ['FileExtension' => []]);
+     if (!empty($new_file) && is_array($new_file)) {
+       $new_file = $new_file[0];
+       $old_uri = $new_file->getFileUri();
+@@ -208,7 +209,7 @@ class FileManagementEditFileForm extends FormBase {
+ 
+       // Move the new file to where the old file was.
+       // TODO: We should use file_unmanaged_copy() so delete() doesn't throw a warning.
+-      $this->fileSystem->move($old_uri, $original_uri, FileSystemInterface::EXISTS_REPLACE);
++      $this->fileSystem->move($old_uri, $original_uri, FileExists::Replace);
+     }
+ 
+     if ($original_uri !== $new_uri) {
+@@ -216,7 +217,7 @@ class FileManagementEditFileForm extends FormBase {
+       // Move the temporary uploaded file to the new location.
+       // TODO: We should use file_unmanaged_copy()
+       // So delete() doesn't throw a warning.
+-      $this->fileSystem->move($original_uri, $new_uri, FileSystemInterface::EXISTS_REPLACE);
++      $this->fileSystem->move($original_uri, $new_uri, FileExists::Replace);
+     }
+ 
+     // Delete the db entry of the new file, we've already adapted the old file.
+diff --git a/src/Plugin/views/field/FileManagementOperations.php b/src/Plugin/views/field/FileManagementOperations.php
+index e950550..23b7977 100644
+--- a/src/Plugin/views/field/FileManagementOperations.php
++++ b/src/Plugin/views/field/FileManagementOperations.php
+@@ -2,6 +2,7 @@
+ 
+ namespace Drupal\file_management\Plugin\views\field;
+ 
++use Drupal\views\Entity\Render\EntityTranslationRenderTrait;
+ use Drupal\views\ResultRow;
+ use Drupal\Core\Url;
+ use Drupal\views\Plugin\views\field\EntityOperations;
+@@ -15,11 +16,13 @@ use Drupal\views\Plugin\views\field\EntityOperations;
+  */
+ class FileManagementOperations extends EntityOperations {
+ 
++  use EntityTranslationRenderTrait;
++
+   /**
+    * {@inheritdoc}
+    */
+   public function render(ResultRow $values) {
+-    $entity = $this->getEntityTranslation($this->getEntity($values), $values);
++    $entity = $this->getEntityTranslationByRelationship($this->getEntity($values), $values);
+ 
+     $operations = [
+       'edit' => [

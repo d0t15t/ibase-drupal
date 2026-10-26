@@ -1,0 +1,34 @@
+diff --git a/src/LinkedFieldManager.php b/src/LinkedFieldManager.php
+--- a/src/LinkedFieldManager.php
++++ b/src/LinkedFieldManager.php
+@@ -144,6 +144,10 @@
+     $uri = '';
+ 
+     if ($type == 'field') {
++      $value = is_array($value) ? ($value['field'] ?? '') : $value;
++      if (!$value || !$context['entity']->hasField($value)) {
++        return FALSE;
++      }
+       /** @var \Drupal\Core\Field\FieldItemListInterface $field_items */
+       $field_items = $context['entity']->get($value);
+ 
+@@ -166,6 +170,10 @@
+    * {@inheritdoc}
+    */
+   public function getFieldItemAttributes($value, int $delta, array $context) {
++    $value = is_array($value) ? ($value['field'] ?? '') : $value;
++    if (!$value || !$context['entity']->hasField($value)) {
++      return [];
++    }
+     /** @var \Drupal\Core\Field\FieldItemListInterface $field */
+     $field = $context['entity']->get($value);
+ 
+@@ -174,7 +182,7 @@
+     }
+ 
+     try {
+-      $item = $field->get($delta)->getValue();
++      $item = $field->get($delta)?->getValue();
+     }
+     catch (MissingDataException) {
+       return [];
