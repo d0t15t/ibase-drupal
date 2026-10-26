@@ -3,7 +3,7 @@ name: Ibase default content
 type: module
 description: Provides additional functionality for the site.
 package: Custom
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11
 default_content:
   node:
     - 7420c2de-053a-4788-9c6a-fa3a82f2ba01
