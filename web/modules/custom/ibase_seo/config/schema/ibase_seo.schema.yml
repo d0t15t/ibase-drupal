@@ -1,0 +1,86 @@
+ibase_seo.settings:
+  type: config_object
+  label: 'Ibase SEO settings'
+  mapping:
+    organization:
+      type: mapping
+      label: 'Organization'
+      mapping:
+        type:
+          type: string
+          label: 'Schema.org type, e.g. ArtGallery or NGO'
+        name:
+          type: label
+          label: 'Name'
+        alternate_name:
+          type: label
+          label: 'Alternate name'
+        description:
+          type: text
+          label: 'Description'
+        logo:
+          type: uri
+          label: 'Logo URL'
+        image:
+          type: uri
+          label: 'Image URL'
+        telephone:
+          type: string
+          label: 'Telephone'
+        email:
+          type: email
+          label: 'Email'
+        street_address:
+          type: string
+          label: 'Street address'
+        locality:
+          type: string
+          label: 'Locality'
+        postal_code:
+          type: string
+          label: 'Postal code'
+        region:
+          type: string
+          label: 'Region'
+        country:
+          type: string
+          label: 'Country code'
+        latitude:
+          type: string
+          label: 'Latitude'
+        longitude:
+          type: string
+          label: 'Longitude'
+        opening_hours:
+          type: sequence
+          label: 'Opening hours, e.g. Tu-Fr 16:00-18:00'
+          sequence:
+            type: string
+        same_as:
+          type: sequence
+          label: 'Profile URLs (social media, Wikipedia)'
+          sequence:
+            type: uri
+    place:
+      type: label
+      label: 'Short location phrase in English, e.g. "in the Itz valley, Bamberg region"'
+    place_de:
+      type: label
+      label: 'Short location phrase in German'
+    description_overrides:
+      type: sequence
+      label: 'Hand-written meta descriptions keyed by node ID'
+      sequence:
+        type: text
+    llms:
+      type: mapping
+      label: 'llms.txt'
+      mapping:
+        intro:
+          type: text
+          label: 'Introduction'
+        bundles:
+          type: sequence
+          label: 'Content types to list, with section headings'
+          sequence:
+            type: label

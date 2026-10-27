@@ -1,0 +1,33 @@
+_core:
+  default_config_hash: iFJO7As_PEBldtGmloHVYh15mPdrXTpYGp1C4EmcA-M
+organization:
+  type: ArtGallery
+  name: 'THE Gallery'
+  alternate_name: THEgallery
+  description: 'THE Gallery is a contemporary art space in a historic water mill in the Itz valley, Bamberg region. Exhibitions, artists, and cultural events two and a half hours from Berlin.'
+  logo: 'https://thegallery.art/sites/the/files/THE-gallery.png'
+  image: 'https://thegallery.art/sites/the/files/THE-gallery.png'
+  telephone: '+49 160 5562556'
+  email: ''
+  street_address: 'Mühlstraße 8'
+  locality: Mürsbach
+  postal_code: '96179'
+  region: Bayern
+  country: DE
+  latitude: '50.0610912'
+  longitude: '10.8679366'
+  opening_hours: {  }
+  same_as: {  }
+place: 'in the Itz valley, Bamberg region'
+place_de: 'im Itztal bei Bamberg'
+description_overrides:
+  2: 'THE gallery is an institution in the rural Bamberg region. Curator Thomas Eller presents contemporary art in a historic water mill in the Itz valley.'
+  242: 'Browse current and past exhibitions at THE Gallery, featuring contemporary art in the Itz valley, Bamberg region.'
+llms:
+  intro: ''
+  bundles:
+    exhibition: Exhibitions
+    artist: Artists
+    artwork: Artworks
+    workgroup: 'Groups of works'
+    page: Pages

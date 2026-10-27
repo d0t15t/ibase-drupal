@@ -1,0 +1,13 @@
+name: 'Ibase SEO'
+type: module
+description: 'Structured data (JSON-LD), page-specific meta tags, robots.txt and llms.txt for each site.'
+package: Custom
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:node
+  - drupal:image
+  - drupal:media
+  - metatag:metatag
+  - metatag:metatag_open_graph
+  - metatag:metatag_twitter_cards
+  - simple_sitemap:simple_sitemap

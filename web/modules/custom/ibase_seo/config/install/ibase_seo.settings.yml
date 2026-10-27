@@ -1,0 +1,24 @@
+organization:
+  type: Organization
+  name: ''
+  alternate_name: ''
+  description: ''
+  logo: ''
+  image: ''
+  telephone: ''
+  email: ''
+  street_address: ''
+  locality: ''
+  postal_code: ''
+  region: ''
+  country: DE
+  latitude: ''
+  longitude: ''
+  opening_hours: {  }
+  same_as: {  }
+place: ''
+place_de: ''
+description_overrides: {  }
+llms:
+  intro: ''
+  bundles: {  }

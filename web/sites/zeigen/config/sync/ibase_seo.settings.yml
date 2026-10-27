@@ -1,0 +1,37 @@
+_core:
+  default_config_hash: iFJO7As_PEBldtGmloHVYh15mPdrXTpYGp1C4EmcA-M
+organization:
+  type: NGO
+  name: 'ZEIGEN e.V.'
+  alternate_name: 'Zeigen EV'
+  description: 'ZEIGEN e.V. ist eine gemeinnützige Organisation, die sich der Förderung interkultureller Zusammenarbeit und künstlerischer Projekte verschrieben hat. Seit 2023 setzen wir uns für den Austausch und die Zusammenarbeit zwischen Künstler*innen aus verschiedenen Ländern ein und organisieren Veranstaltungen, Ausstellungen und Workshops.'
+  logo: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'
+  image: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'
+  telephone: '+49 1511 4535333'
+  email: office@zeigen.online
+  street_address: 'Mühlstraße 8'
+  locality: Mürsbach
+  postal_code: '96179'
+  region: Bayern
+  country: DE
+  latitude: '50.0610912'
+  longitude: '10.8679366'
+  opening_hours: {  }
+  same_as:
+    - 'https://www.instagram.com/zeigenev'
+    - 'https://www.facebook.com/profile.php?id=61554740926018'
+    - 'https://www.linkedin.com/company/zeigenev/'
+    - 'https://www.youtube.com/@ZEIGENeV'
+    - 'https://vimeo.com/user215537438'
+place: 'in Mürsbach near Bamberg'
+place_de: 'in Mürsbach bei Bamberg'
+description_overrides: {  }
+llms:
+  intro: ''
+  bundles:
+    project: Projects
+    events: Events
+    article: News
+    artist: Artists
+    artwork: Artworks
+    page: Pages
