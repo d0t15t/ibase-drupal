@@ -16,9 +16,19 @@ organization:
   longitude: ''
   opening_hours: {  }
   same_as: {  }
+  founding_date: ''
+  region_code: ''
+  knows_about: {  }
 place: ''
 place_de: ''
+content_langcode: ''
+free_admission: false
+redirect_imported_duplicates: false
+page_types: {  }
+person_vocabularies: {  }
+item_list_views: {  }
 description_overrides: {  }
 llms:
   intro: ''
   bundles: {  }
+  vocabularies: {  }

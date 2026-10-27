@@ -7,6 +7,8 @@
 
 use Drupal\Component\Serialization\Json;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_page_attachments().
@@ -32,7 +34,78 @@ function ibase_seo_page_attachments(array &$attachments): void {
     ],
     'ibase_seo_jsonld',
   ];
+
+  // Geo meta tags for local search.
+  $org = $builder->settings()->get('organization') ?: [];
+  if (!empty($org['latitude']) && !empty($org['longitude'])) {
+    $geo = [
+      'geo.region' => $org['region_code'] ?? '',
+      'geo.placename' => $org['locality'] ?? '',
+      'geo.position' => $org['latitude'] . ';' . $org['longitude'],
+      'ICBM' => $org['latitude'] . ', ' . $org['longitude'],
+    ];
+    foreach (array_filter($geo) as $name => $content) {
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'meta',
+          '#attributes' => ['name' => $name, 'content' => $content],
+        ],
+        'ibase_seo_' . $name,
+      ];
+    }
+  }
   $builder->getCacheability()->applyTo($attachments);
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Declares the language the content is written in, when that differs from
+ * the language the site was set up in.
+ */
+function ibase_seo_preprocess_html(array &$variables): void {
+  $langcode = \Drupal::config('ibase_seo.settings')->get('content_langcode');
+  if ($langcode && !\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $variables['html_attributes']['lang'] = $langcode;
+  }
+  $variables['#cache']['tags'][] = 'config:ibase_seo.settings';
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Adds a schema.org ItemList for the listings named in the settings, such
+ * as the current exhibitions or the archive.
+ */
+function ibase_seo_views_pre_render(ViewExecutable $view): void {
+  $lists = \Drupal::config('ibase_seo.settings')->get('item_list_views') ?: [];
+  $display = $view->id() . ':' . $view->current_display;
+  if (!in_array($display, $lists, TRUE) && !in_array($view->id() . ':*', $lists, TRUE)) {
+    return;
+  }
+  $entities = [];
+  foreach ($view->result as $row) {
+    if ($row->_entity instanceof NodeInterface || $row->_entity instanceof TermInterface) {
+      $entities[$row->_entity->id()] = $row->_entity;
+    }
+  }
+  if (!$entities) {
+    return;
+  }
+  /** @var \Drupal\ibase_seo\SchemaBuilder $builder */
+  $builder = \Drupal::service('ibase_seo.schema_builder');
+  $name = $builder->plainText((string) ($view->getTitle() ?: $view->storage->label()), 110);
+  $offset = (int) ($view->pager ? $view->pager->getCurrentPage() * $view->pager->getItemsPerPage() : 0);
+  $view->element['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#attributes' => ['type' => 'application/ld+json'],
+      '#value' => Json::encode($builder->itemList($entities, $name, $offset)),
+    ],
+    'ibase_seo_itemlist_' . $view->id() . '_' . $view->current_display,
+  ];
 }
 
 /**
@@ -42,12 +115,21 @@ function ibase_seo_page_attachments(array &$attachments): void {
  * every page shares well without per-node metatag configuration.
  */
 function ibase_seo_metatags_alter(array &$metatags, array &$context): void {
-  $node = $context['entity'] ?? NULL;
+  /** @var \Drupal\ibase_seo\SchemaBuilder $builder */
+  $builder = \Drupal::service('ibase_seo.schema_builder');
+  $locales = ['de' => 'de_DE', 'en' => 'en_GB', 'zh-hans' => 'zh_CN'];
+  $metatags['og_locale'] = $locales[$builder->langcode()] ?? $builder->langcode();
+
+  $entity = $context['entity'] ?? NULL;
+  if ($entity instanceof TermInterface && $builder->isPersonTerm($entity)) {
+    $metatags['description'] = $builder->termDescription($entity);
+    $metatags['og_type'] = 'profile';
+    return;
+  }
+  $node = $entity;
   if (!$node instanceof NodeInterface) {
     return;
   }
-  /** @var \Drupal\ibase_seo\SchemaBuilder $builder */
-  $builder = \Drupal::service('ibase_seo.schema_builder');
 
   $front = (string) \Drupal::config('system.site')->get('page.front');
   $is_front = $front === '/node/' . $node->id();

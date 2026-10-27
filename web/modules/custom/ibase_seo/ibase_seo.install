@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install hooks for Ibase SEO.
+ * Install and update hooks for Ibase SEO.
  */
 
 /**
@@ -16,6 +16,23 @@ function ibase_seo_install(bool $is_syncing): void {
   if ($is_syncing) {
     return;
   }
+  _ibase_seo_import_from_sync();
+}
+
+/**
+ * Apply the site's updated SEO settings, meta tags and sitemap from sync.
+ */
+function ibase_seo_update_10001(): void {
+  _ibase_seo_import_from_sync();
+  if (\Drupal::moduleHandler()->moduleExists('simple_sitemap')) {
+    \Drupal::service('simple_sitemap.generator')->rebuildQueue();
+  }
+}
+
+/**
+ * Imports the SEO-related config of the current site from its sync folder.
+ */
+function _ibase_seo_import_from_sync(): void {
   /** @var \Drupal\Core\Config\StorageInterface $sync */
   $sync = \Drupal::service('config.storage.sync');
   /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manager */
