@@ -48,7 +48,7 @@
         const layout = document.querySelector('main .layout')
 
         // escape if there are not enough elements to switch between.
-        if (layout.parentElement.children.length < 2) {
+        if (!layout || layout.parentElement.children.length < 2) {
           return;
         }
         const url = window.location.href;

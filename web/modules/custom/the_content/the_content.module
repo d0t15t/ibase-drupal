@@ -33,7 +33,8 @@ function the_content_form_alter(&$form, FormStateInterface $form_state, $form_id
 
   if (isset($form["field_dimensions"]['widget'][0])) {
     $arr = $form["field_dimensions"]['widget'][0];
-    $arr['value']['#access'] = FALSE;
+    // Hide the computed value visually; the dimension JS still needs it.
+    $arr['value']['#wrapper_attributes']['class'][] = 'hidden';
     $order = ['height', 'width', 'length'];
     $newOrder = [];
     foreach ($order as $key) {

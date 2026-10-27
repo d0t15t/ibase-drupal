@@ -135,3 +135,42 @@ function the_update_update_10002(&$sandbox) {
     return t('Created @count missing translations.', ['@count' => $sandbox['created']]);
   }
 }
+
+/**
+ * Remove customized German translations that are identical to the English.
+ *
+ * Config that was flagged as German but contained English text made locale
+ * record the English strings as customized German translations, which block
+ * the real translations and end up in the German config overrides.
+ */
+function the_update_update_10003() {
+  $database = \Drupal::database();
+  $query = $database->select('locales_target', 't');
+  $query->innerJoin('locales_source', 's', 's.lid = t.lid');
+  $query->fields('t', ['lid', 'translation'])
+    ->fields('s', ['source'])
+    ->condition('t.language', 'de')
+    ->condition('t.customized', 1);
+  $lids = [];
+  foreach ($query->execute() as $row) {
+    if ($row->translation === $row->source) {
+      $lids[] = $row->lid;
+    }
+  }
+  if (!$lids) {
+    return t('No identical customized German translations found.');
+  }
+
+  foreach (array_chunk($lids, 500) as $chunk) {
+    $database->delete('locales_target')
+      ->condition('language', 'de')
+      ->condition('lid', $chunk, 'IN')
+      ->execute();
+  }
+
+  // Rebuild the German overrides of the config that used these strings.
+  $config_manager = \Drupal::service('locale.config_manager');
+  $config_manager->updateConfigTranslations($config_manager->getStringNames($lids), ['de']);
+
+  return t('Removed @count customized German translations identical to the English.', ['@count' => count($lids)]);
+}
