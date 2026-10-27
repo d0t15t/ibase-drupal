@@ -9,3 +9,6 @@ label: 'Front page'
 tags:
   canonical_url: '[site:url]'
   shortlink: '[site:url]'
+  description: 'Atelierhof Kreuzberg is an exhibition and studio space in Berlin-Kreuzberg, showing contemporary art since 2008.'
+  og_title: '[site:name]'
+  twitter_cards_title: '[site:name]'

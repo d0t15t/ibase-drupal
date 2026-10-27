@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for Ibase SEO.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * These sites are not deployed with a full config import, so the site's
+ * SEO settings, meta tag defaults and sitemap settings are taken from its
+ * sync folder when the module is installed.
+ */
+function ibase_seo_install(bool $is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+  /** @var \Drupal\Core\Config\StorageInterface $sync */
+  $sync = \Drupal::service('config.storage.sync');
+  /** @var \Drupal\Core\Config\ConfigManagerInterface $config_manager */
+  $config_manager = \Drupal::service('config.manager');
+  $entity_type_manager = \Drupal::entityTypeManager();
+
+  $names = array_merge(
+    [
+      'ibase_seo.settings',
+      'metatag.metatag_defaults.global',
+      'metatag.metatag_defaults.front',
+      'metatag.metatag_defaults.node',
+    ],
+    $sync->listAll('simple_sitemap.'),
+  );
+  foreach ($names as $name) {
+    $data = $sync->read($name);
+    if (!$data) {
+      continue;
+    }
+    $entity_type_id = $config_manager->getEntityTypeIdByName($name);
+    if (!$entity_type_id) {
+      \Drupal::configFactory()->getEditable($name)->setData($data)->save(TRUE);
+      continue;
+    }
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $storage */
+    $storage = $entity_type_manager->getStorage($entity_type_id);
+    $id = $storage->getIDFromConfigName($name, $storage->getEntityType()->getConfigPrefix());
+    $entity = $storage->load($id);
+    if ($entity) {
+      $entity = $storage->updateFromStorageRecord($entity, $data);
+    }
+    else {
+      $entity = $storage->createFromStorageRecord($data);
+    }
+    $entity->save();
+  }
+}

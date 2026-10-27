@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Structured data and page-specific meta tags for the ibase sites.
+ */
+
+use Drupal\Component\Serialization\Json;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Adds a schema.org JSON-LD graph to every front-end page.
+ */
+function ibase_seo_page_attachments(array &$attachments): void {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+  /** @var \Drupal\ibase_seo\SchemaBuilder $builder */
+  $builder = \Drupal::service('ibase_seo.schema_builder');
+  $graph = $builder->buildPageGraph();
+  if (!$graph) {
+    return;
+  }
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#attributes' => ['type' => 'application/ld+json'],
+      '#value' => Json::encode($graph),
+    ],
+    'ibase_seo_jsonld',
+  ];
+  $builder->getCacheability()->applyTo($attachments);
+}
+
+/**
+ * Implements hook_metatags_alter().
+ *
+ * Fills in the description, image and type tags from the node itself, so
+ * every page shares well without per-node metatag configuration.
+ */
+function ibase_seo_metatags_alter(array &$metatags, array &$context): void {
+  $node = $context['entity'] ?? NULL;
+  if (!$node instanceof NodeInterface) {
+    return;
+  }
+  /** @var \Drupal\ibase_seo\SchemaBuilder $builder */
+  $builder = \Drupal::service('ibase_seo.schema_builder');
+
+  $front = (string) \Drupal::config('system.site')->get('page.front');
+  $is_front = $front === '/node/' . $node->id();
+
+  // The front page is described by the site description.
+  if (!$is_front && ($description = $builder->description($node))) {
+    $metatags['description'] = $description;
+  }
+
+  if (!$is_front && ($image = $builder->image($node))) {
+    $metatags['og_image'] = $image['url'];
+    $metatags['og_image_secure_url'] = $image['url'];
+    $metatags['og_image_type'] = $image['type'];
+    $metatags['og_image_width'] = (string) $image['width'];
+    $metatags['og_image_height'] = (string) $image['height'];
+    $metatags['og_image_alt'] = $image['alt'] ?: $node->label();
+    $metatags['twitter_cards_image'] = $image['url'];
+    $metatags['twitter_cards_image_alt'] = $image['alt'] ?: $node->label();
+    $metatags['image_src'] = $image['url'];
+  }
+
+  $metatags['og_type'] = match (TRUE) {
+    $is_front => 'website',
+    $node->bundle() === 'artist' => 'profile',
+    in_array($node->bundle(), ['article', 'exhibition', 'events'], TRUE) => 'article',
+    default => 'website',
+  };
+  if ($metatags['og_type'] === 'article') {
+    $metatags['article_published_time'] = date('c', (int) $node->getCreatedTime());
+    $metatags['article_modified_time'] = date('c', (int) $node->getChangedTime());
+  }
+}

@@ -38,23 +38,6 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-    {% if not root_path %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ArtGallery",
-      "name": "THE Gallery",
-      "description": "Contemporary art space in a historic water mill in the Itz valley, Bamberg region.",
-      "url": "https://thegallery.art",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Bavaria",
-        "addressCountry": "DE"
-      },
-      "sameAs": []
-    }
-    </script>
-    {% endif %}
   </head>
   <body{{ attributes.addClass(body_classes) }}>
 {#    <script src="https://kit.fontawesome.com/686cf5c3b5.js" crossorigin="anonymous"></script>#}

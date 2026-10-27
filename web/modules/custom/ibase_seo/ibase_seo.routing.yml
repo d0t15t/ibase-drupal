@@ -1,0 +1,15 @@
+ibase_seo.robots_txt:
+  path: '/robots.txt'
+  defaults:
+    _controller: '\Drupal\ibase_seo\Controller\SeoTxtController::robots'
+    _disable_route_normalizer: TRUE
+  requirements:
+    _access: 'TRUE'
+
+ibase_seo.llms_txt:
+  path: '/llms.txt'
+  defaults:
+    _controller: '\Drupal\ibase_seo\Controller\SeoTxtController::llms'
+    _disable_route_normalizer: TRUE
+  requirements:
+    _access: 'TRUE'

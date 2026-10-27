@@ -8,5 +8,19 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
-  description: "ZEIGEN e.V. ist eine gemeinnützige Organisation, die sich der Förderung interkultureller Zusammenarbeit und künstlerischer Projekte verschrieben hat. Seit 2023 setzen wir uns für den Austausch und die Zusammenarbeit zwischen Künstler*innen aus verschiedenen Ländern ein und organisieren Veranstaltungen, Ausstellungen und Workshops, um die Vielfalt der Kunst und Kultur zu feiern.\r\n\r\n"
+  description: 'ZEIGEN e.V. ist eine gemeinnützige Organisation, die sich der Förderung interkultureller Zusammenarbeit und künstlerischer Projekte verschrieben hat. Seit 2023 setzen wir uns für den Austausch und die Zusammenarbeit zwischen Künstler*innen aus verschiedenen Ländern ein und organisieren Veranstaltungen, Ausstellungen und Workshops.'
   title: '[current-page:title] | [site:name]'
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  og_site_name: '[site:name]'
+  og_type: website
+  og_url: '[current-page:url]'
+  og_title: '[current-page:title]'
+  og_description: '[current-page:metatag:description]'
+  og_image: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'
+  og_image_secure_url: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'
+  og_image_alt: 'ZEIGEN e.V.'
+  twitter_cards_type: summary_large_image
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_description: '[current-page:metatag:description]'
+  twitter_cards_image: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'
+  image_src: 'https://zeigen.online/sites/zeigen/files/zeigen-logo_0.png'

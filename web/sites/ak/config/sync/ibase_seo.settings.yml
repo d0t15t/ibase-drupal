@@ -1,0 +1,30 @@
+_core:
+  default_config_hash: iFJO7As_PEBldtGmloHVYh15mPdrXTpYGp1C4EmcA-M
+organization:
+  type: ArtGallery
+  name: 'Atelierhof Kreuzberg'
+  alternate_name: ''
+  description: 'Atelierhof Kreuzberg is an exhibition and studio space in Berlin-Kreuzberg, showing contemporary art since 2008.'
+  logo: ''
+  image: ''
+  telephone: '+49 30 61209307'
+  email: atelierhof-kreuzberg@t-online.de
+  street_address: 'Schleiermacherstraße 31-37'
+  locality: Berlin
+  postal_code: '10961'
+  region: Berlin
+  country: DE
+  latitude: '52.4923456'
+  longitude: '13.3986868'
+  opening_hours:
+    - 'Tu-Fr 16:00-18:00'
+  same_as: {  }
+place: 'in Berlin-Kreuzberg'
+place_de: 'in Berlin-Kreuzberg'
+description_overrides: {  }
+llms:
+  intro: ''
+  bundles:
+    exhibition: Exhibitions
+    article: 'News and events'
+    page: Pages
