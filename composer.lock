@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef5e5eee0e7693ae5a0b583b810b913b",
+    "content-hash": "40ff7a27038c9f8005b5c854f3c06bec",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6729,17 +6729,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "2.2.1"
+                "reference": "2.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.1.zip",
-                "reference": "2.2.1",
-                "shasum": "ee75572be28017b7b5a9c4ecf7b643e6ce806e16"
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.2.zip",
+                "reference": "2.2.2",
+                "shasum": "ed007e69ae080434ec655b150a393fa51b6c4b3f"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -6761,8 +6761,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.1",
-                    "datestamp": "1792864792",
+                    "version": "2.2.2",
+                    "datestamp": "1793094340",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
