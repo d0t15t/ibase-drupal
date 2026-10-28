@@ -30,6 +30,13 @@ function ibase_seo_update_10001(): void {
 }
 
 /**
+ * Leave zeigen's events, which Rabbit Hole hides, out of the sitemap and llms.txt.
+ */
+function ibase_seo_update_10002(): void {
+  ibase_seo_update_10001();
+}
+
+/**
  * Imports the SEO-related config of the current site from its sync folder.
  */
 function _ibase_seo_import_from_sync(): void {
