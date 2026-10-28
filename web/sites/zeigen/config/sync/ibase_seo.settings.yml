@@ -30,7 +30,6 @@ llms:
   intro: ''
   bundles:
     project: Projects
-    events: Events
     article: News
     artist: Artists
     artwork: Artworks
