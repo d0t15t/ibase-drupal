@@ -8,3 +8,13 @@ services:
       - '@breadcrumb'
       - '@current_route_match'
       - '@file_url_generator'
+
+  ibase_seo.imported_duplicate_redirect:
+    class: Drupal\ibase_seo\EventSubscriber\ImportedDuplicateRedirect
+    arguments:
+      - '@config.factory'
+      - '@entity_type.manager'
+      - '@current_route_match'
+      - '@current_user'
+    tags:
+      - { name: event_subscriber }

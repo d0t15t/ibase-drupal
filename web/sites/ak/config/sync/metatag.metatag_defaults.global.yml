@@ -9,7 +9,7 @@ label: Global
 tags:
   canonical_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'
-  description: 'Atelierhof Kreuzberg is an exhibition and studio space in Berlin-Kreuzberg, showing contemporary art since 2008.'
+  description: 'Der Atelierhof Kreuzberg ist ein Ausstellungs- und Atelierhaus in Berlin-Kreuzberg und zeigt seit 2008 zeitgenössische Kunst – mit wechselnden Ausstellungen, dem Monday Art Salon und den Offenen Ateliers.'
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   og_site_name: '[site:name]'
   og_type: website

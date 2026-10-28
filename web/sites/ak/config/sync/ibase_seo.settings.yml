@@ -4,7 +4,7 @@ organization:
   type: ArtGallery
   name: 'Atelierhof Kreuzberg'
   alternate_name: ''
-  description: 'Atelierhof Kreuzberg is an exhibition and studio space in Berlin-Kreuzberg, showing contemporary art since 2008.'
+  description: 'Der Atelierhof Kreuzberg ist ein Ausstellungs- und Atelierhaus in Berlin-Kreuzberg und zeigt seit 2008 zeitgenössische Kunst – mit wechselnden Ausstellungen, dem Monday Art Salon und den Offenen Ateliers.'
   logo: ''
   image: ''
   telephone: '+49 30 61209307'
@@ -19,12 +19,34 @@ organization:
   opening_hours:
     - 'Tu-Fr 16:00-18:00'
   same_as: {  }
+  founding_date: '2008'
+  region_code: DE-BE
+  knows_about:
+    - 'Zeitgenössische Kunst'
+    - Kunstausstellungen
+    - Künstlerateliers
+    - 'Monday Art Salon'
+    - 'Offene Ateliers'
 place: 'in Berlin-Kreuzberg'
 place_de: 'in Berlin-Kreuzberg'
+content_langcode: de
+redirect_imported_duplicates: true
+free_admission: false
+page_types:
+  1: AboutPage
+  277: CollectionPage
+  768: CollectionPage
+person_vocabularies:
+  - tags
+item_list_views:
+  - 'exhibitions_current:*'
+  - 'exhibitions_archive:*'
+  - 'taxonomy_term:page_1'
 description_overrides: {  }
 llms:
   intro: ''
   bundles:
-    exhibition: Exhibitions
-    article: 'News and events'
-    page: Pages
+    exhibition: Ausstellungen
+    page: Seiten
+  vocabularies:
+    tags: 'Künstler*innen'

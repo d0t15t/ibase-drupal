@@ -21,6 +21,7 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\TermInterface;
 
 /**
  * Builds schema.org structured data and page-specific meta values for nodes.
@@ -154,6 +155,24 @@ class SchemaBuilder {
         $page['@type'] = $this->pageType($node);
         $graph[] = $entity;
       }
+      $page_types = $settings->get('page_types') ?: [];
+      if (!empty($page_types[$node->id()])) {
+        $page['@type'] = $page_types[$node->id()];
+      }
+    }
+
+    $term = $this->routeMatch->getParameter('taxonomy_term');
+    if ($term instanceof TermInterface && $this->routeMatch->getRouteName() === 'entity.taxonomy_term.canonical' && $this->isPersonTerm($term)) {
+      $term = $this->translation($term, $langcode);
+      $this->cacheability->addCacheableDependency($term);
+      $person = $this->termPerson($term);
+      $person['@id'] = $page_url . '#main';
+      $person['mainEntityOfPage'] = ['@id' => $page['@id']];
+      $page['@type'] = 'ProfilePage';
+      $page['name'] = $term->label();
+      $page['description'] = $person['description'] ?? NULL;
+      $page['mainEntity'] = ['@id' => $person['@id']];
+      $graph[] = $person;
     }
 
     $graph[] = array_filter($page);
@@ -207,8 +226,41 @@ class SchemaBuilder {
     }
     if (!empty($org['opening_hours'])) {
       $data['openingHours'] = array_values($org['opening_hours']);
+      $data['openingHoursSpecification'] = $this->openingHoursSpecification($org['opening_hours']) ?: NULL;
+    }
+    if (!empty($org['founding_date'])) {
+      $data['foundingDate'] = $org['founding_date'];
+    }
+    if (!empty($org['knows_about'])) {
+      $data['knowsAbout'] = array_values($org['knows_about']);
+    }
+    if (!empty($org['locality'])) {
+      $data['areaServed'] = ['@type' => 'City', 'name' => $org['locality']];
     }
     return array_filter($data);
+  }
+
+  /**
+   * Converts opening hours like "Tu-Fr 16:00-18:00" to structured data.
+   */
+  protected function openingHoursSpecification(array $opening_hours): array {
+    $days = ['Mo' => 'Monday', 'Tu' => 'Tuesday', 'We' => 'Wednesday', 'Th' => 'Thursday', 'Fr' => 'Friday', 'Sa' => 'Saturday', 'Su' => 'Sunday'];
+    $keys = array_keys($days);
+    $specification = [];
+    foreach ($opening_hours as $line) {
+      if (!preg_match('/^([A-Z][a-z])(?:-([A-Z][a-z]))?\s+(\d{1,2}:\d{2})-(\d{1,2}:\d{2})$/', trim($line), $m) || !isset($days[$m[1]])) {
+        continue;
+      }
+      $from = array_search($m[1], $keys);
+      $to = $m[2] && isset($days[$m[2]]) ? array_search($m[2], $keys) : $from;
+      $specification[] = [
+        '@type' => 'OpeningHoursSpecification',
+        'dayOfWeek' => array_map(fn($key) => 'https://schema.org/' . $days[$key], array_slice($keys, $from, $to - $from + 1)),
+        'opens' => $m[3],
+        'closes' => $m[4],
+      ];
+    }
+    return $specification;
   }
 
   /**
@@ -274,21 +326,28 @@ class SchemaBuilder {
         }
         $data['eventAttendanceMode'] = 'https://schema.org/OfflineEventAttendanceMode';
         $data['eventStatus'] = 'https://schema.org/EventScheduled';
-        $data['location'] = $this->place();
+        $data['location'] = $this->place($node);
         $data['organizer'] = $organization;
-        $data['performer'] = $this->references($node, 'field_artists', 'Person');
+        $data['performer'] = array_merge($this->references($node, 'field_artists', 'Person'), $this->personTerms($node));
         $data['workFeatured'] = $this->references($node, 'field_artworks', 'VisualArtwork', 30);
+        $data['isAccessibleForFree'] = $this->settings()->get('free_admission') ? TRUE : NULL;
         return array_filter($data);
 
       case 'article':
         $dates = $this->eventDates($node);
         $data = ['@type' => !empty($dates['startDate']) && $this->has($node, 'field_dates') ? 'Event' : 'NewsArticle'] + $common;
         if ($data['@type'] === 'Event') {
+          // Articles typed as exhibitions are exhibitions.
+          if ($this->has($node, 'field_type') && in_array(mb_strtolower((string) $node->get('field_type')->entity?->label()), ['exhibition', 'ausstellung'], TRUE)) {
+            $data['@type'] = 'ExhibitionEvent';
+          }
           $data += $dates;
           $data['eventAttendanceMode'] = 'https://schema.org/OfflineEventAttendanceMode';
           $data['eventStatus'] = 'https://schema.org/EventScheduled';
-          $data['location'] = $this->place();
+          $data['location'] = $this->place($node);
           $data['organizer'] = $organization;
+          $data['performer'] = $this->personTerms($node);
+          $data['isAccessibleForFree'] = $this->settings()->get('free_admission') ? TRUE : NULL;
           return array_filter($data);
         }
         $data['headline'] = Unicode::truncate($node->label(), 110, TRUE, TRUE);
@@ -332,7 +391,7 @@ class SchemaBuilder {
       }
     }
 
-    $de = $node->language()->getId() === 'de';
+    $de = $this->contentLangcode($node->language()->getId()) === 'de';
     $org = $this->settings()->get('organization.name') ?: $this->siteName();
     $place = $this->settings()->get($de ? 'place_de' : 'place');
     $at = $org . ($place ? ' ' . $place : '');
@@ -447,7 +506,8 @@ class SchemaBuilder {
     foreach ($breadcrumb->getLinks() as $link) {
       $url = $link->getUrl();
       $text = $link->getText();
-      if (is_array($text) || ($url->isRouted() && $url->getRouteName() === '<nolink>')) {
+      // Skip unlinked items and labels without words, like "+".
+      if (is_array($text) || !preg_match('/\pL/u', (string) $text) || ($url->isRouted() && $url->getRouteName() === '<nolink>')) {
         continue;
       }
       $generated = $url->setAbsolute()->toString(TRUE);
@@ -555,17 +615,112 @@ class SchemaBuilder {
   }
 
   /**
-   * Builds the venue of the organization as a schema.org Place.
+   * Builds the venue as a schema.org Place, with the room a node names.
    */
-  protected function place(): array {
+  protected function place(?NodeInterface $node = NULL): array {
     $organization = $this->organization();
-    return array_filter([
+    $place = array_filter([
       '@type' => 'Place',
       'name' => $organization['name'] ?? NULL,
       'address' => $organization['address'] ?? NULL,
       'geo' => $organization['geo'] ?? NULL,
       'url' => $organization['url'] ?? NULL,
     ]);
+    $room = $node && $this->has($node, 'field_location') ? $node->get('field_location')->entity : NULL;
+    if ($room instanceof TermInterface) {
+      $place['name'] = $place['name'] . ' – ' . $room->label();
+      $place['containedInPlace'] = ['@id' => $this->baseUrl() . '/#organization'];
+    }
+    return $place;
+  }
+
+  /**
+   * Builds people from the person terms (e.g. artist tags) a node references.
+   */
+  protected function personTerms(NodeInterface $node): array {
+    $people = [];
+    foreach ($node->getFieldDefinitions() as $field_name => $definition) {
+      if ($definition->getType() !== 'entity_reference' || $definition->getSetting('target_type') !== 'taxonomy_term' || $node->get($field_name)->isEmpty()) {
+        continue;
+      }
+      foreach ($node->get($field_name)->referencedEntities() as $term) {
+        if ($term instanceof TermInterface && $this->isPersonTerm($term)) {
+          $this->cacheability->addCacheableDependency($term);
+          $people[] = ['@type' => 'Person', 'name' => $term->label(), 'url' => $this->url($term)];
+        }
+      }
+    }
+    return $people;
+  }
+
+  /**
+   * Checks whether a term stands for a person, such as an artist tag.
+   */
+  public function isPersonTerm(TermInterface $term): bool {
+    if (!in_array($term->bundle(), $this->settings()->get('person_vocabularies') ?: [], TRUE)) {
+      return FALSE;
+    }
+    // Leave out tags that are not names, like "+" or "a.o.".
+    $name = trim($term->label());
+    return preg_match('/\pL.*\pL.*\pL/u', $name) && !preg_match('/^(a\.\s*o\.?|u\.\s*a\.?|and others|und andere)$/iu', $name);
+  }
+
+  /**
+   * Builds a schema.org Person from a person term.
+   */
+  public function termPerson(TermInterface $term): array {
+    return array_filter([
+      '@type' => 'Person',
+      'name' => $term->label(),
+      'url' => $this->url($term),
+      'description' => $this->termDescription($term),
+      'jobTitle' => $this->contentLangcode($term->language()->getId()) === 'de' ? 'Künstler*in' : 'Artist',
+      'affiliation' => ['@id' => $this->baseUrl() . '/#organization'],
+    ]);
+  }
+
+  /**
+   * Returns a meta description for a person term.
+   */
+  public function termDescription(TermInterface $term): string {
+    $text = $this->plainText((string) $term->getDescription());
+    if (mb_strlen($text) >= 50) {
+      return $text;
+    }
+    $de = $this->contentLangcode($term->language()->getId()) === 'de';
+    $org = $this->settings()->get('organization.name') ?: $this->siteName();
+    $place = $this->settings()->get($de ? 'place_de' : 'place');
+    $at = $org . ($place ? ' ' . $place : '');
+    return $de
+      ? $term->label() . " – Ausstellungen und Werke bei $at."
+      : $term->label() . " – exhibitions and works at $at.";
+  }
+
+  /**
+   * Builds a schema.org ItemList of the nodes a listing shows.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface[] $entities
+   *   The listed entities, in order.
+   */
+  public function itemList(array $entities, string $name, int $offset = 0): array {
+    $items = [];
+    foreach (array_values($entities) as $delta => $entity) {
+      $entity = $this->translation($entity, $this->langcode());
+      $this->cacheability->addCacheableDependency($entity);
+      $items[] = [
+        '@type' => 'ListItem',
+        'position' => $offset + $delta + 1,
+        'url' => $this->url($entity),
+        'name' => $entity->label(),
+      ];
+    }
+    return [
+      '@context' => 'https://schema.org',
+      '@type' => 'ItemList',
+      'name' => $name,
+      'numberOfItems' => count($items),
+      'itemListElement' => $items,
+    ];
   }
 
   /**
@@ -639,6 +794,9 @@ class SchemaBuilder {
    * Returns the codes of the site's languages.
    */
   protected function languageCodes(): array|string {
+    if ($langcode = $this->settings()->get('content_langcode')) {
+      return $langcode;
+    }
     $codes = array_keys($this->languageManager->getLanguages());
     return count($codes) === 1 ? reset($codes) : $codes;
   }
@@ -646,8 +804,18 @@ class SchemaBuilder {
   /**
    * Returns the current content language code.
    */
-  protected function langcode(): string {
-    return $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
+  public function langcode(): string {
+    return $this->contentLangcode($this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId());
+  }
+
+  /**
+   * Returns the language content is really written in.
+   *
+   * A monolingual site can be set up in one language while its content is
+   * written in another; the content_langcode setting names the latter.
+   */
+  public function contentLangcode(string $langcode): string {
+    return $this->settings()->get('content_langcode') ?: $langcode;
   }
 
   /**

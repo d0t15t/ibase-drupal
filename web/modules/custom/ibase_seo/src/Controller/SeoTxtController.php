@@ -108,6 +108,29 @@ class SeoTxtController extends ControllerBase {
       $out[] = "## $heading\n\n" . implode("\n", $items);
     }
 
+    $term_storage = $this->entityTypeManager()->getStorage('taxonomy_term');
+    foreach ($settings->get('llms.vocabularies') ?: [] as $vocabulary => $heading) {
+      $ids = $term_storage->getQuery()
+        ->accessCheck(TRUE)
+        ->condition('vid', $vocabulary)
+        ->condition('status', 1)
+        ->sort('name')
+        ->execute();
+      if (!$ids) {
+        continue;
+      }
+      $items = [];
+      $people = in_array($vocabulary, $settings->get('person_vocabularies') ?: [], TRUE);
+      foreach ($term_storage->loadMultiple($ids) as $term) {
+        if ($people && !$this->builder->isPersonTerm($term)) {
+          continue;
+        }
+        $items[] = sprintf('- [%s](%s)', $term->label(), $this->builder->url($term));
+      }
+      $cacheability->addCacheTags(['taxonomy_term_list']);
+      $out[] = "## $heading\n\n" . implode("\n", $items);
+    }
+
     $optional = [];
     if ($this->moduleHandler()->moduleExists('simple_sitemap')) {
       $optional[] = '- [XML sitemap](' . $this->builder->baseUrl() . '/sitemap.xml): every public page';
